@@ -1,0 +1,24 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (opengl_test.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  texture.cpp
+c:\users\xchuki00\documents\bakalarka\opengl_test\opengl_test\includes.h(5): fatal error C1083: Cannot open include file: 'GLFW\glfw3.h': No such file or directory
+  skybox.cpp
+c:\users\xchuki00\documents\bakalarka\opengl_test\opengl_test\includes.h(5): fatal error C1083: Cannot open include file: 'GLFW\glfw3.h': No such file or directory
+  scene.cpp
+c:\users\xchuki00\documents\bakalarka\opengl_test\opengl_test\includes.h(5): fatal error C1083: Cannot open include file: 'GLFW\glfw3.h': No such file or directory
+  model.cpp
+c:\users\xchuki00\documents\bakalarka\opengl_test\opengl_test\includes.h(5): fatal error C1083: Cannot open include file: 'GLFW\glfw3.h': No such file or directory
+  misc.cpp
+c:\users\xchuki00\documents\bakalarka\opengl_test\opengl_test\includes.h(5): fatal error C1083: Cannot open include file: 'GLFW\glfw3.h': No such file or directory
+  loader.cpp
+c:\users\xchuki00\documents\bakalarka\opengl_test\opengl_test\includes.h(5): fatal error C1083: Cannot open include file: 'GLFW\glfw3.h': No such file or directory
+  ground.cpp
+c:\users\xchuki00\documents\bakalarka\opengl_test\opengl_test\includes.h(5): fatal error C1083: Cannot open include file: 'GLFW\glfw3.h': No such file or directory
+  controls.cpp
+c:\users\xchuki00\documents\bakalarka\opengl_test\opengl_test\includes.h(5): fatal error C1083: Cannot open include file: 'GLFW\glfw3.h': No such file or directory
+  bulletC.cpp
+c:\users\xchuki00\documents\bakalarka\opengl_test\opengl_test\includes.h(5): fatal error C1083: Cannot open include file: 'GLFW\glfw3.h': No such file or directory
+  Source.cpp
+c:\users\xchuki00\documents\bakalarka\opengl_test\opengl_test\includes.h(5): fatal error C1083: Cannot open include file: 'GLFW\glfw3.h': No such file or directory
+  Shader.cpp
+c:\users\xchuki00\documents\bakalarka\opengl_test\opengl_test\includes.h(5): fatal error C1083: Cannot open include file: 'GLFW\glfw3.h': No such file or directory
+  Generating Code...

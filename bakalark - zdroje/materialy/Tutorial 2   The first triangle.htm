@@ -1,0 +1,2791 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tutorial 2 : The first triangle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free tutorials for modern Opengl (3.3 and later) in C/C++">
+    <link rel="canonical" href="http://www.opengl-tutorial.org/beginners-tutorials/tutorial-2-the-first-triangle/">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Tutorial%202%20%20%20The%20first%20triangle_soubory/main.css">
+    <link href="Tutorial%202%20%20%20The%20first%20triangle_soubory/syntax.css" rel="stylesheet">
+
+    <script async="" src="Tutorial%202%20%20%20The%20first%20triangle_soubory/analytics.js"></script><script>
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-22633480-2', {'siteSpeedSampleRate': 40});
+      ga('send', 'pageview');
+      
+    </script>
+    
+</head>
+
+
+    <body>
+
+    
+    <header class="site-header">
+
+  <script>
+    String.prototype.replaceAt=function(index, character) {
+    return this.substr(0, index) + character + this.substr(index+character.length);
+    }
+    
+    function myFunction() {
+    var x = document.getElementById("myLanguage").value
+    var pageurl = "/beginners-tutorials/tutorial-2-the-first-triangle/"
+    if (pageurl.charAt(3) == '/') {
+      if(x=='en'){
+        pageurl = pageurl.substring(3);
+      } else {
+        pageurl = pageurl.replaceAt(1, x);
+      }
+      window.open ('' + pageurl,'_self',false);
+    } else { 
+      window.open ('/' + x + pageurl,'_self',false);
+    }
+    
+    
+    }
+  </script>
+  
+  <div class="wrap">
+    
+      <a class="site-title" href="http://www.opengl-tutorial.org/">opengl-tutorial</a>
+    
+
+    <nav class="site-nav">
+      
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"></path>
+          <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"></path>
+          <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"></path>
+        </svg>
+      </a>
+
+      <ul class="trigger">
+        
+        
+
+        <li><a href="http://www.opengl-tutorial.org/beginners-tutorials/">Basic tutorials</a>
+          <span class="arrow">▼</span>
+          <ul class="sub-menu">
+            
+            
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                      
+                  <li><a href="http://www.opengl-tutorial.org/beginners-tutorials/tutorial-1-opening-a-window/">Tutorial 1 : Opening a window</a></li>
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                      
+                  <li><a href="http://www.opengl-tutorial.org/beginners-tutorials/tutorial-2-the-first-triangle/">Tutorial 2 : The first triangle</a></li>
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                      
+                  <li><a href="http://www.opengl-tutorial.org/beginners-tutorials/tutorial-3-matrices/">Tutorial 3 : Matrices</a></li>
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                      
+                  <li><a href="http://www.opengl-tutorial.org/beginners-tutorials/tutorial-4-a-colored-cube/">Tutorial 4 : A Colored Cube</a></li>
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                      
+                  <li><a href="http://www.opengl-tutorial.org/beginners-tutorials/tutorial-5-a-textured-cube/">Tutorial 5 : A Textured Cube</a></li>
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                      
+                  <li><a href="http://www.opengl-tutorial.org/beginners-tutorials/tutorial-6-keyboard-and-mouse/">Tutorial 6 : Keyboard and Mouse</a></li>
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                      
+                  <li><a href="http://www.opengl-tutorial.org/beginners-tutorials/tutorial-7-model-loading/">Tutorial 7 : Model loading</a></li>
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                      
+                  <li><a href="http://www.opengl-tutorial.org/beginners-tutorials/tutorial-8-basic-shading/">Tutorial 8 : Basic shading</a></li>
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+          </ul>
+        </li>
+        <li><a href="http://www.opengl-tutorial.org/intermediate-tutorials/">Intermediate tutorials</a>
+          <span class="arrow">▼</span>
+          <ul class="sub-menu">
+            
+            
+            
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    
+                  
+                  <li><a href="http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-9-vbo-indexing/">Tutorial 9 : VBO Indexing</a>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    </li>
+                  
+                  <li><a href="http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-10-transparency/">Tutorial 10 : Transparency</a>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    </li>
+                  
+                  <li><a href="http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-11-2d-text/">Tutorial 11 : 2D text</a>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    </li>
+                  
+                  <li><a href="http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-12-opengl-extensions/">Tutorial 12 : OpenGL Extensions</a>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    </li>
+                  
+                  <li><a href="http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-13-normal-mapping/">Tutorial 13 : Normal Mapping</a>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    </li>
+                  
+                  <li><a href="http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-14-render-to-texture/">Tutorial 14 : Render To Texture</a>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    </li>
+                  
+                  <li><a href="http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-15-lightmaps/">Tutorial 15 : Lightmaps</a>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    </li>
+                  
+                  <li><a href="http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-16-shadow-mapping/">Tutorial 16 : Shadow mapping</a>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    </li>
+                  
+                  <li><a href="http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-17-quaternions/">Tutorial 17 : Rotations</a>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    </li>
+                  
+                  <li><a href="http://www.opengl-tutorial.org/intermediate-tutorials/billboards-particles/">Tutorial 18 : Billboards &amp; Particles</a>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    
+                    <span class="arrow">▶</span><ul class="sub-menu">
+                  
+                  <li><a href="http://www.opengl-tutorial.org/intermediate-tutorials/billboards-particles/billboards/">Billboards</a></li>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                  <li><a href="http://www.opengl-tutorial.org/intermediate-tutorials/billboards-particles/particles-instancing/">Particles / Instancing</a></li>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+            
+              
+              </ul></li>
+            
+          </ul>
+        </li>
+        <li><a href="http://www.opengl-tutorial.org/miscellaneous/">Miscellaneous</a>
+          <span class="arrow">▼</span>
+          <ul class="sub-menu">
+            
+            
+            
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    
+                  
+                  <li><a href="http://www.opengl-tutorial.org/miscellaneous/faq/">FAQ</a>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    </li>
+                  
+                  <li><a href="http://www.opengl-tutorial.org/miscellaneous/contribute/">Contribute</a>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    
+                    <span class="arrow">▶</span><ul class="sub-menu">
+                  
+                  <li><a href="http://www.opengl-tutorial.org/miscellaneous/contribute/translation/">Translation</a></li>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    
+                    </ul></li>
+                  
+                  <li><a href="http://www.opengl-tutorial.org/miscellaneous/math-cheatsheet/">Math Cheatsheet</a>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    </li>
+                  
+                  <li><a href="http://www.opengl-tutorial.org/miscellaneous/useful-tools-links/">Useful Tools &amp; Links</a>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    </li>
+                  
+                  <li><a href="http://www.opengl-tutorial.org/miscellaneous/an-fps-counter/">An FPS counter</a>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    </li>
+                  
+                  <li><a href="http://www.opengl-tutorial.org/miscellaneous/building-your-own-c-application/">Building your own C application</a>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    </li>
+                  
+                  <li><a href="http://www.opengl-tutorial.org/miscellaneous/clicking-on-objects/">Clicking on objects</a>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                    
+                    <span class="arrow">▶</span><ul class="sub-menu">
+                  
+                  <li><a href="http://www.opengl-tutorial.org/miscellaneous/clicking-on-objects/picking-with-an-opengl-hack/">Picking with an OpenGL hack</a></li>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                  <li><a href="http://www.opengl-tutorial.org/miscellaneous/clicking-on-objects/picking-with-a-physics-library/">Picking with a physics library</a></li>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+                
+
+                  
+                  <li><a href="http://www.opengl-tutorial.org/miscellaneous/clicking-on-objects/picking-with-custom-ray-obb-function/">Picking with custom Ray-OBB function</a></li>
+
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+            
+              
+              </ul></li>
+            
+          </ul>
+        </li>
+        <li><a href="http://www.opengl-tutorial.org/download/">Download</a></li>
+
+
+        <li><select id="myLanguage" onchange="myFunction()">
+          
+            <option value="en" selected="selected">english</option>	    
+          
+            <option value="cn">chinese</option>	    
+          
+            <option value="jp">japanese</option>	    
+          
+            <option value="ru">russian</option>	    
+          
+            <option value="fr">français</option>	    
+          
+	       </select></li>
+       </ul>
+      </nav></div>
+    
+  
+</header>
+
+    
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post">
+
+  <header class="post-header">
+    <h1>Tutorial 2 : The first triangle</h1>
+  </header>
+
+  <article class="post-content">
+  
+<p>This will be another long tutorial.</p>
+
+<p>OpenGL 3 makes it easy to write complicated stuff, but at the expense
+ that drawing a simple triangle is actually quite difficult.</p>
+
+<p>Don’t forget to cut’n paste the code on a regular basis.</p>
+
+<p><strong><span style="color: red">If the program crashes at startup, 
+you’re probably running from the wrong directory. Read CAREFULLY the 
+first tutorial on how to configure Visual Studio !</span></strong></p>
+
+<h2 id="the-vao">The VAO</h2>
+
+<p>I won’t dig into details now, but you need to create a Vertex Array Object and set it as the current one :</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="n">GLuint</span> <span class="n">VertexArrayID</span><span class="p">;</span>
+<span class="n">glGenVertexArrays</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">VertexArrayID</span><span class="p">);</span>
+<span class="n">glBindVertexArray</span><span class="p">(</span><span class="n">VertexArrayID</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>Do this once your window is created (= after the OpenGL Context creation) and before any other OpenGL call.</p>
+
+<p>If you really want to know more about VAOs, there are a few other tutorials out there, but this is not very important.</p>
+
+<h2 id="screen-coordinates">Screen Coordinates</h2>
+
+<p>A triangle is defined by three points. When talking about “points” in
+ 3D graphics, we usually use the word “vertex” ( “vertices” on the 
+plural ). A vertex has 3 coordinates : X, Y and Z. You can think about 
+these three coordinates in the following way :</p>
+
+<ul>
+  <li>X in on your right</li>
+  <li>Y is up</li>
+  <li>Z is towards your back (yes, behind, not in front of you)</li>
+</ul>
+
+<p>But here is a better way to visualize this : use the Right Hand Rule</p>
+
+<ul>
+  <li>X is your thumb</li>
+  <li>Y is your index</li>
+  <li>Z is your middle finger. If you put your thumb to the right and your index to the sky, it will point to your back, too.</li>
+</ul>
+
+<p>Having the Z in this direction is weird, so why is it so ? Short 
+answer : because 100 years of Right Hand Rule Math will give you lots of
+ useful tools. The only downside is an unintuitive Z.</p>
+
+<p>On a side note, notice that you can move your hand freely : your X, Y and Z will be moving, too. More on this later.</p>
+
+<p>So we need three 3D points in order to make a triangle ; let’s go :</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="c1">// An array of 3 vectors which represents 3 vertices
+</span><span class="k">static</span> <span class="k">const</span> <span class="n">GLfloat</span> <span class="n">g_vertex_buffer_data</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="o">-</span><span class="mf">1.0</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.0</span><span class="n">f</span><span class="p">,</span>
+   <span class="mf">1.0</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.0</span><span class="n">f</span><span class="p">,</span>
+   <span class="mf">0.0</span><span class="n">f</span><span class="p">,</span>  <span class="mf">1.0</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.0</span><span class="n">f</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre>
+</div>
+
+<p>The first vertex is (-1,-1,0). This means that <em>unless we transform it in some way</em>,
+ it will be displayed at (-1,-1) on the screen. What does this mean ? 
+The screen origin is in the middle, X is on the right, as usual, and Y 
+is up. This is what it gives on a wide screen :</p>
+
+<p><img src="Tutorial%202%20%20%20The%20first%20triangle_soubory/screenCoordinates.png" alt="screenCoordinates" width="300px" height="165px"></p>
+
+<p>This is something you can’t change, it’s built in your graphics card.
+ So (-1,-1) is the bottom left corner of your screen. (1,-1) is the 
+bottom right, and (0,1) is the middle top. So this triangle should take 
+most of the screen.</p>
+
+<h2 id="drawing-our-triangle">Drawing our triangle</h2>
+
+<p>The next step is to give this triangle to OpenGL. We do this by creating a buffer:</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="c1">// This will identify our vertex buffer
+</span><span class="n">GLuint</span> <span class="n">vertexbuffer</span><span class="p">;</span>
+<span class="c1">// Generate 1 buffer, put the resulting identifier in vertexbuffer
+</span><span class="n">glGenBuffers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">vertexbuffer</span><span class="p">);</span>
+<span class="c1">// The following commands will talk about our 'vertexbuffer' buffer
+</span><span class="n">glBindBuffer</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span> <span class="n">vertexbuffer</span><span class="p">);</span>
+<span class="c1">// Give our vertices to OpenGL.
+</span><span class="n">glBufferData</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">g_vertex_buffer_data</span><span class="p">),</span> <span class="n">g_vertex_buffer_data</span><span class="p">,</span> <span class="n">GL_STATIC_DRAW</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>This needs to be done only once.</p>
+
+<p>Now, in our main loop, where we used to draw “nothing”, we can draw our magnificent triangle :</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="c1">// 1rst attribute buffer : vertices
+</span><span class="n">glEnableVertexAttribArray</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">glBindBuffer</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span> <span class="n">vertexbuffer</span><span class="p">);</span>
+<span class="n">glVertexAttribPointer</span><span class="p">(</span>
+   <span class="mi">0</span><span class="p">,</span><span class="err">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="c1">// attribute 0. No particular reason for 0, but must match the layout in the shader.
+</span>   <span class="mi">3</span><span class="p">,</span><span class="err">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="c1">// size
+</span>   <span class="n">GL_FLOAT</span><span class="p">,</span><span class="err">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="c1">// type
+</span>   <span class="n">GL_FALSE</span><span class="p">,</span><span class="err">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="c1">// normalized?
+</span>   <span class="mi">0</span><span class="p">,</span><span class="err">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="c1">// stride
+</span>   <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="mi">0</span><span class="err">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="c1">// array buffer offset
+</span><span class="p">);</span>
+<span class="c1">// Draw the triangle !
+</span><span class="n">glDrawArrays</span><span class="p">(</span><span class="n">GL_TRIANGLES</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// Starting from vertex 0; 3 vertices total -&gt; 1 triangle
+</span><span class="n">glDisableVertexAttribArray</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>If you’re on lucky, you can see the result (<span style="color: red"><strong>don’t panic if you don’t</strong></span>) :</p>
+
+<p><img src="Tutorial%202%20%20%20The%20first%20triangle_soubory/triangle_no_shader1.png" alt="triangle_no_shader" width="300px" height="232px"></p>
+
+<p>Now this is some boring white. Let’s see how we can improve it by 
+painting it in red. This is done by using something called shaders.</p>
+
+<h2 id="shaders">Shaders</h2>
+
+<h1 id="shader-compilation">Shader Compilation</h1>
+
+<p>In the simplest possible configuration, you will need two shaders : 
+one called Vertex Shader, which will be executed for each vertex, and 
+one called Fragment Shader, which will be executed for each sample. And 
+since we use 4x antialising, we have 4 samples in each pixel.</p>
+
+<p>Shaders are programmed in a language called GLSL : GL Shader 
+Language, which is part of OpenGL. Unlike C or Java, GLSL has to be 
+compiled at run time, which means that each and every time you launch 
+your application, all your shaders are recompiled.</p>
+
+<p>The two shaders are usually in separate files. In this example, we 
+have SimpleFragmentShader.fragmentshader and 
+SimpleVertexShader.vertexshader . The extension is irrelevant, it could 
+be .txt or .glsl .</p>
+
+<p>So here’s the code. It’s not very important to fully understand it, 
+since you often do this only once in a program, so comments should be 
+enough. Since this function will be used by all other tutorials, it is 
+placed in a separate file : common/loadShader.cpp . Notice that just as 
+buffers, shaders are not directly accessible : we just have an ID. The 
+actual implementation is hidden inside the driver.</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="n">GLuint</span> <span class="n">LoadShaders</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">vertex_file_path</span><span class="p">,</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">fragment_file_path</span><span class="p">){</span>
+
+	<span class="c1">// Create the shaders
+</span>	<span class="n">GLuint</span> <span class="n">VertexShaderID</span> <span class="o">=</span> <span class="n">glCreateShader</span><span class="p">(</span><span class="n">GL_VERTEX_SHADER</span><span class="p">);</span>
+	<span class="n">GLuint</span> <span class="n">FragmentShaderID</span> <span class="o">=</span> <span class="n">glCreateShader</span><span class="p">(</span><span class="n">GL_FRAGMENT_SHADER</span><span class="p">);</span>
+
+	<span class="c1">// Read the Vertex Shader code from the file
+</span>	<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">VertexShaderCode</span><span class="p">;</span>
+	<span class="n">std</span><span class="o">::</span><span class="n">ifstream</span> <span class="n">VertexShaderStream</span><span class="p">(</span><span class="n">vertex_file_path</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">ios</span><span class="o">::</span><span class="n">in</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">VertexShaderStream</span><span class="p">.</span><span class="n">is_open</span><span class="p">()){</span>
+		<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Line</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+		<span class="k">while</span><span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">VertexShaderStream</span><span class="p">,</span> <span class="n">Line</span><span class="p">))</span>
+			<span class="n">VertexShaderCode</span> <span class="o">+=</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span> <span class="o">+</span> <span class="n">Line</span><span class="p">;</span>
+		<span class="n">VertexShaderStream</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+	<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">"Impossible to open %s. Are you in the right directory ? Don't forget to read the FAQ !</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">vertex_file_path</span><span class="p">);</span>
+		<span class="n">getchar</span><span class="p">();</span>
+		<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Read the Fragment Shader code from the file
+</span>	<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">FragmentShaderCode</span><span class="p">;</span>
+	<span class="n">std</span><span class="o">::</span><span class="n">ifstream</span> <span class="n">FragmentShaderStream</span><span class="p">(</span><span class="n">fragment_file_path</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">ios</span><span class="o">::</span><span class="n">in</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">FragmentShaderStream</span><span class="p">.</span><span class="n">is_open</span><span class="p">()){</span>
+		<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Line</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+		<span class="k">while</span><span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">FragmentShaderStream</span><span class="p">,</span> <span class="n">Line</span><span class="p">))</span>
+			<span class="n">FragmentShaderCode</span> <span class="o">+=</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span> <span class="o">+</span> <span class="n">Line</span><span class="p">;</span>
+		<span class="n">FragmentShaderStream</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+	<span class="p">}</span>
+
+	<span class="n">GLint</span> <span class="n">Result</span> <span class="o">=</span> <span class="n">GL_FALSE</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">InfoLogLength</span><span class="p">;</span>
+
+
+	<span class="c1">// Compile Vertex Shader
+</span>	<span class="n">printf</span><span class="p">(</span><span class="s">"Compiling shader : %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">vertex_file_path</span><span class="p">);</span>
+	<span class="kt">char</span> <span class="k">const</span> <span class="o">*</span> <span class="n">VertexSourcePointer</span> <span class="o">=</span> <span class="n">VertexShaderCode</span><span class="p">.</span><span class="n">c_str</span><span class="p">();</span>
+	<span class="n">glShaderSource</span><span class="p">(</span><span class="n">VertexShaderID</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">VertexSourcePointer</span> <span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+	<span class="n">glCompileShader</span><span class="p">(</span><span class="n">VertexShaderID</span><span class="p">);</span>
+
+	<span class="c1">// Check Vertex Shader
+</span>	<span class="n">glGetShaderiv</span><span class="p">(</span><span class="n">VertexShaderID</span><span class="p">,</span> <span class="n">GL_COMPILE_STATUS</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">Result</span><span class="p">);</span>
+	<span class="n">glGetShaderiv</span><span class="p">(</span><span class="n">VertexShaderID</span><span class="p">,</span> <span class="n">GL_INFO_LOG_LENGTH</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">InfoLogLength</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span> <span class="n">InfoLogLength</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">){</span>
+		<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">VertexShaderErrorMessage</span><span class="p">(</span><span class="n">InfoLogLength</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+		<span class="n">glGetShaderInfoLog</span><span class="p">(</span><span class="n">VertexShaderID</span><span class="p">,</span> <span class="n">InfoLogLength</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">VertexShaderErrorMessage</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">VertexShaderErrorMessage</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+	<span class="p">}</span>
+
+
+
+	<span class="c1">// Compile Fragment Shader
+</span>	<span class="n">printf</span><span class="p">(</span><span class="s">"Compiling shader : %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">fragment_file_path</span><span class="p">);</span>
+	<span class="kt">char</span> <span class="k">const</span> <span class="o">*</span> <span class="n">FragmentSourcePointer</span> <span class="o">=</span> <span class="n">FragmentShaderCode</span><span class="p">.</span><span class="n">c_str</span><span class="p">();</span>
+	<span class="n">glShaderSource</span><span class="p">(</span><span class="n">FragmentShaderID</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">FragmentSourcePointer</span> <span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+	<span class="n">glCompileShader</span><span class="p">(</span><span class="n">FragmentShaderID</span><span class="p">);</span>
+
+	<span class="c1">// Check Fragment Shader
+</span>	<span class="n">glGetShaderiv</span><span class="p">(</span><span class="n">FragmentShaderID</span><span class="p">,</span> <span class="n">GL_COMPILE_STATUS</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">Result</span><span class="p">);</span>
+	<span class="n">glGetShaderiv</span><span class="p">(</span><span class="n">FragmentShaderID</span><span class="p">,</span> <span class="n">GL_INFO_LOG_LENGTH</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">InfoLogLength</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span> <span class="n">InfoLogLength</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">){</span>
+		<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">FragmentShaderErrorMessage</span><span class="p">(</span><span class="n">InfoLogLength</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+		<span class="n">glGetShaderInfoLog</span><span class="p">(</span><span class="n">FragmentShaderID</span><span class="p">,</span> <span class="n">InfoLogLength</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">FragmentShaderErrorMessage</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">FragmentShaderErrorMessage</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+	<span class="p">}</span>
+
+
+
+	<span class="c1">// Link the program
+</span>	<span class="n">printf</span><span class="p">(</span><span class="s">"Linking program</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+	<span class="n">GLuint</span> <span class="n">ProgramID</span> <span class="o">=</span> <span class="n">glCreateProgram</span><span class="p">();</span>
+	<span class="n">glAttachShader</span><span class="p">(</span><span class="n">ProgramID</span><span class="p">,</span> <span class="n">VertexShaderID</span><span class="p">);</span>
+	<span class="n">glAttachShader</span><span class="p">(</span><span class="n">ProgramID</span><span class="p">,</span> <span class="n">FragmentShaderID</span><span class="p">);</span>
+	<span class="n">glLinkProgram</span><span class="p">(</span><span class="n">ProgramID</span><span class="p">);</span>
+
+	<span class="c1">// Check the program
+</span>	<span class="n">glGetProgramiv</span><span class="p">(</span><span class="n">ProgramID</span><span class="p">,</span> <span class="n">GL_LINK_STATUS</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">Result</span><span class="p">);</span>
+	<span class="n">glGetProgramiv</span><span class="p">(</span><span class="n">ProgramID</span><span class="p">,</span> <span class="n">GL_INFO_LOG_LENGTH</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">InfoLogLength</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span> <span class="n">InfoLogLength</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">){</span>
+		<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">ProgramErrorMessage</span><span class="p">(</span><span class="n">InfoLogLength</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+		<span class="n">glGetProgramInfoLog</span><span class="p">(</span><span class="n">ProgramID</span><span class="p">,</span> <span class="n">InfoLogLength</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ProgramErrorMessage</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ProgramErrorMessage</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+	<span class="p">}</span>
+
+	
+	<span class="n">glDetachShader</span><span class="p">(</span><span class="n">ProgramID</span><span class="p">,</span> <span class="n">VertexShaderID</span><span class="p">);</span>
+	<span class="n">glDetachShader</span><span class="p">(</span><span class="n">ProgramID</span><span class="p">,</span> <span class="n">FragmentShaderID</span><span class="p">);</span>
+	
+	<span class="n">glDeleteShader</span><span class="p">(</span><span class="n">VertexShaderID</span><span class="p">);</span>
+	<span class="n">glDeleteShader</span><span class="p">(</span><span class="n">FragmentShaderID</span><span class="p">);</span>
+
+	<span class="k">return</span> <span class="n">ProgramID</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h1 id="our-vertex-shader">Our Vertex Shader</h1>
+
+<p>Let’s write our vertex shader first.
+The first line tells the compiler that we will use OpenGL 3’s syntax.</p>
+
+<div class="language-glsl highlighter-rouge"><pre class="highlight"><code><span class="cp">#version 330 core
+</span></code></pre>
+</div>
+
+<p>The second line declares the input data :</p>
+
+<div class="language-glsl highlighter-rouge"><pre class="highlight"><code><span class="k">layout</span><span class="p">(</span><span class="n">location</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">in</span> <span class="kt">vec3</span> <span class="n">vertexPosition_modelspace</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p>Let’s explain this line in detail :</p>
+
+<ul>
+  <li>“vec3” is a vector of 3 components in GLSL. It is similar (but 
+different) to the glm::vec3 we used to declare our triangle. The 
+important thing is that if we use 3 components in C++, we use 3 
+components in GLSL too.</li>
+  <li>“layout(location = 0)” refers to the buffer we use to feed the <em>vertexPosition_modelspace</em>
+ attribute. Each vertex can have numerous attributes : A position, one 
+or several colours, one or several texture coordinates, lots of other 
+things. OpenGL doesn’t know what a colour is : it just sees a vec3. So 
+we have to tell him which buffer corresponds to which input. We do that 
+by setting the layout to the same value as the first parameter to 
+glVertexAttribPointer. The value “0” is not important, it could be 12 
+(but no more than glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &amp;v) ), the 
+important thing is that it’s the same number on both sides.</li>
+  <li>“vertexPosition_modelspace” could have any other name. It will 
+contain the position of the vertex for each run of the vertex shader.</li>
+  <li>“in” means that this is some input data. Soon we’ll see the “out” keyword.</li>
+</ul>
+
+<p>The function that is called for each vertex is called main, just as in C :</p>
+
+<div class="language-glsl highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="n">main</span><span class="p">(){</span>
+</code></pre>
+</div>
+
+<p>Our main function will merely set the vertex’ position to whatever 
+was in the buffer. So if we gave (1,1), the triangle would have one of 
+its vertices at the top right corner of the screen. We’ll see in the 
+next tutorial how to do some more interesting computations on the input 
+position.</p>
+
+<div class="language-glsl highlighter-rouge"><pre class="highlight"><code>  <span class="nb">gl_Position</span><span class="p">.</span><span class="n">xyz</span> <span class="o">=</span> <span class="n">vertexPosition_modelspace</span><span class="p">;</span>
+  <span class="nb">gl_Position</span><span class="p">.</span><span class="n">w</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>gl_Position is one of the few built-in variables : you *have *to 
+assign some value to it. Everything else is optional; we’ll see what 
+“everything else” means in Tutorial 4.</p>
+
+<h1 id="our-fragment-shader">Our Fragment Shader</h1>
+
+<p>For our first fragment shader, we will do something really simple : 
+set the color of each fragment to red. (Remember, there are 4 fragment 
+in a pixel because we use 4x AA)</p>
+
+<div class="language-glsl highlighter-rouge"><pre class="highlight"><code><span class="cp">#version 330 core
+</span><span class="k">out</span> <span class="kt">vec3</span> <span class="n">color</span><span class="p">;</span>
+<span class="kt">void</span> <span class="n">main</span><span class="p">(){</span>
+  <span class="n">color</span> <span class="o">=</span> <span class="kt">vec3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>So yeah, vec3(1,0,0) means red. This is because on computer screens, 
+colour is represented by a Red, Green, and Blue triplet, in this order. 
+So (1,0,0) means Full Red, no green and no blue.</p>
+
+<h2 id="putting-it-all-together">Putting it all together</h2>
+
+<p>Before the main loop, call our LoadShaders function :</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="c1">// Create and compile our GLSL program from the shaders
+</span><span class="n">GLuint</span> <span class="n">programID</span> <span class="o">=</span> <span class="n">LoadShaders</span><span class="p">(</span> <span class="s">"SimpleVertexShader.vertexshader"</span><span class="p">,</span> <span class="s">"SimpleFragmentShader.fragmentshader"</span> <span class="p">);</span>
+</code></pre>
+</div>
+
+<p>Now inside the main loop, first clear the screen. This will change 
+the background color to dark blue because of the previous 
+glClearColor(0.0f, 0.0f, 0.4f, 0.0f) call:</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="n">glClear</span><span class="p">(</span><span class="n">GL_COLOR_BUFFER_BIT</span> <span class="o">|</span> <span class="n">GL_DEPTH_BUFFER_BIT</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>and then tell OpenGL that you want to use your shader:</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="c1">// Use our shader
+</span><span class="n">glUseProgram</span><span class="p">(</span><span class="n">programID</span><span class="p">);</span>
+<span class="c1">// Draw triangle...
+</span></code></pre>
+</div>
+
+<p>… and presto, here’s your red triangle !</p>
+
+<p><img src="Tutorial%202%20%20%20The%20first%20triangle_soubory/red_triangle.png" alt="red_triangle" width="300px" height="231px"></p>
+
+<p>In the next tutorial we’ll learn transformations : How to setup your camera, move your objects, etc.</p>
+
+  </article>
+
+</div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrap">
+
+    <div class="footer-col-1 column">
+      <ul>
+        <li><a href="mailto:contact@opengl-tutorial.org">contact@opengl-tutorial.org</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col-2 column">
+      <a href="https://github.com/opengl-tutorials/ogl" target="_blank">
+        <span class="icon github">
+          <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C2C2" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761
+            c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32
+            c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472
+            c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037
+            C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65
+            c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261
+            c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082
+            c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129
+            c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"></path>
+          </svg>
+        </span>
+        <span class="username"></span>
+      </a>
+        
+      <a href="https://twitter.com/GraphicsTut" target="_blank">
+        <span class="icon twitter">
+          <svg version="1.1" class="twitter-icon-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+            <path fill="#C2C2C2" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+            c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27
+            c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767
+            c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206
+            C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271
+            c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469
+            c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"></path>
+          </svg>
+        </span>
+        <span class="username"></span>
+      </a>
+      <a href="https://plus.google.com/107410003823545892786" target="_blank">
+        <span class="icon gplus">
+          <svg class="gplus-icon-svg" enable-background="new 0 0 128 128" height="128px" id="Layer_1" version="1.1" viewBox="0 0 128 128" width="128px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"><g><circle cx="64" cy="64" fill="#C2C2C2" r="64"></circle><g><g><path d="M49.424,97.875c-19.018,0-34.491-15.193-34.491-33.874c0-18.68,15.473-33.875,34.491-33.875     c8.318,0,16.354,2.952,22.624,8.309l-8.771,9.899c-3.838-3.279-8.758-5.086-13.853-5.086c-11.652,0-21.13,9.31-21.13,20.752     c0,11.441,9.479,20.75,21.13,20.75c9.858,0,16.311-4.723,18.407-13.197H49.587V58.432h32.347v6.562     C81.934,84.659,68.869,97.875,49.424,97.875z" fill="#FFFFFF"></path></g><polygon fill="#FFFFFF" points="117.934,58.438 107.934,58.438 107.934,48.438 99.934,48.438 99.934,58.438 89.934,58.438     89.934,66.438 99.934,66.438 99.934,76.438 107.934,76.438 107.934,66.438 117.934,66.438   "></polygon></g></g>
+          </svg>
+        </span>
+      </a>
+    </div>
+
+    <div class="footer-col-3 column">
+      <p class="text">Free tutorials for modern Opengl (3.3 and later) in C/C++</p>
+    </div>
+
+  </div>
+
+</footer>
+
+
+    
+</body></html>

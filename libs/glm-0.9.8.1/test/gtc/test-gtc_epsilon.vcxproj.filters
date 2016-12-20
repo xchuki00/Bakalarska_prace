@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\gtc\gtc_epsilon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\gtc\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{EC2CFFB4-A5AD-36DD-80D1-0E329EC575AD}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

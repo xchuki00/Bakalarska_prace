@@ -1,0 +1,17 @@
+﻿  bullet_Test.cpp
+c:\users\xchuki00\documents\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\xchuki00\documents\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\xchuki00\documents\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+BulletCollision_Debug.lib(btCollisionShape.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MTd_StaticDebug' in bullet_Test.obj
+BulletCollision_Debug.lib(btConvexShape.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MTd_StaticDebug' in bullet_Test.obj
+LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
+BulletCollision_Debug.lib(btConvexShape.obj) : warning LNK4217: locally defined symbol ___acrt_iob_func imported in function _printf
+BulletCollision_Debug.lib(btConvexInternalShape.obj) : warning LNK4217: locally defined symbol ___acrt_iob_func imported in function "class btVector3 __cdecl operator*(class btVector3 const &,class btMatrix3x3 const &)" (??D@YA?AVbtVector3@@ABV0@ABVbtMatrix3x3@@@Z)
+BulletCollision_Debug.lib(btSphereShape.obj) : warning LNK4049: locally defined symbol ___acrt_iob_func imported
+BulletCollision_Debug.lib(btConvexShape.obj) : warning LNK4217: locally defined symbol ___stdio_common_vfprintf imported in function __vfprintf_l
+BulletCollision_Debug.lib(btConvexInternalShape.obj) : warning LNK4217: locally defined symbol ___stdio_common_vfprintf imported in function "class btVector3 __cdecl operator*(class btVector3 const &,class btMatrix3x3 const &)" (??D@YA?AVbtVector3@@ABV0@ABVbtMatrix3x3@@@Z)
+BulletCollision_Debug.lib(btSphereShape.obj) : warning LNK4049: locally defined symbol ___stdio_common_vfprintf imported
+LinearMath_Debug.lib(btAlignedAllocator.obj) : warning LNK4217: locally defined symbol _free imported in function "void __cdecl btAlignedAllocSetCustomAligned(void * (__cdecl*)(unsigned int,int),void (__cdecl*)(void *))" (?btAlignedAllocSetCustomAligned@@YAXP6APAXIH@ZP6AXPAX@Z@Z)
+LinearMath_Debug.lib(btAlignedAllocator.obj) : warning LNK4217: locally defined symbol _malloc imported in function "void __cdecl btAlignedAllocSetCustomAligned(void * (__cdecl*)(unsigned int,int),void (__cdecl*)(void *))" (?btAlignedAllocSetCustomAligned@@YAXP6APAXIH@ZP6AXPAX@Z@Z)
+MSVCRTD.lib(_chandler4gs_.obj) : error LNK2019: unresolved external symbol __except_handler4_common referenced in function __except_handler4
+C:\Users\xchuki00\Documents\bakalarka\bullet_Test\Debug\bullet_Test.exe : fatal error LNK1120: 1 unresolved externals

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build\CMakeFiles\0bf264911b39a768addf984fdb9ae967\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{DB57572D-86DF-329A-BBE9-BF4A5B59E9FC}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

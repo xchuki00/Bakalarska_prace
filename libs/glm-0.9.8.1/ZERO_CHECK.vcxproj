@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{606CA6F3-D2B1-3CD3-96C5-6E9E5F4BF8C7}</ProjectGUID>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>ZERO_CHECK</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\eb39866770b4884bd5405938f4987aee\generate.stamp.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Checking Build System</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1 -BC:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "$(SolutionPath)"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/CMakeFiles/eb39866770b4884bd5405938f4987aee/generate.stamp.rule;C:\Program Files\CMake\share\cmake-3.6\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glm.pc.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeRCCompiler.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeSystem.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\CMakePackageConfigHelpers.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\GNUInstallDirs.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glmBuildConfig.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glmConfig.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\glm\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\bug\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\core\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\gtc\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\gtx\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\glm\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\bug\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\core\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\gtc\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\gtx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Checking Build System</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1 -BC:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "$(SolutionPath)"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/CMakeFiles/eb39866770b4884bd5405938f4987aee/generate.stamp.rule;C:\Program Files\CMake\share\cmake-3.6\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glm.pc.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeRCCompiler.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeSystem.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\CMakePackageConfigHelpers.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\GNUInstallDirs.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glmBuildConfig.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glmConfig.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\glm\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\bug\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\core\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\gtc\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\gtx\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\glm\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\bug\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\core\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\gtc\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\gtx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Checking Build System</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1 -BC:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "$(SolutionPath)"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/CMakeFiles/eb39866770b4884bd5405938f4987aee/generate.stamp.rule;C:\Program Files\CMake\share\cmake-3.6\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glm.pc.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeRCCompiler.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeSystem.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\CMakePackageConfigHelpers.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\GNUInstallDirs.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glmBuildConfig.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glmConfig.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\glm\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\bug\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\core\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\gtc\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\gtx\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\glm\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\bug\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\core\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\gtc\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\gtx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Checking Build System</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1 -BC:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "$(SolutionPath)"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/CMakeFiles/eb39866770b4884bd5405938f4987aee/generate.stamp.rule;C:\Program Files\CMake\share\cmake-3.6\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glm.pc.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeRCCompiler.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeSystem.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\CMakePackageConfigHelpers.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\GNUInstallDirs.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glmBuildConfig.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glmConfig.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\glm\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\bug\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\core\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\gtc\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\gtx\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\glm\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\bug\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\core\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\gtc\CMakeFiles\generate.stamp;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\gtx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

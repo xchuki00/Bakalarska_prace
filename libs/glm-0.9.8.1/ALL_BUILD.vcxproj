@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{38B8F8BD-AEF3-3077-B916-CB55208B32EE}</ProjectGUID>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\test\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1 -BC:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1 --check-stamp-file C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\GNUInstallDirs.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\WriteBasicConfigVersionFile.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glmBuildConfig.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glmConfig.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glm.pc.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1 -BC:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1 --check-stamp-file C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\GNUInstallDirs.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\WriteBasicConfigVersionFile.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glmBuildConfig.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glmConfig.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glm.pc.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1 -BC:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1 --check-stamp-file C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\GNUInstallDirs.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\WriteBasicConfigVersionFile.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glmBuildConfig.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glmConfig.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glm.pc.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1 -BC:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1 --check-stamp-file C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeCCompiler.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\3.6.2\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\GNUInstallDirs.cmake;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\WriteBasicConfigVersionFile.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glmBuildConfig.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glmConfig.cmake.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\cmake\glm.pc.in;C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\xchuki00\Documents\bakalarka\FitGL\glm-0.9.8.1\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/ZERO_CHECK.vcxproj">
+      <Project>606CA6F3-D2B1-3CD3-96C5-6E9E5F4BF8C7</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/glm/glm_shared.vcxproj">
+      <Project>13AEA7DD-65C4-35F8-9063-9955D1A74F18</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/glm/glm_static.vcxproj">
+      <Project>37D67C1C-D22D-30E9-9AE8-A8F033E5B581</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/bug/test-bug_ms_vec_static.vcxproj">
+      <Project>4C7EADD9-007D-3886-BB9D-10401243E4A2</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_force_pure.vcxproj">
+      <Project>D7D0DA44-4B98-3CB9-8426-630BDE5CCBB9</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_func_common.vcxproj">
+      <Project>E0D6ACD5-7723-3632-9D9A-B796AAA6038F</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_func_exponential.vcxproj">
+      <Project>DDE3D043-7A06-3246-8439-B4C8BFB67103</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_func_geometric.vcxproj">
+      <Project>449B8F7E-9C71-3FCF-B050-3F634322CF4C</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_func_integer.vcxproj">
+      <Project>81033225-4821-3830-8968-79E026626511</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_func_integer_bit_count.vcxproj">
+      <Project>9644DC4C-CAF7-345E-9100-B8A90527E580</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_func_integer_find_lsb.vcxproj">
+      <Project>F811EE15-F361-3B36-842A-6E338F0A3ADF</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_func_integer_find_msb.vcxproj">
+      <Project>43AF1A12-1171-36C0-8B3F-D03302C4784D</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_func_matrix.vcxproj">
+      <Project>8E5FC988-389B-3CD4-82F3-1D06B67361FF</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_func_noise.vcxproj">
+      <Project>25DE9679-B8A0-33F0-B8C9-234590A159C0</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_func_packing.vcxproj">
+      <Project>35D589BE-9B35-31B6-B0A8-87E7999F1969</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_func_swizzle.vcxproj">
+      <Project>B894730B-D3EE-367A-B3FB-74A45CD91779</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_func_trigonometric.vcxproj">
+      <Project>5A2FC020-DA70-3C5A-B81A-77AA44DD5611</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_func_vector_relational.vcxproj">
+      <Project>6019D3CA-5C2E-3153-B993-1449CD62353A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_setup_force_cxx98.vcxproj">
+      <Project>F9338798-1D79-3EFC-B992-8A7ACCB699E9</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_setup_message.vcxproj">
+      <Project>7631D93A-FCAF-34CA-A2FD-A691952DB160</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_setup_precision.vcxproj">
+      <Project>C12F891D-7CFD-3AE0-B069-AE7C1B8624E5</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_type_aligned.vcxproj">
+      <Project>11A170E8-130F-3E61-864D-08F8F402EF72</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_type_cast.vcxproj">
+      <Project>6638AACB-1D19-35B8-8AA5-30E2DB53B4F5</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_type_ctor.vcxproj">
+      <Project>D4CB019F-A05B-375E-A959-82F0091C642E</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_type_float.vcxproj">
+      <Project>F655DD8F-FA82-3B2D-BD8E-BEAC7D79A391</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_type_int.vcxproj">
+      <Project>15FEB23A-4A7C-3327-8C46-2A94EA4A4636</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_type_length.vcxproj">
+      <Project>D74BFC25-2C1C-3DEC-A3BE-717042C9FAE2</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_type_mat2x2.vcxproj">
+      <Project>38169C5A-CD66-385F-91B6-8659956BD02A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_type_mat2x3.vcxproj">
+      <Project>934B5C9B-3097-3F9D-AED0-325F62DA9AC0</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_type_mat2x4.vcxproj">
+      <Project>09E82AB4-7C9E-3EDE-9DFD-AE4529E502A0</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_type_mat3x2.vcxproj">
+      <Project>B15DB6A6-90D1-3860-AB16-07E8BB6F0A6A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_type_mat3x3.vcxproj">
+      <Project>4EFDC58F-0414-3C04-9CDE-B49F20DCADD6</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_type_mat3x4.vcxproj">
+      <Project>C0E53427-0CE5-307F-A1CE-307E719EB8DD</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_type_mat4x2.vcxproj">
+      <Project>50B03214-352F-3458-9D41-8CE55C613621</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_type_mat4x3.vcxproj">
+      <Project>BDA87B80-59DD-3769-B38C-F6A4647AF7D8</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_type_mat4x4.vcxproj">
+      <Project>4858E0FD-7BB3-3B45-83B5-FEF749F53B59</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_type_vec1.vcxproj">
+      <Project>334BC77B-5995-3343-8454-A8F980EC85F7</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_type_vec2.vcxproj">
+      <Project>AE0228AB-5F73-330A-A923-A6E9B5E2C3D3</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_type_vec3.vcxproj">
+      <Project>A72CB508-8981-3009-9907-E44BF2AFFB11</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/core/test-core_type_vec4.vcxproj">
+      <Project>C05EACBA-C6A5-3276-AD75-4A957ABD3F17</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_bitfield.vcxproj">
+      <Project>0B441834-A6DD-3FC6-A697-156582E4DB81</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_color_space.vcxproj">
+      <Project>96BB0EAF-D518-3C71-863B-149DDBB8C8C6</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_constants.vcxproj">
+      <Project>4C03DDD8-C6B4-38D7-A401-2E17A63D356B</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_epsilon.vcxproj">
+      <Project>8D2D5D5A-86D6-398F-9375-7DA3CC3CD81A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_functions.vcxproj">
+      <Project>AE5E519E-2547-31DF-ACAB-0E0708989ACA</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_integer.vcxproj">
+      <Project>EB62E6B7-5025-3CDC-AED3-3AD8EBD8AC10</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_matrix_access.vcxproj">
+      <Project>EBFCB20F-592E-33FB-BD38-EA6BFA0B533E</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_matrix_integer.vcxproj">
+      <Project>6866F2BB-D999-3F6C-9953-37672F49BC12</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_matrix_inverse.vcxproj">
+      <Project>602CD996-2CFE-3AB3-9AB5-B0705B9BB348</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_matrix_transform.vcxproj">
+      <Project>C3763EB6-69C3-3A3A-BAF0-A225A1344BE1</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_noise.vcxproj">
+      <Project>BDE1DE04-AEAE-3440-830E-E3EF2D8BE76D</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_packing.vcxproj">
+      <Project>938BD879-5C20-350C-95F4-B25D66EC6F0D</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_quaternion.vcxproj">
+      <Project>B8222278-DB83-3370-B686-9B966161F06E</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_random.vcxproj">
+      <Project>0BF62F58-27BB-3B0D-9A9E-F7DBAC9838B7</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_reciprocal.vcxproj">
+      <Project>1A223AF9-52D2-3743-827A-81DC4B4D5E20</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_round.vcxproj">
+      <Project>230CCBD0-DC80-39C6-83DA-EF6E6E17F4A3</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_type_aligned.vcxproj">
+      <Project>41689CF8-71C8-3735-B17F-550985C2D859</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_type_precision.vcxproj">
+      <Project>4D8C197F-526D-382A-8D35-90C01A9C8B7B</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_type_ptr.vcxproj">
+      <Project>04E9379D-6BB0-396A-BA86-78926D7B443D</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_ulp.vcxproj">
+      <Project>B20765FA-B0B2-3503-B21C-ABB626FB3D9D</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtc/test-gtc_vec1.vcxproj">
+      <Project>127510A8-179E-39CE-B50B-2993D6CC3843</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_associated_min_max.vcxproj">
+      <Project>6DC10035-07A2-3B94-84C0-2A40AE99AC15</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_closest_point.vcxproj">
+      <Project>9C5D946C-0C19-3B8D-8198-98C24AB22AFB</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_color_space.vcxproj">
+      <Project>A19DC32E-6D74-3ED1-8955-8FF385A0295A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_color_space_YCoCg.vcxproj">
+      <Project>02414DAA-9047-35CB-A794-E20BABBBC55B</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_common.vcxproj">
+      <Project>0423EE69-5892-3F3C-9597-DA8757A2D859</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_compatibility.vcxproj">
+      <Project>CD4A5E8B-69A2-3D24-B7CB-2BDFDD068602</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_component_wise.vcxproj">
+      <Project>F8742B44-AEBB-33AA-B7C4-500C069C87E8</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_dual_quaternion.vcxproj">
+      <Project>02A6DA6A-25EB-399F-BCF0-83FDA3E369B8</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_euler_angle.vcxproj">
+      <Project>52ACD738-EE74-3ADE-9C8C-DB4E92628819</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_extend.vcxproj">
+      <Project>2831EB76-84E8-384C-84A7-304ABFE2CBA0</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_extended_min_max.vcxproj">
+      <Project>8F93D83A-87A5-3792-845A-7599A61081AB</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_fast_exponential.vcxproj">
+      <Project>A40A0400-F075-34AE-85CA-517BEA1FABB7</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_fast_square_root.vcxproj">
+      <Project>BDAB5161-ADD5-3980-8A6B-B08C028D8810</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_fast_trigonometry.vcxproj">
+      <Project>3917B1AE-D5C4-399D-87FF-9CBFA58D2A74</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_gradient_paint.vcxproj">
+      <Project>EFAE3520-6639-316C-A920-59AE486ACED3</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_handed_coordinate_space.vcxproj">
+      <Project>F434AFAE-F99B-3172-A322-9D292C00A9CD</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_integer.vcxproj">
+      <Project>50050D04-D1A1-391C-B9A1-98C10377E232</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_intersect.vcxproj">
+      <Project>4F33B0A7-64DC-3AFC-8918-4680BF6C002B</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_io.vcxproj">
+      <Project>B4C42B5D-B058-389D-8FD4-3D17DDA3C207</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_log_base.vcxproj">
+      <Project>08B10EEB-2017-30EC-B103-A6F3F1A019F5</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_matrix_cross_product.vcxproj">
+      <Project>077064A7-3F66-3938-93A3-DEFCDDC54350</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_matrix_decompose.vcxproj">
+      <Project>6D352FAC-55F2-3FE6-864C-A344D305CDC2</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_matrix_interpolation.vcxproj">
+      <Project>B2277FB3-D7EF-3AE6-95DC-1CAC86272D6F</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_matrix_major_storage.vcxproj">
+      <Project>65A8B34F-2B31-30E9-BEBA-3C5376D81EB9</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_matrix_operation.vcxproj">
+      <Project>47DBE18E-E806-349A-9DB9-2E25FE655836</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_matrix_query.vcxproj">
+      <Project>1C04D041-4D12-397A-BB35-4DA9E428AE7F</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_matrix_transform_2d.vcxproj">
+      <Project>63AE8A8C-BB97-3517-913C-79043A870257</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_norm.vcxproj">
+      <Project>6780BF90-2B12-319A-AA28-2EF7D4E7FAB6</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_normal.vcxproj">
+      <Project>5D284316-04F4-305A-8E2B-27ED6AB69EF0</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_normalize_dot.vcxproj">
+      <Project>89C2CBBE-DDB5-39EA-B5EB-BF206FAE1890</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_number_precision.vcxproj">
+      <Project>39340752-40FF-3927-BA55-464A16A6C94B</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_optimum_pow.vcxproj">
+      <Project>3FF24E05-E9F0-3CE6-9ED9-C43525AA4D91</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_orthonormalize.vcxproj">
+      <Project>20ACB780-A2F4-3DA3-BCA3-98CDEFEE9CF4</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_perpendicular.vcxproj">
+      <Project>D2373D8A-490B-3EF6-97E3-0DBA51991F1A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_polar_coordinates.vcxproj">
+      <Project>EB3EDB85-0572-35DD-B3B2-E6FA79F66504</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_projection.vcxproj">
+      <Project>CF8B553F-A448-3ACD-A534-5F2A4F425D70</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_quaternion.vcxproj">
+      <Project>EACE8CD0-0350-3EAE-BEBC-C57C282272DD</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_range.vcxproj">
+      <Project>0D586EC2-A327-31A1-BF0D-38FFF0DED40E</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_rotate_normalized_axis.vcxproj">
+      <Project>B1C30341-E832-3272-B514-117CC49CD22C</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_rotate_vector.vcxproj">
+      <Project>C13EEF8A-ADB2-344B-9BFC-DF74166C3FBE</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_scalar_multiplication.vcxproj">
+      <Project>EF60F91F-D94B-33B8-B650-2A799E2E1286</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_scalar_relational.vcxproj">
+      <Project>B18B218D-4E79-3725-9857-0662E4411C22</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_spline.vcxproj">
+      <Project>B4AF0D2A-AD75-39B4-8E4D-8155D7BA2444</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_string_cast.vcxproj">
+      <Project>9FBEC220-5B48-38F4-850C-81C288D9A67D</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_type_aligned.vcxproj">
+      <Project>07FCC3A6-892B-3E97-9481-86BACE5348AF</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_type_trait.vcxproj">
+      <Project>120B91FB-20CB-3B2E-9F76-5D6121345938</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_vector_angle.vcxproj">
+      <Project>0C442DC2-94FC-3C35-A6CB-4DDDE79F4C16</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_vector_query.vcxproj">
+      <Project>60560CEB-F294-3D4A-8C8D-6D91721B851A</Project>
+    </ProjectReference>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/glm-0.9.8.1/test/gtx/test-gtx_wrap.vcxproj">
+      <Project>A4A4FC9B-3E04-3370-9C99-C270605E318F</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

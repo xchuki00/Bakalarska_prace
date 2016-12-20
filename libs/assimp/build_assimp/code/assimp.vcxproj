@@ -1,0 +1,730 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{E60159B6-8C4F-3867-A21B-29C39DFBF342}</ProjectGUID>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>assimp</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build\code\Debug\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">assimp.dir\Debug\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">assimpd</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build\code\Release\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">assimp.dir\Release\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">assimp</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build\code\MinSizeRel\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">assimp.dir\MinSizeRel\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">assimp</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build\code\RelWithDebInfo\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">assimp.dir\RelWithDebInfo\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">assimp</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround;C:\Program Files (x86)\GnuWin32\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\..\contrib\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;ASSIMP_BUILD_BOOST_WORKAROUND;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Debug";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;ASSIMP_BUILD_BOOST_WORKAROUND;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround;C:\Program Files (x86)\GnuWin32\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\..\contrib\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround;C:\Program Files (x86)\GnuWin32\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\..\contrib\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\Program Files (x86)\GnuWin32\lib\zlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/build/code/Debug/assimpd.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/build/code/Debug/assimpd.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround;C:\Program Files (x86)\GnuWin32\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\..\contrib\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ASSIMP_BUILD_BOOST_WORKAROUND;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Release";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ASSIMP_BUILD_BOOST_WORKAROUND;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround;C:\Program Files (x86)\GnuWin32\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\..\contrib\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround;C:\Program Files (x86)\GnuWin32\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\..\contrib\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\Program Files (x86)\GnuWin32\lib\zlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/build/code/Release/assimp.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/build/code/Release/assimp.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround;C:\Program Files (x86)\GnuWin32\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\..\contrib\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ASSIMP_BUILD_BOOST_WORKAROUND;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="MinSizeRel";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ASSIMP_BUILD_BOOST_WORKAROUND;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"MinSizeRel\";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround;C:\Program Files (x86)\GnuWin32\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\..\contrib\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround;C:\Program Files (x86)\GnuWin32\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\..\contrib\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\Program Files (x86)\GnuWin32\lib\zlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/build/code/MinSizeRel/assimp.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/build/code/MinSizeRel/assimp.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround;C:\Program Files (x86)\GnuWin32\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\..\contrib\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ASSIMP_BUILD_BOOST_WORKAROUND;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="RelWithDebInfo";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ASSIMP_BUILD_BOOST_WORKAROUND;ASSIMP_BUILD_NO_OWN_ZLIB;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"RelWithDebInfo\";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround;C:\Program Files (x86)\GnuWin32\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\..\contrib\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround;C:\Program Files (x86)\GnuWin32\include;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\..\contrib\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\Program Files (x86)\GnuWin32\lib\zlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/build/code/RelWithDebInfo/assimp.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/build/code/RelWithDebInfo/assimp.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/code/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/xchuki00/Documents/bakalarka/FitGL/assimp -BC:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/build --check-stamp-file C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build\code\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/code/CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build\code\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/code/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/xchuki00/Documents/bakalarka/FitGL/assimp -BC:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/build --check-stamp-file C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build\code\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/code/CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build\code\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/code/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/xchuki00/Documents/bakalarka/FitGL/assimp -BC:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/build --check-stamp-file C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build\code\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/code/CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build\code\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/code/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/xchuki00/Documents/bakalarka/FitGL/assimp -BC:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/build --check-stamp-file C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build\code\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/code/CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\CMakeLists.txt;C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\build\code\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\fast_atof.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\qnan.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BaseImporter.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BaseProcess.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Importer.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ScenePrivate.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ByteSwap.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\DefaultProgressHandler.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\DefaultIOStream.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\DefaultIOSystem.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\CInterfaceIOWrapper.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Hash.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\IFF.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MemoryIOWrapper.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ParsingUtils.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\StreamReader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\StringComparison.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\SGSpatialSort.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\VertexTriangleAdjacency.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\GenericProperty.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\SpatialSort.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\SceneCombiner.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ScenePreprocessor.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\SkeletonMeshBuilder.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\SplitByBoneCountProcess.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\SmoothingGroups.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\StandardShapes.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\TargetAnimation.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\RemoveComments.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Subdivision.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Vertex.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\LineSplitter.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\TinyFormatter.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Profiler.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\LogAux.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Bitmap.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\DefaultLogger.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\LogStream.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\Logger.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\NullLogger.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Win32DebugLogStream.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FileLogStream.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\StdOStreamLogStream.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BlobIOSystem.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\CalcTangentsProcess.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ComputeUVMappingProcess.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ConvertToLHProcess.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FindDegenerates.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FindInstancesProcess.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FindInvalidDataProcess.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FixNormalsStep.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\GenFaceNormalsProcess.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\GenVertexNormalsProcess.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\PretransformVertices.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ImproveCacheLocality.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\JoinVerticesProcess.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\LimitBoneWeightsProcess.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\RemoveRedundantMaterials.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\RemoveVCProcess.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\SortByPTypeProcess.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\SplitLargeMeshes.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\TextureTransform.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\TriangulateProcess.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ValidateDataStructure.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\OptimizeGraph.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\OptimizeMeshes.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\DeboneProcess.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ProcessHelper.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\PolyTools.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MakeVerboseFormat.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\3DSHelper.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\3DSLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ACLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ASELoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ASEParser.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\B3DImporter.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BVHLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ColladaHelper.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ColladaLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ColladaParser.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ColladaExporter.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\DXFLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\DXFHelper.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\CSMLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\HMPFileData.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\HMPLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\HalfLifeFileData.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\IRRLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\IRRMeshLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\IRRShared.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\LWOAnimation.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\LWOFileData.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\LWOLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\LWSLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MD2FileData.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MD2Loader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MD2NormalTable.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MD3FileData.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MD3Loader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MD5Loader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MD5Parser.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MDCFileData.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MDCLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MDCNormalTable.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MDLDefaultColorMap.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MDLFileData.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MDLLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MaterialSystem.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\NFFLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\OFFLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ObjFileData.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ObjFileImporter.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ObjFileMtlImporter.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ObjFileParser.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ObjTools.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ObjExporter.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\OgreImporter.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\OgreStructs.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\OgreParsingUtils.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\OgreBinarySerializer.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\OgreXmlSerializer.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\PlyLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\PlyParser.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\PlyExporter.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Q3DLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Q3BSPFileData.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Q3BSPFileParser.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Q3BSPFileImporter.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Q3BSPZipArchive.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\RawLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\SMDLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\STLLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\STLExporter.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\TerragenLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\UnrealLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\XFileHelper.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\XFileImporter.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\XFileParser.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MD4FileData.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MS3DLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\COBLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\COBScene.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BlenderLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BlenderDNA.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BlenderDNA.inl" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BlenderScene.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BlenderSceneGen.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BlenderIntermediate.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BlenderModifier.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BlenderBMesh.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BlenderTessellator.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\NDOLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\IFCLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\IFCReaderGen.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\IFCUtil.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\STEPFile.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\STEPFileReader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\STEPFileEncoding.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\XGLLoader.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXCompileConfig.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXImporter.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXParser.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXTokenizer.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXImportSettings.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXConverter.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXUtil.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXDocument.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXProperties.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\irrXMLWrapper.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\irrXML\CXMLReaderImpl.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\irrXML\heapsort.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\irrXML\irrArray.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\irrXML\irrString.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\irrXML\irrTypes.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\irrXML\irrXML.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\ConvertUTF\ConvertUTF.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\unzip\crypt.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\unzip\ioapi.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\unzip\unzip.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\poly2tri\poly2tri\common\shapes.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\poly2tri\poly2tri\common\utils.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\poly2tri\poly2tri\sweep\advancing_front.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\poly2tri\poly2tri\sweep\cdt.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\poly2tri\poly2tri\sweep\sweep.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\poly2tri\poly2tri\sweep\sweep_context.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\clipper\clipper.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround\boost\math\common_factor_rt.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround\boost\foreach.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround\boost\format.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround\boost\scoped_array.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround\boost\scoped_ptr.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround\boost\shared_array.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround\boost\shared_ptr.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround\boost\make_shared.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround\boost\static_assert.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BoostWorkaround\boost\tuple\tuple.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\anim.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\ai_assert.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\camera.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\color4.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\color4.inl" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\config.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\defs.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\cfileio.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\light.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\material.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\material.inl" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\matrix3x3.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\matrix3x3.inl" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\matrix4x4.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\matrix4x4.inl" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\mesh.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\postprocess.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\quaternion.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\quaternion.inl" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\scene.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\metadata.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\texture.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\types.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\vector2.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\vector2.inl" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\vector3.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\vector3.inl" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\version.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\cimport.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\importerdesc.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\Importer.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\ProgressHandler.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\IOStream.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\IOSystem.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\cexport.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\Exporter.hpp" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\Compiler\pushpack1.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\Compiler\poppack1.h" />
+    <ClInclude Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\include\assimp\Compiler\pstdint.h" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Assimp.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BaseImporter.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BaseProcess.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\PostStepRegistry.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ImporterRegistry.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\DefaultIOStream.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\DefaultIOSystem.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Importer.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\SGSpatialSort.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\VertexTriangleAdjacency.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\SpatialSort.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\SceneCombiner.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ScenePreprocessor.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\SkeletonMeshBuilder.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\SplitByBoneCountProcess.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\StandardShapes.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\TargetAnimation.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\RemoveComments.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Subdivision.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Bitmap.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\DefaultLogger.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Exporter.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\AssimpCExport.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\CalcTangentsProcess.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ComputeUVMappingProcess.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ConvertToLHProcess.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FindDegenerates.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FindInstancesProcess.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FindInvalidDataProcess.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FixNormalsStep.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\GenFaceNormalsProcess.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\GenVertexNormalsProcess.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\PretransformVertices.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ImproveCacheLocality.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\JoinVerticesProcess.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\LimitBoneWeightsProcess.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\RemoveRedundantMaterials.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\RemoveVCProcess.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\SortByPTypeProcess.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\SplitLargeMeshes.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\TextureTransform.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\TriangulateProcess.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ValidateDataStructure.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\OptimizeGraph.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\OptimizeMeshes.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\DeboneProcess.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ProcessHelper.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MakeVerboseFormat.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\3DSConverter.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\3DSLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ACLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ASELoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ASEParser.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\B3DImporter.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BVHLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ColladaLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ColladaParser.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ColladaExporter.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\DXFLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\CSMLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\HMPLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\IRRLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\IRRMeshLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\IRRShared.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\LWOAnimation.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\LWOBLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\LWOLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\LWOMaterial.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\LWSLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MD2Loader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MD3Loader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MD5Loader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MD5Parser.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MDCLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MDLLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MDLMaterialLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MaterialSystem.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\NFFLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\OFFLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ObjFileImporter.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ObjFileMtlImporter.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ObjFileParser.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\ObjExporter.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\OgreImporter.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\OgreStructs.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\OgreBinarySerializer.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\OgreXmlSerializer.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\OgreMaterial.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\PlyLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\PlyParser.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\PlyExporter.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Q3DLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Q3BSPFileParser.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Q3BSPFileImporter.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\Q3BSPZipArchive.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\RawLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\SMDLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\STLLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\STLExporter.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\TerragenLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\UnrealLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\XFileImporter.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\XFileParser.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\MS3DLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\COBLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BlenderLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BlenderDNA.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BlenderScene.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BlenderModifier.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BlenderBMesh.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\BlenderTessellator.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\NDOLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\IFCLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\IFCReaderGen.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\IFCUtil.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\IFCGeometry.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\IFCMaterial.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\IFCProfile.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\IFCCurve.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\IFCBoolean.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\IFCOpenings.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\STEPFileReader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\STEPFileEncoding.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\XGLLoader.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXImporter.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXParser.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXTokenizer.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXConverter.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXUtil.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXDocument.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXProperties.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXMeshGeometry.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXMaterial.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXModel.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXAnimation.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXNodeAttribute.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXDeformer.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXBinaryTokenizer.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\FBXDocumentUtil.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\irrXML\irrXML.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\ConvertUTF\ConvertUTF.c" >
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\unzip\ioapi.c" >
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\unzip\unzip.c" >
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\poly2tri\poly2tri\common\shapes.cc"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\poly2tri\poly2tri\sweep\advancing_front.cc"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\poly2tri\poly2tri\sweep\cdt.cc"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\poly2tri\poly2tri\sweep\sweep.cc"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\poly2tri\poly2tri\sweep\sweep_context.cc"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\contrib\clipper\clipper.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\bakalarka\FitGL\assimp\code\AssimpPCH.cpp"  />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:/Users/xchuki00/Documents/bakalarka/FitGL/assimp/build/ZERO_CHECK.vcxproj">
+      <Project>AC4108EC-284C-35B3-8B66-FAEBF3C945C9</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
