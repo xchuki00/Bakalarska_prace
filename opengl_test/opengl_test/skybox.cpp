@@ -3,41 +3,42 @@
 #include "Shader.h"
 #include "controls.h"
 float points[] = {
-	-10.0f,  10.0f, -10.0f,
-	-10.0f, -10.0f, -10.0f,
-	10.0f, -10.0f, -10.0f,
+	//front
+	-10.0f,  10.0f, -10.0f, //levy hroni zadni
+	-10.0f, -10.0f, -10.0f, //levy dolni zadni
+	10.0f, -10.0f, -10.0f,	//pravy dolni zadni
 	10.0f, -10.0f, -10.0f,
 	10.0f,  10.0f, -10.0f,
 	-10.0f,  10.0f, -10.0f,
-
-	-10.0f, -10.0f,  10.0f,
-	-10.0f, -10.0f, -10.0f,
-	-10.0f,  10.0f, -10.0f,
+	//left
+	-10.0f, -10.0f,  10.0f, //levy dolni predni 
+	-10.0f, -10.0f, -10.0f,	//levy dolni zadni
+	-10.0f,  10.0f, -10.0f,	//levy horni zadni
 	-10.0f,  10.0f, -10.0f,
 	-10.0f,  10.0f,  10.0f,
 	-10.0f, -10.0f,  10.0f,
-
+	//right
 	10.0f, -10.0f, -10.0f,
 	10.0f, -10.0f,  10.0f,
 	10.0f,  10.0f,  10.0f,
 	10.0f,  10.0f,  10.0f,
 	10.0f,  10.0f, -10.0f,
 	10.0f, -10.0f, -10.0f,
-
+	//back
 	-10.0f, -10.0f,  10.0f,
 	-10.0f,  10.0f,  10.0f,
 	10.0f,  10.0f,  10.0f,
 	10.0f,  10.0f,  10.0f,
 	10.0f, -10.0f,  10.0f,
 	-10.0f, -10.0f,  10.0f,
-
+	//top
 	-10.0f,  10.0f, -10.0f,
 	10.0f,  10.0f, -10.0f,
 	10.0f,  10.0f,  10.0f,
 	10.0f,  10.0f,  10.0f,
 	-10.0f,  10.0f,  10.0f,
 	-10.0f,  10.0f, -10.0f,
-
+	//bottom
 	-10.0f, -10.0f, -10.0f,
 	-10.0f, -10.0f,  10.0f,
 	10.0f, -10.0f, -10.0f,
@@ -65,6 +66,7 @@ int skybox::load_texture( const char* left, const char* front, const char* right
 	loadTextureCube(back, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, &this->textur);
 	loadTextureCube(bottom, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, &this->textur);
 	loadTextureCube(top, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, &this->textur);
+
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);

@@ -1,0 +1,14 @@
+#version 400
+layout(location = 0) in vec2 vertexPosition_screen;
+layout(location = 1) in vec2 vertexUv;
+out vec2 uv;
+
+void main(){
+	vec2 position=vertexPosition_screen-vec2(384,512);
+	position /=vec2(512,384);
+	gl_Position=vec4(position,0,1);
+
+	uv=vertexUv;
+
+
+}

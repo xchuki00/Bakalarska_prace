@@ -22,7 +22,7 @@ int scene::addGround(std::string pathOfObj, std::string pathOfTexture)
 	this->Ground.buffer();
 	glm::mat4 mat(1.0f);
 	mat = glm::translate(mat,glm::vec3(0.0f,-0.5f,0.0f));
-	std::cerr << glm::to_string(mat);
+	//std::cerr << glm::to_string(mat);
 	this->Ground.setPosition(mat);
 	mat = glm::translate(mat, glm::vec3(0.0f, -0.6f, 0.0f));
 	int i = this->bulletWord.addGround(mat,1,1);
@@ -32,6 +32,7 @@ int scene::addGround(std::string pathOfObj, std::string pathOfTexture)
 }
 int scene::drawGround()
 {
+	glUseProgram(this->shader);
 	glm::mat4 Projection = getProject();
 	glm::mat4 View = getView();
 	//glm::mat4 Model = glm::mat4(1.0f);
@@ -202,8 +203,16 @@ int scene::drawAllModels()
 
 	return 0;
 }
+//////////////////////////CROSSHAIR/////////////////
+int scene::bufferCrossHair(std::string path) {
+	this->CrossHair.init(path);
+	this->CrossHair.buffer();
+
+	return 0;
+}
 int scene::drawCrossHair()
 {
+	this->CrossHair.draw();
 	return 0;
 }
 
@@ -229,15 +238,15 @@ void scene::calculate()
 	//this->Ground.setPosition(mat);
 	for (int i = 0; i < hitted->size();i++) {
 		
-		std::cerr << hitted->data()[i][0] << std::endl;
+		//std::cerr << hitted->data()[i][0] << std::endl;
 		//this->models[*hitted[i][0]]->hitted();
 		//this->models[*hitted[i][1]]->hitted();
 		if (hitted->data()[i][0] != -1) {
-			this->models[hitted->data()[i][0]]->hitted();
+			this->models[hitted->data()[i][0]]->hitted(hitted->data()[i][1]);
 
 		}
 		if (hitted->data()[i][1] != -1) {
-			this->models[hitted->data()[i][1]]->hitted();
+			this->models[hitted->data()[i][1]]->hitted(hitted->data()[i][0]);
 
 		}
 	}

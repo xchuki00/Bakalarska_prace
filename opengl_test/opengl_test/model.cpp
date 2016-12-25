@@ -108,10 +108,12 @@ void model::setPosition(glm::mat4 mat)
 {
 	mat4Copy(mat, &this->matrix);
 }
-void model::hitted()
+void model::hitted(int byWho)
 {
-	//this->textur = loadTexture2d("red.bmp", &this->textureHeight, &this->textureWidth);
-	std::cerr << "object " << this->RigidBodyIndex << "zasazen\n";
+	if (byWho != -1) {
+		this->textur = loadTexture2d("red.bmp", &this->textureHeight, &this->textureWidth);
+	}
+	//std::cerr << "object " << this->RigidBodyIndex << "zasazen\n";
 }
 model::model()
 {

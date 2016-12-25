@@ -3,6 +3,7 @@
 #include "bulletC.h"
 #include "skybox.h"
 #include "ground.h"
+#include "crossHair.h"
 class scene
 {
 	
@@ -17,6 +18,7 @@ public:
 	GLuint textureID;
 	GLuint MVPID;
 	GLuint VertexArrayID;
+	crossHair CrossHair;
 	////////////GROUND/////////////
 	int addGround(std::string pathOfObj, std::string pathOfTexture);
 	int drawGround();
@@ -49,6 +51,7 @@ public:
 	int addShader(std::string vertexShader, std::string fragmentShader);
 	int bufferModels();
 	int drawAllModels();
+	int bufferCrossHair(std::string path);
 	int drawCrossHair();
 	
 	////////////INIT///////////

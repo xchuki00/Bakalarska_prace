@@ -50,7 +50,7 @@ public:
 	int getRigidBodyIndex();
 	void setIndex(int i);
 	int getIndex();
-	void hitted();
+	void hitted(int byWho);
 	model();
 	virtual ~model();
 };

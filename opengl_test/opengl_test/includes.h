@@ -5,7 +5,6 @@
 #include <GLFW\glfw3.h>
 #include <glm\glm.hpp>
 #include <glm\gtc\matrix_transform.hpp>
-#include "model.h"
 #include <fstream>
 #include <GL\GL.h>
 #include <assimp\Importer.hpp>
@@ -18,6 +17,7 @@
 #include <glm\ext.hpp>
 #include <FreeImage.h>
 #include <btBulletDynamicsCommon.h>
+
 //#include <bt>
 #define HEIGHT 1024	
 #define WIDTH 768

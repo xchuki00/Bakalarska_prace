@@ -127,6 +127,7 @@
   <ItemGroup>
     <ClCompile Include="bulletC.cpp" />
     <ClCompile Include="controls.cpp" />
+    <ClCompile Include="crossHair.cpp" />
     <ClCompile Include="ground.cpp" />
     <ClCompile Include="misc.cpp" />
     <ClCompile Include="model.cpp" />
@@ -140,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="bulletC.h" />
     <ClInclude Include="controls.h" />
+    <ClInclude Include="crossHair.h" />
     <ClInclude Include="ground.h" />
     <ClInclude Include="includes.h" />
     <ClInclude Include="loader.h" />
@@ -151,6 +153,8 @@
     <ClInclude Include="texture.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="crossHair.fragmentShader" />
+    <None Include="crossHair.vertexShader" />
     <None Include="fragment.gls" />
     <None Include="skybox.fragmentShader" />
     <None Include="skybox.vertexShader" />

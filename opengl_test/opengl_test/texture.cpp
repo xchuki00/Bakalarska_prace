@@ -44,7 +44,7 @@ GLuint loadTexture2d(const char * path,int* height,int *width) {
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 	glGenerateMipmap(GL_TEXTURE_2D);
-	//std::cout << "nactena textura " << path << " return je " << ret << std::endl;
+	std::cout << "nactena textura " << path << " return je " << ret << std::endl;
 	return ret;
 
 }
@@ -75,7 +75,7 @@ GLuint loadTextureCube(const char * path, GLenum side, GLuint *texture)
 	int iHeight = FreeImage_GetHeight(bm);
 	GLubyte * data = FreeImage_GetBits(bm32);
 	glBindTexture(GL_TEXTURE_CUBE_MAP, *texture);
-	glTexImage2D(side, 0, GL_RGB, iWidth, iHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+	glTexImage2D(side, 0, GL_RGB, iWidth, iHeight, 0, GL_BGRA, GL_UNSIGNED_BYTE, data);
 	FreeImage_Unload(bm32);
 	if (qu != 32) {
 		FreeImage_Unload(bm);

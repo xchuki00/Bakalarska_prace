@@ -48,6 +48,9 @@
     <ClCompile Include="ground.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="crossHair.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="loader.h">
@@ -83,11 +86,16 @@
     <ClInclude Include="ground.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="crossHair.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="vertex.gls" />
     <None Include="fragment.gls" />
     <None Include="skybox.vertexShader" />
     <None Include="skybox.fragmentShader" />
+    <None Include="crossHair.vertexShader" />
+    <None Include="crossHair.fragmentShader" />
   </ItemGroup>
 </Project>

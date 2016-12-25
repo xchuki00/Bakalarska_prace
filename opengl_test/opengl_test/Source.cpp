@@ -6,6 +6,7 @@
 #include "controls.h"
 #include "scene.h"
 #include "misc.h"
+
 using namespace glm;
 
 //GLOBAL VARIABLES
@@ -43,8 +44,10 @@ void loop() {
 		sc.calculate();
 		computeMatrices();//prepocitava moji polohu
 		sc.drawGround();
+		
 		sc.drawSkybox();
 		sc.drawAllModels();
+		sc.drawCrossHair();
 		glfwSwapBuffers(sc.window);
 		glfwPollEvents();
 
@@ -70,7 +73,7 @@ int main() {
 		"skybox.vertexShader",
 		"skybox.fragmentShader"
 	);
-	sc.addGround("untitled.obj", "green.bmp");
+	sc.addGround("untitled.obj", "bricks.bmp");
 	//sc.addModel();
 	btCollisionShape *shape = new btBoxShape(btVector3(1.0f, 1.0f, 1.0f));
 	sc.addModel(
@@ -82,6 +85,7 @@ int main() {
 		shape,
 		0
 	);
+		sc.bufferCrossHair("crosshairs64.tga");
 	mat = glm::translate(mat, glm::vec3(-2.0f, 5.0f, 0.0f));
 	sc.addModel("cube.obj", "uvtemplate.tga", mat,0,glm::vec3(0.0f),shape,100);
 	mat = glm::translate(mat, glm::vec3(4.0f, 5.0f, 0.0f));
@@ -89,7 +93,6 @@ int main() {
 	//sc.print();
 	//sc.addGround("untitled.obj", "red.bmp");
 	loop();
-
 	
 	return 1;
 }
