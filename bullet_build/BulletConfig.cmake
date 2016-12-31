@@ -15,11 +15,11 @@
 #  BULLET_VERSION_STRING     - A human-readable string containing the version
 
 set ( BULLET_FOUND 1 )
-set ( BULLET_USE_FILE     "lib/cmake/bullet/UseBullet.cmake" )
+set ( BULLET_USE_FILE     "liblib/cmake/bullet/UseBullet.cmake" )
 set ( BULLET_DEFINITIONS  "" )
 set ( BULLET_INCLUDE_DIR  "include/bullet" )
 set ( BULLET_INCLUDE_DIRS "include/bullet" )
 set ( BULLET_LIBRARIES    "LinearMath;BulletInverseDynamics;BulletCollision;BulletDynamics;BulletSoftBody" )
-set ( BULLET_LIBRARY_DIRS "lib" )
+set ( BULLET_LIBRARY_DIRS "C:/Users/xchuki00/Documents/Bakalarska_prace/bullet_build/lib/Debug" )
 set ( BULLET_ROOT_DIR     "C:/Program Files/BULLET_PHYSICS" )
 set ( BULLET_VERSION_STRING "2.85" )

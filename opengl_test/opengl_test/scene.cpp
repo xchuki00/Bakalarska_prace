@@ -2,7 +2,7 @@
 #include "includes.h"
 #include "Shader.h"
 #include "controls.h"
-
+#include "player.h"
 
 void scene::print()
 {
@@ -27,35 +27,12 @@ int scene::addGround(std::string pathOfObj, std::string pathOfTexture)
 	mat = glm::translate(mat, glm::vec3(0.0f, -0.6f, 0.0f));
 	int i = this->bulletWord.addGround(mat,1,1);
 	this->Ground.setRigidBodyIndex(i);
-	
+	this->Ground.setShader(this->shader,this->textureID,this->MVPID);
 	return 0;
 }
 int scene::drawGround()
 {
-	glUseProgram(this->shader);
-	glm::mat4 Projection = getProject();
-	glm::mat4 View = getView();
-	//glm::mat4 Model = glm::mat4(1.0f);
-	glm::mat4 MVP = Projection * View*this->Ground.getMatrix();
-	glUniformMatrix4fv(this->MVPID, 1, GL_FALSE, &MVP[0][0]);
-	//nahraju texturu do shaderu
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, this->Ground.textur);
-	glUniform1i(this->textureID, 0);
-
-	glEnableVertexAttribArray(0);
-	glBindBuffer(GL_ARRAY_BUFFER, this->Ground.vertexBuffer);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
-
-	glEnableVertexAttribArray(1);
-	glBindBuffer(GL_ARRAY_BUFFER, this->Ground.uvBuffer);
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
-	//std::cerr << sizeof(this->Skybox.vertexBuffer) << std::endl;
-	//std::cerr << sizeof(this->models[i].vertexBuffer) << std::endl;
-	glDrawArrays(GL_TRIANGLES, 0, this->Ground.getCountOfVertex());
-	glDisableVertexAttribArray(0);
-	glDisableVertexAttribArray(1);
-
+		this->Ground.draw();
 	return 0;
 }
 ////////////////////////////SKYBOX//////////////////////////
@@ -79,76 +56,65 @@ int scene::addSkybox(std::string left, std::string front, std::string right, std
 
 int scene::drawSkybox()
 {
-	glm::mat4 Projection = getProject();
-	glm::mat4 View = getView();
-	glm::mat4 mat(1.0f);
-	glm::mat4 MV = Projection * View*getMyPosition();
-	
-	glUseProgram(this->Skybox.shader);
-	glUniformMatrix4fv(this->Skybox.MVID, 1, GL_FALSE, &MV[0][0]);
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_CUBE_MAP, this->Skybox.textur);
-	glUniform1i(this->Skybox.textureID, 0);
-
-	glEnableVertexAttribArray(0);
-	glBindBuffer(GL_ARRAY_BUFFER, this->Skybox.vertexBuffer);
-	glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,0,(void*)0);
-	// Draw the triangle !
-	glDrawArrays(GL_TRIANGLES, 0, 36);
-	glDisableVertexAttribArray(0);
-
+	this->Skybox.draw();
 	return 0;
 }
 
 //////////////////MODEL//////////////////////////////////
 
-int scene::addModel(std::string pathOfObj, std::string pathOfTexture)
-{
-	model *mod = new model;
-	mod->load_3DModel(pathOfObj);
-	mod->load_texture(pathOfTexture.c_str());
-	//bulletWord.addShape(glm::mat4(1.0f));
-	this->models.push_back(mod);
-	
-	return 0;
-}
-
-int scene::addModel(std::string pathOfObj, std::string pathOfTexture, glm::mat4 position)
-{
-	model *mod = new model;
-	mod->load_3DModel(pathOfObj);
-	mod->load_texture(pathOfTexture.c_str());
-	mod->setPosition(position);
-	//mod.buffer();
-	//bulletWord.addShape();
-	this->models.push_back(mod);
-	return 0;
-	return 0;
-}
 
 
-int scene::addModel(std::string pathOfObj, std::string pathOfTexture, glm::mat4 position, GLfloat speed, glm::vec3 direction, btCollisionShape *shape, float mass)
+
+
+int scene::addModel(std::string pathOfObj, std::string pathOfTexture, glm::mat4 position, glm::vec3 velocity, float mass)
 {
 	
 	model *mod = new model;
 	mod->load_3DModel(pathOfObj);
 	mod->load_texture(pathOfTexture.c_str());
 	mod->setPosition(position);
-	mod->setSpeed(speed);
-	mod->setDirection(direction);
-	
-	glm::vec3 velocity = direction*speed;
+	mod->setVelocity(velocity);
 	mod->setIndex(this->models.size());
-	int i=bulletWord.addCollisionObject(position,velocity,shape,mass,mod->getIndex());
+	mod->setShader(this->shader, this->textureID, this->MVPID);
+	mod->buffer();
+	int i = bulletWord.addCollisionObject(position, velocity, mod->getVertices(), mass, this->models.size());
 	mod->setRigidBodyIndex(i);
 	this->models.push_back(mod);
 	return 0;
 }
 
-int scene::removeModel(int id)
+int scene::addPlayer(std::string pathOfObj, std::string pathOfTexture, glm::mat4 position,glm::vec3 velocity,float mass)
 {
+	player *mod = new player;
+	//model *mod = new model;
+	mod->load_3DModel(pathOfObj);
+	mod->load_texture(pathOfTexture.c_str());
+	mod->setPosition(position);
+	mod->setVelocity(velocity);
+	mod->setIndex(this->models.size());
+	mod->setShader(this->shader, this->textureID, this->MVPID);
+	mod->buffer();
+	int i = bulletWord.addCollisionObject(position, velocity, mod->getVertices(), mass, this->models.size());
+	mod->setRigidBodyIndex(i);
+	this->models.push_back(mod);
 	return 0;
 }
+
+int scene::addModel(model * mod,float mass)
+{
+	//mod->setIndex(this->models.size());
+	//btCollisionObject *obj= bulletWord.addCollisionObject(mod->getPosition(), mod->getVelocity(), mod->getVertices(), mass, mod->getIndex());
+	//mod->setCollisionObject(obj);
+	//this->models.push_back(mod);
+	return 0;
+}
+
+int scene::removeModel(std::vector<model*> destructionQueue)
+{
+	//destructionQueue
+	return 0;
+}
+
 
 int scene::addShader(std::string vertexShader, std::string fragmentShader)
 {
@@ -158,47 +124,12 @@ int scene::addShader(std::string vertexShader, std::string fragmentShader)
 	return 0;
 }
 
-int scene::bufferModels()
-{
-	//potøeba nahrát všechny modely do buffru a zapamatovat si jejich pozice
-	for (int i=0; i < this->models.size(); i++) {
-		this->models[i]->buffer();
-	}
-	return 0;
-}
 
 int scene::drawAllModels()
 {
-	
-	//pro každý model vypoèítá nahraje do MVP v shaderu jeho mvp a pak zavola gldrwaarrays
-	//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glUseProgram(this->shader);
-	glm::mat4 Projection = getProject();
-	glm::mat4 View = getView();
-	//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	for(int i=0;i<this->models.size();i++){
-		glm::mat4 MVP = Projection * View * this->models[i]->getMatrix();
-	//	std::cerr << glm::to_string(MVP) << std::endl;
-		//nahraju matice do shaderu
-		glUniformMatrix4fv(this->MVPID, 1, GL_FALSE, &MVP[0][0]);
-		//nahraju texturu do shaderu
-		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, this->models[i]->textur);
-		glUniform1i(this->textureID, 0);
-		
-		glEnableVertexAttribArray(0);
-		glBindBuffer(GL_ARRAY_BUFFER, this->models[i]->vertexBuffer);
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
-
-		glEnableVertexAttribArray(1);
-		glBindBuffer(GL_ARRAY_BUFFER, this->models[i]->uvBuffer);
-		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
-		//std::cerr << sizeof(this->Skybox.vertexBuffer) << std::endl;
-		//std::cerr << sizeof(this->models[i].vertexBuffer) << std::endl;
-		glDrawArrays(GL_TRIANGLES, 0, this->models[i]->getCountOfVertex());
-		glDisableVertexAttribArray(0);
-		glDisableVertexAttribArray(1);
-
+	
+		this->models[i]->draw();
 	}
 
 	return 0;
@@ -216,45 +147,62 @@ int scene::drawCrossHair()
 	return 0;
 }
 
+int scene::getModelsSize()
+{
+	return this->models.size();
+}
+
 /////////////////INIT///////////////////////////
 void scene::calculate()
 {
 	btTransform t;
 	glm::mat4 mat;
-	std::vector<int*> *hitted;
-	hitted=this->bulletWord.calculate();
-	for (int i = 0; i < this->models.size();i++) {
-		
-		t = this->bulletWord.getTransform(this->models[i]->getRigidBodyIndex());
-		
+	std::vector<int*> *colisions;
+	colisions=this->bulletWord.calculate();
+	btCollisionObjectArray objArray = this->bulletWord.world->getCollisionObjectArray();
+	for (int i = 0; i<this->models.size(); i++) {
+		btCollisionObject *obj= objArray[this->models[i]->getRigidBodyIndex()];
+		btRigidBody* body = btRigidBody::upcast(obj);
+		btTransform t;
+		if (body && body->getMotionState())
+		{
+			body->getMotionState()->getWorldTransform(t);
+
+		}
+		else
+		{
+			t = obj->getWorldTransform();
+		}
 		t.getOpenGLMatrix(glm::value_ptr(mat));
-	//	std::cerr << glm::to_string(mat) << std::endl;
 		this->models[i]->setPosition(mat);
-		//std::cerr << i<<"\t"<<this->bulletWord.world->getNumCollisionObjects() << std::endl;
 	}
-	t = this->bulletWord.getTransform(this->Ground.getRigidBodyIndex());
-	t.getOpenGLMatrix(glm::value_ptr(mat));
 	//std::cerr << glm::to_string(mat);
 	//this->Ground.setPosition(mat);
-	for (int i = 0; i < hitted->size();i++) {
+	std::vector<model*> destructionQueue;
+	for (int i = 0; i < colisions->size();i++) {
 		
 		//std::cerr << hitted->data()[i][0] << std::endl;
 		//this->models[*hitted[i][0]]->hitted();
 		//this->models[*hitted[i][1]]->hitted();
-		if (hitted->data()[i][0] != -1) {
-			this->models[hitted->data()[i][0]]->hitted(hitted->data()[i][1]);
-
+		/*
+		int reaction;
+		if (colisions->data()[i][0] != -1) {
+			reaction= this->models[colisions->data()[i][0]]->hitted(this->models[colisions->data()[i][1]]);
+			if (reaction < 0) {
+				destructionQueue.push_back(this->models[colisions->data()[i][0]]);
+			}
 		}
-		if (hitted->data()[i][1] != -1) {
-			this->models[hitted->data()[i][1]]->hitted(hitted->data()[i][0]);
-
-		}
+		if (colisions->data()[i][1] != -1) {
+			reaction= this->models[colisions->data()[i][1]]->hitted(this->models[colisions->data()[i][0]]);
+			if (reaction < 0) {
+				destructionQueue.push_back(this->models[colisions->data()[i][1]]);
+			}
+		}*/
 	}
+	this->removeModel(destructionQueue);
+
 }
 
-void scene::initCrossHair()
-{
-}
 
 int scene::initWindow()
 {

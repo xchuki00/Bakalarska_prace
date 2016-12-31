@@ -1,9 +1,10 @@
 #include "controls.h"
 #include "scene.h"
+#include "misc.h"
 extern scene sc;
 glm::mat4 ViewC;
 glm::mat4 ProjectionC;
-glm::vec3 position(0, 0, 5);
+glm::vec3 position(0, 1, 5);
 glm::vec3 dirV;
 glm::mat4 MyPosition(1.0f);
 // horizontal angle : toward -Z
@@ -27,6 +28,10 @@ glm::vec3 getDir() {
 }
 glm::mat4 getMyPosition() {
 	return MyPosition;
+}
+void setMyPosition(glm::vec3 pos)
+{
+	position = pos;
 }
 int computeMatrices()
 {

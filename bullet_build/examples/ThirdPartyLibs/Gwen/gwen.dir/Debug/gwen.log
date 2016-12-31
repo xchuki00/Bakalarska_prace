@@ -1,20 +1,77 @@
-﻿libcpmtd.lib(xlock.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MTd_StaticDebug' doesn't match value 'MDd_DynamicDebug' in Anim.obj
-libcpmtd.lib(stdthrow.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MTd_StaticDebug' doesn't match value 'MDd_DynamicDebug' in Anim.obj
-libcpmtd.lib(xthrow.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MTd_StaticDebug' doesn't match value 'MDd_DynamicDebug' in Anim.obj
-libcpmtd.lib(locale0.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MTd_StaticDebug' doesn't match value 'MDd_DynamicDebug' in Anim.obj
-libcpmtd.lib(raisehan.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MTd_StaticDebug' doesn't match value 'MDd_DynamicDebug' in Anim.obj
-libcpmtd.lib(nothrow.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MTd_StaticDebug' doesn't match value 'MDd_DynamicDebug' in Anim.obj
-libcpmtd.lib(syserror.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MTd_StaticDebug' doesn't match value 'MDd_DynamicDebug' in Anim.obj
-libcpmtd.lib(ios.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MTd_StaticDebug' doesn't match value 'MDd_DynamicDebug' in Anim.obj
-libcpmtd.lib(StlLCMapStringA.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MTd_StaticDebug' doesn't match value 'MDd_DynamicDebug' in Anim.obj
-libcpmtd.lib(StlLCMapStringW.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MTd_StaticDebug' doesn't match value 'MDd_DynamicDebug' in Anim.obj
-libcpmtd.lib(iosptrs.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MTd_StaticDebug' doesn't match value 'MDd_DynamicDebug' in Anim.obj
-libcpmtd.lib(locale.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MTd_StaticDebug' doesn't match value 'MDd_DynamicDebug' in Anim.obj
-libcpmtd.lib(winapisupp.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MTd_StaticDebug' doesn't match value 'MDd_DynamicDebug' in Anim.obj
-libcpmtd.lib(winapinls.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MTd_StaticDebug' doesn't match value 'MDd_DynamicDebug' in Anim.obj
-libcpmtd.lib(wlocale.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MTd_StaticDebug' doesn't match value 'MDd_DynamicDebug' in Anim.obj
-libcpmtd.lib(xlocale.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MTd_StaticDebug' doesn't match value 'MDd_DynamicDebug' in Anim.obj
-libcpmtd.lib(xdateord.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MTd_StaticDebug' doesn't match value 'MDd_DynamicDebug' in Anim.obj
-libcpmtd.lib(StlCompareStringA.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MTd_StaticDebug' doesn't match value 'MDd_DynamicDebug' in Anim.obj
-libcpmtd.lib(StlCompareStringW.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MTd_StaticDebug' doesn't match value 'MDd_DynamicDebug' in Anim.obj
-C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\lib\Debug\gwen_Debug.dll : fatal error LNK1319: 19 mismatches detected
+﻿  Building Custom Rule C:/Users/xchuki00/Documents/Bakalarska_prace/libs/bullet3-2.85.1/examples/ThirdPartyLibs/Gwen/CMakeLists.txt
+  CMake does not need to re-run because C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\examples\ThirdPartyLibs\Gwen\CMakeFiles\generate.stamp is up-to-date.
+  Anim.cpp
+  BaseRender.cpp
+  DragAndDrop.cpp
+  Gwen.cpp
+  Hook.cpp
+  Skin.cpp
+  ToolTip.cpp
+  Utility.cpp
+  events.cpp
+  inputhandler.cpp
+  Base.cpp
+  Button.cpp
+  Canvas.cpp
+  CheckBox.cpp
+  ColorControls.cpp
+  ColorPicker.cpp
+  ComboBox.cpp
+  CrossSplitter.cpp
+  DockBase.cpp
+  DockedTabControl.cpp
+  Generating Code...
+  Compiling...
+  Dragger.cpp
+  GroupBox.cpp
+  HSVColorPicker.cpp
+  HorizontalScrollBar.cpp
+  HorizontalSlider.cpp
+  ImagePanel.cpp
+  Label.cpp
+  LabelClickable.cpp
+  ListBox.cpp
+  Menu.cpp
+  MenuItem.cpp
+  MenuStrip.cpp
+  NumericUpDown.cpp
+  PanelListPanel.cpp
+  ProgressBar.cpp
+  Properties.cpp
+  RadioButton.cpp
+  RadioButtonController.cpp
+  ResizableControl.cpp
+  Resizer.cpp
+  Generating Code...
+  Compiling...
+  RichLabel.cpp
+  ScrollBar.cpp
+  ScrollBarBar.cpp
+  ScrollBarButton.cpp
+  ScrollControl.cpp
+  Slider.cpp
+  SplitterBar.cpp
+  TabButton.cpp
+  TabControl.cpp
+  TabStrip.cpp
+  Text.cpp
+  TextBox.cpp
+  TextBoxNumeric.cpp
+  TreeControl.cpp
+  TreeNode.cpp
+  VerticalScrollBar.cpp
+  VerticalSlider.cpp
+  WindowControl.cpp
+  FileOpen.cpp
+  FileSave.cpp
+  Generating Code...
+  Compiling...
+  Query.cpp
+  Null.cpp
+  Windows.cpp
+  OpenGL_DebugFont.cpp
+  Generating Code...
+Null.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+Query.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+ImagePanel.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+  gwen.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\lib\Debug\gwen_Debug.lib

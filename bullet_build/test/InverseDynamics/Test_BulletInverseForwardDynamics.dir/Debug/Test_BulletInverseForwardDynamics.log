@@ -1,1 +1,1 @@
-﻿LINK : fatal error LNK1104: cannot open file '..\..\lib\Debug\BulletInverseDynamicsUtils_Debug.lib'
+﻿  Test_BulletInverseForwardDynamics.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\test\InverseDynamics\Debug\Test_BulletInverseForwardDynamics.exe

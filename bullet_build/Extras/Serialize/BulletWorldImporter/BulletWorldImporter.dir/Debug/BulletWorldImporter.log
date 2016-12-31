@@ -1,1 +1,13 @@
-﻿LINK : fatal error LNK1104: cannot open file '..\..\..\lib\Debug\BulletDynamics_Debug.lib'
+﻿  Building Custom Rule C:/Users/xchuki00/Documents/Bakalarska_prace/libs/bullet3-2.85.1/Extras/Serialize/BulletWorldImporter/CMakeLists.txt
+  CMake does not need to re-run because C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\Extras\Serialize\BulletWorldImporter\CMakeFiles\generate.stamp is up-to-date.
+  btBulletWorldImporter.cpp
+  btWorldImporter.cpp
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletWorldImporter\btWorldImporter.cpp(1000): warning C4800: 'char': forcing value to bool 'true' or 'false' (performance warning)
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletWorldImporter\btWorldImporter.cpp(1004): warning C4800: 'char': forcing value to bool 'true' or 'false' (performance warning)
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletWorldImporter\btWorldImporter.cpp(1007): warning C4800: 'char': forcing value to bool 'true' or 'false' (performance warning)
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletWorldImporter\btWorldImporter.cpp(1327): warning C4800: 'char': forcing value to bool 'true' or 'false' (performance warning)
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletWorldImporter\btWorldImporter.cpp(1330): warning C4800: 'char': forcing value to bool 'true' or 'false' (performance warning)
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletWorldImporter\btWorldImporter.cpp(1334): warning C4800: 'char': forcing value to bool 'true' or 'false' (performance warning)
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletWorldImporter\btWorldImporter.cpp(1337): warning C4800: 'char': forcing value to bool 'true' or 'false' (performance warning)
+  Generating Code...
+  BulletWorldImporter.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\lib\Debug\BulletWorldImporter_Debug.lib

@@ -18,6 +18,7 @@ public:
 		const char* top, 
 		const char* bottom
 	);
+	void draw();
 	int buffer();
 	int addShader(std::string vertexShader, std::string fragmentShader);
 	skybox();

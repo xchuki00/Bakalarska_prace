@@ -1,1 +1,16 @@
-﻿LINK : fatal error LNK1104: cannot open file '..\..\lib\Debug\BulletInverseDynamics_Debug.lib'
+﻿  Building Custom Rule C:/Users/xchuki00/Documents/Bakalarska_prace/libs/bullet3-2.85.1/Extras/InverseDynamics/CMakeLists.txt
+  CMake does not need to re-run because C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\Extras\InverseDynamics\CMakeFiles\generate.stamp is up-to-date.
+  CloneTreeCreator.cpp
+  CoilCreator.cpp
+  MultiBodyTreeCreator.cpp
+  btMultiBodyTreeCreator.cpp
+  DillCreator.cpp
+  MultiBodyTreeDebugGraph.cpp
+  invdyn_bullet_comparison.cpp
+  IDRandomUtil.cpp
+  RandomTreeCreator.cpp
+  SimpleTreeCreator.cpp
+  MultiBodyNameMap.cpp
+  User2InternalIndex.cpp
+  Generating Code...
+  BulletInverseDynamicsUtils.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\lib\Debug\BulletInverseDynamicsUtils_Debug.lib

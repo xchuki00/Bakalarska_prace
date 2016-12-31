@@ -1,1 +1,12 @@
-﻿LINK : fatal error LNK1104: cannot open file '..\..\lib\Debug\BulletDynamics_Debug.lib'
+﻿  Building Custom Rule C:/Users/xchuki00/Documents/Bakalarska_prace/libs/bullet3-2.85.1/src/BulletSoftBody/CMakeLists.txt
+  CMake does not need to re-run because C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\src\BulletSoftBody\CMakeFiles\generate.stamp is up-to-date.
+  btSoftBody.cpp
+  btSoftBodyConcaveCollisionAlgorithm.cpp
+  btSoftBodyHelpers.cpp
+  btSoftBodyRigidBodyCollisionConfiguration.cpp
+  btSoftRigidCollisionAlgorithm.cpp
+  btSoftRigidDynamicsWorld.cpp
+  btSoftSoftCollisionAlgorithm.cpp
+  btDefaultSoftBodySolver.cpp
+  Generating Code...
+  BulletSoftBody.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\lib\Debug\BulletSoftBody_Debug.lib

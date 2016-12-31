@@ -1,9 +1,12 @@
-﻿  Source.cpp
+﻿  model.cpp
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\source.cpp(33): warning C4305: 'argument': truncation from 'double' to 'btScalar'
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\source.cpp(63): warning C4101: 'k': unreferenced local variable
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\source.cpp(63): warning C4101: 'h': unreferenced local variable
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\model.cpp(64): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\model.cpp(68): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\model.cpp(72): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\model.cpp(77): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\model.cpp(121): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   opengl_test.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\opengl_test\x64\Debug\OpenGlDemo.exe
   opengl_test.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\opengl_test\x64\Debug\OpenGlDemo.pdb (Partial PDB)

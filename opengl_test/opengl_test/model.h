@@ -2,24 +2,26 @@
 #include "loader.h"
 #include "includes.h"
 #include "texture.h"
+//#include "bulletC.h"
 class model
 {
 protected:
 	static int counter;
-
+	
 	int index;
 	std::vector <glm::vec2> uv;
 	std::vector <glm::vec3> ver;
 	std::vector <glm::vec3> nor;
-	int RigidBodyIndex;
-
+	int rigidBodyIndex;
 	int textureHeight;
 	int textureWidth;
+	GLuint shader;
+	GLuint textureID;
+	GLuint MVPID;
 public:
+	int classID = 0;
 	glm::mat4 matrix;
-	GLfloat speed = 0;
-	glm::vec3 direction = glm::vec3(0.0f);
-
+	glm::vec3 velocity = glm::vec3(0.0f);
 	GLuint vertexBuffer;
 	GLuint uvBuffer;
 	GLuint textur;
@@ -28,30 +30,34 @@ public:
 	int load_texture(const char *path);
 	int buffer();
 
-	int setSpeed(GLfloat s);
-	int setDirection(glm::vec3 dir);
+	int setVelocity (glm::vec3 dir);
 	void setPosition(glm::mat4 mat);
+	glm::mat4 getPosition();
+	glm::vec3 getVelocity();
 
 	GLvoid * getVer();
 	GLvoid * getUv();
 	GLvoid* getNor();
-
+	std::vector<glm::vec3> getVertices();
 	int getSizeofVer();
 	int getSizeofUv();
 	int getSizeofNor();
 	int getCountOfVertex();
-	glm::mat4 getMatrix();
-	
+	void setShader(GLuint sh, GLuint texturID, GLuint MVPID);
+	void calculateVelocity();
 	//void rotate(glm::vec3 angle);
 	void scale(glm::vec3 vector);
 	void translate(glm::vec3 vector);
-
-	void setRigidBodyIndex(int i);
+	void draw();
+	void setRigidBodyIndex(int id);
 	int getRigidBodyIndex();
 	void setIndex(int i);
 	int getIndex();
-	void hitted(int byWho);
+	int hitted(int byWho);
 	model();
 	virtual ~model();
 };
 
+///////////enum pro navratove hodnoty funkce hitted
+#define DESTROY -1;
+#define NOTHING 0;

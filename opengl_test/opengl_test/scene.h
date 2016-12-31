@@ -36,27 +36,30 @@ public:
 		);
 	int drawSkybox();
 	////////////////MODEL//////////////
-	int addModel(std::string pathOfObj, std::string pathOfTexture);
-	int addModel(std::string pathOfObj, std::string pathOfTexture, glm::mat4 position);
 	int addModel(
 		std::string pathOfObj,
 		std::string pathOfTexture, 
 		glm::mat4 position,
-		GLfloat speed,
-		glm::vec3 direction,
-		btCollisionShape *shape,
+		glm::vec3 velocity,
 		float mass
 	);
-	int removeModel(int id);
+	int addPlayer(
+		std::string pathOfObj,
+		std::string pathOfTexture,
+		glm::mat4 position,
+		glm::vec3 velocity,
+		float mass
+	);
+	int addModel(model *mod, float mass);
+	int removeModel(std::vector <model*> destructionQueue);
 	int addShader(std::string vertexShader, std::string fragmentShader);
-	int bufferModels();
 	int drawAllModels();
 	int bufferCrossHair(std::string path);
 	int drawCrossHair();
-	
+	int getModelsSize();
 	////////////INIT///////////
 	void calculate();
-	void initCrossHair();
+
 	int initWindow();
 	scene();
 	virtual ~scene();

@@ -28,7 +28,7 @@ if(NOT CMAKE_INSTALL_COMPONENT)
 endif()
 
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/bullet" TYPE FILE FILES
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/liblib/cmake/bullet" TYPE FILE FILES
     "C:/Users/xchuki00/Documents/Bakalarska_prace/libs/bullet3-2.85.1/UseBullet.cmake"
     "C:/Users/xchuki00/Documents/Bakalarska_prace/bullet_build/BulletConfig.cmake"
     )

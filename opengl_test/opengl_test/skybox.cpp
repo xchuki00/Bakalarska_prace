@@ -76,6 +76,29 @@ int skybox::load_texture( const char* left, const char* front, const char* right
 	return 0;
 }
 
+void skybox::draw()
+{
+	
+	glm::mat4 Projection = getProject();
+	glm::mat4 View = getView();
+	glm::mat4 mat(1.0f);
+	glm::mat4 MV = Projection * View*getMyPosition();
+
+	glUseProgram(this->shader);
+	glUniformMatrix4fv(this->MVID, 1, GL_FALSE, &MV[0][0]);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_CUBE_MAP, this->textur);
+	glUniform1i(this->textureID, 0);
+
+	glEnableVertexAttribArray(0);
+	glBindBuffer(GL_ARRAY_BUFFER, this->vertexBuffer);
+	glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,0,(void*)0);
+	// Draw the triangle !
+	glDrawArrays(GL_TRIANGLES, 0, 36);
+	glDisableVertexAttribArray(0);
+	
+}
+
 int skybox::buffer()
 {
 /*
@@ -110,6 +133,7 @@ int skybox::addShader(std::string vertexShader, std::string fragmentShader)
 
 skybox::skybox()
 {
+	this->classID = 2;
 }
 
 

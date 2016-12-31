@@ -4,7 +4,7 @@
 //#include "texture-cizi.cpp"
 //poloha vybraneho miridla v texture crosshairs64.tga, pocitano od 0
 #define ROW 5	
-#define  COLUMN 1
+#define  COLUMN 0
 void crossHair::init(std::string path)
 {
 	if(this->texture==0){
@@ -23,10 +23,10 @@ void crossHair::buffer()
 	int half_width = WIDTH / 2;
 	int half_height = HEIGHT / 2;
 
-	glm::vec2 Vup_left = glm::vec2(half_width - 30, half_height + 30);
-	glm::vec2 Vdown_left = glm::vec2(half_width - 30, half_height - 30);
-	glm::vec2 Vup_right = glm::vec2(half_width + 30, half_height + 30);
-	glm::vec2 Vdown_right = glm::vec2(half_width + 30, half_height - 30);
+	glm::vec2 Vup_left = glm::vec2(half_width - 50, half_height + 50);
+	glm::vec2 Vdown_left = glm::vec2(half_width - 50, half_height - 50);
+	glm::vec2 Vup_right = glm::vec2(half_width + 50, half_height + 50);
+	glm::vec2 Vdown_right = glm::vec2(half_width + 50, half_height - 50);
 	
 	ver.push_back(Vup_left);
 	ver.push_back(Vdown_left);
@@ -64,9 +64,11 @@ void crossHair::buffer()
 }
 
 void crossHair::draw()
-{
+{	
+
 	//std::cerr << "TEXTUREA" << this->texture << std::endl;
 	glUseProgram(this->shader);
+
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D,this->texture);
 	glUniform1i(this->uniformID,0);
@@ -80,9 +82,8 @@ void crossHair::draw()
 	glBindBuffer(GL_ARRAY_BUFFER, this->UVbuffer);
 	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, (void*)0);
 	
-	
 	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glBlendFunc(GL_SRC_ALPHA, GL_SRC_ALPHA);
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 	glDisable(GL_BLEND);
 

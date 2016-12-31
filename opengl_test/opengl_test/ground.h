@@ -3,6 +3,7 @@
 class ground:public model
 {
 public:
+	void draw();
 	ground();
 	~ground();
 };

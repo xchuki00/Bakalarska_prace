@@ -1,1 +1,25 @@
-﻿LINK : fatal error LNK1104: cannot open file '..\..\..\lib\Debug\BulletWorldImporter_Debug.lib'
+﻿  Building Custom Rule C:/Users/xchuki00/Documents/Bakalarska_prace/libs/bullet3-2.85.1/Extras/Serialize/BulletXmlWorldImporter/CMakeLists.txt
+  CMake does not need to re-run because C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\Extras\Serialize\BulletXmlWorldImporter\CMakeFiles\generate.stamp is up-to-date.
+  btBulletXmlWorldImporter.cpp
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletXmlWorldImporter\btBulletXmlWorldImporter.cpp(236): warning C4312: 'type cast': conversion from 'int' to 'btVector3FloatData *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletXmlWorldImporter\btBulletXmlWorldImporter.cpp(237): warning C4312: 'type cast': conversion from 'int' to 'btVector3DoubleData *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletXmlWorldImporter\btBulletXmlWorldImporter.cpp(241): warning C4312: 'type cast': conversion from 'int' to 'void *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletXmlWorldImporter\btBulletXmlWorldImporter.cpp(265): warning C4312: 'type cast': conversion from 'int' to 'btCollisionShapeData *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletXmlWorldImporter\btBulletXmlWorldImporter.cpp(295): warning C4312: 'type cast': conversion from 'int' to 'void *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletXmlWorldImporter\btBulletXmlWorldImporter.cpp(322): warning C4312: 'type cast': conversion from 'int' to 'btCompoundShapeChildData *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletXmlWorldImporter\btBulletXmlWorldImporter.cpp(331): warning C4312: 'type cast': conversion from 'int' to 'void *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletXmlWorldImporter\btBulletXmlWorldImporter.cpp(351): warning C4312: 'type cast': conversion from 'int' to 'void *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletXmlWorldImporter\btBulletXmlWorldImporter.cpp(385): warning C4312: 'type cast': conversion from 'int' to 'void *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletXmlWorldImporter\btBulletXmlWorldImporter.cpp(416): warning C4312: 'type cast': conversion from 'int' to 'btRigidBodyFloatData *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletXmlWorldImporter\btBulletXmlWorldImporter.cpp(417): warning C4312: 'type cast': conversion from 'int' to 'btRigidBodyFloatData *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletXmlWorldImporter\btBulletXmlWorldImporter.cpp(442): warning C4312: 'type cast': conversion from 'int' to 'void *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletXmlWorldImporter\btBulletXmlWorldImporter.cpp(460): warning C4312: 'type cast': conversion from 'int' to 'void *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletXmlWorldImporter\btBulletXmlWorldImporter.cpp(509): warning C4312: 'type cast': conversion from 'int' to 'void *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\Extras\Serialize\BulletXmlWorldImporter\btBulletXmlWorldImporter.cpp(654): warning C4312: 'type cast': conversion from 'int' to 'void *' of greater size
+  string_split.cpp
+  tinyxml.cpp
+  tinystr.cpp
+  tinyxmlerror.cpp
+  tinyxmlparser.cpp
+  Generating Code...
+  BulletXmlWorldImporter.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\lib\Debug\BulletXmlWorldImporter_Debug.lib

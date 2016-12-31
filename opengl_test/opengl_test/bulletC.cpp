@@ -1,4 +1,5 @@
 #include "bulletC.h"
+
 //#include "btBulletDynamicsCommon.h"
 //#include <BulletCollision\CollisionShapes\btSphereShape.h>
 
@@ -48,7 +49,7 @@ void bulletC::initBullet()
 	
 }
 
-int bulletC::addCollisionObject(glm::mat4 position, glm::vec3 velocityGL, btCollisionShape *shape, btScalar mass, int index)
+int bulletC::addCollisionObject(glm::mat4 position, glm::vec3 velocityGL, btCollisionShape *shape, btScalar mass,int index)
 {
 	//this->bodies.push_back(new btSphereShape(1));
 	//btCollisionShape *shape = new btBoxShape(btVector3(1.0f, 1.0f, 1.0f));
@@ -81,19 +82,52 @@ int bulletC::addCollisionObject(glm::mat4 position, glm::vec3 velocityGL, btColl
 	if (!match) {
 		this->shapes.push_back(shape);
 	}//delete shape;
-	return this->world->getNumCollisionObjects()-1;
+	return this->world->getNumCollisionObjects() - 1;
 }
+
+int bulletC::addCollisionObject(glm::mat4 position, glm::vec3 velocityGL, std::vector<glm::vec3> vertices, btScalar mass, int index)
+{
+	btConvexHullShape *shape = new btConvexHullShape();
+	for (int i = 0; i < vertices.size(); i++) {
+		shape->addPoint(btVector3(vertices.data()[i][0], vertices.data()[i][1], vertices.data()[i][2]),true);
+	}
+	
+	btTransform temp;
+	temp.setFromOpenGLMatrix(glm::value_ptr(position));
+	btVector3 inertiaVec(0, 0, 0);
+	if (mass > 0)
+	{
+		shape->calculateLocalInertia(mass, inertiaVec);
+	}
+	
+	btDefaultMotionState* motionState =
+		new btDefaultMotionState(temp);
+	btRigidBody::btRigidBodyConstructionInfo fallRigidBodyCI(mass, motionState, shape, inertiaVec);
+	btRigidBody* RigidBody = new btRigidBody(fallRigidBodyCI);
+	btVector3 velocity(velocityGL[0], velocityGL[1], velocityGL[2]);
+	RigidBody->setLinearVelocity(velocity);
+	RigidBody->setUserIndex(index);
+	
+	this->world->addRigidBody(RigidBody);
+	bool match = false;
+	for (int i = 0; i < this->shapes.size(); i++) {
+		if (shape == this->shapes[i]) {
+			match = true;
+			break;
+		}
+	}
+	if (!match) {
+		this->shapes.push_back(shape);
+	}//delete shape;
+	return this->world->getNumCollisionObjects() - 1;
+}
+
 
 
 
 int bulletC::addGround(glm::mat4 position, float wideth, float height)
 {
 	this->Ground = new btStaticPlaneShape(btVector3(0, 1, 0), 1);
-	//this->Ground = new btBoxShape(btVector3(50.0f, 50.0f, 50.0f));
-	//motion state vychozo pozice
-	//getmotionstate kde to zrovna a vykresli
-	//btvector v Construction info je pro setrvacnost tam predam kombinaci rychlosti
-	//a smeru ktere muzu na cist v opengl
 	btTransform temp;
 	temp.setFromOpenGLMatrix(glm::value_ptr(position));
 	btDefaultMotionState* groundMotionState =
@@ -105,7 +139,7 @@ int bulletC::addGround(glm::mat4 position, float wideth, float height)
 	rb->setUserIndex2(this->world->getNumCollisionObjects());
 	this->world->addRigidBody(rb);
 		std::cerr << "ground add" << std::endl;
-	return this->world->getNumCollisionObjects() - 1;
+	return this->world->getNumCollisionObjects() - 1;;
 	
 }
 std::vector<int*>* bulletC::calculate()

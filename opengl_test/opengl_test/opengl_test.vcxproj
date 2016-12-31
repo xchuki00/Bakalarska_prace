@@ -131,6 +131,8 @@
     <ClCompile Include="ground.cpp" />
     <ClCompile Include="misc.cpp" />
     <ClCompile Include="model.cpp" />
+    <ClCompile Include="player.cpp" />
+    <ClCompile Include="projectile.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="skybox.cpp" />
@@ -147,6 +149,8 @@
     <ClInclude Include="loader.h" />
     <ClInclude Include="misc.h" />
     <ClInclude Include="model.h" />
+    <ClInclude Include="player.h" />
+    <ClInclude Include="projectile.h" />
     <ClInclude Include="scene.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="skybox.h" />

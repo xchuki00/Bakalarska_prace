@@ -10,3 +10,4 @@ glm::mat4 getProject();
 glm::mat4 getView();
 glm::vec3 getDir();
 glm::mat4 getMyPosition();
+void setMyPosition(glm::vec3 pos);
