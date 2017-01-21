@@ -42,14 +42,15 @@ GLuint LoadShaders(std::string vertex, std::string fragment)
 	//check shaders
 	GLint res = GL_FALSE;
 	int logLen;
+	int error = 0;
 	glGetShaderiv(vShaderID, GL_COMPILE_STATUS, &res);
 	glGetShaderiv(vShaderID, GL_INFO_LOG_LENGTH, &logLen);
 	if (logLen > 0) {
 		std::vector<char> VertexShaderErrorMessage(logLen + 1);
 		glGetShaderInfoLog(vShaderID, logLen, NULL, &VertexShaderErrorMessage[0]);
 		printf("%s\n", &VertexShaderErrorMessage[0]);
-	}
-	else {
+		error = 1;
+	}else{
 		printf("vertex ok\n");
 	}
 	glGetShaderiv(fShaderID, GL_COMPILE_STATUS, &res);
@@ -58,8 +59,8 @@ GLuint LoadShaders(std::string vertex, std::string fragment)
 		std::vector<char> fShaderErrorMessage(logLen + 1);
 		glGetShaderInfoLog(fShaderID, logLen, NULL, &fShaderErrorMessage[0]);
 		printf("%s\n", &fShaderErrorMessage[0]);
-	}
-	else {
+		error = 1;
+	}else{
 		printf("fragment ok\n");
 	}
 	GLuint ProgramID = glCreateProgram();
@@ -71,9 +72,9 @@ GLuint LoadShaders(std::string vertex, std::string fragment)
 	if (logLen > 0) {
 		std::vector<char> ProgramErrorMessage(logLen + 1);
 		glGetProgramInfoLog(ProgramID, logLen, NULL, &ProgramErrorMessage[0]);
-		printf("Prog: %s\n", &ProgramErrorMessage[0]);
-	}
-	else {
+		printf("Program: %s\n", &ProgramErrorMessage[0]);
+		error = 1;
+	}else{
 		printf("program ok\n");
 	}
 
@@ -82,7 +83,10 @@ GLuint LoadShaders(std::string vertex, std::string fragment)
 
 	glDeleteShader(vShaderID);
 	glDeleteShader(fShaderID);
-	std::cout << "nacteny shadry " <<vertex<<" a "<<fragment << std::endl;
-
+	if(error==0){
+		std::cout << "nacteny shadry " <<vertex<<" a "<<fragment << std::endl;
+	}else{
+		std::cout << "NEPODARILO se nacist shadry " << vertex << " a " << fragment << std::endl;
+	}
 	return ProgramID;
 }

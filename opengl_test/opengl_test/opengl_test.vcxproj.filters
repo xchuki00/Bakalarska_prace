@@ -57,6 +57,15 @@
     <ClCompile Include="projectile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="modelXbullet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="target.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shadowmap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="loader.h">
@@ -99,6 +108,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="projectile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modelXbullet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="target.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shadowmap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -21,3 +21,14 @@
 //#include <bt>
 #define HEIGHT 1024	
 #define WIDTH 768
+/***********CLASS ENUM*****************/
+#define MODEL 0
+#define GROUND 1
+#define SKYBOX 2
+#define PLAYER 3
+#define TARGET 4
+#define PROJECTIL 5
+#define WEAPON 6
+///////////enum pro navratove hodnoty funkce hitted
+#define DESTROY -1;
+#define NOTHING 0;

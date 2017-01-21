@@ -15,21 +15,21 @@ public:
 	bulletC();
 	~bulletC();
 	void initBullet();
-	int addCollisionObject(
+	btCollisionObject* addCollisionObject(
 		glm::mat4 position,
 		glm::vec3 velocityGL,
 		btCollisionShape *shape,
 		btScalar mass,
 		int index
 	);
-	int addCollisionObject(
+	btCollisionObject* addCollisionObject(
 		glm::mat4 ,
 		glm::vec3 ,
 		std::vector<glm::vec3> ,
 		btScalar ,
 		int index
 	);
-	int addGround(glm::mat4 position, float width, float height);
+	btCollisionObject* addGround(glm::mat4 position, float width, float height,int index);
 	std::vector<int*>* calculate();
 	btTransform  getTransform(int id);
 	

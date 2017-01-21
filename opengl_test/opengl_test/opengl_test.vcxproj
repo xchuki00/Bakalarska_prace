@@ -131,13 +131,16 @@
     <ClCompile Include="ground.cpp" />
     <ClCompile Include="misc.cpp" />
     <ClCompile Include="model.cpp" />
+    <ClCompile Include="modelXbullet.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="projectile.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="shadowmap.cpp" />
     <ClCompile Include="skybox.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="loader.cpp" />
+    <ClCompile Include="target.cpp" />
     <ClCompile Include="texture.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -149,11 +152,14 @@
     <ClInclude Include="loader.h" />
     <ClInclude Include="misc.h" />
     <ClInclude Include="model.h" />
+    <ClInclude Include="modelXbullet.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="projectile.h" />
     <ClInclude Include="scene.h" />
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="shadowmap.h" />
     <ClInclude Include="skybox.h" />
+    <ClInclude Include="target.h" />
     <ClInclude Include="texture.h" />
   </ItemGroup>
   <ItemGroup>

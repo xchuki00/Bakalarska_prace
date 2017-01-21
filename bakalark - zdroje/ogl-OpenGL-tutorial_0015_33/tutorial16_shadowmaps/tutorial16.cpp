@@ -421,7 +421,7 @@ int main( void )
 
 	// Close OpenGL window and terminate GLFW
 	glfwTerminate();
-
+	
 	return 0;
 }
 

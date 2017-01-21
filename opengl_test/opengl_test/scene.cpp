@@ -3,15 +3,17 @@
 #include "Shader.h"
 #include "controls.h"
 #include "player.h"
-
+#include "projectile.h"
+#include "target.h"
+#include "weapon.h"
 void scene::print()
 {
 	for (int i = 0; i < this->models.size();i++) {
-		std::cerr << "model\t" << i << ":" << this->models[i]->textur << std::endl;
+		std::cerr << "model\t" << i << ":" << this->models[i]->classID << std::endl;
 
 	}
-	std::cerr << "skybox\t"<< ":" << this->Skybox.textur << std::endl;
-	std::cerr << "ground\t" << ":" << this->Ground.textur << std::endl;
+	//std::cerr << "skybox\t"<< ":" << this->Skybox.textur << std::endl;
+	//std::cerr << "ground\t" << ":" << this->Ground.textur << std::endl;
 }
 /////////////////GROUND///////////////////////////////
 int scene::addGround(std::string pathOfObj, std::string pathOfTexture)
@@ -25,14 +27,18 @@ int scene::addGround(std::string pathOfObj, std::string pathOfTexture)
 	//std::cerr << glm::to_string(mat);
 	this->Ground.setPosition(mat);
 	mat = glm::translate(mat, glm::vec3(0.0f, -0.6f, 0.0f));
-	int i = this->bulletWord.addGround(mat,1,1);
-	this->Ground.setRigidBodyIndex(i);
-	this->Ground.setShader(this->shader,this->textureID,this->MVPID);
+	btCollisionObject* i = this->bulletWord.addGround(mat,1,1,this->modelsXbullets.size());
+	this->Ground.setRigidBodyIndex(this->modelsXbullets.size()); 
+	this->Ground.setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
+	modelXbullet *mb = new modelXbullet();
+	mb->setModel(&this->Ground);
+	mb->setObj(i);
+	this->modelsXbullets.push_back(mb);
 	return 0;
 }
 int scene::drawGround()
 {
-		this->Ground.draw();
+		this->Ground.draw(this->depthTexture);
 	return 0;
 }
 ////////////////////////////SKYBOX//////////////////////////
@@ -61,43 +67,106 @@ int scene::drawSkybox()
 }
 
 //////////////////MODEL//////////////////////////////////
-
-
-
-
-
-int scene::addModel(std::string pathOfObj, std::string pathOfTexture, glm::mat4 position, glm::vec3 velocity, float mass)
+int scene::addModel(int clas, std::string pathOfObj, std::string pathOfTexture, glm::mat4 position, glm::vec3 velocity, float mass)
 {
-	
-	model *mod = new model;
-	mod->load_3DModel(pathOfObj);
-	mod->load_texture(pathOfTexture.c_str());
-	mod->setPosition(position);
-	mod->setVelocity(velocity);
-	mod->setIndex(this->models.size());
-	mod->setShader(this->shader, this->textureID, this->MVPID);
-	mod->buffer();
-	int i = bulletWord.addCollisionObject(position, velocity, mod->getVertices(), mass, this->models.size());
-	mod->setRigidBodyIndex(i);
-	this->models.push_back(mod);
-	return 0;
-}
+	if (clas == MODEL) {
+		model *mod = new model();
+		mod->load_3DModel(pathOfObj);
+		mod->load_texture(pathOfTexture.c_str());
+		mod->setPosition(position);
+		mod->setVelocity(velocity);
+		mod->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
+		mod->buffer();
+		btCollisionObject* i = bulletWord.addCollisionObject(position, velocity, mod->getVertices(), mass, this->models.size());
+		mod->setRigidBodyIndex(this->modelsXbullets.size());
+		this->models.push_back(mod);
+		modelXbullet *mb = new modelXbullet();
+		mb->setModel(mod);
+		mb->setObj(i);
+		this->modelsXbullets.push_back(mb);
+		std::cerr << "model" << std::endl;
+		return 0;
+	}
+	else if (clas == GROUND) {
+		this->addGround(pathOfObj, pathOfTexture);
+		std::cerr << "ground" << std::endl;
+		return 0;
+	}
+	else if (clas == PROJECTIL) {
+		projectile *proj = new projectile();
+		proj->load_3DModel(pathOfObj);
+		proj->load_texture(pathOfTexture.c_str());
+		proj->setPosition(position);
+		proj->setVelocity(velocity);
+		proj->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
+		proj->buffer();
+		//btCollisionShape *shape = new btSphereShape(1);
+		btCollisionObject* ip = bulletWord.addCollisionObject(position, velocity, proj->getVertices(), mass, this->models.size());
+		//btCollisionObject* ip = bulletWord.addCollisionObject(position, velocity, shape, mass, this->models.size());
 
-int scene::addPlayer(std::string pathOfObj, std::string pathOfTexture, glm::mat4 position,glm::vec3 velocity,float mass)
-{
-	player *mod = new player;
-	//model *mod = new model;
-	mod->load_3DModel(pathOfObj);
-	mod->load_texture(pathOfTexture.c_str());
-	mod->setPosition(position);
-	mod->setVelocity(velocity);
-	mod->setIndex(this->models.size());
-	mod->setShader(this->shader, this->textureID, this->MVPID);
-	mod->buffer();
-	int i = bulletWord.addCollisionObject(position, velocity, mod->getVertices(), mass, this->models.size());
-	mod->setRigidBodyIndex(i);
-	this->models.push_back(mod);
-	return 0;
+		proj->setRigidBodyIndex(this->modelsXbullets.size());
+		this->models.push_back(proj);
+		modelXbullet *mbp = new modelXbullet();
+		mbp->setModel(proj);
+		mbp->setObj(ip);
+		this->modelsXbullets.push_back(mbp);
+		std::cerr << "projectil" << std::endl;
+		return 0;
+	}
+	else if (clas == PLAYER) {
+		player *pl = new player();
+		pl->load_3DModel(pathOfObj);
+		pl->load_texture(pathOfTexture.c_str());
+		pl->setPosition(position);
+		pl->setVelocity(velocity);
+		pl->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
+		pl->buffer();
+		btCollisionShape *shape = new btBoxShape(btVector3(1,1,1));
+		//btCollisionShape *shape = new btSphereShape(1);
+		btCollisionObject* ipl = bulletWord.addCollisionObject(position, velocity,shape, mass, this->models.size());
+		//btCollisionObject* ipl = bulletWord.addCollisionObject(position, velocity, pl->getVertices(), mass, this->models.size());
+		pl->setRigidBodyIndex(this->modelsXbullets.size());
+		this->models.push_back(pl);
+		modelXbullet *mbpl = new modelXbullet();
+		mbpl->setModel(pl);
+		mbpl->setObj(ipl);
+		this->Player = pl;
+		this->modelsXbullets.push_back(mbpl);
+		std::cerr << "player" << std::endl;
+		return 0;
+	}
+	else if (clas == TARGET) {
+		target *targ = new target();
+		targ->load_3DModel(pathOfObj);
+		targ->load_texture(pathOfTexture.c_str());
+		targ->setPosition(position);
+		targ->setVelocity(velocity);
+		targ->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
+		targ->buffer();
+		btCollisionObject* it = bulletWord.addCollisionObject(position, velocity, targ->getVertices(), mass, this->models.size());
+		targ->setRigidBodyIndex(this->modelsXbullets.size());
+		this->models.push_back(targ);
+		modelXbullet *mbt = new modelXbullet();
+		mbt->setModel(targ);
+		mbt->setObj(it);
+		this->modelsXbullets.push_back(mbt);
+		std::cerr << "taget" << std::endl;
+		return 0;
+	}
+	else if (clas == WEAPON) {
+		weapon *w = new weapon();
+		w->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
+
+		w->loadWeapon(pathOfObj, pathOfTexture, position);
+		this->models.push_back(w);
+		modelXbullet *wmb = new modelXbullet();
+		wmb->setModel(w);
+		this->modelsXbullets.push_back(wmb);
+	}
+	else {
+		std::cerr << "error\n";
+		return 0;
+	}
 }
 
 int scene::addModel(model * mod,float mass)
@@ -109,9 +178,30 @@ int scene::addModel(model * mod,float mass)
 	return 0;
 }
 
-int scene::removeModel(std::vector<model*> destructionQueue)
+int scene::removeModel(std::vector<int> destructionQueue)
 {
-	//destructionQueue
+	while (!destructionQueue.empty()) {
+		int mXb = destructionQueue.back();
+		destructionQueue.pop_back();
+		if (this->modelsXbullets[mXb]->getModel() != NULL &&this->modelsXbullets[mXb]->getObj() != NULL) {
+			this->bulletWord.world->removeCollisionObject(this->modelsXbullets[mXb]->getObj());
+			this->modelsXbullets[mXb]->setObj(NULL);
+			int pos = -1;
+			//for (int i = 0; i < this->models.size();i++) {
+			std::vector<model*>::iterator it = this->models.begin();
+			while (it != this->models.end()) {
+				if ((*it)->getRigidBodyIndex() ==mXb) {
+					pos = 1;
+					break;
+				}
+				it++;
+			}
+			if (pos != -1) {
+				this->models.erase(it);
+			}
+			this->modelsXbullets[mXb]->setModel(NULL);
+		}
+	}
 	return 0;
 }
 
@@ -119,19 +209,55 @@ int scene::removeModel(std::vector<model*> destructionQueue)
 int scene::addShader(std::string vertexShader, std::string fragmentShader)
 {
 	this->shader = LoadShaders(vertexShader, fragmentShader);
-	this->textureID = glGetUniformLocation(this->shader, "textureSampler");
+	this->textureID = glGetUniformLocation(this->shader, "myTextureSampler");
 	this->MVPID = glGetUniformLocation(this->shader, "MVP");
+	this->viewID = glGetUniformLocation(this->shader,"V");
+	this->modelID = glGetUniformLocation(this->shader, "M");
+	this->DepthBiasID = glGetUniformLocation(this->shader, "DepthBiasMVP");
+	this->shadowMapID = glGetUniformLocation(this->shader, "shadowMap");
+	this->lightInvDirID = glGetUniformLocation(this->shader, "LightInvDirection_worldspace");
+
+	return 0;
+}
+
+int scene::addDepthShader(std::string vertexShader, std::string fragmentShader)
+{
+	this->depthShader = LoadShaders(vertexShader,fragmentShader);
+	this->depthMVPID = glGetUniformLocation(this->depthShader,"depthMVP");
+
 	return 0;
 }
 
 
 int scene::drawAllModels()
 {
-	for(int i=0;i<this->models.size();i++){
-	
-		this->models[i]->draw();
+	glBindFramebuffer(GL_FRAMEBUFFER,this->shadowBuffer);
+	//glViewport(0, 0, WIDTH, HEIGHT);
+	glEnable(GL_CULL_FACE);
+	glCullFace(GL_BACK);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	this->Ground.depthDraw();
+	for (int i = 0; i < this->models.size(); i++) {
+		this->models[i]->depthDraw();
 	}
-
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	//glViewport(0, 0, WIDTH, HEIGHT);
+	glEnable(GL_CULL_FACE);
+	glCullFace(GL_BACK);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	this->Ground.draw(this->depthTexture);
+	this->Skybox.draw();
+	
+	for(int i=0;i<this->models.size();i++){
+		if (this->models[i]->classID == WEAPON) {
+			(static_cast<weapon*>(this->models[i]))->draw();
+		}else{
+			this->models[i]->draw(this->depthTexture);
+		}
+	}
+	this->drawCrossHair();
+	glfwSwapBuffers(this->window);
+	glfwPollEvents();
 	return 0;
 }
 //////////////////////////CROSSHAIR/////////////////
@@ -159,15 +285,17 @@ void scene::calculate()
 	glm::mat4 mat;
 	std::vector<int*> *colisions;
 	colisions=this->bulletWord.calculate();
-	btCollisionObjectArray objArray = this->bulletWord.world->getCollisionObjectArray();
+	//btCollisionObjectArray objArray = this->bulletWord.world->getCollisionObjectArray();
 	for (int i = 0; i<this->models.size(); i++) {
-		btCollisionObject *obj= objArray[this->models[i]->getRigidBodyIndex()];
+		//btCollisionObject *obj= objArray[this->models[i]->getRigidBodyIndex()];
+		btCollisionObject *obj = this->modelsXbullets[this->models[i]->getRigidBodyIndex()]->getObj();
 		btRigidBody* body = btRigidBody::upcast(obj);
 		btTransform t;
 		if (body && body->getMotionState())
 		{
 			body->getMotionState()->getWorldTransform(t);
-
+			btVector3 vec = body->getLinearVelocity();
+			this->models[i]->setVelocity(glm::vec3(vec[0], vec[1], vec[2]));
 		}
 		else
 		{
@@ -178,29 +306,82 @@ void scene::calculate()
 	}
 	//std::cerr << glm::to_string(mat);
 	//this->Ground.setPosition(mat);
-	std::vector<model*> destructionQueue;
+	std::vector<int> destructionQueue;
 	for (int i = 0; i < colisions->size();i++) {
 		
 		//std::cerr << hitted->data()[i][0] << std::endl;
 		//this->models[*hitted[i][0]]->hitted();
 		//this->models[*hitted[i][1]]->hitted();
-		/*
+		
 		int reaction;
-		if (colisions->data()[i][0] != -1) {
-			reaction= this->models[colisions->data()[i][0]]->hitted(this->models[colisions->data()[i][1]]);
+		model *modA = this->modelsXbullets[colisions->data()[i][0]]->getModel();
+		model *modB = this->modelsXbullets[colisions->data()[i][1]]->getModel();
+		//std::cerr << this->models.size() << std::endl;
+		if(modA->classID==PLAYER ||modB->classID==PLAYER)
+			//std::cerr << modA->classID << "\t" << modB->classID << std::endl;
+		if (modA->classID != GROUND) {
+			if(modA->classID==PLAYER){
+				//std::cerr << "PLAYER\n";
+				reaction = (static_cast<player*>( modA))->hitted(modB);
+			}
+			else if(modA->classID==PROJECTIL){
+				reaction = (static_cast<projectile*>(modA))->hitted(modB);
+			}
+			else {
+				reaction = modA->hitted(modB);
+			}
 			if (reaction < 0) {
-				destructionQueue.push_back(this->models[colisions->data()[i][0]]);
+				destructionQueue.push_back(modA->getRigidBodyIndex());
 			}
 		}
-		if (colisions->data()[i][1] != -1) {
-			reaction= this->models[colisions->data()[i][1]]->hitted(this->models[colisions->data()[i][0]]);
-			if (reaction < 0) {
-				destructionQueue.push_back(this->models[colisions->data()[i][1]]);
+		if (modB->classID != GROUND) {
+			if (modB->classID == PLAYER) {
+				//std::cerr << "PLAYER\n";
+				reaction = (static_cast<player*>(modB))->hitted(modA);
 			}
-		}*/
+			else if (modB->classID == PROJECTIL) {
+				reaction = (static_cast<projectile*>(modB))->hitted(modA);
+			}
+			else {
+				reaction = modB->hitted(modA);
+			}
+			if (reaction < 0) {
+				destructionQueue.push_back(modB->getRigidBodyIndex());
+			}
+		}
+	}
+	if (destructionQueue.size() != 0) {
+		std::cerr << destructionQueue.size() << std::endl;
 	}
 	this->removeModel(destructionQueue);
 
+}
+
+int scene::initShadowBuffer()
+{
+	glGenFramebuffers(1, &this->shadowBuffer);
+	glBindFramebuffer(GL_FRAMEBUFFER, this->shadowBuffer);
+
+	// Depth texture. Slower than a depth buffer, but you can sample it later in your shader
+	glGenTextures(1, &this->depthTexture);
+	glBindTexture(GL_TEXTURE_2D, this->depthTexture);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT16, WIDTH, HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, 0);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_FUNC, GL_LEQUAL);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_COMPARE_R_TO_TEXTURE);
+
+	glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, this->depthTexture, 0);
+
+	// No color output in the bound framebuffer, only depth.
+	glDrawBuffer(GL_NONE);
+
+	// Always check that our framebuffer is ok
+	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+		return false;
+	return 0;
 }
 
 
@@ -243,6 +424,7 @@ int scene::initWindow()
 	glGenVertexArrays(1, &this->VertexArrayID);
 	glBindVertexArray(this->VertexArrayID);
 	this->bulletWord.initBullet();
+	this->initShadowBuffer();
 	return 0;
 }
 
@@ -261,6 +443,8 @@ scene::~scene()
 	glDeleteProgram(this->shader);
 	glDeleteTextures(1, &this->textureID);
 	glDeleteVertexArrays(1, &this->VertexArrayID);
+	glDeleteFramebuffers(1, &this->shadowBuffer);
+	glDeleteTextures(1, &this->depthTexture);
 	FreeImage_DeInitialise();
 	glfwTerminate();
 }

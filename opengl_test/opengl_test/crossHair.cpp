@@ -95,7 +95,6 @@ void crossHair::draw()
 crossHair::crossHair(std::string path)
 {
 	this->texture = loadTexture2d(path.c_str(),&this->height,&this->height);
-	//this->texture = loadDDS(path.c_str());
 	glGenBuffers(1, &this->UVbuffer);
 	glGenBuffers(1, &this->VertexBuffer);
 	this->shader = LoadShaders("crossHair.vertexShader", "crossHair.fragmentShader");

@@ -49,7 +49,7 @@ void bulletC::initBullet()
 	
 }
 
-int bulletC::addCollisionObject(glm::mat4 position, glm::vec3 velocityGL, btCollisionShape *shape, btScalar mass,int index)
+btCollisionObject* bulletC::addCollisionObject(glm::mat4 position, glm::vec3 velocityGL, btCollisionShape *shape, btScalar mass,int index)
 {
 	//this->bodies.push_back(new btSphereShape(1));
 	//btCollisionShape *shape = new btBoxShape(btVector3(1.0f, 1.0f, 1.0f));
@@ -82,10 +82,10 @@ int bulletC::addCollisionObject(glm::mat4 position, glm::vec3 velocityGL, btColl
 	if (!match) {
 		this->shapes.push_back(shape);
 	}//delete shape;
-	return this->world->getNumCollisionObjects() - 1;
+	return this->world->getCollisionObjectArray()[this->world->getNumCollisionObjects() - 1];
 }
 
-int bulletC::addCollisionObject(glm::mat4 position, glm::vec3 velocityGL, std::vector<glm::vec3> vertices, btScalar mass, int index)
+btCollisionObject* bulletC::addCollisionObject(glm::mat4 position, glm::vec3 velocityGL, std::vector<glm::vec3> vertices, btScalar mass, int index)
 {
 	btConvexHullShape *shape = new btConvexHullShape();
 	for (int i = 0; i < vertices.size(); i++) {
@@ -119,13 +119,13 @@ int bulletC::addCollisionObject(glm::mat4 position, glm::vec3 velocityGL, std::v
 	if (!match) {
 		this->shapes.push_back(shape);
 	}//delete shape;
-	return this->world->getNumCollisionObjects() - 1;
+	return this->world->getCollisionObjectArray()[this->world->getNumCollisionObjects() - 1];
 }
 
 
 
 
-int bulletC::addGround(glm::mat4 position, float wideth, float height)
+btCollisionObject* bulletC::addGround(glm::mat4 position, float wideth, float height,int index)
 {
 	this->Ground = new btStaticPlaneShape(btVector3(0, 1, 0), 1);
 	btTransform temp;
@@ -135,11 +135,11 @@ int bulletC::addGround(glm::mat4 position, float wideth, float height)
 	btRigidBody::btRigidBodyConstructionInfo
 		groundRigidBodyCI(0, groundMotionState, this->Ground, btVector3(0, 0, 0));
 	btRigidBody* rb = new btRigidBody(groundRigidBodyCI);
-	rb->setUserIndex(-1);
+	rb->setUserIndex(index);
 	rb->setUserIndex2(this->world->getNumCollisionObjects());
 	this->world->addRigidBody(rb);
 		std::cerr << "ground add" << std::endl;
-	return this->world->getNumCollisionObjects() - 1;;
+	return this->world->getCollisionObjectArray()[this->world->getNumCollisionObjects() - 1];
 	
 }
 std::vector<int*>* bulletC::calculate()
