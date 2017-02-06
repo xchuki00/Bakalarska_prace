@@ -1,21 +1,8 @@
-﻿  scene.cpp
+﻿  Source.cpp
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\scene.cpp(29): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\scene.cpp(30): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\scene.cpp(79): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\scene.cpp(80): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\scene.cpp(103): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\scene.cpp(106): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\scene.cpp(125): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\scene.cpp(127): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\scene.cpp(145): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\scene.cpp(146): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\scene.cpp(263): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  controls.cpp
-  Source.cpp
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\source.cpp(65): warning C4101: 'k': unreferenced local variable
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\source.cpp(65): warning C4101: 'h': unreferenced local variable
   opengl_test.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\opengl_test\x64\Debug\OpenGlDemo.exe
   opengl_test.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\opengl_test\x64\Debug\OpenGlDemo.pdb (Partial PDB)

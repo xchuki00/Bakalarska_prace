@@ -23,6 +23,10 @@ void loop() {
 	double releaseT;
 	do {
 
+		//getworldtransform()
+		sc.calculate();
+		computeMatrices();//prepocitava moji polohu
+
 		if (glfwGetKey(sc.window, GLFW_KEY_E) == GLFW_PRESS &&!release) {
 			pressT = glfwGetTime();
 			release = true;
@@ -38,8 +42,8 @@ void loop() {
 			glm::mat4 mat;
 			mat4Copy(getMyPosition(), &mat);
 			mat = glm::translate(mat, 3 * getDir());
+			//mat = glm::translate(mat, getRight());
 			mat4Rotate(&mat, getDir(),getUp());
-			
 			sc.addModel(PROJECTIL,"arrow.obj", "bricks.bmp",mat, speed*getDir(),10);
 			sc.print();
 			//printMat4(sc.models[sc.models.size() - 1].matrix);
@@ -48,10 +52,6 @@ void loop() {
 		}
 
 	
-
-		//getworldtransform()
-		sc.calculate();
-		computeMatrices();//prepocitava moji polohu
 
 		sc.drawAllModels();
 	} while (glfwGetKey(sc.window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
@@ -72,32 +72,34 @@ int main() {
 		"front.tga",
 		"right.tga",
 		"back.tga",
-		"top.tga", 
+		"top.tga",	
 		"bottom.tga",
 		"skybox.vertexShader",
 		"skybox.fragmentShader"
 	);
-	sc.addGround("untitled.obj", "bricks.bmp");
+	sc.addGround("untitled.obj", "uvtemplate.tga");
 	//sc.addModel();
 	sc.addModel(TARGET,
 		"cube.obj",
 		"uvtemplate.tga",
 		glm::translate(mat, glm::vec3(0.0f, 5.0f, -5.0f)),
 		glm::vec3(0,0,0),
-		5
+		50
 	);
 	sc.bufferCrossHair("crosshairs64.tga");
 	//mat = glm::translate(mat, glm::vec3(-2.0f, 8.0f, 0.0f));
 	//sc.addModel("tank.obj", "uvtemplate.tga", mat,glm::vec3(0.0f),100);
 
 	mat = glm::translate(mat, glm::vec3(5.0f, 4.0f, 0.5f));
-	sc.addModel(TARGET, "cube.obj", "red.bmp", mat, glm::vec3(0.0f, 0.0f, 0.0f),100);
+	sc.addModel(TARGET, "cube.obj", "red.bmp", mat, glm::vec3(0.0f, 0.0f, 0.0f),0);
 	mat = glm::translate(mat, glm::vec3(4.0f, 5.0f, 0.0f));
 	//sc.addModel(MODEL,"cube2.obj", "red.bmp", mat, glm::vec3(0.0f,0.0f,0.0f),100);
-	mat = glm::translate(mat, glm::vec3(6.0f, 0.0f, -4.0f));
+	mat = glm::mat4(1.0f);
+	mat = glm::translate(mat, glm::vec3(0,2,0));
 	//sc.addModel(MODEL,"cube2.obj", "bricks.bmp", getMyPosition(),glm::vec3(0.0f, 0.0f, 0.0f), 100);
-	sc.addModel(PLAYER, "arrow.obj", "green.bmp", getMyPosition(), glm::vec3(0.0f), 10);
-	
+	sc.addModel(PLAYER, "bullet.obj", "green.bmp", getMyPosition(), glm::vec3(0.0f), 10);
+	sc.addModel(WEAPON, "bow.obj", "green.bmp",mat, glm::vec3(0.0f), 10);
+//	sc.addModel(WEAPON, "bow_final.dae", "green.bmp", mat, glm::vec3(0.0f), 10);
 	//sc.print();
 	loop();
 	

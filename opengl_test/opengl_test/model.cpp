@@ -77,7 +77,9 @@ int model::getRigidBodyIndex()
 }
 int model::hitted(model * byWho)
 {
-	//std::cerr << "MODEL\n";
+	if(this->classID==PROJECTIL){
+		std::cerr << "MODEL\n";
+	}
 	if (byWho->classID != GROUND) {
 		//	std::cerr << "somethig\n";
 	//	this->textur = loadTexture2d("red.bmp", &this->textureHeight, &this->textureWidth);

@@ -5,6 +5,8 @@
 //poloha vybraneho miridla v texture crosshairs64.tga, pocitano od 0
 #define ROW 5	
 #define  COLUMN 0
+int half_width = WIDTH / 2;
+int half_height = HEIGHT / 2;
 void crossHair::init(std::string path)
 {
 	if(this->texture==0){
@@ -12,7 +14,9 @@ void crossHair::init(std::string path)
 		glGenBuffers(1, &this->UVbuffer);
 		glGenBuffers(1, &this->VertexBuffer);
 		this->shader = LoadShaders("crossHair.vertexShader", "crossHair.fragmentShader");
-		this->uniformID = glGetUniformLocation(this->shader, "texture_sampler");
+		this->textureID = glGetUniformLocation(this->shader, "texture_sampler");
+		this->half_width_ID = glGetUniformLocation(this->shader, "half_width");
+		this->half_height_ID = glGetUniformLocation(this->shader, "half_height");
 	}
 }
 
@@ -20,9 +24,7 @@ void crossHair::buffer()
 {
 	std::vector<glm::vec2> ver;
 	std::vector<glm::vec2> uv;
-	int half_width = WIDTH / 2;
-	int half_height = HEIGHT / 2;
-
+	std::cerr << "CROSSHAIR" << half_height << "\t" << half_width << std::endl;
 	glm::vec2 Vup_left = glm::vec2(half_width - 50, half_height + 50);
 	glm::vec2 Vdown_left = glm::vec2(half_width - 50, half_height - 50);
 	glm::vec2 Vup_right = glm::vec2(half_width + 50, half_height + 50);
@@ -68,10 +70,11 @@ void crossHair::draw()
 
 	//std::cerr << "TEXTUREA" << this->texture << std::endl;
 	glUseProgram(this->shader);
-
+	glUniform1i(this->half_width_ID, half_width);
+	glUniform1i(this->half_height_ID, half_height);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D,this->texture);
-	glUniform1i(this->uniformID,0);
+	glUniform1i(this->textureID,0);
 
 	glEnableVertexAttribArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, this->VertexBuffer);
@@ -98,7 +101,7 @@ crossHair::crossHair(std::string path)
 	glGenBuffers(1, &this->UVbuffer);
 	glGenBuffers(1, &this->VertexBuffer);
 	this->shader = LoadShaders("crossHair.vertexShader", "crossHair.fragmentShader");
-	this->uniformID = glGetUniformLocation(this->shader,"");
+	this->textureID = glGetUniformLocation(this->shader,"");
 }
 crossHair::crossHair()
 {

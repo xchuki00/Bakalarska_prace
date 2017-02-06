@@ -19,8 +19,8 @@
 #include <btBulletDynamicsCommon.h>
 
 //#include <bt>
-#define HEIGHT 1024	
-#define WIDTH 768
+#define HEIGHT 1050
+#define WIDTH 1680
 /***********CLASS ENUM*****************/
 #define MODEL 0
 #define GROUND 1

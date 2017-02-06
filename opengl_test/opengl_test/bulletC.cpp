@@ -70,7 +70,7 @@ btCollisionObject* bulletC::addCollisionObject(glm::mat4 position, glm::vec3 vel
 	btVector3 velocity(velocityGL[0], velocityGL[1], velocityGL[2]);
 	RigidBody->setLinearVelocity(velocity);
 	RigidBody->setUserIndex(index);
-	RigidBody->setUserIndex2(this->world->getNumCollisionObjects());
+	//RigidBody->setUserIndex2(this->world->getNumCollisionObjects());
 	this->world->addRigidBody(RigidBody);
 	bool match = false;
 	for (int i = 0; i < this->shapes.size(); i++) {

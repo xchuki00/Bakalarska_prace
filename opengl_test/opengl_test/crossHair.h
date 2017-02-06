@@ -6,7 +6,9 @@ class crossHair
 	GLuint UVbuffer;
 	GLuint VertexBuffer;
 	GLuint texture=0;
-	GLuint uniformID;
+	GLuint textureID;
+	GLuint half_height_ID;
+	GLuint half_width_ID;
 
 	int width, height;
 public:

@@ -154,14 +154,15 @@ int scene::addModel(int clas, std::string pathOfObj, std::string pathOfTexture, 
 		return 0;
 	}
 	else if (clas == WEAPON) {
-		weapon *w = new weapon();
-		w->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
-
+		weapon *w = new weapon();	
+	//	w->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
 		w->loadWeapon(pathOfObj, pathOfTexture, position);
+		w->setRigidBodyIndex(this->modelsXbullets.size());
 		this->models.push_back(w);
 		modelXbullet *wmb = new modelXbullet();
 		wmb->setModel(w);
 		this->modelsXbullets.push_back(wmb);
+		
 	}
 	else {
 		std::cerr << "error\n";
@@ -180,7 +181,9 @@ int scene::addModel(model * mod,float mass)
 
 int scene::removeModel(std::vector<int> destructionQueue)
 {
+
 	while (!destructionQueue.empty()) {
+		//cerr << "DESTRO SIZE" << destructionQueue.size() << std::endl;
 		int mXb = destructionQueue.back();
 		destructionQueue.pop_back();
 		if (this->modelsXbullets[mXb]->getModel() != NULL &&this->modelsXbullets[mXb]->getObj() != NULL) {
@@ -238,7 +241,13 @@ int scene::drawAllModels()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	this->Ground.depthDraw();
 	for (int i = 0; i < this->models.size(); i++) {
-		this->models[i]->depthDraw();
+		if (this->models[i]->classID == WEAPON) {
+			//(static_cast<weapon*>(this->models[i]))->draw();
+		}
+		else {
+			this->models[i]->depthDraw();
+		}
+		
 	}
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	//glViewport(0, 0, WIDTH, HEIGHT);
@@ -250,6 +259,7 @@ int scene::drawAllModels()
 	
 	for(int i=0;i<this->models.size();i++){
 		if (this->models[i]->classID == WEAPON) {
+			//std::cerr << "WEAPON DRAW";
 			(static_cast<weapon*>(this->models[i]))->draw();
 		}else{
 			this->models[i]->draw(this->depthTexture);
@@ -288,21 +298,23 @@ void scene::calculate()
 	//btCollisionObjectArray objArray = this->bulletWord.world->getCollisionObjectArray();
 	for (int i = 0; i<this->models.size(); i++) {
 		//btCollisionObject *obj= objArray[this->models[i]->getRigidBodyIndex()];
-		btCollisionObject *obj = this->modelsXbullets[this->models[i]->getRigidBodyIndex()]->getObj();
-		btRigidBody* body = btRigidBody::upcast(obj);
-		btTransform t;
-		if (body && body->getMotionState())
-		{
-			body->getMotionState()->getWorldTransform(t);
-			btVector3 vec = body->getLinearVelocity();
-			this->models[i]->setVelocity(glm::vec3(vec[0], vec[1], vec[2]));
+		if (this->modelsXbullets[this->models[i]->getRigidBodyIndex()]->getObj() != NULL) {
+			btCollisionObject *obj = this->modelsXbullets[this->models[i]->getRigidBodyIndex()]->getObj();
+			btRigidBody* body = btRigidBody::upcast(obj);
+			btTransform t;
+			if (body && body->getMotionState())
+			{
+				body->getMotionState()->getWorldTransform(t);
+				btVector3 vec = body->getLinearVelocity();
+				this->models[i]->setVelocity(glm::vec3(vec[0], vec[1], vec[2]));
+			}
+			else
+			{
+				t = obj->getWorldTransform();
+			}
+			t.getOpenGLMatrix(glm::value_ptr(mat));
+			this->models[i]->setPosition(mat);
 		}
-		else
-		{
-			t = obj->getWorldTransform();
-		}
-		t.getOpenGLMatrix(glm::value_ptr(mat));
-		this->models[i]->setPosition(mat);
 	}
 	//std::cerr << glm::to_string(mat);
 	//this->Ground.setPosition(mat);
@@ -314,46 +326,45 @@ void scene::calculate()
 		//this->models[*hitted[i][1]]->hitted();
 		
 		int reaction;
+		
 		model *modA = this->modelsXbullets[colisions->data()[i][0]]->getModel();
 		model *modB = this->modelsXbullets[colisions->data()[i][1]]->getModel();
+		
 		//std::cerr << this->models.size() << std::endl;
-		if(modA->classID==PLAYER ||modB->classID==PLAYER)
-			//std::cerr << modA->classID << "\t" << modB->classID << std::endl;
-		if (modA->classID != GROUND) {
-			if(modA->classID==PLAYER){
-				//std::cerr << "PLAYER\n";
-				reaction = (static_cast<player*>( modA))->hitted(modB);
-			}
-			else if(modA->classID==PROJECTIL){
-				reaction = (static_cast<projectile*>(modA))->hitted(modB);
-			}
-			else {
-				reaction = modA->hitted(modB);
-			}
-			if (reaction < 0) {
-				destructionQueue.push_back(modA->getRigidBodyIndex());
+		if(modA!=NULL){
+			//std::cerr << modA->classID << std::endl;
+			if (modA->classID != GROUND) {
+				if(modA->classID==PLAYER){
+					reaction = (static_cast<player*>( modA))->hitted(modB);
+				}else if(modA->classID==PROJECTIL){
+					reaction = (static_cast<projectile*>(modA))->hitted(modB);
+				}else {			
+					reaction = modA->hitted(modB);
+				}
+				if (reaction < 0) {
+					destructionQueue.push_back(modA->getRigidBodyIndex());
+				}
 			}
 		}
-		if (modB->classID != GROUND) {
-			if (modB->classID == PLAYER) {
-				//std::cerr << "PLAYER\n";
-				reaction = (static_cast<player*>(modB))->hitted(modA);
-			}
-			else if (modB->classID == PROJECTIL) {
-				reaction = (static_cast<projectile*>(modB))->hitted(modA);
-			}
-			else {
-				reaction = modB->hitted(modA);
-			}
-			if (reaction < 0) {
-				destructionQueue.push_back(modB->getRigidBodyIndex());
+		if(modB!=NULL){
+			if (modB->classID != GROUND) {
+				if (modB->classID == PLAYER) {
+					reaction = (static_cast<player*>(modB))->hitted(modA);
+				}else if (modB->classID == PROJECTIL) {
+					reaction = (static_cast<projectile*>(modB))->hitted(modA);
+				}else{
+					reaction = modB->hitted(modA);
+				}
+				if (reaction < 0) {
+					destructionQueue.push_back(modB->getRigidBodyIndex());
+				}
 			}
 		}
 	}
 	if (destructionQueue.size() != 0) {
-		std::cerr << destructionQueue.size() << std::endl;
+		std::cerr<<"DESTRO" << destructionQueue.size() << std::endl;
 	}
-	this->removeModel(destructionQueue);
+	//this->removeModel(destructionQueue);
 
 }
 
@@ -374,7 +385,8 @@ int scene::initShadowBuffer()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_COMPARE_R_TO_TEXTURE);
 
 	glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, this->depthTexture, 0);
-
+	
+	//glTexParameterfv(GL_TEXTURE_2D,GL_TEXTURE_BORDER_COLOR,glm::value_ptr(glm::vec4(0.0f,0.0f,0.0f,0.0f)));
 	// No color output in the bound framebuffer, only depth.
 	glDrawBuffer(GL_NONE);
 
@@ -396,7 +408,7 @@ int scene::initWindow()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	this->window = glfwCreateWindow(HEIGHT, WIDTH, "window", NULL, NULL);
+	this->window = glfwCreateWindow(WIDTH, HEIGHT, "window", NULL, NULL);
 	if (this->window == NULL) {
 		fprintf(stderr, "Error:glfwCreateWindow fail\n");
 		glfwTerminate();

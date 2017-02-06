@@ -5,9 +5,11 @@ extern scene sc;
 glm::mat4 ViewC;
 glm::mat4 ProjectionC;
 glm::vec3 position(0, 1, 5);
-glm::vec3 dirV;
+glm::vec3 dirV(0,0,1);
 glm::mat4 MyPosition(1.0f);
 glm::vec3 upV(0, 1, 0);
+glm::vec3 force(0, 0, 0);
+glm::vec3 rightV(1, 0, 0);
 // horizontal angle : toward -Z
 float hAngle = 3.14f;
 // vertical angle : 0, look at the horizon
@@ -17,6 +19,7 @@ float initialFoV = 45.0f;
 bool space = true;
 float speed = 3.0f; // 3 units / second
 float mouseSpeed = 0.005f;
+
 glm::mat4 getProject() {
 	return ProjectionC;
 }
@@ -37,6 +40,12 @@ void setMyPosition(glm::vec3 pos)
 {
 	position = pos;
 }
+glm::vec3 getRight() {
+	return rightV;
+}
+glm::vec3 getChange() {
+	return force;
+}
 int computeMatrices()
 {
 
@@ -48,14 +57,14 @@ int computeMatrices()
 
 	double x, y;
 	glfwGetCursorPos(sc.window, &x, &y);
-	glfwSetCursorPos(sc.window,HEIGHT / 2, WIDTH / 2);
+	glfwSetCursorPos(sc.window,WIDTH / 2, HEIGHT / 2);
 
 	//smery posunu z aktualni pozice
-	hAngle += mouseSpeed * float(HEIGHT / 2 - x);
-	vAngle += mouseSpeed * float(WIDTH / 2 - y);
+	hAngle += mouseSpeed * float(WIDTH / 2 - x);
+	vAngle += mouseSpeed * float(HEIGHT / 2 - y);
 
 	dirV=glm::vec3(cos(vAngle)*sin(hAngle),sin(vAngle), cos(vAngle)*cos(hAngle));
-	glm::vec3 rightV(sin(hAngle-3.14f/2.0f),0,cos(hAngle - 3.14f / 2.0f));
+	rightV=glm::vec3(sin(hAngle-3.14f/2.0f),0,cos(hAngle - 3.14f / 2.0f));
 	upV=glm::cross(rightV,dirV);
 	bool pressAD=false;
 	bool pressW = false;
@@ -86,7 +95,7 @@ int computeMatrices()
 	}
 	if (glfwGetKey(sc.window, GLFW_KEY_SPACE) == GLFW_PRESS&&space&&sc.Player->landed()) {
 
-		std::cerr << sc.Player->classID << " PRDE\n";
+		//std::cerr << sc.Player->classID << " PRDE\n";
 		sc.Player->jump();
 		space = false;
 		position += glm::vec3(0,1,0) * 0.1* speed; //vektor posunu doprava, doba drzeni, rychlost
@@ -95,7 +104,7 @@ int computeMatrices()
 		position -= glm::vec3(0, 1, 0) * delta*speed; //vektor posunu doprava, doba drzeni, rychlost
 	}
 	float Fov = initialFoV;
-	glm::vec3 force=position - oldPos;
+	force=position - oldPos;
 	if (pressAD && pressW) {
 		force.x *= 0.77;
 		force.z *= 0.77;
