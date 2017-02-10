@@ -1,0 +1,90 @@
+\documentclass{beamer}
+\long\def\/*#1*/{}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage{multimedia}
+\usepackage{animate,media9,movie15}
+\title{Interaktivní
+	 OpenGL demo}
+\institute{{\large Fakulta informačních technologií\\ VUT}}
+%\author{Patrik Chukir}
+\author[Patrik Chukir]{Patrik Chukir\\{\small vedoucí práce: Tomáš Millét}}
+\usetheme{Warsaw}
+
+\date{{\small 30.1.2017}}
+
+\begin{document}
+	\begin{frame}
+		<handout:0|beamer:0>
+		\frametitle{Obsah}
+		\tableofcontents
+	\end{frame}
+	\frame{\titlepage}
+	
+
+	\section{Zadání}
+		\begin{frame}
+		\frametitle{Zadání}
+		\begin{itemize}[<+->]
+			\item Prostudovat knihovnu OpenGl a její nástavby
+			\item Navrhnout aplikaci umožňující zobrazení a interakci v 3D scéně
+			\item Implementovat aplikaci
+			\item Zhodnotit výsledek a navrhnout další postup
+		\end{itemize}
+		\end{frame}
+	\section{Cíle práce}
+	\begin{frame}
+		\frametitle{Cíle práce}
+		\begin{itemize}[<+->]
+			\item Vytvořit scénu lukostřelecké střelnice
+			\item Naprogramovat chování luku a šípů
+			\item Zrealizovat změny počasí a osvětlovacích podmínek na scéně
+			\item Naprogramovat vliv těchto změn na chování luku a šípů 
+		\end{itemize}
+	\end{frame}
+	\section{Splněno}
+		\begin{frame}
+			\frametitle{Splněno}
+			\begin{itemize}
+				\item<1-> Vykreslování okna v OpenGL
+					\begin{itemize}
+						\item<2-> Zkompilování a nalinkování všech potřebných knihoven
+						\item<2-> Vytvořit free kameru
+						\item<2-> Zachytávání kláves
+					\end{itemize}
+				\item<3-> Načítání 3D modelů formátů wavefront a collada
+				\item<4-> Načítání textur různých formátů pro tyto modely
+				\item<5-> Jejich vykreslování
+				\item<6-> Integrace \textit{Bullet physic engine}
+					\begin{itemize}
+						\item<6-> Gravitace
+						\item<6-> Zachytávání kolizí a jejich základní ošetření
+						\item<6-> Fyzikální chování pro kameru	
+					\end{itemize}	
+\end{itemize}
+		\end{frame}
+	\section{Plán na letní semestr}
+		\begin{frame}
+			\frametitle{Plán na letní semestr}	
+			\begin{itemize}[<+->]
+				\item Animace pohybu a deformace těles (\textit{Skeletal animation})
+				\item Vyřešit práci s maticemi modelů, aby byly zachovány směry a místa objevování
+				\item Zabodávání šípů
+				\item Počasí
+				\item Vliv počasí na let šípu a sílu luku	
+			\end{itemize}
+		\end{frame}
+	\section{Poděkování}
+	\begin{frame}	
+		\begin{center}
+				{\huge Děkuji za pozornost}
+		\end{center}
+	
+	\end{frame}
+\/*	\section{Ukázka}
+		\begin{frame}
+		%	\movie{poster text}{uk.avi}	
+   \includemovie[poster,autoplay]{potee}{uk.avi}
+		\end{frame}
+	*/
+\end{document}

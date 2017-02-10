@@ -65,6 +65,7 @@
   Generating Code...
   Compiling...
   btShapeHull.cpp
+C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btShapeHull.cpp : fatal error C1041: cannot open program database 'C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\src\BulletCollision\BulletCollision.dir\Debug\BulletCollision.pdb'; if multiple CL.EXE write to the same .PDB file, please use /FS
   btSphereShape.cpp
   btStaticPlaneShape.cpp
   btStridingMeshInterface.cpp
@@ -102,5 +103,3 @@
   btVoronoiSimplexSolver.cpp
   btPolyhedralContactClipping.cpp
   Generating Code...
-btBroadphaseProxy.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
-  BulletCollision.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\lib\Debug\BulletCollision_Debug.lib

@@ -1,0 +1,6 @@
+\select@language {czech}
+\beamer@sectionintoc {1}{Zad\IeC {\'a}n\IeC {\'\i }}{2}{0}{1}
+\beamer@sectionintoc {2}{C\IeC {\'\i }le pr\IeC {\'a}ce}{6}{0}{2}
+\beamer@sectionintoc {3}{Spln\IeC {\v e}no}{10}{0}{3}
+\beamer@sectionintoc {4}{Pl\IeC {\'a}n na letn\IeC {\'\i } semestr}{16}{0}{4}
+\beamer@sectionintoc {5}{Pod\IeC {\v e}kov\IeC {\'a}n\IeC {\'\i }}{21}{0}{5}

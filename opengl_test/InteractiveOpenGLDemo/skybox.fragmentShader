@@ -1,0 +1,8 @@
+ #version 400
+ in vec3 uv;
+ out vec4 color;
+ uniform samplerCube textureSampler;
+void main(){
+	vec3 p=uv/vec3(10.0,10.0,10.0);
+  color = texture(textureSampler,p);
+}

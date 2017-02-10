@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -57,25 +57,25 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-    <PropertyGroup>
-      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\lib\Debug\</OutDir>
-      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">BulletCollision.dir\Debug\</IntDir>
-      <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">BulletCollision_Debug</TargetName>
-      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\lib\Release\</OutDir>
-      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">BulletCollision.dir\Release\</IntDir>
-      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">BulletCollision</TargetName>
-      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\lib\MinSizeRel\</OutDir>
-      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">BulletCollision.dir\MinSizeRel\</IntDir>
-      <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">BulletCollision_MinsizeRel</TargetName>
-      <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\lib\RelWithDebInfo\</OutDir>
-      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">BulletCollision.dir\RelWithDebInfo\</IntDir>
-      <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">BulletCollision_RelWithDebugInfo</TargetName>
-      <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
-    </PropertyGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\lib\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">BulletCollision.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">BulletCollision_Debug</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\lib\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">BulletCollision.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">BulletCollision</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\lib\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">BulletCollision.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">BulletCollision_MinsizeRel</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\lib\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">BulletCollision.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">BulletCollision_RelWithDebugInfo</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -94,6 +94,7 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG;_WIN64;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG;_WIN64;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -110,6 +111,9 @@
     <Lib>
       <AdditionalOptions> /machine:x64 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -127,7 +131,8 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN64;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
-      <DebugInformationFormat></DebugInformationFormat>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN64;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -161,7 +166,8 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN64;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
-      <DebugInformationFormat></DebugInformationFormat>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN64;USE_GRAPHICAL_BENCHMARK;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -396,101 +402,101 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btSubSimplexConvexCast.h" />
     <ClInclude Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btVoronoiSimplexSolver.h" />
     <ClInclude Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btPolyhedralContactClipping.h" />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btAxisSweep3.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btBroadphaseProxy.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btCollisionAlgorithm.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btDbvt.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btDbvtBroadphase.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btDispatcher.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btMultiSapBroadphase.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btOverlappingPairCache.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btQuantizedBvh.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btSimpleBroadphase.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btActivatingCollisionAlgorithm.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btBoxBoxCollisionAlgorithm.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btBox2dBox2dCollisionAlgorithm.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btBoxBoxDetector.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btCollisionDispatcher.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btCollisionObject.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btCollisionWorld.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btCollisionWorldImporter.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btCompoundCollisionAlgorithm.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btCompoundCompoundCollisionAlgorithm.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btConvexConcaveCollisionAlgorithm.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btConvexConvexAlgorithm.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btConvexPlaneCollisionAlgorithm.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btConvex2dConvex2dAlgorithm.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btDefaultCollisionConfiguration.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btEmptyCollisionAlgorithm.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btGhostObject.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btHashedSimplePairCache.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btInternalEdgeUtility.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btManifoldResult.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btSimulationIslandManager.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btSphereBoxCollisionAlgorithm.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btSphereSphereCollisionAlgorithm.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btSphereTriangleCollisionAlgorithm.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btUnionFind.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\SphereTriangleDetector.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btBoxShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btBox2dShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btBvhTriangleMeshShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btCapsuleShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btCollisionShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btCompoundShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btConcaveShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btConeShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btConvexHullShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btConvexInternalShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btConvexPointCloudShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btConvexPolyhedron.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btConvexShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btConvex2dShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btConvexTriangleMeshShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btCylinderShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btEmptyShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btHeightfieldTerrainShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btMinkowskiSumShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btMultimaterialTriangleMeshShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btMultiSphereShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btOptimizedBvh.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btPolyhedralConvexShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btScaledBvhTriangleMeshShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btShapeHull.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btSphereShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btStaticPlaneShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btStridingMeshInterface.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btTetrahedronShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btTriangleBuffer.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btTriangleCallback.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btTriangleIndexVertexArray.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btTriangleIndexVertexMaterialArray.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btTriangleMesh.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btTriangleMeshShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btUniformScalingShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\btContactProcessing.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\btGenericPoolAllocator.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\btGImpactBvh.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\btGImpactCollisionAlgorithm.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\btGImpactQuantizedBvh.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\btGImpactShape.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\btTriangleShapeEx.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\gim_box_set.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\gim_contact.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\gim_memory.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\gim_tri_collision.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btContinuousConvexCollision.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btConvexCast.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btGjkConvexCast.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btGjkEpa2.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btGjkEpaPenetrationDepthSolver.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btGjkPairDetector.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btMinkowskiPenetrationDepthSolver.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btPersistentManifold.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btRaycastCallback.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btSubSimplexConvexCast.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btVoronoiSimplexSolver.cpp"  />
-    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btPolyhedralContactClipping.cpp"  />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btAxisSweep3.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btBroadphaseProxy.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btCollisionAlgorithm.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btDbvt.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btDbvtBroadphase.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btDispatcher.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btMultiSapBroadphase.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btOverlappingPairCache.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btQuantizedBvh.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\BroadphaseCollision\btSimpleBroadphase.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btActivatingCollisionAlgorithm.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btBoxBoxCollisionAlgorithm.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btBox2dBox2dCollisionAlgorithm.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btBoxBoxDetector.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btCollisionDispatcher.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btCollisionObject.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btCollisionWorld.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btCollisionWorldImporter.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btCompoundCollisionAlgorithm.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btCompoundCompoundCollisionAlgorithm.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btConvexConcaveCollisionAlgorithm.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btConvexConvexAlgorithm.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btConvexPlaneCollisionAlgorithm.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btConvex2dConvex2dAlgorithm.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btDefaultCollisionConfiguration.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btEmptyCollisionAlgorithm.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btGhostObject.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btHashedSimplePairCache.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btInternalEdgeUtility.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btManifoldResult.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btSimulationIslandManager.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btSphereBoxCollisionAlgorithm.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btSphereSphereCollisionAlgorithm.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btSphereTriangleCollisionAlgorithm.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\btUnionFind.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionDispatch\SphereTriangleDetector.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btBoxShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btBox2dShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btBvhTriangleMeshShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btCapsuleShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btCollisionShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btCompoundShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btConcaveShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btConeShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btConvexHullShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btConvexInternalShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btConvexPointCloudShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btConvexPolyhedron.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btConvexShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btConvex2dShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btConvexTriangleMeshShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btCylinderShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btEmptyShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btHeightfieldTerrainShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btMinkowskiSumShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btMultimaterialTriangleMeshShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btMultiSphereShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btOptimizedBvh.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btPolyhedralConvexShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btScaledBvhTriangleMeshShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btShapeHull.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btSphereShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btStaticPlaneShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btStridingMeshInterface.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btTetrahedronShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btTriangleBuffer.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btTriangleCallback.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btTriangleIndexVertexArray.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btTriangleIndexVertexMaterialArray.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btTriangleMesh.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btTriangleMeshShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\CollisionShapes\btUniformScalingShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\btContactProcessing.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\btGenericPoolAllocator.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\btGImpactBvh.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\btGImpactCollisionAlgorithm.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\btGImpactQuantizedBvh.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\btGImpactShape.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\btTriangleShapeEx.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\gim_box_set.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\gim_contact.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\gim_memory.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\Gimpact\gim_tri_collision.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btContinuousConvexCollision.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btConvexCast.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btGjkConvexCast.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btGjkEpa2.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btGjkEpaPenetrationDepthSolver.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btGjkPairDetector.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btMinkowskiPenetrationDepthSolver.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btPersistentManifold.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btRaycastCallback.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btSubSimplexConvexCast.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btVoronoiSimplexSolver.cpp" />
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\libs\bullet3-2.85.1\src\BulletCollision\NarrowPhaseCollision\btPolyhedralContactClipping.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:/Users/xchuki00/Documents/Bakalarska_prace/bullet_build/ZERO_CHECK.vcxproj">
