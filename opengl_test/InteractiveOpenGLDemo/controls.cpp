@@ -1,7 +1,8 @@
+#pragma once
 #include "controls.h"
 #include "scene.h"
 #include "misc.h"
-extern scene sc;
+extern Scene sc;
 glm::mat4 ViewC;
 glm::mat4 ProjectionC;
 glm::vec3 position(0, 1, 5);
@@ -48,7 +49,7 @@ glm::vec3 getChange() {
 }
 int computeMatrices()
 {
-
+	//std::cerr << glm::to_string(position) << std::endl;
 	glm::vec3 oldPos;
 	vec3Copy(position, &oldPos);
 	static double lastT = glfwGetTime();
@@ -92,11 +93,12 @@ int computeMatrices()
 	
 	if (glfwGetKey(sc.window, GLFW_KEY_SPACE) == GLFW_RELEASE) {
 		space = true;
+		
 	}
-	if (glfwGetKey(sc.window, GLFW_KEY_SPACE) == GLFW_PRESS&&space&&sc.Player->landed()) {
+	if (glfwGetKey(sc.window, GLFW_KEY_SPACE) == GLFW_PRESS) {
 
 		//std::cerr << sc.Player->classID << " PRDE\n";
-		sc.Player->jump();
+		//sc.player->jump();
 		space = false;
 		position += glm::vec3(0,1,0) * 0.1* speed; //vektor posunu doprava, doba drzeni, rychlost
 	}
@@ -116,7 +118,7 @@ int computeMatrices()
 	pressAD = false;
 	pressS = false;
 	pressW = false;
-	btCollisionObject *pl=sc.modelsXbullets.data()[sc.Player->getRigidBodyIndex()]->getObj();
+	btCollisionObject *pl = sc.player->getObj();
 	btRigidBody *rb = btRigidBody::upcast(pl);
 	rb->clearForces();
 	//force=glm::normalize(force);

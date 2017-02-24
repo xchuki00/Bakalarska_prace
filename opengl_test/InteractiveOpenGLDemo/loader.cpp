@@ -9,6 +9,8 @@ int loadObj(std::string path, std::vector<glm::vec3>& out_vertices, std::vector<
 	
 	std::ifstream obj(path);
 	if (!(obj.is_open())) {
+
+		std::cerr << "ERROR:soubor " << path << " se nepodarilo otevrit!" << std::endl;
 		return -1;
 	}
 
@@ -79,11 +81,42 @@ int loadObj(std::string path, std::vector<glm::vec3>& out_vertices, std::vector<
 	return 0;
 }
 
-int loadObjAss(std::string path, std::vector<glm::vec3>& out_vertices, std::vector<glm::vec2>& out_uvs, std::vector<glm::vec3>& out_normals)
+int loadObjAss(std::string path, std::vector<MyVertex>& out_vertices, std::vector<unsigned short>& indices)
 {
-	
-	return 0;
+
+	Assimp::Importer imp;
+	const aiScene *scen = imp.ReadFile(path.c_str(), aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_JoinIdenticalVertices);
+	if (scen == NULL) {
+		std::cerr << "Error:Assimp load\n";
+		return -1;
+	}
+	//std::cerr << "ASSIMP: num mesh:" << scen->mNumMeshes<<std::endl;
+	const aiMesh* mesh = scen->mMeshes[0];
+	std::cerr << "ASSIMP: num ver:" << mesh->mNumVertices << std::endl;
+	const aiVector3D Zero3D(0.0f, 0.0f, 0.0f);
+	for (int i = 0; i < mesh->mNumVertices; i++) {
+		const aiVector3D* pTexCoord = mesh->HasTextureCoords(0) ? &(mesh->mTextureCoords[0][i]) : &Zero3D;
+		MyVertex v(
+			glm::vec3(mesh->mVertices[i].x, mesh->mVertices[i].y, mesh->mVertices[i].z),
+			//glm::vec2(pTexCoord->x, pTexCoord->y),
+			glm::vec2(0, 0),
+			glm::vec3(mesh->mNormals[i].x, mesh->mNormals[i].y, mesh->mNormals[i].z));
+		out_vertices.push_back(v);
+	}
+	std::cerr << "ASSIMP: out:" << out_vertices.size() << std::endl;
+	std::cerr << "ASSIMP: num face:" << mesh->mNumFaces << std::endl;
+	for (int i = 0; i < mesh->mNumFaces; i++) {
+		const aiFace& Face = mesh->mFaces[i];
+		assert(Face.mNumIndices == 3);
+		indices.push_back(Face.mIndices[0]);
+		indices.push_back(Face.mIndices[1]);
+		indices.push_back(Face.mIndices[2]);
+	}
+
+	std::cout << "nacten 3D modle " << path << std::endl;
+	return indices.size();
 }
+
 
 
 

@@ -1,15 +1,6 @@
-﻿  texture.cpp
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\includes.h(4): fatal error C1083: Cannot open include file: 'GL\glew.h': No such file or directory
-  Source.cpp
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\includes.h(4): fatal error C1083: Cannot open include file: 'GL\glew.h': No such file or directory
-  Shader.cpp
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\includes.h(4): fatal error C1083: Cannot open include file: 'GL\glew.h': No such file or directory
-  misc.cpp
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\includes.h(4): fatal error C1083: Cannot open include file: 'GL\glew.h': No such file or directory
-  loader.cpp
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\includes.h(4): fatal error C1083: Cannot open include file: 'GL\glew.h': No such file or directory
-  crossHair.cpp
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\includes.h(4): fatal error C1083: Cannot open include file: 'GL\glew.h': No such file or directory
-  controls.cpp
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\includes.h(4): fatal error C1083: Cannot open include file: 'GL\glew.h': No such file or directory
-  Generating Code...
+﻿  Scene.cpp
+c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+  InteractiveOpenGLDemo.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\opengl_test\x64\Debug\InteractiveOpenGLDemo.exe
+  InteractiveOpenGLDemo.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\opengl_test\x64\Debug\InteractiveOpenGLDemo.pdb (Partial PDB)

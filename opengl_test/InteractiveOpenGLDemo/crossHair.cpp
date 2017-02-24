@@ -1,3 +1,4 @@
+#pragma once
 #include "crossHair.h"
 #include "Shader.h"
 #include "texture.h"

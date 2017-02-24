@@ -7,7 +7,6 @@ class bulletC
 	btDefaultCollisionConfiguration * collisionConfig;
 	btCollisionDispatcher* dispatcher;
 	btSequentialImpulseConstraintSolver *solver;
-	
 	btCollisionShape *Ground;
 	std::vector<btCollisionShape*> shapes;
 public:

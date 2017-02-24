@@ -32,3 +32,20 @@
 ///////////enum pro navratove hodnoty funkce hitted
 #define DESTROY -1;
 #define NOTHING 0;
+///////////STRUCT pro vrchol/////////////////
+
+#pragma once
+struct MyVertex {
+	glm::vec3 pos;
+	glm::vec2 uv;
+	glm::vec3 normal;
+
+	MyVertex() {}
+
+	MyVertex(glm::vec3 inpos, glm::vec2 inuv, glm::vec3 innormal)
+	{
+		pos = inpos;
+		uv = inuv;
+		normal = innormal;
+	}
+};
