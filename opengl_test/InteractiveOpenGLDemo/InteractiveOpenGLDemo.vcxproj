@@ -132,6 +132,7 @@
     <ClCompile Include="Skybox.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Target.cpp" />
+    <ClCompile Include="textToScem.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
@@ -150,6 +151,7 @@
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Skybox.h" />
     <ClInclude Include="Target.h" />
+    <ClInclude Include="textToScem.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>

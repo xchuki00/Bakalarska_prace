@@ -107,10 +107,14 @@ int loadObjAss(std::string path, std::vector<MyVertex>& out_vertices, std::vecto
 	std::cerr << "ASSIMP: num face:" << mesh->mNumFaces << std::endl;
 	for (int i = 0; i < mesh->mNumFaces; i++) {
 		const aiFace& Face = mesh->mFaces[i];
-		assert(Face.mNumIndices == 3);
+		//assert(Face.mNumIndices == 3);
+		for (int j = 0; j < Face.mNumIndices; j++) {
+			indices.push_back(Face.mIndices[j]);
+		}/*
 		indices.push_back(Face.mIndices[0]);
 		indices.push_back(Face.mIndices[1]);
 		indices.push_back(Face.mIndices[2]);
+	*/
 	}
 
 	std::cout << "nacten 3D modle " << path << std::endl;

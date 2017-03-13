@@ -1,10 +1,6 @@
-﻿  controls.cpp
+﻿  misc.cpp
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\controls.cpp(109): warning C4305: '*=': truncation from 'double' to 'float'
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\controls.cpp(110): warning C4305: '*=': truncation from 'double' to 'float'
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\controls.cpp(113): warning C4305: '*=': truncation from 'double' to 'float'
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\controls.cpp(114): warning C4305: '*=': truncation from 'double' to 'float'
   opengl_test.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\opengl_test\x64\Debug\OpenGlDemo.exe
   opengl_test.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\opengl_test\x64\Debug\OpenGlDemo.pdb (Partial PDB)

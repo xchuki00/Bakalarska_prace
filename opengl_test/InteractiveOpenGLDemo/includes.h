@@ -17,13 +17,14 @@
 #include <glm\ext.hpp>
 #include <FreeImage.h>
 #include <btBulletDynamicsCommon.h>
-
+#include <map>
+#include <iterator>
 //#include <bt>
-#define HEIGHT 1050
-#define WIDTH 1680
-/***********CLASS ENUM*****************/
+#define HEIGHT 1080
+#define WIDTH 1920
+/***********CLASS ENUM****************/
 #define MODEL 0
-#define GROUND 1
+#define GROUND 1 
 #define SKYBOX 2
 #define PLAYER 3
 #define TARGET 4
@@ -32,6 +33,8 @@
 ///////////enum pro navratove hodnoty funkce hitted
 #define DESTROY -1;
 #define NOTHING 0;
+///////////proste pi pro pocitani s radiany////////////
+const float PI = 3.1415927f;
 ///////////STRUCT pro vrchol/////////////////
 
 #pragma once

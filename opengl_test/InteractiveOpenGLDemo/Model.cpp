@@ -27,6 +27,13 @@ double Model::getDmg()
 {
 	return 0.0;
 }
+glm::mat4 Model::getPosition()
+{
+	return this->modelMatrix;
+}
+void Model::calc()
+{
+}
 void Model::draw()
 {
 
@@ -38,7 +45,7 @@ void Model::draw()
 	glUseProgram(this->shader);
 	glm::mat4 Projection = getProject();
 	glm::mat4 View = getView();
-	glm::mat4 MVP = Projection * View * this->modelMatrix;
+	glm::mat4 MVP = Projection * View * this->getPosition();
 	glUniformMatrix4fv(this->MVPID, 1, GL_FALSE, &MVP[0][0]);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, this->textur);
@@ -87,6 +94,25 @@ int Model::load_texture(const char * path)
 {
 	this->textur = loadTexture2d(path, &this->textureHeight, &this->textureWidth);
 
+	return 0;
+}
+
+int Model::set3DModel(std::vector<MyVertex> v)
+{
+	this->vertices = v;
+
+	return 0;
+}
+
+int Model::setIndices(std::vector<unsigned short> i)
+{
+	this->indices = i;
+	return 0;
+}
+
+int Model::setTexture(GLuint t)
+{
+	this->textur = t;
 	return 0;
 }
 

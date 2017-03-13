@@ -38,7 +38,9 @@ public:
 	////////////funkce pro init////////////
 	virtual int load_3DModel(std::string path);
 	virtual int load_texture(const char *path);
-	
+	virtual int set3DModel(std::vector<MyVertex>v);
+	virtual int setIndices(std::vector<unsigned short>i);
+	virtual int setTexture(GLuint t);
 	void setShader(
 		GLuint sh,
 		GLuint texturID,
@@ -60,6 +62,8 @@ public:
 	virtual int hitted(Model* byWho);
 	virtual double getDmg();
 	//////////DRAW////////////////////
+	virtual glm::mat4 getPosition();
+	virtual void calc();
 	virtual void draw();
 	virtual void depthDraw();
 	Model();

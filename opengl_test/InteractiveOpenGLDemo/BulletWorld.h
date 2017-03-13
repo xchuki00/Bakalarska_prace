@@ -17,7 +17,13 @@ public:
 		btScalar mass,
 		Model* index
 	);
-
+	btCollisionObject* addCollisionObject(
+		glm::mat4 position,
+		glm::vec3 velocityGL,
+		btScalar mass,
+		Model* index,
+		btCollisionShape *shape
+	);
 	btCollisionObject* addGround(glm::mat4 position, Model* index);
 	std::vector<Model *> *calculate();
 

@@ -6,6 +6,8 @@
 #include "Projectil.h"
 #include "Weapon.h"
 #include "Shader.h"
+#include "texture.h"
+#include "loader.h"
 Scene::Scene()
 {
 }
@@ -29,10 +31,10 @@ Scene::~Scene()
 
 
 
-int Scene::addModel(int clas, std::string pathOfObj, std::string pathOfTexture, glm::mat4 position, glm::vec3 velocity, float mass)
+Model* Scene::addModel(int clas, std::string pathOfObj, std::string pathOfTexture, glm::mat4 position, glm::vec3 velocity, float mass)
 {
 	Model *m= new Model();
-	glm::mat4 mat(1.0f);
+	//glm::mat4 mat(1.0f);
 	switch (clas) {
 	case MODEL:
 		m = new Model();
@@ -42,41 +44,24 @@ int Scene::addModel(int clas, std::string pathOfObj, std::string pathOfTexture, 
 		m->setPosition(position);
 		m->setObj(this->bulletWorld.addCollisionObject(position, velocity, mass, m));
 		this->models.push_back(m);
-		break;
+		std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
+		return m;
 	case GROUND:
 		m = new Ground();
 		m->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
 		m->load_3DModel(pathOfObj);
 		m->load_texture(pathOfTexture.c_str());
 		
-		mat = glm::translate(mat, glm::vec3(0.0f, -2.5f, 0.0f));
-		m->setPosition(mat);
-		mat = glm::translate(mat, glm::vec3(0.0f, -0.6f, 0.0f));
+		//mat = glm::translate(mat, glm::vec3(0.0f, -2.5f, 0.0f));
+		m->setPosition(position);
+		//mat = glm::translate(mat, glm::vec3(0.0f, -0.6f, 0.0f));
 		//m->setObj(this->bulletWorld.addGround(mat,m));
 		//m->setPosition(position);
-		m->setObj(this->bulletWorld.addCollisionObject(mat,velocity,mass,m));
+		m->setObj(this->bulletWorld.addCollisionObject(position,velocity,mass,m));
 		this->models.push_back(m);
-		break;
-	case PLAYER:
-		m = new Player();
-		m = new Model();
-		m->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
-		m->load_3DModel(pathOfObj);
-		m->load_texture(pathOfTexture.c_str());
-		m->setPosition(position);
-		m->setObj(this->bulletWorld.addCollisionObject(position, velocity, mass, m));
-		this->models.push_back(m);
-		this->player=m;
-		break;
-	case TARGET:
-		m = new Target();
-		break;
-	case PROJECTIL:
-		m = new Projectil();
-		break;
-	case WEAPON:
-		m = new Weapon();
-		break;
+		std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
+		return m;
+
 	default:
 		m = new Model();
 		m->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
@@ -85,15 +70,61 @@ int Scene::addModel(int clas, std::string pathOfObj, std::string pathOfTexture, 
 		m->setPosition(position);
 		m->setObj(this->bulletWorld.addCollisionObject(position, velocity, mass, m));
 		this->models.push_back(m);
-		break;
+		std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
+		return m;
 	}
 	//m->setShader(this->shader);
 
-	std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
+	
 
 
 	
-	return 0;
+	
+}
+
+Model * Scene::addProjectil(std::string pathOfObj, std::string pathOfTexture,int mass)
+{
+	Projectil *m = new Projectil();
+	m->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
+	m->set3DModel(this->get3DModel(pathOfObj));
+	m->setIndices(this->getIndices(pathOfObj));
+	m->setTexture(this->getTexture(pathOfTexture));
+	m->init();
+	//m->setObj(this->bulletWorld.addCollisionObject(m->getPosition(), glm::vec3(0,0,0), mass, m));
+	//btRigidBody *rb = btRigidBody::upcast(m->getObj());
+	//rb->setActivationState(DISABLE_SIMULATION);
+	this->models.push_back(m);
+	std::cerr << "PROJECTIL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen."<< std::endl;
+	return m;
+}
+
+Model * Scene::addWeapon(std::string pathOfObj, std::string pathOfTexture, Projectil* pl)
+{
+	Weapon *w = new Weapon();
+	w->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
+	w->load_3DModel(pathOfObj);
+	w->load_texture(pathOfTexture.c_str());
+	w->init(pl);
+	//m->setObj(this->bulletWorld.addCollisionObject(position, velocity, mass, m));
+	this->models.push_back(w);
+	std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
+	return w;
+}
+
+Model * Scene::addPlayer(std::string pathOfObj, std::string pathOfTexture, glm::mat4 position, glm::vec3 velocity, Weapon * w, float mass)
+{
+	Player* pl = new Player();
+	pl->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
+	pl->load_3DModel(pathOfObj);
+	pl->load_texture(pathOfTexture.c_str());
+	pl->setPosition(position);
+	pl->setWeapon(w);
+	pl->setObj(this->bulletWorld.addCollisionObject(position, velocity, mass, pl, new btBoxShape(btVector3(1, 1, 1))));
+	this->models.push_back(pl);
+	this->player = pl;
+	std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
+
+	return pl;
 }
 
 int Scene::removeModels(std::vector<int> destructionQueue)
@@ -122,7 +153,6 @@ int Scene::drawAllModels()
 	glEnable(GL_CULL_FACE);
 	glCullFace(GL_BACK);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
 	for (int i = 0; i<this->models.size(); i++) {
 		this->models[i]->draw();
 
@@ -131,6 +161,45 @@ int Scene::drawAllModels()
 	glfwSwapBuffers(this->window);
 	glfwPollEvents();
 	return 0;
+}
+
+GLuint Scene::getTexture(std::string path)
+{
+
+	try {
+		this->LiberyOfTextures.at(path);
+	}
+	catch (const std::out_of_range& oor) {
+		int h, w;
+		this->LiberyOfTextures.emplace(path, loadTexture2d(path.c_str(), &h, &w));
+	}
+	return this->LiberyOfTextures.at(path);;
+}
+
+std::vector<MyVertex> Scene::get3DModel(std::string path)
+{
+	try {
+		this->VerticesOfModels.at(path);
+	}
+	catch (const std::out_of_range& oor) {
+		this->VerticesOfModels.emplace(path,std::vector<MyVertex>());
+		this->IndicesOfModels.emplace(path,std::vector<unsigned short>());
+		loadObjAss(path, this->VerticesOfModels.at(path), this->IndicesOfModels.at(path));
+	}
+	return this->VerticesOfModels.at(path);
+}
+
+std::vector<unsigned short> Scene::getIndices(std::string path)
+{
+	try {
+		this->IndicesOfModels.at(path);
+	}
+	catch (const std::out_of_range& oor) {
+		this->VerticesOfModels.emplace(path, std::vector<MyVertex>());
+		this->IndicesOfModels.emplace(path,std::vector<unsigned short>());
+		loadObjAss(path, this->VerticesOfModels.at(path), this->IndicesOfModels.at(path));
+	}
+	return this->IndicesOfModels.at(path);
 }
 
 int Scene::addCrossHair(std::string path)
@@ -156,7 +225,11 @@ int Scene::addSkybox(const char * left, const char * front, const char * right, 
 	this->models.push_back(s);
 	return 0;
 }
-
+void Scene::CalculatePositionOfAddicted() {
+	for (auto &m : this->models) {
+		m->calc();
+	}
+}
 void Scene::calculate()
 {
 
@@ -168,14 +241,15 @@ void Scene::calculate()
 	for (int i = 0; i<this->models.size(); i++) {
 		//btCollisionObject *obj= objArray[this->models[i]->getRigidBodyIndex()];
 		if (this->models[i]->getObj() != NULL) {
+
 			btCollisionObject *obj = this->models[i]->getObj();
 			btRigidBody* body = btRigidBody::upcast(obj);
 			btTransform t;
+
 			if (body && body->getMotionState())
 			{
 				body->getMotionState()->getWorldTransform(t);
-				btVector3 vec = body->getLinearVelocity();
-				//this->models[i]->setVelocity(glm::vec3(vec[0], vec[1], vec[2]));
+				//t = obj->getWorldTransform();
 			}
 			else
 			{
@@ -185,6 +259,7 @@ void Scene::calculate()
 			this->models[i]->setPosition(mat);
 		}
 	}
+
 	//std::cerr << glm::to_string(mat);
 	//this->Ground.setPosition(mat);
 	std::vector<Model*> destructionQueue;
@@ -248,7 +323,7 @@ int Scene::initWindow()
 
 																	   //vychozi pozice mysi
 	glfwPollEvents();
-	glfwSetCursorPos(this->window, 1024 / 2, 768 / 2);
+	glfwSetCursorPos(this->window, WIDTH / 2, HEIGHT / 2);
 
 	//pozadi
 	glClearColor(0.0f, 0.0f, 0.64f, 0.0f);

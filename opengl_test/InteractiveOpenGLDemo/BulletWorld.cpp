@@ -9,7 +9,7 @@ int BulletWorld::init()
 	this->dispatcher = new btCollisionDispatcher(this->collisionConfig);
 	this->solver = new btSequentialImpulseConstraintSolver;
 	this->world = new btDiscreteDynamicsWorld(this->dispatcher, this->broadphase, this->solver, this->collisionConfig);
-	this->world->setGravity(btVector3(0, -10, 0));
+	this->world->setGravity(btVector3(0, -2, 0));
 	std::cerr << "Bullet Init" << std::endl;
 	return 0;
 }
@@ -39,17 +39,54 @@ btCollisionObject * BulletWorld::addCollisionObject(glm::mat4 position, glm::vec
 	RigidBody->setUserPointer((void*)index);
 
 	this->world->addRigidBody(RigidBody);
-	bool match = false;
+	/*bool match = false;
 	for (int i = 0; i < this->shapes.size(); i++) {
 		if (shape == this->shapes[i]) {
 			match = true;
 			break;
 		}
 	}
-	if (!match) {
+	if (!match) {*/
 		this->shapes.push_back(shape);
-	}//delete shape;
+	/*}
+	else {
+		delete shape;
+	}	//delete shape;
+	*/
 	return this->world->getCollisionObjectArray()[this->world->getNumCollisionObjects() - 1];
+}
+
+btCollisionObject * BulletWorld::addCollisionObject(glm::mat4 position, glm::vec3 velocityGL, btScalar mass, Model * index, btCollisionShape * shape)
+{
+	btTransform temp;
+	temp.setFromOpenGLMatrix(glm::value_ptr(position));
+	btVector3 inertiaVec(0, 0, 0);
+	if (mass > 0)
+	{
+		shape->calculateLocalInertia(mass, inertiaVec);
+	}
+
+	btDefaultMotionState* motionState =
+		new btDefaultMotionState(temp);
+	btRigidBody::btRigidBodyConstructionInfo fallRigidBodyCI(mass, motionState, shape, inertiaVec);
+	btRigidBody* RigidBody = new btRigidBody(fallRigidBodyCI);
+	btVector3 velocity(velocityGL[0], velocityGL[1], velocityGL[2]);
+	RigidBody->setLinearVelocity(velocity);
+	RigidBody->setUserPointer((void*)index);
+	//RigidBody->setUserIndex2(this->world->getNumCollisionObjects());
+	this->world->addRigidBody(RigidBody);
+	bool match = false;
+	/*for (int i = 0; i < this->shapes.size(); i++) {
+		if (shape == this->shapes[i]) {
+			match = true;
+			break;
+		}
+	}
+	if (!match) {*/
+		this->shapes.push_back(shape);
+	/*}//delete shape;*/
+	return this->world->getCollisionObjectArray()[this->world->getNumCollisionObjects() - 1];
+	return nullptr;
 }
 
 
@@ -70,6 +107,7 @@ btCollisionObject * BulletWorld::addGround(glm::mat4 position,Model * index)
 	this->world->addRigidBody(rb);
 	std::cerr << "ground add" << std::endl;
 	return this->world->getCollisionObjectArray()[this->world->getNumCollisionObjects() - 1];
+
 }
 
 std::vector<Model*> *BulletWorld::calculate()

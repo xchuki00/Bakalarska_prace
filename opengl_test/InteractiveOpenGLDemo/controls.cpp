@@ -5,20 +5,22 @@
 extern Scene sc;
 glm::mat4 ViewC;
 glm::mat4 ProjectionC;
-glm::vec3 position(0, 1, 5);
-glm::vec3 dirV(0,0,1);
-glm::mat4 MyPosition(1.0f);
+glm::vec3 position(0, 1.0f, 2.0f);
+glm::vec3 dirV(0,0,0.5f);
+glm::mat4 MyPosition = glm::translate(glm::mat4(1.0f), position);
 glm::vec3 upV(0, 1, 0);
 glm::vec3 force(0, 0, 0);
 glm::vec3 rightV(1, 0, 0);
 // horizontal angle : toward -Z
-float hAngle = 3.14f;
+float hAngle = PI;
+float oldHAngle = PI;
 // vertical angle : 0, look at the horizon
 float vAngle = 0.0f;
+float oldVAngle = 0.0f;
 // Initial Field of View
 float initialFoV = 45.0f;
 bool space = true;
-float speed = 3.0f; // 3 units / second
+float speed = 2.0f; // 3 units / second
 float mouseSpeed = 0.005f;
 
 glm::mat4 getProject() {
@@ -29,20 +31,29 @@ glm::mat4 getView() {
 	return ViewC;
 }
 glm::vec3 getDir() {
-	return dirV;
+	return glm::normalize(dirV);
 }
 glm::vec3 getUp() {
-	return upV;
+	return glm::normalize(upV);
 }
 glm::mat4 getMyPosition() {
 	return MyPosition;
+}
+glm::vec3 getVectorOfPosition() {
+	return position;
 }
 void setMyPosition(glm::vec3 pos)
 {
 	position = pos;
 }
 glm::vec3 getRight() {
-	return rightV;
+	return glm::normalize(rightV);
+}
+float getVAngle() {
+	return vAngle;
+}
+float getHAngle() {
+	return hAngle;
 }
 glm::vec3 getChange() {
 	return force;
@@ -67,11 +78,12 @@ int computeMatrices()
 	dirV=glm::vec3(cos(vAngle)*sin(hAngle),sin(vAngle), cos(vAngle)*cos(hAngle));
 	rightV=glm::vec3(sin(hAngle-3.14f/2.0f),0,cos(hAngle - 3.14f / 2.0f));
 	upV=glm::cross(rightV,dirV);
-	bool pressAD=false;
-	bool pressW = false;
-	bool pressS = false;
+	static bool pressAD=false;
+	static bool pressW = false;
+	static bool pressS = false;
 	if (glfwGetKey(sc.window, GLFW_KEY_A) == GLFW_PRESS) {
 		pressAD = true;
+		std::cerr << "SA";
 		position -= glm::vec3(rightV.x,0,rightV.z) * delta*speed; //vektor posunu doprava, doba drzeni, rychlost
 	}
 
@@ -106,26 +118,21 @@ int computeMatrices()
 		position -= glm::vec3(0, 1, 0) * delta*speed; //vektor posunu doprava, doba drzeni, rychlost
 	}
 	float Fov = initialFoV;
-	force=position - oldPos;
-	if (pressAD && pressW) {
-		force.x *= 0.77;
-		force.z *= 0.77;
+	force.x=position.x - oldPos.x;
+	force.y = position.y - oldPos.y;
+	force.z= position.z - oldPos.z;
+	if (pressAD && (pressW || pressS)) {
+	//	force.x *= 0.5;
+		//force.z *= 0.5;
 	}
-	if (pressAD && pressS) {
-		force.x *= 0.77;
-		force.y *= 0.77;
-	}
+
 	pressAD = false;
 	pressS = false;
 	pressW = false;
 	btCollisionObject *pl = sc.player->getObj();
 	btRigidBody *rb = btRigidBody::upcast(pl);
 	rb->clearForces();
-	//force=glm::normalize(force);
-	//std::cerr << "GLM"<<glm::to_string(force) << "\n";
 	rb->applyCentralForce(btVector3(70*force.x, 1000*force.y,70*force.z));
-	btVector3 f= rb->getTotalForce();
-	//std::cerr << "BULLET" << f.x() << "  " << f.y() << "  " << f.z() << std::endl;
 	rb->activate();
 	btTransform t;
 	rb->getMotionState()->getWorldTransform(t);
@@ -134,11 +141,12 @@ int computeMatrices()
 	position.x = mat[3][0];
 	position.y = mat[3][1];
 	position.z = mat[3][2];
+	MyPosition = glm::translate(glm::mat4(1.0f), position);
 	//std::cerr << "FORCE" << glm::to_string(position) <<"\n"<<glm::to_string(oldPos)<< std::endl;
-	ProjectionC = glm::perspective(45.0f, 4.0f / 3.0f, 0.1f, 100.0f);
+	ProjectionC = glm::perspective(Fov, 4.0f / 3.0f, 0.1f, 100.0f);
 	ViewC = glm::lookAt(position, position+dirV,upV);
 	lastT = current;
-	MyPosition = glm::translate(glm::mat4(1.0f), position);
+
 	return 0;
 }
 
