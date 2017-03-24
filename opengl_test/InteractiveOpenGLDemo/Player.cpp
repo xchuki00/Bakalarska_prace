@@ -75,6 +75,7 @@ glm::mat4 Player::getPosition() {
 Player::Player()
 {
 	this->classID = PLAYER;
+
 }
 
 

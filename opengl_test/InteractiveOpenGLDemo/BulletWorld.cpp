@@ -37,7 +37,6 @@ btCollisionObject * BulletWorld::addCollisionObject(glm::mat4 position, glm::vec
 	btVector3 velocity(velocityGL[0], velocityGL[1], velocityGL[2]);
 	RigidBody->setLinearVelocity(velocity);
 	RigidBody->setUserPointer((void*)index);
-
 	this->world->addRigidBody(RigidBody);
 	/*bool match = false;
 	for (int i = 0; i < this->shapes.size(); i++) {
@@ -53,6 +52,8 @@ btCollisionObject * BulletWorld::addCollisionObject(glm::mat4 position, glm::vec
 		delete shape;
 	}	//delete shape;
 	*/
+	index->setBulletWorld(this->world);
+	index->setObj(this->world->getCollisionObjectArray()[this->world->getNumCollisionObjects() - 1]);
 	return this->world->getCollisionObjectArray()[this->world->getNumCollisionObjects() - 1];
 }
 

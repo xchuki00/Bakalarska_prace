@@ -388,7 +388,7 @@ public:
    * @param s The scale factor */
 	btQuaternion& operator/=(const btScalar& s) 
 	{
-		btAssert(s != btScalar(0.0));
+			btAssert(s != btScalar(0.0));
 		return *this *= btScalar(1.0) / s;
 	}
 

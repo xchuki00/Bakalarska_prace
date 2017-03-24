@@ -76,6 +76,7 @@ int Skybox::addShader(std::string vertexShader, std::string fragmentShader)
 Skybox::Skybox()
 {
 	this->classID = SKYBOX;
+
 }
 
 

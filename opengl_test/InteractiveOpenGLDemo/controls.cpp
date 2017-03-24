@@ -83,7 +83,6 @@ int computeMatrices()
 	static bool pressS = false;
 	if (glfwGetKey(sc.window, GLFW_KEY_A) == GLFW_PRESS) {
 		pressAD = true;
-		std::cerr << "SA";
 		position -= glm::vec3(rightV.x,0,rightV.z) * delta*speed; //vektor posunu doprava, doba drzeni, rychlost
 	}
 

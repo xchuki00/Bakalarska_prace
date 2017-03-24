@@ -15,6 +15,7 @@ btCollisionObject * Ground::getPlane()
 Ground::Ground()
 {
 	this->classID = GROUND;
+
 }
 
 

@@ -57,3 +57,14 @@ void mat4Rotate(glm::mat4 *mat, glm::vec3 dir,glm::vec3 up) {
 	(*mat)[2][2] = dir.z;
 	
 }
+
+float AngleBetween(glm::vec3 first, glm::vec3 second)
+{
+	double ret;
+	ret = first.x*second.x + first.y*second.y + first.z*second.z;
+	
+	ret /= sqrt(first.x*first.x+ first.y*first.y+ first.z*first.z)*sqrt(second.x*second.x+ second.y*second.y + second.z*second.z);
+
+	//std::cerr << "ACOS " << ret << std::endl;
+	return (std::isnan(ret))?(float)acos(ret):0;
+}

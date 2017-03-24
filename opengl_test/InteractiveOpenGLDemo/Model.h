@@ -1,9 +1,10 @@
 #pragma once
 #include "loader.h"
-
 class Model
 {
 protected:
+	static int idCount;
+	
 	///////////vrcholy a buffry//////////
 	GLuint vertexBuffer;
 	GLuint indexBuffer;
@@ -22,6 +23,7 @@ protected:
 	GLuint lightInvDirID;
 	////////////bullet///////////
 	btCollisionObject *bt;
+	btDiscreteDynamicsWorld* bulletWorld;
 	////////textura
 	GLuint textur;
 	int textureHeight;
@@ -29,6 +31,7 @@ protected:
 
 	int buffer();
 public:
+	int id;
 	std::vector<MyVertex> vertices;
 	std::vector<unsigned short> indices;
 	int classID = MODEL;
@@ -57,6 +60,8 @@ public:
 	void setRigidBodyIndex(int id);
 	virtual void setPosition(glm::mat4 mat);
 	////////////kolize//////////////
+	void setBulletWorld(btDiscreteDynamicsWorld* bw);
+	btDiscreteDynamicsWorld* getBulletWorld();
 	btCollisionObject * getObj();
 	void setObj(btCollisionObject* obj);
 	virtual int hitted(Model* byWho);

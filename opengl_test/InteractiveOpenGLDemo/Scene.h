@@ -52,7 +52,7 @@ public:
 		glm::vec3 velocity,
 		Weapon *w,
 		float mass);
-	int removeModels(std::vector <int> destructionQueue);
+	int removeModels(std::vector <std::pair<Model *, int>>destructionQueue);
 	int addShader(std::string vertexShader, std::string fragmentShader);
 	int addDepthShader(std::string vertexShader, std::string fragmentShader);
 	int drawAllModels();

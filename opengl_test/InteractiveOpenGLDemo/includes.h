@@ -32,6 +32,7 @@
 #define WEAPON 6
 ///////////enum pro navratove hodnoty funkce hitted
 #define DESTROY -1;
+#define DESTROY_BULLET - 2;
 #define NOTHING 0;
 ///////////proste pi pro pocitani s radiany////////////
 const float PI = 3.1415927f;

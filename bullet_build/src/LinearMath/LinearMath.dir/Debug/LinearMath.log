@@ -1,10 +1,2 @@
-﻿  btAlignedAllocator.cpp
-  btConvexHull.cpp
-  btConvexHullComputer.cpp
-  btGeometryUtil.cpp
-  btPolarDecomposition.cpp
-  btQuickprof.cpp
-  btSerializer.cpp
-  btVector3.cpp
-  Generating Code...
+﻿  btPolarDecomposition.cpp
   LinearMath.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\lib\Debug\LinearMath_Debug.lib

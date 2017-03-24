@@ -33,7 +33,7 @@ Scene::~Scene()
 
 Model* Scene::addModel(int clas, std::string pathOfObj, std::string pathOfTexture, glm::mat4 position, glm::vec3 velocity, float mass)
 {
-	Model *m= new Model();
+	Model *m;
 	//glm::mat4 mat(1.0f);
 	switch (clas) {
 	case MODEL:
@@ -42,7 +42,7 @@ Model* Scene::addModel(int clas, std::string pathOfObj, std::string pathOfTextur
 		m->load_3DModel(pathOfObj);
 		m->load_texture(pathOfTexture.c_str());
 		m->setPosition(position);
-		m->setObj(this->bulletWorld.addCollisionObject(position, velocity, mass, m));
+		this->bulletWorld.addCollisionObject(position, velocity, mass, m);
 		this->models.push_back(m);
 		std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
 		return m;
@@ -57,7 +57,7 @@ Model* Scene::addModel(int clas, std::string pathOfObj, std::string pathOfTextur
 		//mat = glm::translate(mat, glm::vec3(0.0f, -0.6f, 0.0f));
 		//m->setObj(this->bulletWorld.addGround(mat,m));
 		//m->setPosition(position);
-		m->setObj(this->bulletWorld.addCollisionObject(position,velocity,mass,m));
+		this->bulletWorld.addCollisionObject(position,velocity,mass,m);
 		this->models.push_back(m);
 		std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
 		return m;
@@ -68,7 +68,7 @@ Model* Scene::addModel(int clas, std::string pathOfObj, std::string pathOfTextur
 		m->load_3DModel(pathOfObj);
 		m->load_texture(pathOfTexture.c_str());
 		m->setPosition(position);
-		m->setObj(this->bulletWorld.addCollisionObject(position, velocity, mass, m));
+		this->bulletWorld.addCollisionObject(position, velocity, mass, m);
 		this->models.push_back(m);
 		std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
 		return m;
@@ -120,6 +120,7 @@ Model * Scene::addPlayer(std::string pathOfObj, std::string pathOfTexture, glm::
 	pl->setPosition(position);
 	pl->setWeapon(w);
 	pl->setObj(this->bulletWorld.addCollisionObject(position, velocity, mass, pl, new btBoxShape(btVector3(1, 1, 1))));
+	pl->setBulletWorld(this->bulletWorld.world);
 	this->models.push_back(pl);
 	this->player = pl;
 	std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
@@ -127,10 +128,6 @@ Model * Scene::addPlayer(std::string pathOfObj, std::string pathOfTexture, glm::
 	return pl;
 }
 
-int Scene::removeModels(std::vector<int> destructionQueue)
-{
-	return 0;
-}
 
 int Scene::addShader(std::string vertexShader, std::string fragmentShader)
 {
@@ -245,7 +242,6 @@ void Scene::calculate()
 			btCollisionObject *obj = this->models[i]->getObj();
 			btRigidBody* body = btRigidBody::upcast(obj);
 			btTransform t;
-
 			if (body && body->getMotionState())
 			{
 				body->getMotionState()->getWorldTransform(t);
@@ -262,7 +258,7 @@ void Scene::calculate()
 
 	//std::cerr << glm::to_string(mat);
 	//this->Ground.setPosition(mat);
-	std::vector<Model*> destructionQueue;
+	std::vector<std::pair<Model *, int>> destructionQueue;// = new std::vector<std::pair<Model *, int>>();
 	for (int i = 0; i < colisions->size(); i+=2) {
 		int reaction;
 		if (colisions->data()[i] != NULL) {
@@ -270,7 +266,7 @@ void Scene::calculate()
 			if (colisions->data()[i]->classID != GROUND) {
 					reaction = colisions->data()[i]->hitted(colisions->data()[i+1]);
 				if (reaction < 0) {
-					destructionQueue.push_back(colisions->data()[i]);
+					destructionQueue.push_back(std::pair<Model*,int>(colisions->data()[i],reaction));
 				}
 			}
 		}
@@ -278,17 +274,46 @@ void Scene::calculate()
 			if (colisions->data()[i + 1]->classID != GROUND) {
 					reaction = colisions->data()[i + 1]->hitted(colisions->data()[i]);
 				if (reaction < 0) {
-					destructionQueue.push_back(colisions->data()[i + 1]);
+					destructionQueue.push_back(std::pair<Model*, int>(colisions->data()[i+1], reaction));
+
 				}
 			}
 		}
 	}
-	if (destructionQueue.size() != 0) {
-		std::cerr << "DESTRO" << destructionQueue.size() << std::endl;
-	}
-	//this->removeModel(destructionQueue);
+//	if (destructionQueue.size() != 0) {
+	//	std::cerr << "DESTRO" << destructionQueue.size() << std::endl;
+	//}
+	this->removeModels(destructionQueue);
 }
 
+int Scene::removeModels(std::vector<std::pair<Model *, int>>destructionQueue)
+{
+	for each (std::pair<Model *, int> var in destructionQueue)
+	{
+		switch (var.second)
+		{
+		case -1:	//DESTROY 
+			break;
+		case -2:	//DESTROY_BULLET :
+		{
+			if (var.first->getObj() != nullptr) {
+				btRigidBody* body = btRigidBody::upcast(var.first->getObj());
+				if (body && body->getMotionState())
+				{
+					delete body->getMotionState();
+				}
+				this->bulletWorld.world->removeCollisionObject(var.first->getObj());
+				delete var.first->getObj();
+				var.first->setObj(nullptr);
+			}
+			break; 
+		}
+		default:
+			break;
+		}
+	}
+	return 0;
+}
 int Scene::initShadowBuffer()
 {
 	return 0;

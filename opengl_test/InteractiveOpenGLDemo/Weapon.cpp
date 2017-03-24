@@ -18,6 +18,10 @@ void Weapon::triggered()
 {
 	this->p->triggered();
 }
+Model * Weapon::getPlayer()
+{
+	return this->player;
+}
 void Weapon::setPlayer(Model * p)
 {
 	this->player = p;
@@ -80,7 +84,7 @@ void Weapon::calc()
 
 		this->player->calc();
 		this->Angles();
-		std::cerr <<i<<"VANGLE: "<<VAngle<<"\t HANGLE: "<<HAngle<<std::endl;
+		//std::cerr <<i<<"VANGLE: "<<VAngle<<"\t HANGLE: "<<HAngle<<std::endl;
 		this->p->modelMatrix = glm::rotate(this->p->modelMatrix, -VAngle, upProjectil);
 		dirProjectil = glm::rotate(dirProjectil, VAngle, upProjectil);
 		this->p->modelMatrix = glm::rotate(this->p->modelMatrix, -HAngle, dirProjectil);
@@ -98,8 +102,13 @@ void Weapon::calc()
 
 glm::mat4 Weapon::getPosition()
 {
+	static int i = 0;
 	this->player->calc();
+	if(i%60==0)
+	//std::cerr << "WEAPON: " << glm::to_string(this->modelMatrix)<<std::endl;
+	i++;
 	return this->modelMatrix;
+	
 }
 
 Projectil * Weapon::getProjectil()
@@ -110,6 +119,7 @@ Projectil * Weapon::getProjectil()
 Weapon::Weapon()
 {
 	this->classID = WEAPON;
+
 }
 
 

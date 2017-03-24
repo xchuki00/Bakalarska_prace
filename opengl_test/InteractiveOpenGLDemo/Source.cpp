@@ -31,12 +31,12 @@ void loop() {
 			//std::cerr << "PRDEL";
 			release = true;
 			Projectil *p = sc.player->getWeapon()->getProjectil();
-			btCollisionObject *obj=sc.bulletWorld.addCollisionObject(p->getPosition(), glm::vec3(0, 0, 0), 1,p);
-			p = (Projectil*)sc.addProjectil("./icons/arrow.obj", "./icons/bricks.bmp", 1);
+			btCollisionObject *obj=sc.bulletWorld.addCollisionObject(p->getPosition(), glm::vec3(0, 0, 0),1,p);
+			Projectil* p2 = (Projectil*)sc.addProjectil("./icons/arrow.obj", "./icons/wood.jpg", 1);
 
-			sc.player->fire(p,obj);
+			sc.player->fire(p2,obj);
 			
-			std::cerr << "DIR" << glm::to_string((getDir() + glm::vec3(1, 1, 1)) / 2) << std::endl;
+			//std::cerr << "DIR" << glm::to_string((getDir() + glm::vec3(1, 1, 1)) / 2) << std::endl;
 		}
 		
 
@@ -57,7 +57,7 @@ int main() {
 	sc.addModel(GROUND, "./icons/ground.obj", "./icons/grass.jpg", glm::mat4(1.0f), glm::vec3(0, 0, 0), 0);
 	sc.addModel(MODEL,"./icons/cube.obj","./icons/bricks.bmp",mat,glm::vec3(0,0,0),100);
 	mat = glm::translate(mat, glm::vec3(-2.0f, 0.0f, 0.0f));
-	sc.addModel(MODEL, "./icons/cube.obj", "./icons/bricks.bmp", mat, glm::vec3(0, 0, 0), 1);
+	sc.addModel(MODEL, "./icons/cube.obj", "./icons/uvtemplate.tga", mat, glm::vec3(0, 0, 0), 10);
 	//sc.addModel(MODEL, "./icons/arrow.obj", "./icons/bricks.bmp",glm::translate(mat,glm::vec3(0,5,0)), glm::vec3(0, 0, 0), 100);
 
 	sc.addCrossHair("./icons/crosshairs64.tga");
@@ -69,7 +69,7 @@ int main() {
 		"./icons/top.tga",
 		"./icons/bottom.tga"
 	);
-	Projectil *p = (Projectil*)sc.addProjectil("./icons/arrow.obj", "./icons/bricks.bmp", 5);
+	Projectil *p = (Projectil*)sc.addProjectil("./icons/arrow.obj", "./icons/wood.jpg", 5);
 //	Projectil *p = NULL;
 	Weapon *w = (Weapon*)sc.addWeapon("./icons/bow_final.dae", "./icons/bricks.bmp", p);
 	sc.addPlayer("./icons/bullet.obj", "./icons/bricks.bmp", getMyPosition(), glm::vec3(0, 0, 0), w,1.7);
@@ -78,20 +78,5 @@ int main() {
 	//std::cerr << "PLAYER" << sc.player->classID << std::endl;
 
 	loop();
-	mat = glm::rotate(mat, PI, glm::vec3(0, 1, 0));
-	std::cerr << "PRVNI" << glm::to_string(mat) << std::endl;
-	mat = glm::rotate(mat, PI, glm::vec3(1, 0, 0));
-	std::cerr << "Druhga" << glm::to_string(mat) << std::endl;
-
-
-
-
-
-
-
-	std::string s;
-	std::cin >> s;
-		
-
 	return 0;
 }

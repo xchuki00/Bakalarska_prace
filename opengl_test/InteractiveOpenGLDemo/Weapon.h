@@ -11,6 +11,7 @@ class Weapon :
 	void Angles();
 public:
 	void triggered();
+	Model* getPlayer();
 	void setPlayer(Model* p);
 	void init(Projectil* p);
 	void reload(Projectil *p);

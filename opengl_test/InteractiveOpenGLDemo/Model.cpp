@@ -72,6 +72,8 @@ void Model::depthDraw()
 Model::Model()
 {
 	this->classID = MODEL;
+	this->id = idCount;
+	idCount++;
 }
 
 
@@ -158,5 +160,15 @@ void Model::setRigidBodyIndex(int id)
 void Model::setPosition(glm::mat4 mat)
 {
 	mat4Copy(mat, &this->modelMatrix);
+}
+
+void Model::setBulletWorld(btDiscreteDynamicsWorld* bw)
+{
+	this->bulletWorld = bw;
+}
+
+btDiscreteDynamicsWorld* Model::getBulletWorld()
+{
+	return this->bulletWorld;
 }
 

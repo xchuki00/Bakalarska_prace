@@ -15,3 +15,4 @@ void indexVBOmy(
 	std::vector<unsigned short> indeces
 );
 void mat4Rotate(glm::mat4 *mat, glm::vec3 dir,glm::vec3 up);
+float AngleBetween(glm::vec3 first, glm::vec3 second);
