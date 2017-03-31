@@ -16,6 +16,7 @@ void Weapon::Angles()
 }
 void Weapon::triggered()
 {
+	this->triggeredTime = glfwGetTime();
 	this->p->triggered();
 }
 Model * Weapon::getPlayer()
@@ -71,8 +72,8 @@ void Weapon::fire(Projectil* load, btCollisionObject *obj)
 {
 	if (this->p != NULL) {
 		this->p->fire(obj);
-
-		this->reload(load);
+		this->toLoad = load;
+		this->triggeredTime = glfwGetTime();
 	}
 }
 
@@ -99,11 +100,37 @@ void Weapon::calc()
 	}
 }
 
+double Weapon::getTime()
+{
+	double endA = 40 / 46;
+	if (this->triggeredTime != 0 && this->toLoad==NULL) {
+		double time = glfwGetTime() - this->triggeredTime;
+		time *= (this->animations->mTicksPerSecond != 0) ? this->animations->mTicksPerSecond :1.0f;
+		return (time>this->animations->mDuration* 40 / 46)?this->animations->mDuration* 40 / 46 :time;
+	}
+	else if (this->toLoad!=NULL) {
+		double time = glfwGetTime() - this->triggeredTime;
+		time *= (this->animations->mTicksPerSecond != 0) ? this->animations->mTicksPerSecond : 1.0f;
+		time += this->animations->mDuration *40/46;
+		if (time > this->animations->mDuration) {
+			this->reload(this->toLoad);
+			this->toLoad = NULL;
+			this->triggeredTime = 0;
+		}
+		return (time > this->animations->mDuration) ? this->animations->mDuration * 0.99 : time;
+	}
+	else {
+		return 0;
+	}
+}
+
 
 glm::mat4 Weapon::getPosition()
 {
 	static int i = 0;
 	this->player->calc();
+
+	//this->modelMatrix = glm::rotate(this->modelMatrix, 0.05f, glm::vec3(this->modelMatrix[0][0], this->modelMatrix[0][1], this->modelMatrix[0][2]));
 	if(i%60==0)
 	//std::cerr << "WEAPON: " << glm::to_string(this->modelMatrix)<<std::endl;
 	i++;

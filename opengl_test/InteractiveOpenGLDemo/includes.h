@@ -19,9 +19,11 @@
 #include <btBulletDynamicsCommon.h>
 #include <map>
 #include <iterator>
+#include <tuple>
 //#include <bt>
 #define HEIGHT 1080
 #define WIDTH 1920
+#define MAX_VERTEX_BONES 4
 /***********CLASS ENUM****************/
 #define MODEL 0
 #define GROUND 1 
@@ -35,21 +37,6 @@
 #define DESTROY_BULLET - 2;
 #define NOTHING 0;
 ///////////proste pi pro pocitani s radiany////////////
+#pragma once
 const float PI = 3.1415927f;
 ///////////STRUCT pro vrchol/////////////////
-
-#pragma once
-struct MyVertex {
-	glm::vec3 pos;
-	glm::vec2 uv;
-	glm::vec3 normal;
-
-	MyVertex() {}
-
-	MyVertex(glm::vec3 inpos, glm::vec2 inuv, glm::vec3 innormal)
-	{
-		pos = inpos;
-		uv = inuv;
-		normal = innormal;
-	}
-};

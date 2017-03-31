@@ -10,6 +10,16 @@ void mat4Copy(glm::mat4 source, glm::mat4 *destination)
 	}
 }
 
+void mat4Copy(const aiMatrix4x4 source, aiMatrix4x4 * destination)
+{
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j<4; j++) {
+			//std::cerr << (*destination)[i][j] << " kop " << source[i][j] << std::endl;
+			(*destination)[i][j] = source[i][j];
+		}
+	}
+}
+
 void vec3Copy(glm::vec3 source, glm::vec3* destination)
 {
 	for (int i = 0; i < 3; i++) {
@@ -65,6 +75,21 @@ float AngleBetween(glm::vec3 first, glm::vec3 second)
 	
 	ret /= sqrt(first.x*first.x+ first.y*first.y+ first.z*first.z)*sqrt(second.x*second.x+ second.y*second.y + second.z*second.z);
 
-	//std::cerr << "ACOS " << ret << std::endl;
+	//\]std::cerr << "ACOS " << ret << std::endl;
 	return (std::isnan(ret))?(float)acos(ret):0;
 }
+
+void printNodeHiearchy(const aiNode * Nodes)
+	{
+		std::cerr << "NODE: " << Nodes->mName.data << "\n";
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				//std::cerr << Nodes->mTransformation[i][j] << "\t";
+			}
+			//	std::cerr << "\n";
+		}
+		for (unsigned int i = 0; i < Nodes->mNumChildren; i++) {
+			printNodeHiearchy(Nodes->mChildren[i]);
+		}
+	}
+

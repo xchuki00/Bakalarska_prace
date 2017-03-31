@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="cs"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="WT.seg_1" content="cs-cz"><link rel="canonical" href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.110%29.aspx">
+    <title>Metoda Object.Equals (Object) (System)</title>
+
+
+
+
+
+
+
+<meta name="DCS.dcsuri" content="/cs-cz/library/bsc2ak47(d=default,l=cs-cz,v=vs.110).aspx">
+
+<meta name="NormalizedUrl" content="https://msdn.microsoft.com/cs-cz/library/bsc2ak47(d=default,l=cs-cz,v=vs.110).aspx">
+
+<meta name="ms.normalizedurl" content="https://msdn.microsoft.com/cs-cz/library/bsc2ak47(d=default,l=cs-cz,v=vs.110).aspx">
+
+<meta name="ms.prod" content=".net-framework-4.6">
+
+<meta name="ms.devlang" content="csharp">
+
+<meta name="ms.topic" content="managed-reference">
+
+<meta name="AmbientContext" content="{&quot;layout.limit_max_width&quot;:true,&quot;AmbientContextId&quot;:&quot;2E13FEA1-D5B2-4EEB-904A-2502BEA57394&quot;,&quot;display.use_large_font&quot;:true,&quot;insight.perf_timing&quot;:true,&quot;AmbientContextDownstream&quot;:{&quot;LogTrace&quot;:false},&quot;display.high_contrast&quot;:false,&quot;insight.use_wedcs_vnext&quot;:true}">
+
+<meta name="VotingContextUrl" content="https://msdn.microsoft.com/cs-cz/library/bsc2ak47(d=default,l=cs-cz,v=vs.110).aspx">
+
+<meta name="MN" content="BF1CA93C-6:45:20 AM">
+
+<meta name="Search.ShortId" content="bsc2ak47">
+
+<meta name="ms.shortidmsdn" content="bsc2ak47">
+
+<meta name="ms.locale" content="cs-cz">
+
+<meta name="ms.prodver" content="VS.110">
+
+<meta name="ms.contentlang" content="CS">
+
+<meta name="ms.lang" content="CS">
+
+<meta name="ms.loc" content="CZ">
+
+<meta name="ms.sitever" content="2017.02.28.2">
+
+<meta name="ms.assetid" content="M:System.Object.Equals(System.Object)">
+
+<meta name="ms.auth" content="0">
+
+<meta name="ms.technology" content="dotnet-bcl">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+        
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/ai.js" async=""></script><script type="text/javascript" data-do-not-move="true">
+        //<![CDATA[
+        var AmbientContext = null;
+
+        (function(){
+            var root = (function(){return this;}).call(null);
+
+            var GetCookie = function(name){
+                var cookies = root.document.cookie ? root.document.cookie.split('; ') : [];
+                for (var i = 0; i < cookies.length; i++) {
+                    var pos = cookies[i].indexOf('=');
+                    if (name === root.decodeURIComponent(cookies[i].slice(0, pos)))
+                    {
+                        var cookie = cookies[i].slice(pos + 1).replace(/\+/g, ' ');
+                        cookie = root.decodeURIComponent(cookie);
+                        return cookie;
+                    }
+                }
+            };
+
+            var JsonDeserialize = function(content) {
+                return root.JSON && root.JSON.parse ? root.JSON.parse(content) : (new Function('return (' + content + ')'))();
+            };
+
+            try {
+                AmbientContext = GetCookie('AmbientContext');
+                AmbientContext = AmbientContext && JsonDeserialize(AmbientContext);
+            } catch(ex) {
+            } finally {
+                AmbientContext = AmbientContext || null;
+            }
+        })();
+        //]]>
+    </script>
+
+    <script type="text/javascript" src="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/jquery-1.js" data-do-not-move="true" data-provides="jQuery"></script>
+    
+<link rel="stylesheet" type="text/css" href="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/Combined.css"><script class="mtps-injected">try {
+/**/
+(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { 
+	"image": "https://i-msdn.sec.s-msft.com", 
+	"js": "https://i2-msdn.sec.s-msft.com", 
+	"css": "https://i-msdn.sec.s-msft.com", 
+	"ttf": "https://i-msdn.sec.s-msft.com"
+});
+/**/
+} finally { MTPS._injectNextScript_0 && MTPS._injectNextScript_0(); }</script><script class="mtps-injected">try {
+//
+
+        window.appInsightsId = '5eb1b2eb-c47a-497a-a7ac-a1c230b2882f';
+        //
+} finally { MTPS._injectNextScript_1 && MTPS._injectNextScript_1(); }</script><script class="mtps-injected" src="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/Combined_002.js"></script><meta name="ms.layout_limit_max_width" content="true"><meta name="ms.AmbientContextId" content="2E13FEA1-D5B2-4EEB-904A-2502BEA57394"><meta name="ms.display_use_large_font" content="true"><meta name="ms.insight_perf_timing" content="true"><meta name="ms.AmbientContextDownstream" content="%7B%7D"><meta name="ms.display_high_contrast" content="false"><meta name="ms.insight_use_wedcs_vnext" content="true"><script class="mtps-injected" src="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/SearchBox.js"></script><link href="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/PrintView.css" rel="stylesheet" type="text/css" media="print"><meta name="ms.perf.timing" content=",,2,3,3,87,2063,2476,2851,3599,3599,,,,"><script type="text/javascript" src="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/ms.js"></script><script type="text/javascript" src="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/jsll-3.js"></script><script class="mtps-injected" src="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/JumpRedirect.js"></script><script class="mtps-injected">try {
+//
+    MTPS = window.MTPS || {};
+    MTPS.Translation = window.MTPS.Translation || {};
+
+    MTPS.Translation.TranslationType =  0;
+    
+    
+        
+        MTPS.Translation.EditorLink = {
+            includeEditor : 0,
+            editLink: "https://msdn.microsoft.com/cs-cz/library/translation/edit/bsc2ak47(v=vs.110).aspx",
+            editLinkText: "Navrhnout lepš&#237; překlad"
+        };
+        
+    //
+} finally { MTPS._injectNextScript_5 && MTPS._injectNextScript_5(); }</script><script class="mtps-injected" src="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/Combined.js"></script><script class="mtps-injected">try {
+MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = 'Rozbalit'; MTPS.LocalizedStrings.CollapseButtonTooltip = 'Sbalit'; MTPS.LocalizedStrings.EnhancedExpandTooltip = 'Kliknutím rozbalte. Dvojitým kliknutím rozbalte vše.'; MTPS.LocalizedStrings.EnhancedCollapseTooltip = 'Kliknutím sbalte. Dvojitým kliknutím sbalte vše.'; MTPS.LocalizedStrings.ExpandAllButtonTooltip = 'Rozbalit vše'; MTPS.LocalizedStrings.CollapseAllButtonTooltip = 'Sbalit vše';
+} finally { MTPS._injectNextScript_7 && MTPS._injectNextScript_7(); }</script><script class="mtps-injected">try {
+MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = 'Rozbalit'; MTPS.LocalizedStrings.CollapseButtonTooltip = 'Sbalit'; MTPS.LocalizedStrings.EnhancedExpandTooltip = 'Kliknutím rozbalte. Dvojitým kliknutím rozbalte vše.'; MTPS.LocalizedStrings.EnhancedCollapseTooltip = 'Kliknutím sbalte. Dvojitým kliknutím sbalte vše.'; MTPS.LocalizedStrings.ExpandAllButtonTooltip = 'Rozbalit vše'; MTPS.LocalizedStrings.CollapseAllButtonTooltip = 'Sbalit vše';
+} finally { MTPS._injectNextScript_8 && MTPS._injectNextScript_8(); }</script><script class="mtps-injected">try {
+MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = 'Rozbalit'; MTPS.LocalizedStrings.CollapseButtonTooltip = 'Sbalit'; MTPS.LocalizedStrings.EnhancedExpandTooltip = 'Kliknutím rozbalte. Dvojitým kliknutím rozbalte vše.'; MTPS.LocalizedStrings.EnhancedCollapseTooltip = 'Kliknutím sbalte. Dvojitým kliknutím sbalte vše.'; MTPS.LocalizedStrings.ExpandAllButtonTooltip = 'Rozbalit vše'; MTPS.LocalizedStrings.CollapseAllButtonTooltip = 'Sbalit vše';
+} finally { MTPS._injectNextScript_9 && MTPS._injectNextScript_9(); }</script><script class="mtps-injected" src="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/Combined_003.js"></script><script src="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/broker.js"></script><script class="mtps-injected">try {
+$(document).ready(function() {
+        try {
+            var token = $("#globalRequestVerification input[name='__RequestVerificationToken']").clone();
+            $("#siteFeedbackForm").append(token);
+        } catch(err) {
+            
+        }
+    });
+} finally { MTPS._injectNextScript_11 && MTPS._injectNextScript_11(); }</script></head>
+<body class="library FF">
+    <div id="page">
+
+        
+
+        
+    
+
+    
+    <link type="text/css" rel="stylesheet">
+    
+        
+        
+    <input id="isHeaderBleeding" value="true" type="hidden">
+    <div id="ux-header" dir="ltr" class="ltr msdn" ms.pgarea="header" data-device-type="desktop">
+        
+    
+    <div id="ux-banner" style="display: block;">
+        <div class="banner">
+            <div class="row">
+                <div class="left">Používáním tohoto webu souhlasíte s použitím cookies pro analýzy, přizpůsobený obsah a reklamy.</div>
+                <div class="middle"><a tabindex="1" href="https://www.microsoft.com/privacystatement/cs-cz/core/default.aspx">Další informace</a></div>
+                <div class="right"><a tabindex="1" title="Zavřít"></a></div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+      <header ms.pgarea="header">
+        <span id="singleCol"></span>
+        <span id="doubleCol"></span>
+        <span id="isMobile"></span>
+        <div>
+          <div class="row topRow" role="banner">
+            <div class="top">
+              <div class="left">
+                <a class="msdnLogoImg" href="https://msdn.microsoft.com/cs-cz" title="MSDN home" ms.cmpgrp="mslogo">
+                  <div class="clip70x15">
+                    <img alt="Microsoft Logo" id="msft-logo" class="msft-logo" src="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/HeaderFooterSprite.png">
+                  </div>
+                </a>
+                <div class="GrayPipeDiv clip1x18">
+                  <img alt="Gray Pipe" class="GrayPipe" src="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/HeaderFooterSprite.png">
+                </div>
+                  <a class="DevCenterFullNameNonMegaBlade" href="https://msdn.microsoft.com/cs-cz">Developer Network</a>
+                <a class="DevCenterFullName" href="https://msdn.microsoft.com/cs-cz">Developer Network</a>
+                <a class="DevCenterShortName" href="https://msdn.microsoft.com/cs-cz">Developer</a>
+              </div>
+              <div class="right" ms.cmpgrp="aux nav">
+                <div id="signIn" aria-label="Profile button">
+
+  <div class="profileImage"></div>
+
+
+
+<a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=13&amp;ct=1489671920&amp;rver=6.7.6640.0&amp;wp=mcmbi&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=https%3a%2f%2fmsdn.microsoft.com%2fcs-cz%2flibrary%2fbsc2ak47%2528v%3dvs.110%2529.aspx&amp;lc=1029&amp;id=254354&amp;mkt=cs-cz">Přihlásit se</a></div>
+
+
+
+
+                <div class="auxNav">
+                  <div>
+                    <div data-fragmentname="Subscriptions" id="Fragment_Subscriptions" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="https://msdn.microsoft.com/subscriptions/manage/hh442900" id="Subscriptions_2153_1" xmlns="http://www.w3.org/1999/xhtml">Předplatná MSDN</a>
+</div>
+                    <div data-fragmentname="GetTools" id="Fragment_GetTools" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="https://go.microsoft.com/fwlink/?LinkId=309297&amp;clcid=0x405&amp;slcid=0x405&amp;campaign=o%7Emsft%7Emsdn%7Egettools-header%7Edn308572" id="GetTools_2153_3" xmlns="http://www.w3.org/1999/xhtml">Získat nástroje</a>
+</div>
+                  </div>
+                        <div>
+                            
+                        </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="row middleRow">
+            <div class="expandTop" style="display: none;">
+              <div class="left"></div>
+              <div class="right"></div>
+            </div>
+          </div>
+        </div>
+        <div id="buttomRowWrapper" class="bg_default">
+          <div class="row buttomRow bg_default">
+            <div class="bottom">
+              <div class="left" role="navigation" aria-label="header toc" ms.cmpgrp="main nav">
+                <a id="grip" class="menu-icon" href="javascript:void(0)" role="button" aria-label="navigation menu"></a>
+                
+                <div id="drawer">
+                  <div class="toc">
+                    
+        <nav>
+            <ul class="navL1" ms.cmpgrp="main nav">
+                        <li class="inactive toggle">
+                                <a href="javascript:void(0)" role="button" aria-expanded="false">Soubory ke stažení</a>
+                                <ul class="navL2" style="display: none;">
+                                        <li class="inactive">
+
+                                                <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" role="link" title="Visual Studio">Visual Studio</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://msdn.microsoft.com/microsoft-sdks-msdn" role="link" title="Sady SDK">Sady SDK</a>
+                                        </li>
+                                        <li class="inactive toggle">
+
+                                                <a href="javascript:void(0)" title="Zkušební verze softwaru" role="button" aria-expanded="false">Zkušební verze softwaru</a>
+                                                <ul class="navL3" style="display: none;">
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/evalcenter" title="Soubory zdarma ke stažení" role="link">Soubory zdarma ke stažení</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/officeevaluationresources" title="Materiály pro Office" role="link">Materiály pro Office</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/sharepoint2013resources" title="Materiály pro SharePoint Server 2013" role="link">Materiály pro SharePoint Server 2013</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/sqlserver2014expressresources" title="Materiály pro SQL Server 2014 Express" role="link">Materiály pro SQL Server 2014 Express</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/windowsserver2012r2resources" title="Materiály pro Windows Server 2012" role="link">Materiály pro Windows Server 2012</a>
+                                                        </li>
+                                                </ul>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive toggle">
+                                <a href="javascript:void(0)" role="button" aria-expanded="false">Programy</a>
+                                <ul class="navL2" style="display: none;">
+                                        <li class="inactive toggle">
+
+                                                <a href="javascript:void(0)" title="Předplatná" role="button" aria-expanded="false">Předplatná</a>
+                                                <ul class="navL3" style="display: none;">
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/msdn-subscriptions-administration" title="Správci" role="link">Správci</a>
+                                                        </li>
+                                                </ul>
+                                        </li>
+                                        <li class="inactive toggle">
+
+                                                <a href="javascript:void(0)" title="Studenti" role="button" aria-expanded="false">Studenti</a>
+                                                <ul class="navL3" style="display: none;">
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/imagine/imagine-home" title="Microsoft Imagine" role="link">Microsoft Imagine</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/microsoftstudentpartners" title="Účastníci programu Microsoft Student Partners" role="link">Účastníci programu Microsoft Student Partners</a>
+                                                        </li>
+                                                </ul>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://msdn.microsoft.com/applicationbuilder" role="link" title="ISV">ISV</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://www.microsoft.com/bizspark" role="link" title="Startups">Startups</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://events.microsoft.com/" role="link" title="Akce">Akce</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive toggle">
+                                <a href="javascript:void(0)" role="button" aria-expanded="false">Komunita</a>
+                                <ul class="navL2" style="display: none;">
+                                        <li class="inactive">
+
+                                                <a href="https://msdn.microsoft.com/magazine/dd767791" role="link" title="Zpravodaj">Zpravodaj</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://social.msdn.microsoft.com/forums/cs-cz/" role="link" title="Fóra">Fóra</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://blogs.msdn.microsoft.com/" role="link" title="Blogy">Blogy</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="http://channel9.msdn.com/" role="link" title="Channel 9">Channel 9</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive current toggle">
+                                <a href="javascript:void(0)" role="button" aria-expanded="false">Dokumentace</a>
+                                <ul class="navL2" style="display: none;">
+                                        <li class="inactive current">
+
+                                                <a href="https://msdn.microsoft.com/library" role="link" title="API a reference">API a reference</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://msdn.microsoft.com/developer-centers-msdn" role="link" title="Centra pro vývojáře">Centra pro vývojáře</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://code.msdn.microsoft.com/" role="link" title="Zkušební verze">Zkušební verze</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://msdn.microsoft.com/retiredcontent" role="link" title="Vyřazený obsah">Vyřazený obsah</a>
+                                        </li>
+                                </ul>
+                        </li>
+            </ul>
+        </nav>
+
+                  </div>
+                </div>
+              </div>
+              <div class="right" ms.title="search" role="search">
+                <div data-fragmentname="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="SearchBox">
+    <form id="HeaderSearchForm" name="HeaderSearchForm" method="get">
+      <button id="FakeHeaderSearchButton" value="Search" type="submit" class="header-search-button" role="button" aria-label="search finder" ms.interactiontype="2" ms.title="search" ms.pgarea="header" ms.searchtype="icon">
+        <div id="search-finder-div" class="clip16x20">
+          <img alt="search finder" id="search-finder" class="search-finder" src="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/HeaderFooterSprite.png">
+        </div>
+      </button>
+      <button id="HeaderSearchButton" style="display:none" data-searchtype="icon" data-pgarea="header" title="Hledat na webu MSDN" ms.interactiontype="2" ms.title="search" ms.pgarea="header" ms.searchtype="icon"></button>
+      <div id="searchSplitter"></div>
+      <div id="searchCloseIconDiv" class="clip16x20" tabindex="0">
+        <img alt="search clear" id="searchCloseIcon" class="search-clear-x" src="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/HeaderFooterSprite.png">
+      </div>
+      <div id="searchTextContainer" style="width: 0px; display: none;"><p role="alert" style="height: 1px;width: 1px;overflow: hidden;position: absolute;"></p>
+        <input id="HeaderSearchTextBox" name="query" aria-label="Search Input Box" maxlength="200" onfocus="Epx.Controls.SearchBox.watermarkFocus(event, this.title)" onblur="Epx.Controls.SearchBox.watermarkBlur(event, this.title)" autocomplete="off" data-searchtype="searchbox" role="combobox" aria-autocomplete="both" aria-owns="MSDNSearchAutoCompleteList" aria-live="polite" placeholder="" data-pgarea="header" ms.interactiontype="2" ms.title="search" ms.pgarea="header" ms.searchtype="enter-key" type="text">
+      <div id="SearchFlyoutContainer" style="display: none; text-align: left; border: 1px solid buttonshadow; position: absolute; z-index: 1000; padding: 2px; background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); font-family: MS Shell Dlg \32 ; font-size: 16px;"><div id="SuggestionContainer"><ul style="list-style: outside none none; padding: 4px 2px 0px 1px; cursor: pointer; margin: 1px; white-space: nowrap;" data-pgarea="header" data-searchtype="search dropdown" id="MSDNSearchAutoCompleteList" role="listbox" aria-controls="HeaderSearchTextBox" ms.interactiontype="2" ms.title="search" ms.pgarea="header" ms.searchtype="suggested keyword"></ul></div></div></div>
+    </form>
+    
+    
+  </div>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </header>
+
+    <div id="overlayMaskHeader"></div></div>
+
+    
+    
+    
+    <div id="jumpInfo" style="display: none">Je nám líto. Požadovaný obsah byl odebrán. Do 1 sekundy proběhne automatické přesměrování.</div>
+
+
+
+
+
+<link type="text/css" rel="stylesheet">
+<link type="text/css" rel="stylesheet">
+
+
+    <div id="breadcrumbs" ms.pgarea="body" ms.cmpgrp="breadcrumbs">
+        <div id="breadcrumbDesktop" class="breadCrumb">
+                        <span class="breadcrumbEllipsis"><a href="https://msdn.microsoft.com/cs-cz/library/system%28v=vs.110%29.aspx" title="System"></a></span>
+                        <span><a href="https://msdn.microsoft.com/cs-cz/library/system.object%28v=vs.110%29.aspx" title="Object – třída"><span>Object – třída</span></a></span>
+                        <span><a href="https://msdn.microsoft.com/cs-cz/library/system.object_methods%28v=vs.110%29.aspx" title="Object – metody"><span>Object – metody</span></a></span>
+                        <span class="breadcrumbDropSmall">
+                            <a id="breadcrumbDropDownButton" href="#" targethref="https://msdn.microsoft.com/cs-cz/library/system.object_methods(v=vs.110).aspx" title="Equals – metoda " role="button" aria-expanded="false"><span>Equals – metoda </span></a>
+                        </span>
+        </div>
+        <div id="breadcrumbDropDownMenu" style="display: none;"></div>
+
+        <div id="breadcrumbTablet" class="breadCrumb">
+                        <span class="breadcrumbEllipsis"><a href="https://msdn.microsoft.com/cs-cz/library/system.object_methods%28v=vs.110%29.aspx" title="Object – metody"></a></span>
+                    <span><a href="https://msdn.microsoft.com/cs-cz/library/system.object.equals%28v=vs.110%29.aspx" title="Equals – metoda "><span>Equals – metoda </span></a></span>
+                <span class="breadcrumbDropSmall"><a id="tocDropDownButton" href="#" title="Equals – metoda (Object)" role="button" aria-expanded="false"><span>Equals – metoda (Object)</span></a></span>
+        <div id="navigationButtons">
+            <a id="isd_print" href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28d=printer,v=vs.110%29.aspx" rel="nofollow"><ins class="print"></ins>Tisk </a>
+            <a id="isd_printABook" href="https://msdn.microsoft.com/cs-cz/library/export/help/?returnurl=%2fcs-cz%2flibrary%2fbsc2ak47%28v%3dvs.110%29.aspx">
+                <ins class="export"></ins>Exportovat (<span class="count">0</span>)
+            </a>
+        </div></div>
+        <div id="tocDropDownMenu" style="display: none;"></div>
+        <div id="breadcrumbMobile" class="breadCrumb">
+                <span class="breadcrumbEllipsis"><a href="https://msdn.microsoft.com/cs-cz/library/system.object.equals%28v=vs.110%29.aspx" title="Equals – metoda "></a></span>
+            <span class="breadcrumbDropSmall"><a id="tocPopupButton" href="#" title="Equals – metoda (Object)" role="button" aria-expanded="false"><span>Equals – metoda (Object)</span></a></span>
+        <div id="navigationButtons">
+            <a id="isd_print" href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28d=printer,v=vs.110%29.aspx" rel="nofollow"><ins class="print"></ins>Tisk </a>
+            <a id="isd_printABook" href="https://msdn.microsoft.com/cs-cz/library/export/help/?returnurl=%2fcs-cz%2flibrary%2fbsc2ak47%28v%3dvs.110%29.aspx">
+                <ins class="export"></ins>Exportovat (<span class="count">0</span>)
+            </a>
+        </div></div>
+    </div>
+    <div id="tocPopupMenu" style="display: none;">
+        <div id="tocPopMenuClose" class="tocCloseLarge" role="button" aria-label="Close Popup Menu" tabindex="0"></div>
+        <div id="tocTitle">Equals – metoda (Object)</div>        
+    </div>
+
+    
+
+
+        <div id="body" ms.pgarea="body" class="">
+            <span id="tabletView_large"></span>
+            <span id="tabletView_small"></span>
+            <span id="mobileView"></span>
+            
+
+
+
+
+
+
+
+
+
+    <div id="leftNav" ms.cmpgrp="left toc" role="navigation" aria-label="left toc" style="height: 86px;">
+
+    
+
+
+<div id="tocnav" class="ArchiveV2" style="width: 255px; position: fixed; top: 60px;">
+    <div class="tocunselected">
+        <div id="tocExpandArea">
+            <span class="toc_empty"></span>
+            <span id="tocExpandButton"><a href="javascript:void(0)" aria-label="expand sibling toc" role="button"></a></span>
+        </div>
+        <div id="tocExpand"></div>
+    </div>
+    <div class="tocselected"><div class="toclevel current" data-toclevel="1">
+<span class="toc_empty"></span><a href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.110%29.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Equals – metoda (Object)">Equals – metoda (Object)</a>                </div><div class="tocPadding"></div></div>
+    <div class="tocunselected">
+                
+                <div class="toclevel " data-toclevel="1">
+<span class="toc_empty"></span><a href="https://msdn.microsoft.com/cs-cz/library/w4hkze5k%28v=vs.110%29.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Equals – metoda (Object, Object)">Equals – metoda (Object, Object)</a>                </div>
+    </div>
+    <a id="tocMenuToggler" href="javascript:void(0)" role="button">
+        <span id="tocMenuTogglerIcon" class="tocMenuCollapse" role="button" aria-expanded="true" aria-label="Table of contents menu"></span>
+        <div id="tocMenuTogglerLabel">TOC</div>
+    </a>
+</div>            <div style="display:none">
+                <div id="CollapseLocalizeString">Sbalit obsah</div>
+                <div id="ExpandLocalizeString">Rozbalit obsah</div>
+            </div>
+        <div>
+            <a id="isd_archiveControlResponsive" style="display:none;" href="javascript:void(0)" role="button" aria-label="Skrýt archivované verze" data-include-archive="Zobrazit archivované verze" data-exclude-archive="Skrýt archivované verze">
+            </a>
+            <div id="isd_archiveInstrument" style="display:none">Tato dokumentace je archivovaná a neudržuje se.</div>
+        </div>
+    </div>
+     <div id="content" class="content" ms.cmpgrp="content body" role="main">
+
+
+
+<div id="MTPSTranslator" class="MTPSTranslator">
+    <table class="MTPSTranslatorTable" style="width: 100%">
+        <tbody><tr>
+            <td class="TranslationAlertBox">
+                <div>Tento článek byl přeložený strojově. Pokud chcete 
+zobrazit článek v angličtině, zaškrtněte políčko Angličtina. Anglickou 
+verzi článku můžete také zobrazit v místním okně přesunutím ukazatele 
+myši nad text.</div>
+            </td>
+                <td class="TranslationViewSwitcher">
+                    <div>
+                        <input title="Zobrazit přeložený text" value="0" name="TrnaslatorView" class="translatechoice" checked="checked" ms.title="translated" ms.cmptyp="language selector" ms.interactiontype="16" type="radio"><span>Překlad</span>
+                    </div>
+                    <div>
+                        <input title="Zobrazit anglický text" value="1" name="TrnaslatorView" class="translatechoice" ms.title="original" ms.cmptyp="language selector" ms.interactiontype="16" type="radio"><span>Angličtina</span>
+                    </div>
+                </td>
+        </tr>
+    </tbody></table>
+</div>
+    
+    
+    
+     
+
+
+
+
+
+
+
+    <div id="archiveDisclaimerText" style="display:none">Tato dokumentace je archivovaná a neudržuje se.</div>
+
+
+
+<div xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="topic">
+    <h1 class="title">Metoda Object<span xmlns="">.</span>Equals <span xmlns="">(Object)</span></h1>
+    
+    <div class="lw_vs">
+      <div id="curversion">
+        <strong>
+                .NET Framework (current version)
+            </strong>
+      </div>
+      <div id="versionclick">
+        <div id="vsseperator" class="cl_lw_vs_seperator"></div>
+        <div>
+          <div>
+            <a id="vsLink" href="javascript:void(0)" role="button" aria-label="Ostatní verze" aria-expanded="false">
+                        Ostatní verze
+                    </a>
+          </div>
+          <div class="cl_vs_arrow clip10x10">
+            <img class="cl_lw_vs_arrow" id="vsArrow" alt="" src="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/ImageSprite.png">
+          </div>
+        </div>
+        <ul id="vsPanel">
+          <li class="archived"><a href="javascript:void(0)" role="img" title="Tato dokumentace je archivovaná a neudržuje se."></a>
+            <a href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.100%29.aspx">Visual Studio 2010</a>
+          </li>
+          <li class="archived"><a href="javascript:void(0)" role="img" title="Tato dokumentace je archivovaná a neudržuje se."></a>
+            <a href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.100%29.aspx">.NET Framework 4</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+    <div id="mainSection">
+      <div id="mainBody">&nbsp;<div class="section"><div class="section"><p><span id="mt1" class="sentence" data-guid="b238d552a92742e9109fc6dea0b89329" data-source="Determines whether the specified object is equal to the current object." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Určuje, zda zadaný objekt je rovna aktuálního objektu.</sentencetext></span></p></div><strong>Obor názvů:
+      </strong>
+      &nbsp;
+      <a href="https://msdn.microsoft.com/cs-cz/library/system%28v=vs.110%29.aspx">System</a><br><strong>Sestavení:
+        </strong>&nbsp;mscorlib (v mscorlib.dll)<br><br><div><h2 class="LW_CollapsibleArea_TitleDiv"><div><a class="LW_CollapsibleArea_TitleAhref" title="" role="heading"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Syntaxe</span></a><div id="Anchor_0" class="LW_CollapsibleArea_Anchor_Div active"><a href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.110%29.aspx#Anchor_0" class="LW_CollapsibleArea_Anchor_Img" title="Po kliknutí pravým tlačítkem myši můžete zkopírovat a nasdílet odkaz pro tento oddíl."></a></div><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></h2><div class="sectionblock">
+<div id="code-snippet-1" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabActive" dir="ltr"><a>C#</a></div><div class="codeSnippetContainerTab" dir="ltr"><a href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.110%29.aspx?cs-save-lang=1&amp;cs-lang=cpp#code-snippet-1">C++</a></div><div class="codeSnippetContainerTab" dir="ltr"><a href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.110%29.aspx?cs-save-lang=1&amp;cs-lang=fsharp#code-snippet-1">F#</a></div><div class="codeSnippetContainerTab" dir="ltr"><a href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.110%29.aspx?cs-save-lang=1&amp;cs-lang=vb#code-snippet-1">VB</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Zkopírovat&nbsp;do&nbsp;schránky" href="javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_248711fb-a550-4f27-92a7-7ccd040241c2');" ms.cmptyp="CodeSnippet">Zkopírovat</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_248711fb-a550-4f27-92a7-7ccd040241c2" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre><span style="color:Blue;">public</span> <span style="color:Blue;">virtual</span> <span style="color:Blue;">bool</span> Equals(
+	<span style="color:Blue;">object</span> obj
+)
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+<div class="section"><h4 class="subHeading" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink">Parametry</h4><dl><dt><span class="parameter">obj</span></dt><dd>
+    Type:
+    <span xmlns=""><a href="https://msdn.microsoft.com/cs-cz/library/system.object%28v=vs.110%29.aspx">System.Object</a></span><p><span id="mt2" class="sentence" data-guid="a76de5d90e84e5d3ecee77b92e046aad" data-source="The object to compare with the current object." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Objekt k porovnání s aktuálním objektem.</sentencetext></span></p></dd></dl></div><div class="section"><h4 class="subHeading" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink">Návratová hodnota</h4>
+    Type:
+    <span xmlns=""><a href="https://msdn.microsoft.com/cs-cz/library/system.boolean%28v=vs.110%29.aspx">System.Boolean</a></span><p><span id="mt3" class="sentence" data-guid="9e3dd7af89559b5ab479f63f22428ee1" data-source="&lt;strong&gt;true&lt;/strong&gt; if the specified object  is equal to the current object; otherwise, &lt;strong&gt;false&lt;/strong&gt;." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">
+  <strong xmlns="http://www.w3.org/1999/xhtml">true</strong> Pokud zadaný objekt rovná aktuálního objektu; jinak <strong xmlns="http://www.w3.org/1999/xhtml">false</strong>.</sentencetext></span></p></div></div></div><div><h2 class="LW_CollapsibleArea_TitleDiv"><div><a class="LW_CollapsibleArea_TitleAhref" title="" role="heading"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Poznámky</span></a><div id="Anchor_1" class="LW_CollapsibleArea_Anchor_Div"><a href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.110%29.aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Po kliknutí pravým tlačítkem myši můžete zkopírovat a nasdílet odkaz pro tento oddíl."></a></div><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></h2><div class="sectionblock"><div class="section"><p><span id="mt4" class="sentence" data-guid="3796f523116198f47e134432cdcd0ca3" data-source=" The type of comparison between the current instance and the &lt;em&gt;obj&lt;/em&gt; parameter depends on whether the current instance is a reference type or a value type." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Typ porovnání mezi aktuální instance a <em xmlns="http://www.w3.org/1999/xhtml">obj</em> parametr závisí na tom, zda aktuální instance typu odkazu nebo typu hodnoty.</sentencetext></span></p><ul class="unordered"><li><p><span id="mt5" class="sentence" data-guid="64beb6028e7dc3411f06d77063217202" data-source="If the current instance is a reference type, the &lt;span class=&quot;selflink&quot;&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; method tests for reference equality, and a call to the &lt;span class=&quot;selflink&quot;&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; method is equivalent to a call to the &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;ReferenceEquals&lt;/span&gt;&lt;/span&gt; method." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Pokud je aktuální instance typu odkazu <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> Metoda testy pro rovnost reference a volání <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> Metoda je ekvivalentní volání <a href="https://msdn.microsoft.com/cs-cz/library/system.object.referenceequals%28v=vs.110%29.aspx">ReferenceEquals</a> Metoda.</sentencetext></span><span id="mt6" class="sentence" data-guid="6ca93f6688435e1e83763feeade548b6" data-source=" Reference equality means that the object variables that are compared refer to the same object." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Referenční rovnost znamená, že proměnné objektu, které jsou porovnány odkazovat na stejný objekt.</sentencetext></span><span id="mt7" class="sentence" data-guid="e5efd58cc4ec07cb09553e2dc78e40dc" data-source=" The following example illustrates the result of such a comparison." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Následující příklad ukazuje výsledku takové porovnání.</sentencetext></span><span id="mt8" class="sentence" data-guid="4d704f4f9eb774284c0db4029f19f331" data-source=" It defines a &lt;span class=&quot;code&quot;&gt;Person&lt;/span&gt; class, which is a reference type, and calls the &lt;span class=&quot;code&quot;&gt;Person&lt;/span&gt; class constructor to instantiate two new &lt;span class=&quot;code&quot;&gt;Person&lt;/span&gt; objects, &lt;span class=&quot;code&quot;&gt;person1a&lt;/span&gt; and &lt;span class=&quot;code&quot;&gt;person2&lt;/span&gt;, which have the same value." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Definuje <span class="code" xmlns="http://www.w3.org/1999/xhtml">Person</span> Třída, která je typem odkazu, a volání <span class="code" xmlns="http://www.w3.org/1999/xhtml">Person</span> konstruktor třídy pro vytvoření instance dva nové <span class="code" xmlns="http://www.w3.org/1999/xhtml">Person</span> objekty, <span class="code" xmlns="http://www.w3.org/1999/xhtml">person1a</span> a <span class="code" xmlns="http://www.w3.org/1999/xhtml">person2</span>, které mají stejnou hodnotu.</sentencetext></span><span id="mt9" class="sentence" data-guid="698821360a9b525ef83ae75f11c9daa4" data-source=" It also assigns &lt;span class=&quot;code&quot;&gt;person1a&lt;/span&gt; to another object variable, &lt;span class=&quot;code&quot;&gt;person1b&lt;/span&gt;." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Také přiřadí <span class="code" xmlns="http://www.w3.org/1999/xhtml">person1a</span> jiné proměnné objektu <span class="code" xmlns="http://www.w3.org/1999/xhtml">person1b</span>.</sentencetext></span><span id="mt10" class="sentence" data-guid="0b0857dfd94594ab368ab6663031e5a4" data-source=" As the output from the example shows, &lt;span class=&quot;code&quot;&gt;person1a&lt;/span&gt; and &lt;span class=&quot;code&quot;&gt;person1b&lt;/span&gt; are equal because they reference the same object." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Jako výstup z příkladu <span class="code" xmlns="http://www.w3.org/1999/xhtml">person1a</span> a <span class="code" xmlns="http://www.w3.org/1999/xhtml">person1b</span> jsou stejné, protože odkazují na stejný objekt.</sentencetext></span><span id="mt11" class="sentence" data-guid="ac09c47a95c0a5d51abd602c0d470009" data-source=" However, &lt;span class=&quot;code&quot;&gt;person1a&lt;/span&gt; and &lt;span class=&quot;code&quot;&gt;person2&lt;/span&gt; are not equal, although they have the same value." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Však <span class="code" xmlns="http://www.w3.org/1999/xhtml">person1a</span> a <span class="code" xmlns="http://www.w3.org/1999/xhtml">person2</span> nejsou shodné, i když mají stejnou hodnotu.</sentencetext></span></p>
+<div id="code-snippet-2" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabActive" dir="ltr"><a>C#</a></div><div class="codeSnippetContainerTab" dir="ltr"><a href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.110%29.aspx?cs-save-lang=1&amp;cs-lang=vb#code-snippet-2">VB</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Zkopírovat&nbsp;do&nbsp;schránky" href="javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_d269a05d-7f0a-4159-94cd-039a1d91ae12');" ms.cmptyp="CodeSnippet">Zkopírovat</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_d269a05d-7f0a-4159-94cd-039a1d91ae12" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre><span style="color:Blue;">using</span> System;
+
+<span style="color:Green;">// Define a reference type that does not override Equals.</span>
+<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> Person
+{
+   <span style="color:Blue;">private</span> <span style="color:Blue;">string</span> personName;
+
+   <span style="color:Blue;">public</span> Person(<span style="color:Blue;">string</span> name)
+   {
+      <span style="color:Blue;">this</span>.personName = name;
+   }
+
+   <span style="color:Blue;">public</span> <span style="color:Blue;">override</span> <span style="color:Blue;">string</span> ToString()
+   {
+      <span style="color:Blue;">return</span> <span style="color:Blue;">this</span>.personName;
+   }
+}
+
+<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> Example
+{
+   <span style="color:Blue;">public</span> <span style="color:Blue;">static</span> <span style="color:Blue;">void</span> Main()
+   {
+      Person person1a = <span style="color:Blue;">new</span> Person(<span style="color:#A31515;">"John"</span>);
+      Person person1b = person1a;
+      Person person2 = <span style="color:Blue;">new</span> Person(person1a.ToString());
+
+      Console.WriteLine(<span style="color:#A31515;">"Calling Equals:"</span>); 
+      Console.WriteLine(<span style="color:#A31515;">"person1a and person1b: {0}"</span>, person1a.Equals(person1b));               
+      Console.WriteLine(<span style="color:#A31515;">"person1a and person2: {0}"</span>, person1a.Equals(person2));  
+
+      Console.WriteLine(<span style="color:#A31515;">"\nCasting to an Object and calling Equals:"</span>);
+      Console.WriteLine(<span style="color:#A31515;">"person1a and person1b: {0}"</span>, ((<span style="color:Blue;">object</span>) person1a).Equals((<span style="color:Blue;">object</span>) person1b));
+      Console.WriteLine(<span style="color:#A31515;">"person1a and person2: {0}"</span>, ((<span style="color:Blue;">object</span>) person1a).Equals((<span style="color:Blue;">object</span>) person2)); 
+   }
+}
+<span style="color:Green;">// The example displays the following output:</span>
+<span style="color:Green;">//       person1a and person1b: True</span>
+<span style="color:Green;">//       person1a and person2: False</span>
+<span style="color:Green;">//       </span>
+<span style="color:Green;">//       Casting to an Object and calling Equals:</span>
+<span style="color:Green;">//       person1a and person1b: True</span>
+<span style="color:Green;">//       person1a and person2: False</span>
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</li><li><p><span id="mt12" class="sentence" data-guid="64370d61b191622bab52ed09a23f59e8" data-source="If the current instance is a value type, the &lt;span class=&quot;selflink&quot;&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; method tests for value equality." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Pokud je aktuální instance typu hodnoty <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> Metoda testy pro rovnost hodnot.</sentencetext></span><span id="mt13" class="sentence" data-guid="da51e744e5659dfff27dc04a3e6dd515" data-source=" Value equality means the following:" xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Rovnost hodnot znamená následující:</sentencetext></span></p><ul class="unordered"><li><p><span id="mt14" class="sentence" data-guid="dc3387989d695bf8aff4a13646cab244" data-source="The two objects are of the same type." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Dva objekty jsou stejného typu.</sentencetext></span><span id="mt15" class="sentence" data-guid="e63ed842f1d48f9776c85d27d0afc37b" data-source=" As the following example shows, a &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;Byte&lt;/span&gt;&lt;/span&gt; object that has a value of 12 does not equal an &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;Int32&lt;/span&gt;&lt;/span&gt; object that has a value of 12, because the two objects have different run-time types." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Jak ukazuje následující příklad, <a href="https://msdn.microsoft.com/cs-cz/library/system.byte%28v=vs.110%29.aspx">Byte</a> objekt, který má hodnotu 12 se nerovná <a href="https://msdn.microsoft.com/cs-cz/library/system.int32%28v=vs.110%29.aspx">Int32</a> objekt, který má hodnotu 12, protože dva objekty mají různé typy runtime.</sentencetext></span></p>
+<div id="code-snippet-3" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabActive" dir="ltr"><a>C#</a></div><div class="codeSnippetContainerTab" dir="ltr"><a href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.110%29.aspx?cs-save-lang=1&amp;cs-lang=vb#code-snippet-3">VB</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Zkopírovat&nbsp;do&nbsp;schránky" href="javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_79b44ea0-96ec-436a-bfb0-b788f5d0724c');" ms.cmptyp="CodeSnippet">Zkopírovat</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_79b44ea0-96ec-436a-bfb0-b788f5d0724c" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre><span style="color:Blue;">using</span> System;
+
+<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> Example
+{
+   <span style="color:Blue;">public</span> <span style="color:Blue;">static</span> <span style="color:Blue;">void</span> Main()
+   {
+      <span style="color:Blue;">byte</span> value1 = 12;
+      <span style="color:Blue;">int</span> value2 = 12;
+
+      <span style="color:Blue;">object</span> object1 = value1;
+      <span style="color:Blue;">object</span> object2 = value2;
+
+      Console.WriteLine(<span style="color:#A31515;">"{0} ({1}) = {2} ({3}): {4}"</span>,
+                        object1, object1.GetType().Name,
+                        object2, object2.GetType().Name,
+                        object1.Equals(object2));
+   }
+}
+<span style="color:Green;">// The example displays the following output:</span>
+<span style="color:Green;">//        12 (Byte) = 12 (Int32): False</span>
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</li><li><p><span id="mt16" class="sentence" data-guid="b12b9c5873e41fb20d83187b7d68e8af" data-source="The values of the public and private fields of the two objects are equal." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Hodnoty veřejné a soukromé pole dva objekty rovnají.</sentencetext></span><span id="mt17" class="sentence" data-guid="b549506b907ff9ec9abc16a40219d4f9" data-source=" The following example tests for value equality." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Následující příklad testuje rovnosti hodnoty.</sentencetext></span><span id="mt18" class="sentence" data-guid="4f011a1b92e7801466e83c0b02bcac7b" data-source=" It defines a &lt;span class=&quot;code&quot;&gt;Person&lt;/span&gt; structure, which is a value type, and calls the &lt;span class=&quot;code&quot;&gt;Person&lt;/span&gt; class constructor to instantiate two new &lt;span class=&quot;code&quot;&gt;Person&lt;/span&gt; objects, &lt;span class=&quot;code&quot;&gt;person1&lt;/span&gt; and &lt;span class=&quot;code&quot;&gt;person2&lt;/span&gt;, which have the same value." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Definuje <span class="code" xmlns="http://www.w3.org/1999/xhtml">Person</span> struktury, což je typ hodnoty, a volání <span class="code" xmlns="http://www.w3.org/1999/xhtml">Person</span> konstruktor třídy pro vytvoření instance dva nové <span class="code" xmlns="http://www.w3.org/1999/xhtml">Person</span> objekty, <span class="code" xmlns="http://www.w3.org/1999/xhtml">person1</span> a <span class="code" xmlns="http://www.w3.org/1999/xhtml">person2</span>, které mají stejnou hodnotu.</sentencetext></span><span id="mt19" class="sentence" data-guid="80d1e0b5f9c788b44d3302aaaefeaccd" data-source=" As the output from the example shows, although the two object variables refer to different objects, &lt;span class=&quot;code&quot;&gt;person1&lt;/span&gt; and &lt;span class=&quot;code&quot;&gt;person2&lt;/span&gt; are equal because they have the same value for the private &lt;span class=&quot;code&quot;&gt;personName&lt;/span&gt; field." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Jak ukazuje výstup z příkladu, i když dvě objektové proměnné odkazovat na různé objekty <span class="code" xmlns="http://www.w3.org/1999/xhtml">person1</span> a <span class="code" xmlns="http://www.w3.org/1999/xhtml">person2</span> jsou stejné, protože mají stejnou hodnotu pro privátní <span class="code" xmlns="http://www.w3.org/1999/xhtml">personName</span> pole.</sentencetext></span></p>
+<div id="code-snippet-4" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabActive" dir="ltr"><a>C#</a></div><div class="codeSnippetContainerTab" dir="ltr"><a href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.110%29.aspx?cs-save-lang=1&amp;cs-lang=vb#code-snippet-4">VB</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Zkopírovat&nbsp;do&nbsp;schránky" href="javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_3e64b81e-6a26-4acd-96a0-695ef1bace5e');" ms.cmptyp="CodeSnippet">Zkopírovat</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_3e64b81e-6a26-4acd-96a0-695ef1bace5e" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre><span style="color:Blue;">using</span> System;
+
+<span style="color:Green;">// Define a value type that does not override Equals.</span>
+<span style="color:Blue;">public</span> <span style="color:Blue;">struct</span> Person
+{
+   <span style="color:Blue;">private</span> <span style="color:Blue;">string</span> personName;
+
+   <span style="color:Blue;">public</span> Person(<span style="color:Blue;">string</span> name)
+   {
+      <span style="color:Blue;">this</span>.personName = name;
+   }
+
+   <span style="color:Blue;">public</span> <span style="color:Blue;">override</span> <span style="color:Blue;">string</span> ToString()
+   {
+      <span style="color:Blue;">return</span> <span style="color:Blue;">this</span>.personName;
+   }
+}
+
+<span style="color:Blue;">public</span> <span style="color:Blue;">struct</span> Example
+{
+   <span style="color:Blue;">public</span> <span style="color:Blue;">static</span> <span style="color:Blue;">void</span> Main()
+   {
+      Person person1 = <span style="color:Blue;">new</span> Person(<span style="color:#A31515;">"John"</span>);
+      Person person2 = <span style="color:Blue;">new</span> Person(<span style="color:#A31515;">"John"</span>);
+
+      Console.WriteLine(<span style="color:#A31515;">"Calling Equals:"</span>); 
+      Console.WriteLine(person1.Equals(person2)); 
+
+      Console.WriteLine(<span style="color:#A31515;">"\nCasting to an Object and calling Equals:"</span>);
+      Console.WriteLine(((<span style="color:Blue;">object</span>) person1).Equals((<span style="color:Blue;">object</span>) person2));  
+   }
+}
+<span style="color:Green;">// The example displays the following output:</span>
+<span style="color:Green;">//       Calling Equals:</span>
+<span style="color:Green;">//       True</span>
+<span style="color:Green;">//       </span>
+<span style="color:Green;">//       Casting to an Object and calling Equals:</span>
+<span style="color:Green;">//       True</span>
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</li></ul></li></ul><p><span id="mt20" class="sentence" data-guid="ab80dd52d3f19f4dc426907ef48e6892" data-source="Because the &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;Object&lt;/span&gt;&lt;/span&gt; class is the base class for all types in the .NET Framework, the &lt;span class=&quot;selflink&quot;&gt;Object&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;.&lt;/span&gt;&lt;/span&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; method provides the default equality comparison for all other types." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Protože <a href="https://msdn.microsoft.com/cs-cz/library/system.object%28v=vs.110%29.aspx">Object</a> Třída je základní třída pro všechny typy v rozhraní .NET Framework <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Object<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9ImNwcCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPjo6PC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJudSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+LjwvdmFyaWF0aW9uPjwvbXRwczpMYW5ndWFnZVNwZWNpZmljVGV4dD4=" xmlns=""><span>.</span></span>Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> Metoda poskytuje porovnání rovnosti výchozí pro všechny ostatní typy.</sentencetext></span><span id="mt21" class="sentence" data-guid="ebb1d664ead45bb5dd8a04f2a9541b8e" data-source=" However, types often override the &lt;span class=&quot;selflink&quot;&gt;Equals&lt;/span&gt; method to implement value equality." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Však často přepsat typy <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals</span> Metoda k implementaci rovnosti hodnoty.</sentencetext></span><span id="mt22" class="sentence" data-guid="b6519165255cadc3ec39658a44e798e6" data-source=" For more information, see the Notes for Callers and Notes for Inheritors sections." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Další informace najdete v poznámkách k pro volající a poznámky pro dědice oddíly.</sentencetext></span></p></div><div><h3 class="LW_CollapsibleArea_TitleDiv"><div><a class="LW_CollapsibleArea_TitleAhref" title="Sbalit" role="heading"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Poznámky pro prostředí Windows Runtime</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></h3><div class="sectionblock"><div class="section"><p><span id="mt24" class="sentence" data-guid="6ab99e204416e9956d2dce7622252a70" data-source="When you call the &lt;span class=&quot;selflink&quot;&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; method overload on a class in the Windows Runtime, it provides the default behavior for classes that don’t override &lt;span class=&quot;selflink&quot;&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Při volání <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> přetížení metody třídy v prostředí Windows Runtime, poskytuje výchozí chování pro třídy, které nechcete přepsat <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span>.</sentencetext></span><span id="mt25" class="sentence" data-guid="9a32cc481bf011c4f49f31ee99929130" data-source=" This is part of the support that the .NET Framework provides for the Windows Runtime (see &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;.NET Framework Support for Windows Store Apps and Windows Runtime&lt;/span&gt;&lt;/span&gt;)." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Jedná se o součást podpory, která poskytuje rozhraní .NET Framework prostředí Windows Runtime (viz <a href="https://msdn.microsoft.com/cs-cz/library/hh694558%28v=vs.110%29.aspx">Podpora pro aplikace pro web Windows Store a&nbsp;prostředí Windows Runtime v&nbsp;rozhraní .NET Framework</a>).</sentencetext></span><span id="mt26" class="sentence" data-guid="1634423010a8eafdaab75a57924e18c2" data-source=" Classes in the Windows Runtime don’t inherit &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;Object&lt;/span&gt;&lt;/span&gt;, and currently don’t implement an &lt;span class=&quot;selflink&quot;&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;method." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Třídy v prostředí Windows Runtime nedědí <a href="https://msdn.microsoft.com/cs-cz/library/system.object%28v=vs.110%29.aspx">Object</a>, a není implementovat <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span>Metoda.</sentencetext></span><span id="mt27" class="sentence" data-guid="7c08414c555809c5eaf69b12ba923532" data-source=" However, they appear to have &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;ToString&lt;/span&gt;&lt;/span&gt;, &lt;span class=&quot;selflink&quot;&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;, and &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;GetHashCode&lt;/span&gt;&lt;/span&gt; methods when you use them in your C# or Visual Basic code, and the .NET Framework provides the default behavior for these methods." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Zobrazují se však mít <a href="https://msdn.microsoft.com/cs-cz/library/system.object.tostring%28v=vs.110%29.aspx">ToString</a>, <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span>, a <a href="https://msdn.microsoft.com/cs-cz/library/system.object.gethashcode%28v=vs.110%29.aspx">GetHashCode</a> metody při použití v kódu jazyka C# nebo Visual Basic a .NET Framework poskytuje výchozí chování pro tyto metody.</sentencetext></span></p><div class="alert"><div class="contentTableWrapper"><table summary="table"><tbody><tr><th scope="col" align="left"><span><img id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" alt="System_CAPS_note" src="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/IC101471.jpg" title="System_CAPS_note" xmlns=""></span><span class="alertTitle">Poznámka </span></th></tr><tr><td><p><span id="mt28" class="sentence" data-guid="caf8b79f2ad534ff6b423b7d6571af8f" data-source="Windows Runtime classes that are written in C# or Visual Basic can override the &lt;span class=&quot;selflink&quot;&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; method overload." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">prostředí Windows Runtime třídy, které jsou napsány v jazyce C# nebo Visual Basic můžete přepsat <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> přetížení metody.</sentencetext></span></p></td></tr></tbody></table></div></div></div></div></div><div><h3 class="LW_CollapsibleArea_TitleDiv"><div><a class="LW_CollapsibleArea_TitleAhref" title="Sbalit" role="heading"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Poznámky pro volající</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></h3><div class="sectionblock"><div class="section"><p><span id="mt30" class="sentence" data-guid="9c9894346ae44d951aaa3ddf6707df32" data-source="Derived classes frequently override the &lt;span class=&quot;selflink&quot;&gt;Object&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;.&lt;/span&gt;&lt;/span&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; method to implement value equality." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Odvozené třídy často přepsat <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Object<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9ImNwcCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPjo6PC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJudSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+LjwvdmFyaWF0aW9uPjwvbXRwczpMYW5ndWFnZVNwZWNpZmljVGV4dD4=" xmlns=""><span>.</span></span>Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> Metoda k implementaci rovnosti hodnoty.</sentencetext></span><span id="mt31" class="sentence" data-guid="802e50558e0f5f202442dcc08c4d2141" data-source=" In addition, types also frequently provide an additional strongly typed overload to the &lt;strong&gt;Equals&lt;/strong&gt; method, typically by implementing the &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;IEquatable&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;&amp;lt;T&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; interface." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Kromě toho typy také často poskytují další silného typu přetížení pro <strong xmlns="http://www.w3.org/1999/xhtml">Equals</strong> Metoda obvykle implementací <a href="https://msdn.microsoft.com/cs-cz/library/ms131187%28v=vs.110%29.aspx">IEquatable<span xmlns="">&lt;T&gt;</span></a> rozhraní.</sentencetext></span><span id="mt32" class="sentence" data-guid="55efcac5e1d151ca79eedfa10da7db9f" data-source=" When you call the &lt;strong&gt;Equals&lt;/strong&gt; method to test for equality, you should know whether the current instance overrides &lt;span class=&quot;selflink&quot;&gt;Object&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;.&lt;/span&gt;&lt;/span&gt;Equals&lt;/span&gt; and understand how a particular call to an &lt;strong&gt;Equals&lt;/strong&gt; method is resolved." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Při volání <strong xmlns="http://www.w3.org/1999/xhtml">Equals</strong> Metoda testování rovnosti, byste měli vědět, zda aktuální instance přepsání <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Object<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9ImNwcCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPjo6PC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJudSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+LjwvdmFyaWF0aW9uPjwvbXRwczpMYW5ndWFnZVNwZWNpZmljVGV4dD4=" xmlns=""><span>.</span></span>Equals</span> a pochopit, jak konkrétní volání <strong xmlns="http://www.w3.org/1999/xhtml">Equals</strong> Metoda je vyřešený.</sentencetext></span><span id="mt33" class="sentence" data-guid="b0e0d0d6227f8dd35a915599cc6491b7" data-source=" Otherwise, you may be performing a test for equality that is different from what you intended, and the method may return an unexpected value." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> V opačném případě může provedení testu rovnosti, které se liší od vašich představ a metoda může vrátit neočekávanou hodnotu.</sentencetext></span></p><p><span id="mt34" class="sentence" data-guid="7a9ba8cb8bd925826c908902f64a488c" data-source="The following example provides an illustration." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Následující příklad uvádí ukázku.</sentencetext></span><span id="mt35" class="sentence" data-guid="7df7c325be4a00dded9a2d70c81e69fb" data-source=" It instantiates three &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;StringBuilder&lt;/span&gt;&lt;/span&gt; objects with identical strings, and then makes four calls to &lt;strong&gt;Equals&lt;/strong&gt; methods." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Ji vytvoří tři <a href="https://msdn.microsoft.com/cs-cz/library/system.text.stringbuilder%28v=vs.110%29.aspx">StringBuilder</a> objekty s shodné řetězce a poté volá čtyři <strong xmlns="http://www.w3.org/1999/xhtml">Equals</strong> metody.</sentencetext></span><span id="mt36" class="sentence" data-guid="748bbf1d0382f29b36b54f3251d20768" data-source=" The first method call returns &lt;strong&gt;true&lt;/strong&gt;, and the remaining three return &lt;strong&gt;false&lt;/strong&gt;." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> První metoda volání vrátí <strong xmlns="http://www.w3.org/1999/xhtml">true</strong>, a zbývající tři návrat <strong xmlns="http://www.w3.org/1999/xhtml">false</strong>.</sentencetext></span></p>
+<div id="code-snippet-5" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabActive" dir="ltr"><a>C#</a></div><div class="codeSnippetContainerTab" dir="ltr"><a href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.110%29.aspx?cs-save-lang=1&amp;cs-lang=vb#code-snippet-5">VB</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Zkopírovat&nbsp;do&nbsp;schránky" href="javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_b4b5fcf9-8dc7-489e-a4dd-eddd244c323c');" ms.cmptyp="CodeSnippet">Zkopírovat</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_b4b5fcf9-8dc7-489e-a4dd-eddd244c323c" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre><span style="color:Blue;">using</span> System;
+<span style="color:Blue;">using</span> System.Text;
+
+<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> Example
+{
+   <span style="color:Blue;">public</span> <span style="color:Blue;">static</span> <span style="color:Blue;">void</span> Main()
+   {
+      StringBuilder sb1 = <span style="color:Blue;">new</span> StringBuilder(<span style="color:#A31515;">"building a string..."</span>);
+      StringBuilder sb2 = <span style="color:Blue;">new</span> StringBuilder(<span style="color:#A31515;">"building a string..."</span>);
+
+      Console.WriteLine(<span style="color:#A31515;">"sb1.Equals(sb2): {0}"</span>, sb1.Equals(sb2));
+      Console.WriteLine(<span style="color:#A31515;">"((Object) sb1).Equals(sb2): {0}"</span>, 
+                        ((Object) sb1).Equals(sb2));
+      Console.WriteLine(<span style="color:#A31515;">"Object.Equals(sb1, sb2): {0}"</span>,
+                        Object.Equals(sb1, sb2));      
+
+      Object sb3 = <span style="color:Blue;">new</span> StringBuilder(<span style="color:#A31515;">"building a string..."</span>);
+      Console.WriteLine(<span style="color:#A31515;">"\nsb3.Equals(sb2): {0}"</span>, sb3.Equals(sb2));                              
+   }
+}
+<span style="color:Green;">// The example displays the following output:</span>
+<span style="color:Green;">//       sb1.Equals(sb2): True</span>
+<span style="color:Green;">//       ((Object) sb1).Equals(sb2): False</span>
+<span style="color:Green;">//       Object.Equals(sb1, sb2): False</span>
+<span style="color:Green;">//</span>
+<span style="color:Green;">//       sb3.Equals(sb2): False</span>
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+<p><span id="mt37" class="sentence" data-guid="c8ecc60257af7a7e238048464db67141" data-source="In the first case, the strongly typed &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;StringBuilder&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;.&lt;/span&gt;&lt;/span&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(StringBuilder)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; method overload, which tests for value equality, is called." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">V případě, první silného typu <a href="https://msdn.microsoft.com/cs-cz/library/ccth01t4%28v=vs.110%29.aspx">StringBuilder<span xmlns="">.</span>Equals<span xmlns="">(StringBuilder)</span></a> přetížení metody, které testy pro rovnost hodnot, je volána.</sentencetext></span><span id="mt38" class="sentence" data-guid="cd96133e2fa97a23d8a407b9d1fc8ea7" data-source=" Because the strings assigned to the two &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;StringBuilder&lt;/span&gt;&lt;/span&gt; objects are equal, the method returns &lt;strong&gt;true&lt;/strong&gt;." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Protože řetězce přiřazen dvou <a href="https://msdn.microsoft.com/cs-cz/library/system.text.stringbuilder%28v=vs.110%29.aspx">StringBuilder</a> jsou objekty rovnocenné, metoda vrátí <strong xmlns="http://www.w3.org/1999/xhtml">true</strong>.</sentencetext></span><span id="mt39" class="sentence" data-guid="ac6d0c50c0bc2ac36f6611ace3401896" data-source=" However, &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;StringBuilder&lt;/span&gt;&lt;/span&gt; does not override &lt;span class=&quot;selflink&quot;&gt;Object&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;.&lt;/span&gt;&lt;/span&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Však <a href="https://msdn.microsoft.com/cs-cz/library/system.text.stringbuilder%28v=vs.110%29.aspx">StringBuilder</a> nepřepisuje <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Object<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9ImNwcCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPjo6PC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJudSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+LjwvdmFyaWF0aW9uPjwvbXRwczpMYW5ndWFnZVNwZWNpZmljVGV4dD4=" xmlns=""><span>.</span></span>Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span>.</sentencetext></span><span id="mt40" class="sentence" data-guid="ec897e03b26c1db89b149b8a094423bb" data-source=" Because of this, when the &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;StringBuilder&lt;/span&gt;&lt;/span&gt; object is cast to an &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;Object&lt;/span&gt;&lt;/span&gt;, when a &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;StringBuilder&lt;/span&gt;&lt;/span&gt; instance is assigned to a variable of type &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;Object&lt;/span&gt;&lt;/span&gt;, and when the &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;Object&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;.&lt;/span&gt;&lt;/span&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object, Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; method is passed two &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;StringBuilder&lt;/span&gt;&lt;/span&gt; objects, the default &lt;span class=&quot;selflink&quot;&gt;Object&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;.&lt;/span&gt;&lt;/span&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; method is called." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Z tohoto důvodu při <a href="https://msdn.microsoft.com/cs-cz/library/system.text.stringbuilder%28v=vs.110%29.aspx">StringBuilder</a> objekt je přetypovat na <a href="https://msdn.microsoft.com/cs-cz/library/system.object%28v=vs.110%29.aspx">Object</a>, když <a href="https://msdn.microsoft.com/cs-cz/library/system.text.stringbuilder%28v=vs.110%29.aspx">StringBuilder</a> instance je přiřazen proměnné typu <a href="https://msdn.microsoft.com/cs-cz/library/system.object%28v=vs.110%29.aspx">Object</a>, a kdy <a href="https://msdn.microsoft.com/cs-cz/library/w4hkze5k%28v=vs.110%29.aspx">Object<span xmlns="">.</span>Equals<span xmlns="">(Object, Object)</span></a> metodě je předána dva <a href="https://msdn.microsoft.com/cs-cz/library/system.text.stringbuilder%28v=vs.110%29.aspx">StringBuilder</a> objekty, výchozí <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Object<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9ImNwcCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPjo6PC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJudSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+LjwvdmFyaWF0aW9uPjwvbXRwczpMYW5ndWFnZVNwZWNpZmljVGV4dD4=" xmlns=""><span>.</span></span>Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> Metoda je volána.</sentencetext></span><span id="mt41" class="sentence" data-guid="d89f79ac2bedf9d904cac63c7b05580d" data-source=" Because &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;StringBuilder&lt;/span&gt;&lt;/span&gt; is a reference type, this is equivalent to passing the two &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;StringBuilder&lt;/span&gt;&lt;/span&gt; objects to the &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;ReferenceEquals&lt;/span&gt;&lt;/span&gt; method." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Protože <a href="https://msdn.microsoft.com/cs-cz/library/system.text.stringbuilder%28v=vs.110%29.aspx">StringBuilder</a> je typem odkazu, jedná se o ekvivalent předání dvou <a href="https://msdn.microsoft.com/cs-cz/library/system.text.stringbuilder%28v=vs.110%29.aspx">StringBuilder</a> objekty k <a href="https://msdn.microsoft.com/cs-cz/library/system.object.referenceequals%28v=vs.110%29.aspx">ReferenceEquals</a> Metoda.</sentencetext></span><span id="mt42" class="sentence" data-guid="29f0b18232305990e1ce75cbab3b19a7" data-source=" Although all three &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;StringBuilder&lt;/span&gt;&lt;/span&gt; objects contain identical strings, they refer to three distinct objects." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Ačkoliv všechny tři <a href="https://msdn.microsoft.com/cs-cz/library/system.text.stringbuilder%28v=vs.110%29.aspx">StringBuilder</a> objekty obsahují shodné řetězce, které odkazují na tři odlišné objekty.</sentencetext></span><span id="mt43" class="sentence" data-guid="c96152ded97ceba6c44540a526aa37c2" data-source=" As a result, these three method calls return &lt;strong&gt;false&lt;/strong&gt;." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> V důsledku toho tyto tři metoda volá návratový <strong xmlns="http://www.w3.org/1999/xhtml">false</strong>.</sentencetext></span></p><p><span id="mt44" class="sentence" data-guid="8bd719b3a4cb0bea583e345bdd4a1403" data-source="You can compare the current object to another object for reference equality by calling the &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;ReferenceEquals&lt;/span&gt;&lt;/span&gt; method." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Můžete porovnat aktuální objekt k jinému objektu pro referenční rovnost voláním <a href="https://msdn.microsoft.com/cs-cz/library/system.object.referenceequals%28v=vs.110%29.aspx">ReferenceEquals</a> Metoda.</sentencetext></span><span id="mt45" class="sentence" data-guid="cc997f3e6a49c45f256fc135f4f4c404" data-source=" In Visual Basic, you can also use the &lt;strong&gt;is&lt;/strong&gt; keyword (for example, &lt;span class=&quot;code&quot;&gt;If Me Is otherObject Then ...&lt;/span&gt;)." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> V jazyce Visual Basic, můžete použít také <strong xmlns="http://www.w3.org/1999/xhtml">is</strong> klíčové slovo (například <span class="code" xmlns="http://www.w3.org/1999/xhtml">If Me Is otherObject Then ...</span>).</sentencetext></span></p></div></div></div><div><h3 class="LW_CollapsibleArea_TitleDiv"><div><a class="LW_CollapsibleArea_TitleAhref" title="Sbalit" role="heading"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Poznámky pro dědice</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></h3><div class="sectionblock"><div class="section"><p><span id="mt47" class="sentence" data-guid="6f070589c684df7fe1436146aaa9477f" data-source="When you define your own type, that type inherits the functionality defined by the &lt;strong&gt;Equals&lt;/strong&gt; method of its base type." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Když definujete vlastní typ, tento typ dědí funkce definované <strong xmlns="http://www.w3.org/1999/xhtml">Equals</strong> Metoda z jeho základních typů.</sentencetext></span><span id="mt48" class="sentence" data-guid="e1ab80fc068ceb12b3da8402222bca9d" data-source=" The following table lists the default implementation of the &lt;strong&gt;Equals&lt;/strong&gt; method for the major categories of types in the .NET Framework." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> V následující tabulce jsou uvedeny výchozí implementace <strong xmlns="http://www.w3.org/1999/xhtml">Equals</strong> metodu pro hlavní kategorie typů v rozhraní .NET Framework.</sentencetext></span></p><div class="contentTableWrapper"><table responsive="true" summary="table"><tbody><tr responsive="true"><th scope="col"><p><span id="mt49" class="sentence" data-guid="9fd697632a997206f372c7e601135f78" data-source="Type category" xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Typ kategorie</sentencetext></span></p></th><th scope="col"><p><span id="mt50" class="sentence" data-guid="f17b0108c2e478449a9bb5478ae71ba1" data-source="Equality defined by" xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Určené rovnosti</sentencetext></span></p></th><th scope="col"><p><span id="mt51" class="sentence" data-guid="a5d491060952aa8ad5fdee071be752de" data-source="Comments" xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Komentáře</sentencetext></span></p></th></tr><tr><td data-th="Typ kategorie"><p><span id="mt52" class="sentence" data-guid="0f95977ba332a9ef7b8d3e5fa6bcc002" data-source="Class derived directly from &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;Object&lt;/span&gt;&lt;/span&gt;" xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Třída odvozena přímo z <a href="https://msdn.microsoft.com/cs-cz/library/system.object%28v=vs.110%29.aspx">Object</a></sentencetext></span></p></td><td data-th="Určené rovnosti"><p><span class="selflink">Object<span xmlns="">.</span>Equals<span xmlns="">(Object)</span></span></p></td><td data-th="Komentáře"><p><span id="mt53" class="sentence" data-guid="1d417541419dd13f097d3e0aadbc23f4" data-source="Reference equality; equivalent to calling &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;Object&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;.&lt;/span&gt;&lt;/span&gt;ReferenceEquals&lt;/span&gt;&lt;/span&gt;." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Referenční rovnost; ekvivalentní volání <a href="https://msdn.microsoft.com/cs-cz/library/system.object.referenceequals%28v=vs.110%29.aspx">Object<span xmlns="">.</span>ReferenceEquals</a>.</sentencetext></span></p></td></tr><tr><td data-th="Typ kategorie"><p><span id="mt54" class="sentence" data-guid="07414f4e15ca943e6cde032dec85d92f" data-source="Structure" xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Struktura</sentencetext></span></p></td><td data-th="Určené rovnosti"><p><a href="https://msdn.microsoft.com/cs-cz/library/2dts52z7%28v=vs.110%29.aspx">ValueType<span xmlns="">.</span>Equals</a></p></td><td data-th="Komentáře"><p><span id="mt55" class="sentence" data-guid="ef3d8175c3d2abd98099c077f6405195" data-source="Value equality; either direct byte-by-byte comparison or field-by-field comparison using reflection." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Rovnost hodnot; přímé bajt po bajtu porovnání nebo porovnání pole pole pomocí reflexe.</sentencetext></span></p></td></tr><tr><td data-th="Typ kategorie"><p><span id="mt56" class="sentence" data-guid="3f49fe61d5812612c53377049e3c86d6" data-source="Enumeration" xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Výčet</sentencetext></span></p></td><td data-th="Určené rovnosti"><p><a href="https://msdn.microsoft.com/cs-cz/library/8bafh2by%28v=vs.110%29.aspx">Enum<span xmlns="">.</span>Equals</a></p></td><td data-th="Komentáře"><p><span id="mt57" class="sentence" data-guid="d5624c3700605bb6de4e93e5c3988c0c" data-source="Values must have the same enumeration type and the same underlying value." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Hodnoty musí mít stejný typ výčtu a stejnou zdrojovou hodnotu.</sentencetext></span></p></td></tr><tr><td data-th="Typ kategorie"><p><span id="mt58" class="sentence" data-guid="7f662005788ab434b371fbb0efc6d45f" data-source="Delegate" xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">
+  <sentencetext xmlns="http://www.w3.org/1999/xhtml">delegate</sentencetext>
+</sentencetext></span></p></td><td data-th="Určené rovnosti"><p><a href="https://msdn.microsoft.com/cs-cz/library/1ts3c5tx%28v=vs.110%29.aspx">MulticastDelegate<span xmlns="">.</span>Equals</a></p></td><td data-th="Komentáře"><p><span id="mt59" class="sentence" data-guid="2ff4cef1bf8ac7b8fbb02e0a11a86897" data-source="Delegates must have the same type with identical invocation lists." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Delegáti musí mít stejný typ s identickými vyvolání seznamy.</sentencetext></span></p></td></tr><tr><td data-th="Typ kategorie"><p><span id="mt60" class="sentence" data-guid="8eb58dd5e328e978169c7b0cbd30d43f" data-source="Interface" xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Rozhraní</sentencetext></span></p></td><td data-th="Určené rovnosti"><p><span class="selflink">Object<span xmlns="">.</span>Equals<span xmlns="">(Object)</span></span></p></td><td data-th="Komentáře"><p><span id="mt61" class="sentence" data-guid="0d8934a2dbcd1c32924e6e98ce64a88e" data-source="Reference equality." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Referenční rovnost.</sentencetext></span></p></td></tr></tbody></table></div><p><span id="mt62" class="sentence" data-guid="7a1fec9e59dc9dd33e6eefa8e737fdd2" data-source="For a value type, you should always override &lt;span class=&quot;selflink&quot;&gt;Equals&lt;/span&gt;, because tests for equality that rely on reflection offer poor performance." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Typ hodnoty, měli byste vždy přepsat <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals</span>, protože testy pro rovnost, které závisí na reflexi nabízejí nízký výkon.</sentencetext></span><span id="mt63" class="sentence" data-guid="9cb5b163b69fecf9efd1b61277c7a59e" data-source=" You can also override the default implementation of &lt;span class=&quot;selflink&quot;&gt;Equals&lt;/span&gt; for reference types to test for value equality instead of reference equality and to define the precise meaning of value equality." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Můžete také přepsat výchozí implementace <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals</span> pro odkazové typy pro testování rovnosti hodnoty namísto referenční rovnost a definování Přesný význam rovnosti hodnoty.</sentencetext></span><span id="mt64" class="sentence" data-guid="cfb5b7d32e7a01e861a45bcbca622b4b" data-source=" Such implementations of &lt;span class=&quot;selflink&quot;&gt;Equals&lt;/span&gt; return &lt;strong&gt;true&lt;/strong&gt; if the two objects have the same value, even if they are not the same instance." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Tato implementace <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals</span> vrátit <strong xmlns="http://www.w3.org/1999/xhtml">true</strong> Pokud dva objekty mají stejnou hodnotu, i v případě, že se nepoužívají stejnou instanci.</sentencetext></span><span id="mt65" class="sentence" data-guid="1da4fce312373c8433e9d656a11457cf" data-source=" The type's implementer decides what constitutes an object's value, but it is typically some or all the data stored in the instance variables of the object." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">
+ Typ implementátor rozhodne, co představuje hodnotu objektu, ale je 
+obvykle některá nebo všechna data uložená v proměnné instance objektu.</sentencetext></span><span id="mt66" class="sentence" data-guid="d003038803ff886dfd55d82ab027d81e" data-source=" For example, the value of a &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;String&lt;/span&gt;&lt;/span&gt; object is based on the characters of the string; the &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;String&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;.&lt;/span&gt;&lt;/span&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;  method overrides the &lt;span class=&quot;selflink&quot;&gt;Object&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;.&lt;/span&gt;&lt;/span&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; method to return &lt;strong&gt;true&lt;/strong&gt; for any two string instances that contain the same characters in the same order." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Například hodnota <a href="https://msdn.microsoft.com/cs-cz/library/system.string%28v=vs.110%29.aspx">String</a> objektu je založena na znaky řetězce; <a href="https://msdn.microsoft.com/cs-cz/library/fkfd9eh8%28v=vs.110%29.aspx">String<span xmlns="">.</span>Equals<span xmlns="">(Object)</span></a>  přepsání metody <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Object<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9ImNwcCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPjo6PC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJudSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+LjwvdmFyaWF0aW9uPjwvbXRwczpMYW5ndWFnZVNwZWNpZmljVGV4dD4=" xmlns=""><span>.</span></span>Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> Metoda vrátí <strong xmlns="http://www.w3.org/1999/xhtml">true</strong> pro jakékoli dva řetězce instancí, které obsahují stejné znaky ve stejném pořadí.</sentencetext></span></p><p><span id="mt67" class="sentence" data-guid="3fae2daa227e239b9dcea2a0fab166a6" data-source="The following example shows how to override the &lt;span class=&quot;selflink&quot;&gt;Object&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;.&lt;/span&gt;&lt;/span&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; method to test for value equality." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Následující příklad ukazuje, jak přepsat <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Object<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9ImNwcCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPjo6PC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJudSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+LjwvdmFyaWF0aW9uPjwvbXRwczpMYW5ndWFnZVNwZWNpZmljVGV4dD4=" xmlns=""><span>.</span></span>Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> Metoda pro testování rovnosti hodnoty.</sentencetext></span><span id="mt68" class="sentence" data-guid="dcb33df5b037a1b0c5c997089b0060d0" data-source=" It overrides the &lt;span class=&quot;selflink&quot;&gt;Equals&lt;/span&gt; method for the &lt;span class=&quot;code&quot;&gt;Person&lt;/span&gt; class." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Přepíše <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals</span> metodu pro <span class="code" xmlns="http://www.w3.org/1999/xhtml">Person</span> třídy.</sentencetext></span><span id="mt69" class="sentence" data-guid="ed84c645fd838c1ef82c7fb05338a991" data-source=" If &lt;span class=&quot;code&quot;&gt;Person&lt;/span&gt; accepted its base class implementation of equality, two &lt;span class=&quot;code&quot;&gt;Person&lt;/span&gt; objects would be equal only if they referenced a single object." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Pokud <span class="code" xmlns="http://www.w3.org/1999/xhtml">Person</span> přijmout jeho implementace základní třídy rovnosti, dva <span class="code" xmlns="http://www.w3.org/1999/xhtml">Person</span> objektů by byla stejná pouze v případě, že se odkazuje jeden objekt.</sentencetext></span><span id="mt70" class="sentence" data-guid="d8894df848c946ee7df3a52012e5a730" data-source=" However, in this case, two &lt;span class=&quot;code&quot;&gt;Person&lt;/span&gt; objects are equal if they have the same value for the &lt;span class=&quot;code&quot;&gt;Person.Id&lt;/span&gt; property." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> V tomto případě však dva <span class="code" xmlns="http://www.w3.org/1999/xhtml">Person</span> jsou objekty rovnocenné, pokud mají stejnou hodnotu pro <span class="code" xmlns="http://www.w3.org/1999/xhtml">Person.Id</span> vlastnost.</sentencetext></span></p>
+<div id="code-snippet-6" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabActive" dir="ltr"><a>C#</a></div><div class="codeSnippetContainerTab" dir="ltr"><a href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.110%29.aspx?cs-save-lang=1&amp;cs-lang=vb#code-snippet-6">VB</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Zkopírovat&nbsp;do&nbsp;schránky" href="javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_e5408142-8987-4e09-915a-62a1d1f6662a');" ms.cmptyp="CodeSnippet">Zkopírovat</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_e5408142-8987-4e09-915a-62a1d1f6662a" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre><span style="color:Blue;">public</span> <span style="color:Blue;">class</span> Person
+{
+   <span style="color:Blue;">private</span> <span style="color:Blue;">string</span> idNumber;
+   <span style="color:Blue;">private</span> <span style="color:Blue;">string</span> personName;
+
+   <span style="color:Blue;">public</span> Person(<span style="color:Blue;">string</span> name, <span style="color:Blue;">string</span> id)
+   {
+      <span style="color:Blue;">this</span>.personName = name;
+      <span style="color:Blue;">this</span>.idNumber = id;
+   }
+
+   <span style="color:Blue;">public</span> <span style="color:Blue;">override</span> <span style="color:Blue;">bool</span> Equals(Object obj)
+   {
+      Person personObj = obj <span style="color:Blue;">as</span> Person; 
+      <span style="color:Blue;">if</span> (personObj == <span style="color:Blue;">null</span>)
+         <span style="color:Blue;">return</span> <span style="color:Blue;">false</span>;
+      <span style="color:Blue;">else</span>
+         <span style="color:Blue;">return</span> idNumber.Equals(personObj.idNumber);
+   }
+
+   <span style="color:Blue;">public</span> <span style="color:Blue;">override</span> <span style="color:Blue;">int</span> GetHashCode()
+   {
+      <span style="color:Blue;">return</span> <span style="color:Blue;">this</span>.idNumber.GetHashCode(); 
+   }
+}
+
+<span style="color:Blue;">public</span> <span style="color:Blue;">class</span> Example
+{
+   <span style="color:Blue;">public</span> <span style="color:Blue;">static</span> <span style="color:Blue;">void</span> Main()
+   {
+      Person p1 = <span style="color:Blue;">new</span> Person(<span style="color:#A31515;">"John"</span>, <span style="color:#A31515;">"63412895"</span>);
+      Person p2 = <span style="color:Blue;">new</span> Person(<span style="color:#A31515;">"Jack"</span>, <span style="color:#A31515;">"63412895"</span>);
+      Console.WriteLine(p1.Equals(p2));
+      Console.WriteLine(Object.Equals(p1, p2));
+   }
+}
+<span style="color:Green;">// The example displays the following output:</span>
+<span style="color:Green;">//       True</span>
+<span style="color:Green;">//       True</span>
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+<p><span id="mt71" class="sentence" data-guid="acb00df85b84ee797b5f54281114fd3c" data-source="In addition to overriding &lt;span class=&quot;selflink&quot;&gt;Equals&lt;/span&gt;, you can implement the &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;IEquatable&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;&amp;lt;T&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; interface to provide a strongly typed test for equality." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Kromě potlačení <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals</span>, můžete implementovat <a href="https://msdn.microsoft.com/cs-cz/library/ms131187%28v=vs.110%29.aspx">IEquatable<span xmlns="">&lt;T&gt;</span></a> pro poskytnutí silného typu testování rovnosti.</sentencetext></span></p><p><span id="mt72" class="sentence" data-guid="440aa922f728feb5dcfab39a661b7467" data-source="The following statements must be true for all implementations of the &lt;span class=&quot;selflink&quot;&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; method." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Následující příkazy musí být splněny pro všechny implementace <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> Metoda.</sentencetext></span><span id="mt73" class="sentence" data-guid="aa4ccf3e907a2e61c70fb4e80fb2da94" data-source=" In the list, &lt;span class=&quot;code&quot;&gt;x&lt;/span&gt;, &lt;span class=&quot;code&quot;&gt;y&lt;/span&gt;, and &lt;span class=&quot;code&quot;&gt;z&lt;/span&gt; represent object references that are not &lt;span class=&quot;label&quot;&gt;null&lt;/span&gt;." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> V seznamu <span class="code" xmlns="http://www.w3.org/1999/xhtml">x</span>, <span class="code" xmlns="http://www.w3.org/1999/xhtml">y</span>, a <span class="code" xmlns="http://www.w3.org/1999/xhtml">z</span> představují odkazy na objekty, které nejsou <span class="label" xmlns="http://www.w3.org/1999/xhtml">null</span>.</sentencetext></span></p><ul class="unordered"><li><p><span id="mt74" class="sentence" data-guid="2e20a9d499c3052135820203c3b717ea" data-source="&lt;span class=&quot;code&quot;&gt;x.Equals(x)&lt;/span&gt; returns &lt;strong&gt;true&lt;/strong&gt;, except in cases that involve floating-point types." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">
+  <span class="code" xmlns="http://www.w3.org/1999/xhtml">x.Equals(x)</span> Vrátí <strong xmlns="http://www.w3.org/1999/xhtml">true</strong>, s výjimkou případů, které zahrnují typy s plovoucí desetinnou čárkou.</sentencetext></span><span id="mt75" class="sentence" data-guid="d3bf77bf584aed3637999f0c34e88651" data-source=" See ISO/IEC/IEEE 60559:2011, Information technology -- Microprocessor Systems -- Floating-Point arithmetic." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">
+ Viz ISO/IEC/IEEE 60559:2011, informačních technologií--mikroprocesoru 
+systémy--aritmetické operace s plovoucí desetinnou čárkou.</sentencetext></span></p></li><li><p><span id="mt76" class="sentence" data-guid="6a4d5cedc860acc815edc070c2eb2d67" data-source="&lt;span class=&quot;code&quot;&gt;x.Equals(y)&lt;/span&gt; returns the same value as &lt;span class=&quot;code&quot;&gt;y.Equals(x)&lt;/span&gt;." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">
+  <span class="code" xmlns="http://www.w3.org/1999/xhtml">x.Equals(y)</span> vrátí stejnou hodnotu jako <span class="code" xmlns="http://www.w3.org/1999/xhtml">y.Equals(x)</span>.</sentencetext></span></p></li><li><p><span id="mt77" class="sentence" data-guid="164e7bb4bb5757029afcc378d1db28f8" data-source="&lt;span class=&quot;code&quot;&gt;x.Equals(y)&lt;/span&gt; returns &lt;strong&gt;true&lt;/strong&gt; if both &lt;span class=&quot;code&quot;&gt;x&lt;/span&gt; and &lt;span class=&quot;code&quot;&gt;y&lt;/span&gt; are &lt;strong&gt;NaN&lt;/strong&gt;." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">
+  <span class="code" xmlns="http://www.w3.org/1999/xhtml">x.Equals(y)</span> Vrátí <strong xmlns="http://www.w3.org/1999/xhtml">true</strong> Pokud obě <span class="code" xmlns="http://www.w3.org/1999/xhtml">x</span> a <span class="code" xmlns="http://www.w3.org/1999/xhtml">y</span> jsou <strong xmlns="http://www.w3.org/1999/xhtml">NaN</strong>.</sentencetext></span></p></li><li><p><span id="mt78" class="sentence" data-guid="31d3685176ab452752645a47ebb5d6b9" data-source="If &lt;span class=&quot;code&quot;&gt;(x.Equals(y) &amp;amp;&amp;amp; y.Equals(z))&lt;/span&gt; returns &lt;strong&gt;true&lt;/strong&gt;, then &lt;span class=&quot;code&quot;&gt;x.Equals(z)&lt;/span&gt; returns &lt;strong&gt;true&lt;/strong&gt;." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Pokud <span class="code" xmlns="http://www.w3.org/1999/xhtml">(x.Equals(y) &amp;&amp; y.Equals(z))</span> vrátí <strong xmlns="http://www.w3.org/1999/xhtml">true</strong>, pak <span class="code" xmlns="http://www.w3.org/1999/xhtml">x.Equals(z)</span> vrátí <strong xmlns="http://www.w3.org/1999/xhtml">true</strong>.</sentencetext></span></p></li><li><p><span id="mt79" class="sentence" data-guid="39827d7a3ead589b77c6bd953c406dea" data-source="Successive calls to &lt;span class=&quot;code&quot;&gt;x.Equals(y)&lt;/span&gt; return the same value as long as the objects referenced by &lt;span class=&quot;code&quot;&gt;x&lt;/span&gt; and &lt;span class=&quot;code&quot;&gt;y&lt;/span&gt; are not modified." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Následná volání <span class="code" xmlns="http://www.w3.org/1999/xhtml">x.Equals(y)</span> vrátit stejnou hodnotu, dokud odkazují objekty <span class="code" xmlns="http://www.w3.org/1999/xhtml">x</span> a <span class="code" xmlns="http://www.w3.org/1999/xhtml">y</span> se nezmění.</sentencetext></span></p></li><li><p><span id="mt80" class="sentence" data-guid="63afc9cccec527a0a91601012093ce8f" data-source="&lt;span class=&quot;code&quot;&gt;x.Equals(null)&lt;/span&gt; returns &lt;strong&gt;false&lt;/strong&gt;." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">
+  <span class="code" xmlns="http://www.w3.org/1999/xhtml">x.Equals(null)</span> Vrátí <strong xmlns="http://www.w3.org/1999/xhtml">false</strong>.</sentencetext></span></p></li></ul><p><span id="mt81" class="sentence" data-guid="6f09016b5daaeb51fcba7befdc341117" data-source="Implementations of &lt;span class=&quot;selflink&quot;&gt;Equals&lt;/span&gt; must not throw exceptions; they should always return a value." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Implementace <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals</span> nesmí vyvolat výjimky; by vždy vrátit hodnotu.</sentencetext></span><span id="mt82" class="sentence" data-guid="c6ae241bab376be21dcaef07fdc9a51b" data-source=" For example, if &lt;em&gt;obj&lt;/em&gt; is &lt;strong&gt;null&lt;/strong&gt;, the &lt;span class=&quot;selflink&quot;&gt;Equals&lt;/span&gt; method should return &lt;strong&gt;false&lt;/strong&gt; instead of throwing an &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;ArgumentNullException&lt;/span&gt;&lt;/span&gt;." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Například pokud <em xmlns="http://www.w3.org/1999/xhtml">obj</em> je <strong xmlns="http://www.w3.org/1999/xhtml">null</strong>,  <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals</span> Metoda by měla vrátit <strong xmlns="http://www.w3.org/1999/xhtml">false</strong> namísto vyvolání <a href="https://msdn.microsoft.com/cs-cz/library/system.argumentnullexception%28v=vs.110%29.aspx">ArgumentNullException</a>.</sentencetext></span></p><p><span id="mt83" class="sentence" data-guid="6c2ee22fa1f76faecdd01b3ea420dd27" data-source="Follow these guidelines when overriding &lt;span class=&quot;selflink&quot;&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;:" xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Postupujte podle následujících pokynů při přepisování <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span>:</sentencetext></span></p><ul class="unordered"><li><p><span id="mt84" class="sentence" data-guid="348fb60afebc1354916d81efbf21d6c2" data-source="Types that implement &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;IComparable&lt;/span&gt;&lt;/span&gt; must override &lt;span class=&quot;selflink&quot;&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Typy, které implementují <a href="https://msdn.microsoft.com/cs-cz/library/system.icomparable%28v=vs.110%29.aspx">IComparable</a> nutné přepsat <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span>.</sentencetext></span></p></li><li><p><span id="mt85" class="sentence" data-guid="a8b596aab5313a733e5c76359e6951b9" data-source="Types that override &lt;span class=&quot;selflink&quot;&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; must also override &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;GetHashCode&lt;/span&gt;&lt;/span&gt;; otherwise, hash tables  might not work correctly." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Typy toto přepsání <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> musí také přepsat <a href="https://msdn.microsoft.com/cs-cz/library/system.object.gethashcode%28v=vs.110%29.aspx">GetHashCode</a>jinak zatřiďovacích tabulek nemusí fungovat správně.</sentencetext></span></p></li><li><p><span id="mt86" class="sentence" data-guid="8c64eaeb19003c08435023e35482424e" data-source="You should consider implementing the &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;IEquatable&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;&amp;lt;T&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; interface to support strongly typed tests for equality." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Měli byste zvážit implementaci <a href="https://msdn.microsoft.com/cs-cz/library/ms131187%28v=vs.110%29.aspx">IEquatable<span xmlns="">&lt;T&gt;</span></a> rozhraní pro podporu silně typované testy pro rovnost.</sentencetext></span><span id="mt87" class="sentence" data-guid="a34c07fbd4cbca77e7f96aaaf47b384d" data-source=" Your &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;IEquatable&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;&amp;lt;T&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;.&lt;/span&gt;&lt;/span&gt;Equals&lt;/span&gt;&lt;/span&gt; implementation should return results that are consistent with &lt;span class=&quot;selflink&quot;&gt;Equals&lt;/span&gt;." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Vaše <a href="https://msdn.microsoft.com/cs-cz/library/ms131190%28v=vs.110%29.aspx">IEquatable<span xmlns="">&lt;T&gt;</span><span xmlns="">.</span>Equals</a> implementace by měla vrátit výsledky, které jsou v souladu s <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals</span>.</sentencetext></span></p></li><li><p><span id="mt88" class="sentence" data-guid="7b57831b6d0fdb09733ab73c9711f7a9" data-source="If your programming language supports operator overloading and you overload the equality operator for a given type, you must also override the &lt;span class=&quot;selflink&quot;&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; method to return the same result as the equality operator." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Pokud váš programovací jazyk podporuje přetížení operátoru a přetížení operátoru rovnosti pro daný typ, je nutné přepsat <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> Metoda vrátí stejný výsledek jako operátor rovnosti.</sentencetext></span><span id="mt89" class="sentence" data-guid="62d52cea3dd3f7be620c5fad54c7984d" data-source=" This  helps ensure that class library code that uses &lt;span class=&quot;selflink&quot;&gt;Equals&lt;/span&gt; (such as &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;ArrayList&lt;/span&gt;&lt;/span&gt; and &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;Hashtable&lt;/span&gt;&lt;/span&gt;) behaves in a manner that is consistent with the way the equality operator is used by application code." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> To pomáhá zajistit, že třída knihovny kódu, který používá <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals</span> (jako je například <a href="https://msdn.microsoft.com/cs-cz/library/system.collections.arraylist%28v=vs.110%29.aspx">ArrayList</a> a <a href="https://msdn.microsoft.com/cs-cz/library/system.collections.hashtable%28v=vs.110%29.aspx">Hashtable</a>) se chová způsobem, který je konzistentní s způsob, jak se používá operátor rovnosti kódem aplikace.</sentencetext></span></p></li></ul></div><div><h4 class="LW_CollapsibleArea_TitleDiv"><div><a class="LW_CollapsibleArea_TitleAhref" title="Sbalit" role="heading"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Pokyny pro typy odkazů</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></h4><div class="sectionblock"><div class="section"><p><span id="mt91" class="sentence" data-guid="c000f7a986e482641dfcdae633d8c9c1" data-source="The following guidelines apply to overriding &lt;span class=&quot;selflink&quot;&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; for a reference type:" xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Následující pokyny se vztahují k přepsání <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> pro typ odkazu:</sentencetext></span></p><ul class="unordered"><li><p><span id="mt92" class="sentence" data-guid="8c872ef0ff0ac09e477a85b62033f427" data-source="Consider overriding &lt;span class=&quot;selflink&quot;&gt;Equals&lt;/span&gt; if the semantics of the type are based on the fact that the type represents some value(s)." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Vezměte v úvahu přepsání <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals</span> Pokud sémantiku typu jsou na základě skutečnosti, že typ představuje některé hodnoty.</sentencetext></span></p></li><li><p><span id="mt93" class="sentence" data-guid="33a38a4700c4b5a718a5b41b93d63a78" data-source="Most reference types must not overload the equality operator, even if they override &lt;span class=&quot;selflink&quot;&gt;Equals&lt;/span&gt;." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Většina odkazové typy nesmí přetížení operátoru rovnosti, i v případě, že má přednost před <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals</span>.</sentencetext></span><span id="mt94" class="sentence" data-guid="d87f9a45f6b2ed068d2e443edb9f2604" data-source=" However, if you are implementing a reference type that is intended to have value semantics, such as a complex number type, you must override the equality operator." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">
+ Při implementaci typu odkaz, který je určen k mají sémantiku hodnotu, 
+jako je například typ komplexního čísla, je však nutné přepsat operátor 
+rovnosti.</sentencetext></span></p></li><li><p><span id="mt95" class="sentence" data-guid="920a4ecb73a3b357dcad019a18913f17" data-source="You should not override &lt;span class=&quot;selflink&quot;&gt;Equals&lt;/span&gt; on a mutable reference type." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Neměli přepsat <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals</span> na proměnlivé odkazového typu.</sentencetext></span><span id="mt96" class="sentence" data-guid="9dd972c1d10b4d37f135e039c91f63a8" data-source=" This is because overriding &lt;span class=&quot;selflink&quot;&gt;Equals&lt;/span&gt; requires that you also override the &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;GetHashCode&lt;/span&gt;&lt;/span&gt; method, as discussed in the previous section." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Důvodem je, že přepsání <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals</span> vyžaduje, aby také přepsat <a href="https://msdn.microsoft.com/cs-cz/library/system.object.gethashcode%28v=vs.110%29.aspx">GetHashCode</a> metodu, jak je popsáno v předchozí části.</sentencetext></span><span id="mt97" class="sentence" data-guid="030ccf57ac978ef3f11b4261c14411ed" data-source=" This means that the hash code of an instance of a mutable reference type can change during its lifetime, which can cause the object to be lost in a hash table." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">
+ To znamená, že kód hash instance typu proměnlivé odkazové lze změnit 
+během celé jeho životnosti, což může způsobit objekt, který má dojít ke 
+ztrátě v tabulce hash.</sentencetext></span></p></li></ul></div></div></div><div><h4 class="LW_CollapsibleArea_TitleDiv"><div><a class="LW_CollapsibleArea_TitleAhref" title="Sbalit" role="heading"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Pokyny pro typy hodnot</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></h4><div class="sectionblock"><div class="section"><p><span id="mt99" class="sentence" data-guid="8bc18102e9a9f2023875a9608e627d75" data-source="The following guidelines apply to overriding &lt;span class=&quot;selflink&quot;&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; for a value type:" xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Následující pokyny se vztahují k přepsání <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> pro typ hodnoty:</sentencetext></span></p><ul class="unordered"><li><p><span id="mt100" class="sentence" data-guid="a9d501e70283d4175a9fcf3b735ca43e" data-source="If you are defining a value type that includes one or more fields whose values are reference types, you should override &lt;span class=&quot;selflink&quot;&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Pokud definujete hodnotový typ, který obsahuje jeden nebo více polí, jejichž hodnoty jsou typy odkazů, byste měli přepsat <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span>.</sentencetext></span><span id="mt101" class="sentence" data-guid="8fb62e077d0e5b1eaae298c703b45112" data-source=" The &lt;span class=&quot;selflink&quot;&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; implementation provided by &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;ValueType&lt;/span&gt;&lt;/span&gt; performs a byte-by-byte comparison for value types whose fields are all value types, but it uses reflection to perform a field-by-field comparison of value types whose fields include reference types." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">
+  <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> Implementace poskytovaná <a href="https://msdn.microsoft.com/cs-cz/library/system.valuetype%28v=vs.110%29.aspx">ValueType</a>
+ provádí porovnání bajt po bajtu pro typy hodnota, jejíž pole jsou 
+všechny typy hodnot, ale používá reflexi pro provedení porovnání pole 
+pole typů hodnot, jejichž pole obsahují typy odkazů.</sentencetext></span></p></li><li><p><span id="mt102" class="sentence" data-guid="0b279f6265916c3ad0fbaabfe41ba691" data-source="If you override &lt;span class=&quot;selflink&quot;&gt;Equals&lt;/span&gt; and your development language supports operator overloading, you must overload the equality operator." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Pokud přepíšete <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals</span> a váš jazyk vývoj podporuje přetížení operátoru, musí přetížení operátoru rovnosti.</sentencetext></span></p></li><li><p><span id="mt103" class="sentence" data-guid="0bbbbb36e9678dc4c1d9ed081bab9862" data-source="You should implement the &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;IEquatable&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;&amp;lt;T&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; interface." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Měli byste implementovat <a href="https://msdn.microsoft.com/cs-cz/library/ms131187%28v=vs.110%29.aspx">IEquatable<span xmlns="">&lt;T&gt;</span></a> rozhraní.</sentencetext></span><span id="mt104" class="sentence" data-guid="297058304f8ff7396bb8373504d43d46" data-source=" Calling the strongly typed &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;IEquatable&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;&amp;lt;T&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;.&lt;/span&gt;&lt;/span&gt;Equals&lt;/span&gt;&lt;/span&gt; method avoids boxing the &lt;em&gt;obj&lt;/em&gt; argument." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Volání silného typu <a href="https://msdn.microsoft.com/cs-cz/library/ms131190%28v=vs.110%29.aspx">IEquatable<span xmlns="">&lt;T&gt;</span><span xmlns="">.</span>Equals</a> metoda zabraňuje zabalení <em xmlns="http://www.w3.org/1999/xhtml">obj</em> argument.</sentencetext></span></p></li></ul></div></div></div></div></div></div></div><div><h2 class="LW_CollapsibleArea_TitleDiv"><div><a class="LW_CollapsibleArea_TitleAhref" title="" role="heading"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Příklady</span></a><div id="Anchor_2" class="LW_CollapsibleArea_Anchor_Div"><a href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.110%29.aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Po kliknutí pravým tlačítkem myši můžete zkopírovat a nasdílet odkaz pro tento oddíl."></a></div><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></h2><div class="sectionblock"><div class="section"><div class="description"><div class="section"><p><span id="mt105" class="sentence" data-guid="e367b0df3497c31c24058771eac35fbc" data-source="The following example shows a &lt;span class=&quot;code&quot;&gt;Point&lt;/span&gt; class that overrides the &lt;span class=&quot;selflink&quot;&gt;Equals&lt;/span&gt; method to provide value equality, and a &lt;span class=&quot;code&quot;&gt;Point3D&lt;/span&gt; class that is derived from &lt;span class=&quot;code&quot;&gt;Point&lt;/span&gt;." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Následující příklad ukazuje <span class="code" xmlns="http://www.w3.org/1999/xhtml">Point</span> třídu, která přepíše <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals</span> Metoda poskytnout rovnosti hodnoty a <span class="code" xmlns="http://www.w3.org/1999/xhtml">Point3D</span> Třída, která je odvozena od <span class="code" xmlns="http://www.w3.org/1999/xhtml">Point</span>.</sentencetext></span><span id="mt106" class="sentence" data-guid="d84bad5303009cf3b73fddce49ce426f" data-source=" Because &lt;span class=&quot;code&quot;&gt;Point&lt;/span&gt; overrides &lt;span class=&quot;selflink&quot;&gt;Object&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;.&lt;/span&gt;&lt;/span&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; to test for value equality, the &lt;span class=&quot;selflink&quot;&gt;Object&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;.&lt;/span&gt;&lt;/span&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; method is not called." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Protože <span class="code" xmlns="http://www.w3.org/1999/xhtml">Point</span> přepsání <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Object<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9ImNwcCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPjo6PC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJudSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+LjwvdmFyaWF0aW9uPjwvbXRwczpMYW5ndWFnZVNwZWNpZmljVGV4dD4=" xmlns=""><span>.</span></span>Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> pro testování rovnosti hodnoty <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Object<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9ImNwcCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPjo6PC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJudSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+LjwvdmFyaWF0aW9uPjwvbXRwczpMYW5ndWFnZVNwZWNpZmljVGV4dD4=" xmlns=""><span>.</span></span>Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> není zavolána metoda.</sentencetext></span><span id="mt107" class="sentence" data-guid="967e04c3a8a03fe8581d6890a14ace83" data-source=" However, &lt;span class=&quot;code&quot;&gt;Point3D.Equals&lt;/span&gt; calls &lt;span class=&quot;code&quot;&gt;Point.Equals&lt;/span&gt; because &lt;span class=&quot;code&quot;&gt;Point&lt;/span&gt; implements &lt;span class=&quot;selflink&quot;&gt;Object&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;.&lt;/span&gt;&lt;/span&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; in a manner that provides value equality." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Však <span class="code" xmlns="http://www.w3.org/1999/xhtml">Point3D.Equals</span> volání <span class="code" xmlns="http://www.w3.org/1999/xhtml">Point.Equals</span> protože <span class="code" xmlns="http://www.w3.org/1999/xhtml">Point</span> implementuje <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Object<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9ImNwcCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPjo6PC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJudSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+LjwvdmFyaWF0aW9uPjwvbXRwczpMYW5ndWFnZVNwZWNpZmljVGV4dD4=" xmlns=""><span>.</span></span>Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> způsobem, který poskytuje rovnosti hodnoty.</sentencetext></span></p></div></div>
+<div id="code-snippet-7" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabActive" dir="ltr"><a>C#</a></div><div class="codeSnippetContainerTab" dir="ltr"><a href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.110%29.aspx?cs-save-lang=1&amp;cs-lang=vb#code-snippet-7">VB</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Zkopírovat&nbsp;do&nbsp;schránky" href="javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_532f967b-03a5-4b51-8f23-ec494cabdf78');" ms.cmptyp="CodeSnippet">Zkopírovat</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_532f967b-03a5-4b51-8f23-ec494cabdf78" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre><span style="color:Blue;">using</span> System;
+
+<span style="color:Blue;">class</span> Point
+{
+   <span style="color:Blue;">protected</span> <span style="color:Blue;">int</span> x, y;
+
+   <span style="color:Blue;">public</span> Point() : <span style="color:Blue;">this</span>(0, 0) 
+   { }
+
+   <span style="color:Blue;">public</span> Point(<span style="color:Blue;">int</span> x, <span style="color:Blue;">int</span> y) 
+   {
+      <span style="color:Blue;">this</span>.x = x;
+      <span style="color:Blue;">this</span>.y = y;
+   }
+
+   <span style="color:Blue;">public</span> <span style="color:Blue;">override</span> <span style="color:Blue;">bool</span> Equals(Object obj) 
+   {
+      <span style="color:Green;">//Check for null and compare run-time types.</span>
+      <span style="color:Blue;">if</span> ((obj == <span style="color:Blue;">null</span>) || ! <span style="color:Blue;">this</span>.GetType().Equals(obj.GetType())) {
+         <span style="color:Blue;">return</span> <span style="color:Blue;">false</span>;
+      }
+      <span style="color:Blue;">else</span> { 
+         Point p = (Point) obj; 
+         <span style="color:Blue;">return</span> (x == p.x) &amp;&amp; (y == p.y);
+      }   
+   }
+
+   <span style="color:Blue;">public</span> <span style="color:Blue;">override</span> <span style="color:Blue;">int</span> GetHashCode() 
+   {
+      <span style="color:Blue;">return</span> (x &lt;&lt; 2) ^ y;
+   }
+
+    <span style="color:Blue;">public</span> <span style="color:Blue;">override</span> <span style="color:Blue;">string</span> ToString()
+    {
+        <span style="color:Blue;">return</span> String.Format(<span style="color:#A31515;">"Point({0}, {1})"</span>, x, y);
+    }
+}
+
+<span style="color:Blue;">sealed</span> <span style="color:Blue;">class</span> Point3D: Point 
+{
+   <span style="color:Blue;">int</span> z;
+
+   <span style="color:Blue;">public</span> Point3D(<span style="color:Blue;">int</span> x, <span style="color:Blue;">int</span> y, <span style="color:Blue;">int</span> z) : <span style="color:Blue;">base</span>(x, y) 
+   {
+      <span style="color:Blue;">this</span>.z = z; 
+   }
+
+   <span style="color:Blue;">public</span> <span style="color:Blue;">override</span> <span style="color:Blue;">bool</span> Equals(Object obj) 
+   {
+      Point3D pt3 = obj <span style="color:Blue;">as</span> Point3D;
+      <span style="color:Blue;">if</span> (pt3 == <span style="color:Blue;">null</span>)
+         <span style="color:Blue;">return</span> <span style="color:Blue;">false</span>;
+      <span style="color:Blue;">else</span>
+         <span style="color:Blue;">return</span> <span style="color:Blue;">base</span>.Equals((Point)obj) &amp;&amp; z == pt3.z;
+   }
+
+   <span style="color:Blue;">public</span> <span style="color:Blue;">override</span> <span style="color:Blue;">int</span> GetHashCode() 
+   {
+      <span style="color:Blue;">return</span> (<span style="color:Blue;">base</span>.GetHashCode() &lt;&lt; 2) ^ z;
+   }
+
+   <span style="color:Blue;">public</span> <span style="color:Blue;">override</span> String ToString() 
+   {
+        <span style="color:Blue;">return</span> String.Format(<span style="color:#A31515;">"Point({0}, {1}, {2})"</span>, x, y, z);
+    }
+}
+
+<span style="color:Blue;">class</span> Example 
+{
+  <span style="color:Blue;">public</span> <span style="color:Blue;">static</span> <span style="color:Blue;">void</span> Main() 
+  {
+     Point point2D = <span style="color:Blue;">new</span> Point(5, 5);
+     Point3D point3Da = <span style="color:Blue;">new</span> Point3D(5, 5, 2);
+     Point3D point3Db = <span style="color:Blue;">new</span> Point3D(5, 5, 2);
+     Point3D point3Dc = <span style="color:Blue;">new</span> Point3D(5, 5, -1);
+
+     Console.WriteLine(<span style="color:#A31515;">"{0} = {1}: {2}"</span>, 
+                       point2D, point3Da, point2D.Equals(point3Da));
+     Console.WriteLine(<span style="color:#A31515;">"{0} = {1}: {2}"</span>, 
+                       point2D, point3Db, point2D.Equals(point3Db));        
+     Console.WriteLine(<span style="color:#A31515;">"{0} = {1}: {2}"</span>, 
+                       point3Da, point3Db, point3Da.Equals(point3Db));
+     Console.WriteLine(<span style="color:#A31515;">"{0} = {1}: {2}"</span>, 
+                       point3Da, point3Dc, point3Da.Equals(point3Dc));
+  } 
+}
+<span style="color:Green;">// The example displays the following output:</span>
+<span style="color:Green;">//       Point(5, 5) = Point(5, 5, 2): False</span>
+<span style="color:Green;">//       Point(5, 5) = Point(5, 5, 2): False</span>
+<span style="color:Green;">//       Point(5, 5, 2) = Point(5, 5, 2): True</span>
+<span style="color:Green;">//       Point(5, 5, 2) = Point(5, 5, -1): False</span>
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+<div class="comments"><div class="section"><p>The Point.Equals method 
+checks to make sure that the obj argument is not null and that it 
+references an instance of the same type as this object. If either check 
+fails, the method returns false.</p><p>The Point.Equals method calls the
+ M:System.Object.GetType method to determine whether the run-time types 
+of the two objects are identical. If the method used a check of the form
+ obj is Point in C# or TryCast(obj, Point) in Visual Basic, the check 
+would return true in cases where obj is an instance of a derived class 
+of Point, even though obj and the current instance are not of the same 
+run-time type. Having verified that both objects are of the same type, 
+the method casts obj to type Point and returns the result of comparing 
+the instance fields of the two objects.</p><p>In Point3D.Equals, the 
+inherited Point.Equals  method, which overrides 
+M:System.Object.Equals(System.Object), is invoked before anything else 
+is done. Because Point3D is a sealed class (NotInheritable in Visual 
+Basic), a check in the form obj is Point in C# or TryCast(obj, Point) in
+ Visual Basic is adequate to ensure that obj is a Point3D object. If it 
+is a Point3D object, it is cast to a Point object and passed to the base
+ class implementation of M:System.Object.Equals(System.Object). Only 
+when the inherited Point.Equals method returns true does the method 
+compare the z instance fields introduced in the derived class. </p></div></div></div><div class="section"><div class="description"><div class="section"><p><span id="mt108" class="sentence" data-guid="d934425e8307c96a1dff17af3bf641be" data-source="The following example defines a &lt;span class=&quot;code&quot;&gt;Rectangle&lt;/span&gt; class that internally implements a rectangle as two &lt;span class=&quot;code&quot;&gt;Point&lt;/span&gt; objects." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Následující příklad definuje <span class="code" xmlns="http://www.w3.org/1999/xhtml">Rectangle</span> třídu, která implementuje interně obdélník jako dva <span class="code" xmlns="http://www.w3.org/1999/xhtml">Point</span> objekty.</sentencetext></span><span id="mt109" class="sentence" data-guid="9c935f4727aa6e521df4f3f6a3fc7b04" data-source=" The &lt;span class=&quot;code&quot;&gt;Rectangle&lt;/span&gt; class also overrides &lt;span class=&quot;selflink&quot;&gt;Object&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;.&lt;/span&gt;&lt;/span&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; to provide for value equality." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">
+  <span class="code" xmlns="http://www.w3.org/1999/xhtml">Rectangle</span> Třídy také přepsání <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Object<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9ImNwcCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPjo6PC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJudSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPi48L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+LjwvdmFyaWF0aW9uPjwvbXRwczpMYW5ndWFnZVNwZWNpZmljVGV4dD4=" xmlns=""><span>.</span></span>Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> stanovit rovnosti hodnoty.</sentencetext></span></p></div></div>
+<div id="code-snippet-8" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabActive" dir="ltr"><a>C#</a></div><div class="codeSnippetContainerTab" dir="ltr"><a href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.110%29.aspx?cs-save-lang=1&amp;cs-lang=vb#code-snippet-8">VB</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Zkopírovat&nbsp;do&nbsp;schránky" href="javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_0c317783-dbdd-4d02-b9db-ad02314c84d9');" ms.cmptyp="CodeSnippet">Zkopírovat</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_0c317783-dbdd-4d02-b9db-ad02314c84d9" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre><span style="color:Blue;">using</span> System;
+
+<span style="color:Blue;">class</span> Rectangle 
+{
+   <span style="color:Blue;">private</span> Point a, b;
+
+   <span style="color:Blue;">public</span> Rectangle(<span style="color:Blue;">int</span> upLeftX, <span style="color:Blue;">int</span> upLeftY, <span style="color:Blue;">int</span> downRightX, <span style="color:Blue;">int</span> downRightY) {
+      <span style="color:Blue;">this</span>.a = <span style="color:Blue;">new</span> Point(upLeftX, upLeftY);
+      <span style="color:Blue;">this</span>.b = <span style="color:Blue;">new</span> Point(downRightX, downRightY);
+   }
+
+   <span style="color:Blue;">public</span> <span style="color:Blue;">override</span> <span style="color:Blue;">bool</span> Equals(Object obj) {
+      <span style="color:Green;">// Perform an equality check on two rectangles (Point object pairs).</span>
+      <span style="color:Blue;">if</span> (obj == <span style="color:Blue;">null</span> || GetType() != obj.GetType()) 
+          <span style="color:Blue;">return</span> <span style="color:Blue;">false</span>;
+      Rectangle r = (Rectangle)obj;
+      <span style="color:Blue;">return</span> a.Equals(r.a) &amp;&amp; b.Equals(r.b);
+   }
+
+   <span style="color:Blue;">public</span> <span style="color:Blue;">override</span> <span style="color:Blue;">int</span> GetHashCode() {
+      <span style="color:Blue;">return</span> Tuple.Create(a, b).GetHashCode();
+   }
+
+    <span style="color:Blue;">public</span> <span style="color:Blue;">override</span> String ToString() 
+    {
+       <span style="color:Blue;">return</span> String.Format(<span style="color:#A31515;">"Rectangle({0}, {1}, {2}, {3})"</span>,
+                            a.x, a.y, b.x, b.y); 
+    }
+}
+
+<span style="color:Blue;">class</span> Point 
+{
+  <span style="color:Blue;">internal</span> <span style="color:Blue;">int</span> x;
+  <span style="color:Blue;">internal</span> <span style="color:Blue;">int</span> y;
+
+  <span style="color:Blue;">public</span> Point(<span style="color:Blue;">int</span> X, <span style="color:Blue;">int</span> Y) {
+     <span style="color:Blue;">this</span>.x = X;
+     <span style="color:Blue;">this</span>.y = Y;
+  }
+
+  <span style="color:Blue;">public</span> <span style="color:Blue;">override</span> <span style="color:Blue;">bool</span> Equals (Object obj) {
+     <span style="color:Green;">// Performs an equality check on two points (integer pairs).</span>
+     <span style="color:Blue;">if</span> (obj == <span style="color:Blue;">null</span> || GetType() != obj.GetType()) <span style="color:Blue;">return</span> <span style="color:Blue;">false</span>;
+     Point p = (Point)obj;
+     <span style="color:Blue;">return</span> (x == p.x) &amp;&amp; (y == p.y);
+  }
+
+  <span style="color:Blue;">public</span> <span style="color:Blue;">override</span> <span style="color:Blue;">int</span> GetHashCode() {
+     <span style="color:Blue;">return</span> Tuple.Create(x, y).GetHashCode();
+  }
+}
+
+<span style="color:Blue;">class</span> Example 
+{
+   <span style="color:Blue;">public</span> <span style="color:Blue;">static</span> <span style="color:Blue;">void</span> Main() 
+   {
+      Rectangle r1 = <span style="color:Blue;">new</span> Rectangle(0, 0, 100, 200);
+      Rectangle r2 = <span style="color:Blue;">new</span> Rectangle(0, 0, 100, 200);
+      Rectangle r3 = <span style="color:Blue;">new</span> Rectangle(0, 0, 150, 200);
+
+      Console.WriteLine(<span style="color:#A31515;">"{0} = {1}: {2}"</span>, r1, r2, r1.Equals(r2));
+      Console.WriteLine(<span style="color:#A31515;">"{0} = {1}: {2}"</span>, r1, r3, r1.Equals(r3));
+      Console.WriteLine(<span style="color:#A31515;">"{0} = {1}: {2}"</span>, r2, r3, r2.Equals(r3));
+   }
+}
+<span style="color:Green;">// The example displays the following output:</span>
+<span style="color:Green;">//    Rectangle(0, 0, 100, 200) = Rectangle(0, 0, 100, 200): True</span>
+<span style="color:Green;">//    Rectangle(0, 0, 100, 200) = Rectangle(0, 0, 150, 200): False</span>
+<span style="color:Green;">//    Rectangle(0, 0, 100, 200) = Rectangle(0, 0, 150, 200): False</span>
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</div><div class="section"><div class="description"><div class="section"><p><span id="mt110" class="sentence" data-guid="332f5a4ad993a1b3748bf19c16644fd3" data-source="Some languages such as C# and Visual Basic support operator overloading." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml">Některé jazyky, například C# a Visual Basic podporují přetížení operátoru.</sentencetext></span><span id="mt111" class="sentence" data-guid="242dd4f1785e2c6481ce1d873f4bc297" data-source=" When a type overloads the equality operator, it must also override the &lt;span class=&quot;selflink&quot;&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; method to provide the same functionality." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Pokud typ přetížení operátoru rovnosti, musí také přepsat <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> Metoda poskytnout stejné funkce.</sentencetext></span><span id="mt112" class="sentence" data-guid="70600a8ceb0fef92d6c8441a4caf01d2" data-source=" This is typically accomplished by writing the &lt;span class=&quot;selflink&quot;&gt;Equals&lt;span class=&quot;mtpsTagOuterHtml&quot;  xmlns=&quot;&quot;&gt;&lt;span&gt;(Object)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; method in terms of the overloaded equality operator, as in the following example." xml:space="preserve"><sentencetext xmlns="http://www.w3.org/1999/xhtml"> Obvykle to lze provést napsáním <span class="selflink" xmlns="http://www.w3.org/1999/xhtml">Equals<span class="mtpsTagOuterHtml" outerhtml="PG10cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQgcnVuYXQ9InNlcnZlciIgeG1sbnM6bXRwcz0iaHR0cDovL21zZG4yLm1pY3Jvc29mdC5jb20vbXRwcyI+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPihPYmplY3QpPC92YXJpYXRpb24+PHZhcmlhdGlvbiBkZXZMYW5nPSJjcHAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIj4oT2JqZWN0Xik8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9Im51IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48dmFyaWF0aW9uIGRldkxhbmc9InZiIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+KE9iamVjdCk8L3ZhcmlhdGlvbj48L210cHM6TGFuZ3VhZ2VTcGVjaWZpY1RleHQ+" xmlns=""><span>(Object)</span></span></span> Metoda z hlediska rovnosti přetíženého operátoru, jako v následujícím příkladu.</sentencetext></span></p></div></div>
+<div id="code-snippet-9" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabActive" dir="ltr"><a>C#</a></div><div class="codeSnippetContainerTab" dir="ltr"><a href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.110%29.aspx?cs-save-lang=1&amp;cs-lang=vb#code-snippet-9">VB</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Zkopírovat&nbsp;do&nbsp;schránky" href="javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_badcbd2f-50c7-43b7-be79-664b965e74bf');" ms.cmptyp="CodeSnippet">Zkopírovat</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_badcbd2f-50c7-43b7-be79-664b965e74bf" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre><span style="color:Blue;">using</span> System;
+
+<span style="color:Blue;">public</span> <span style="color:Blue;">struct</span> Complex {
+   <span style="color:Blue;">public</span> <span style="color:Blue;">double</span> re, im;
+
+   <span style="color:Blue;">public</span> <span style="color:Blue;">override</span> <span style="color:Blue;">bool</span> Equals(Object obj) {
+      <span style="color:Blue;">return</span> obj <span style="color:Blue;">is</span> Complex &amp;&amp; <span style="color:Blue;">this</span> == (Complex)obj;
+   }
+
+   <span style="color:Blue;">public</span> <span style="color:Blue;">override</span> <span style="color:Blue;">int</span> GetHashCode() {
+      <span style="color:Blue;">return</span> Tuple.Create(re, im).GetHashCode();
+   }
+
+   <span style="color:Blue;">public</span> <span style="color:Blue;">static</span> <span style="color:Blue;">bool</span> <span style="color:Blue;">operator</span> ==(Complex x, Complex y) {
+      <span style="color:Blue;">return</span> x.re == y.re &amp;&amp; x.im == y.im;
+   }
+
+   <span style="color:Blue;">public</span> <span style="color:Blue;">static</span> <span style="color:Blue;">bool</span> <span style="color:Blue;">operator</span> !=(Complex x, Complex y) {
+      <span style="color:Blue;">return</span> !(x == y);
+   }
+
+    <span style="color:Blue;">public</span> <span style="color:Blue;">override</span> String ToString()
+    {
+       <span style="color:Blue;">return</span> String.Format(<span style="color:#A31515;">"({0}, {1})"</span>, re, im);
+    } 
+}
+
+<span style="color:Blue;">class</span> MyClass 
+{
+  <span style="color:Blue;">public</span> <span style="color:Blue;">static</span> <span style="color:Blue;">void</span> Main() 
+  {
+    Complex cmplx1, cmplx2;
+
+    cmplx1.re = 4.0;
+    cmplx1.im = 1.0;
+
+    cmplx2.re = 2.0;
+    cmplx2.im = 1.0;
+
+    Console.WriteLine(<span style="color:#A31515;">"{0} &lt;&gt; {1}: {2}"</span>, cmplx1, cmplx2, cmplx1 != cmplx2);        
+    Console.WriteLine(<span style="color:#A31515;">"{0} = {1}: {2}"</span>, cmplx1, cmplx2, cmplx1.Equals(cmplx2));        
+
+    cmplx2.re = 4.0;
+
+    Console.WriteLine(<span style="color:#A31515;">"{0} = {1}: {2}"</span>, cmplx1, cmplx2, cmplx1 == cmplx2);        
+    Console.WriteLine(<span style="color:#A31515;">"{0} = {1}: {2}"</span>, cmplx1, cmplx2, cmplx1.Equals(cmplx2));          
+  }
+}
+<span style="color:Green;">// The example displays the following output:</span>
+<span style="color:Green;">//       (4, 1) &lt;&gt; (2, 1): True</span>
+<span style="color:Green;">//       (4, 1) = (2, 1): False</span>
+<span style="color:Green;">//       (4, 1) = (4, 1): True</span>
+<span style="color:Green;">//       (4, 1) = (4, 1): True</span>
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+<div class="comments"><div class="section"><p>Because Complex is a value
+ type, it cannot be derived from.  Therefore, the override to 
+M:System.Object.Equals(System.Object) method need not call 
+M:System.Object.GetType to determine the precise run-time type of each 
+object, but can instead use the is operator in C# or the TypeOf operator
+ in Visual Basic to check the type of the obj parameter.</p></div></div></div></div></div><div><h2 class="LW_CollapsibleArea_TitleDiv"><div><a class="LW_CollapsibleArea_TitleAhref" title="" role="heading"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Informace o verzi</span></a><div id="Anchor_3" class="LW_CollapsibleArea_Anchor_Div"><a href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.110%29.aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Po kliknutí pravým tlačítkem myši můžete zkopírovat a nasdílet odkaz pro tento oddíl."></a></div><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></h2><div class="sectionblock">
+        <strong>Univerzální platforma Windows</strong>
+      <br>K dispozici od 8<br>
+        <strong>.NET Framework</strong>
+      <br>K dispozici od 1.1<br>
+        <strong>Přenosná knihovna tříd</strong>
+      <br>Podporováno v: 
+        <a href="https://msdn.microsoft.com/en-us/library/gg597391.aspx">přenosné platformy .NET</a>
+      <br>
+        <strong>Silverlight</strong>
+      <br>K dispozici od 2.0<br>
+        <strong>Windows Phone Silverlight</strong>
+      <br>K dispozici od 7.0<br>
+        <strong>Windows Phone</strong>
+      <br>K dispozici od 8.1<br></div></div><div><h2 class="LW_CollapsibleArea_TitleDiv"><div><a class="LW_CollapsibleArea_TitleAhref" title="" role="heading"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Viz také</span></a><div id="Anchor_4" class="LW_CollapsibleArea_Anchor_Div"><a href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28v=vs.110%29.aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Po kliknutí pravým tlačítkem myši můžete zkopírovat a nasdílet odkaz pro tento oddíl."></a></div><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></h2><div class="sectionblock"><p><a href="https://msdn.microsoft.com/cs-cz/library/system.object.referenceequals%28v=vs.110%29.aspx">ReferenceEquals</a><br><a href="https://msdn.microsoft.com/cs-cz/library/system.object.gethashcode%28v=vs.110%29.aspx">GetHashCode</a><br><a href="https://msdn.microsoft.com/cs-cz/library/system.valuetype%28v=vs.110%29.aspx">ValueType</a><br><a href="https://msdn.microsoft.com/cs-cz/library/system.icomparable%28v=vs.110%29.aspx">IComparable</a><br><a href="https://msdn.microsoft.com/cs-cz/library/system.collections.arraylist%28v=vs.110%29.aspx">System.Collections<span xmlns="">.</span>ArrayList</a><br><a href="https://msdn.microsoft.com/cs-cz/library/system.collections.hashtable%28v=vs.110%29.aspx">System.Collections<span xmlns="">.</span>Hashtable</a><br><a href="https://msdn.microsoft.com/cs-cz/library/system.object.equals%28v=vs.110%29.aspx">Equals Přetížení</a><br><a href="https://msdn.microsoft.com/cs-cz/library/system.object%28v=vs.110%29.aspx">Třída Object</a><br><a href="https://msdn.microsoft.com/cs-cz/library/system%28v=vs.110%29.aspx">Obory názvů System</a><br></p></div></div><a href="#mainBody">Zpět na začátek</a><br></div></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="libraryMemberFilter">
+    <div class="filterContainer">
+        <span>Zobrazit:</span>
+        <label>
+            <input class="libraryFilterInherited" checked="checked" value="Inherit" type="checkbox">Zdědění
+        </label>
+        <label>
+            <input class="libraryFilterProtected" checked="checked" value="Protected" type="checkbox">Chránění
+        </label>
+    </div>
+</div>
+    
+<input id="libraryMemberFilterEmptyWarning" value="Aktuálnímu nastavení filtru neodpovídají žádní členové." type="hidden">
+
+
+
+    </div>
+<div id="rightNavigationMenu" ms.cmpgrp="right nav" style="position: fixed; margin-left: 3px; top: 60px;">
+    <div id="mobileButtons">
+        
+    </div>
+    <div id="navMain">
+        <div id="closeNavigation">
+            <a class="tocCloseSmall" id="closeButton"></a>
+        </div>
+        <div id="navigationButtons">
+            <a id="isd_print" href="https://msdn.microsoft.com/cs-cz/library/bsc2ak47%28d=printer,v=vs.110%29.aspx" rel="nofollow"><ins class="print"></ins>Tisk </a>
+            <a id="isd_printABook2" href="https://msdn.microsoft.com/cs-cz/library/export/help/?returnurl=%2fcs-cz%2flibrary%2fbsc2ak47%28v%3dvs.110%29.aspx">
+                <ins class="export"></ins>Exportovat (<span class="count">0</span>)
+            </a>
+            <a id="isdShare" href="#" role="button" aria-expanded="false">
+                <ins class="share"></ins>Sdílet
+            </a>
+            <div id="socials" style="display: none">
+                <a class="isdFacebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmsdn.microsoft.com%2Fcs-cz%2Flibrary%2Fbsc2ak47%28v%3Dvs.110%29.aspx" aria-label="Sdílet na Facebooku">
+                    <ins class="facebook"></ins>
+                </a>
+                <a class="isdTwitter" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fmsdn.microsoft.com%2Fcs-cz%2Flibrary%2Fbsc2ak47%28v%3Dvs.110%29.aspx&amp;text=Metoda%20Object.Equals%20%28Object%29%20%28System%29&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Fmsdn.microsoft.com%2Fcs-cz%2Flibrary%2Fbsc2ak47%28v%3Dvs.110%29.aspx" aria-label="Sdílet na Twitteru">
+                    <ins class="twitter"></ins>
+                </a>
+                <a class="isdGooglePlus" href="https://plus.google.com/share?url=https%3A%2F%2Fmsdn.microsoft.com%2Fcs-cz%2Flibrary%2Fbsc2ak47%28v%3Dvs.110%29.aspx" aria-label="Sdílet na Google+">
+                    <ins class="googlePlus"></ins>
+                </a>
+            </div>
+        </div>
+        <div id="indoc_toc" style="" ms.cmpgrp="indoc toc">
+            <div id="indoc_title">V TOMTO ČLÁNKU</div>
+            <ul id="indoc_toclist"><li data-index="0" class="active"><a href="#Syntaxe">Syntaxe</a></li><li data-index="1"><a href="#Pozn%C3%A1mky">Poznámky</a></li><li data-index="2"><a href="#P%C5%99%C3%ADklady">Příklady</a></li><li data-index="3"><a href="#Informace%20o%20verzi">Informace o verzi</a></li><li data-index="4"><a href="#Viz+tak%C3%A9">Viz také</a></li></ul>
+        </div>
+    </div>
+</div>
+<div id="rightNavigationMenuThumbnail" class="rightNavigationMenuThumbnail">
+</div>
+
+
+
+
+
+        </div>
+        <div class="clear"></div>
+
+        
+
+<input name="__RequestVerificationToken" value="lA50TtQTnL18DialPe4-1O9sXKPRL3_rGigxYkEAKYu5JtbwJVi_oBUW7ReSYmNMkvmi4NGPyjh-R1Wxd8xu4XNNhFE1" type="hidden">
+<input id="ratingValueSubmitUrl" value="https://msdn.microsoft.com/cs-cz/library/feedback/rate/bsc2ak47(v=vs.110).aspx" type="hidden">
+<input id="ratingAdditionalSubmitUrl" value="https://msdn.microsoft.com/cs-cz/library/feedback/additional/bsc2ak47(v=vs.110).aspx" type="hidden">
+<input id="isTopicRated" value="false" type="hidden">
+
+
+
+
+    <div id="lib-footer">
+        
+
+    
+    <link type="text/css" rel="stylesheet">
+    
+        
+    <div id="ux-footer" class="" style="" dir="ltr" ms.pgarea="footer">
+
+
+    <div id="standardRatingBefore" class="clear stdr-container-before"></div>
+    <div id="standardRating" class="stdr-container stdr-float" ms.pgarea="body" style="width: 1519px; margin-left: 0px; display: block;">
+        <div class="stdr-close" style="display: block;"></div>
+        <div class="stdr-vote stdr-content">
+            <div class="stdr-content">
+                <span class="stdr-votetitle">Je tato stránka užitečná?</span>
+                <button class="stdr-yes" aria-label="Ano, tato stránka byla užitečná">Ano</button>
+                <button class="stdr-no" aria-label="Ne, tato stránka nebyla užitečná">Ne</button>
+                <input id="s_ratingValue" value="" type="hidden">
+            </div>
+        </div>
+        <div class="stdr-feedback" style="display: none">
+            <div class="stdr-form">
+                <div class="stdr-fieldtitle">Další podněty?</div>
+                <textarea class="stdr-detail" rows="6" maxlength="1500"></textarea>
+                <div>
+                    <span class="stdr-count">Zbývající počet znaků: <span class="stdr-charcnt">1500</span></span>
+                    <div class="stdr-buttons">
+                        <button class="stdr-provide" aria-label="Poslat další názor">Odeslat</button>
+                        <button class="stdr-skip" aria-label="Přeskočit další názor">Přeskočit</button>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="stdr-thanks" style="display: none">
+            <div class="stdr-content">
+                <span class="stdr-thankyou">Děkujeme!</span>
+                <span class="stdr-appreciate">Děkujeme za váš názor.</span>
+            </div>
+        </div>
+
+        
+        <div id="contentFeedbackQAContainer" style="display: none;"></div>
+    </div>
+    <div id="standardRatingPlaceholder" style="height: 60px;"></div>
+    
+
+        <footer class="top" role="navigation" aria-label="footer">
+            <div data-fragmentname="LeftLinks" id="Fragment_LeftLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <h4 class="linkListTitle">Centra pro vývojáře</h4>
+    <ul class="links">
+      <li>
+        <a href="https://dev.windows.com/" id="LeftLinks_2148_1" class="windowsBlue" xmlns="http://www.w3.org/1999/xhtml">Windows</a>
+      </li>
+      <li>
+        <a href="https://dev.office.com/" id="LeftLinks_2148_3" class="office" xmlns="http://www.w3.org/1999/xhtml">Office</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/vstudio" id="LeftLinks_2148_4" class="visualStudio" xmlns="http://www.w3.org/1999/xhtml">Visual Studio</a>
+      </li>
+      <li>
+        <a href="https://azure.microsoft.com/en-us/documentation/" target="_blank" id="LeftLinks_2148_12" xmlns="http://www.w3.org/1999/xhtml">Microsoft Azure</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/developer-centers-msdn" id="LeftLinks_2148_5" xmlns="http://www.w3.org/1999/xhtml">Další…</a>
+      </li>
+    </ul>
+  </div>
+</div>
+            <div id="rightLinks">
+                <div data-fragmentname="CenterLinks1" id="Fragment_CenterLinks1" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <h4 class="linkListTitle">Studijní materiály</h4>
+    <ul class="links">
+      <li>
+        <a href="https://mva.microsoft.com/" id="CenterLinks1_2151_4" xmlns="http://www.w3.org/1999/xhtml">Microsoft Virtual Academy</a>
+      </li>
+      <li>
+        <a href="https://channel9.msdn.com/" id="CenterLinks1_2151_5" xmlns="http://www.w3.org/1999/xhtml">Channel 9</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/magazine/" id="CenterLinks1_2151_7" xmlns="http://www.w3.org/1999/xhtml">Časopis MSDN Magazine</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentname="CenterLinks2" id="Fragment_CenterLinks2" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <h4 class="linkListTitle">Komunita</h4>
+    <ul class="links">
+      <li>
+        <a href="https://social.msdn.microsoft.com/forums/cs-cz/home" id="CenterLinks2_2151_8" xmlns="http://www.w3.org/1999/xhtml">Fóra</a>
+      </li>
+      <li>
+        <a href="https://blogs.msdn.com/b/developer-tools/" id="CenterLinks2_2151_9" xmlns="http://www.w3.org/1999/xhtml">Blogy</a>
+      </li>
+      <li>
+        <a href="https://www.codeplex.com/" id="CenterLinks2_2151_10" xmlns="http://www.w3.org/1999/xhtml">Codeplex</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentname="CenterLinks3" id="Fragment_CenterLinks3" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <h4 class="linkListTitle">Podpora</h4>
+    <ul class="links">
+      <li>
+        <a href="https://msdn.microsoft.com/hh361695" id="CenterLinks3_2151_11" xmlns="http://www.w3.org/1999/xhtml">Samoobslužná podpora</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentname="CenterLinks4" id="Fragment_CenterLinks4" xmlns="http://www.w3.org/1999/xhtml" class="nth-child-4n">
+  
+  <div class="linkList">
+    <h4 class="linkListTitle">Programy</h4>
+    <ul class="links">
+      <li>
+        <a href="https://bizspark.microsoft.com/" id="CenterLinks4_2151_13" xmlns="http://www.w3.org/1999/xhtml">BizSpark (pro startupy)</a>
+      </li>
+      <li>
+        <a href="https://imagine.microsoft.com/en-us" id="CenterLinks4_2151_21" xmlns="http://www.w3.org/1999/xhtml">Microsoft Imagine (for students)</a>
+      </li>
+    </ul>
+  </div>
+</div>
+            </div>
+        </footer>
+
+        <footer class="bottom" role="contentinfo">
+            <span class="localeContainer">
+                
+    <form class="selectLocale" id="selectLocaleForm" action="https://msdn.microsoft.com/cs-cz/selectlocale-dmc">
+        <input name="fromPage" value="https%3a%2f%2fmsdn.microsoft.com%2fcs-cz%2flibrary%2fbsc2ak47(v%3dvs.110).aspx" type="hidden">
+        <a href="#" onclick="$('#selectLocaleForm').submit();return false;" title="Změna jazyka">Česká republika (Česky)</a>
+    </form>
+
+
+            </span>
+
+            <div data-fragmentname="BottomLinks" id="Fragment_BottomLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <ul class="links horizontal">
+      <li>
+        <a href="https://msdn.microsoft.com/newsletter.aspx" id="BottomLinks_2148_7" xmlns="http://www.w3.org/1999/xhtml">Zpravodaj</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/dn529288" id="BottomLinks_2148_8" xmlns="http://www.w3.org/1999/xhtml">Ochrana osobních údajů &amp; cookie</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/cc300389" id="BottomLinks_2148_9" xmlns="http://www.w3.org/1999/xhtml">Podmínky používání</a>
+      </li>
+      <li>
+        <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/" id="BottomLinks_2148_10" xmlns="http://www.w3.org/1999/xhtml">Ochranné známky</a>
+      </li>
+    </ul>
+  </div>
+</div>
+            <span class="logoLegal">
+                <span class="logoSpan clip67x13" role="img" tabindex="0" aria-label="microsoft logo">
+                    <img alt="logo" class="logo" src="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/HeaderFooterSprite.png">
+                </span>
+                <span class="copyright">© 2017 Microsoft</span>
+            </span>
+        </footer>
+    </div>
+    
+
+    </div>
+
+
+        <div class="footerPrintView">
+            <div class="footerCopyrightPrintView">© 2017 Microsoft</div>
+        </div>
+
+        
+        
+
+        
+        
+        
+
+    <input id="tocPaddingPerLevel" value="17" type="hidden">
+
+
+
+        <input id="MtpsDevice" value="Default" type="hidden">
+
+
+<!--[CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]-->
+
+        
+        
+        
+            
+        
+
+<!--[CDATA[ WebTrends view model not available or IncludeLegacyWebTrendsScriptInGlobal feature flag is off]]-->
+
+
+
+
+<div id="globalRequestVerification">
+    <input name="__RequestVerificationToken" value="1XEL50syI76aTVVHRTR2o4FBcwewkvMTcPnSrWwu9B3mjTSUZIjQeEc5sTnP_qjN9BGwjhgGMGn0qS8a7dWB1-0j3mk1" type="hidden">
+</div>
+
+
+    </div>
+
+    
+    
+
+    
+
+    
+<script type="text/javascript" class="mtps-injected">
+/*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"js\": \"https://i2-msdn.sec.s-msft.com\", \r\n\t\"css\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"ttf\": \"https://i-msdn.sec.s-msft.com\"\r\n});\r\n/**/" },
+	{ txt: "//\n\n        window.appInsightsId = \u00275eb1b2eb-c47a-497a-a7ac-a1c230b2882f\u0027;\n        //" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:Utilities,1:Banner,2:Layout,3:Header,4:Breadcrumbs,5:LibraryRightNavigationMenu,5:PrintExportButton,6:StandardRating,3:Footer,0:Topic,4:ResponsiveSupport,0:AppInsightsPerf,4:ResponsiveToc,0:ABTestControl,5:WEDCS,4:CmpgrpForHeader,2:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Shared/Content:1,/Areas/Epx/Themes/Base/Content:2,/Areas/Centers/Themes/StandardDevCenter/Content:3,/Areas/Library/Content:4,/Areas/Library/Themes/Base/Content:5,/Areas/Global/Content:6\u0026amp;hashKey=6959488F1192C4AEDA00CE930CFBFF1C\u0026amp;v=ADBED1C646CBA459680BEF80D2829322" },
+	{ url: "https://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026minimumTermLength=2\u0026pgArea=header\u0026brand=Msdn\u0026loc=cs-cz\u0026focusOnInit=false\u0026emptyWatermark=true\u0026searchButtonTooltip=Hledat na webu MSDN" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Areas/Epx/Themes/Base/Content/JumpRedirect.js" },
+	{ txt: "//\n    MTPS = window.MTPS || {};\n    MTPS.Translation = window.MTPS.Translation || {};\n\n    MTPS.Translation.TranslationType =  0;\n    \n    \n        \n        MTPS.Translation.EditorLink = {\n            includeEditor : 0,\n            editLink: \"https://msdn.microsoft.com/cs-cz/library/translation/edit/bsc2ak47(v=vs.110).aspx\",\n            editLinkText: \"Navrhnout lepš\u0026#237; překlad\"\n        };\n        \n    //" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:jquery.popup,0:Translator;/Areas/Library/Content:0\u0026amp;hashKey=16D24150BAC1A18066CEC17E9B28E03E\u0026amp;v=ADBED1C646CBA459680BEF80D2829322" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Rozbalit\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Sbalit\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Kliknutím rozbalte. Dvojitým kliknutím rozbalte vše.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Kliknutím sbalte. Dvojitým kliknutím sbalte vše.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Rozbalit vše\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Sbalit vše\u0027;" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Rozbalit\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Sbalit\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Kliknutím rozbalte. Dvojitým kliknutím rozbalte vše.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Kliknutím sbalte. Dvojitým kliknutím sbalte vše.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Rozbalit vše\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Sbalit vše\u0027;" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Rozbalit\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Sbalit\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Kliknutím rozbalte. Dvojitým kliknutím rozbalte vše.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Kliknutím sbalte. Dvojitým kliknutím sbalte vše.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Rozbalit vše\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Sbalit vše\u0027;" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:LibraryMemberFilter,1:Toc_Fixed,1:CodeSnippet,1:TopicNotInScope,1:VersionSelector,1:SurveyBroker;/Areas/Library/Content:0,/Areas/Epx/Content/Scripts:1\u0026amp;hashKey=D8D1FFAA6CA68460B7EFA5923975CA44\u0026amp;v=ADBED1C646CBA459680BEF80D2829322" },
+	{ txt: "$(document).ready(function() {\n        try {\n            var token = $(\"#globalRequestVerification input[name=\u0027__RequestVerificationToken\u0027]\").clone();\n            $(\"#siteFeedbackForm\").append(token);\n        } catch(err) {\n            \n        }\n    });" }
+]);
+
+/*]]>*/
+</script>
+
+<div id="overlayMask"></div><div id="popup-loading0" class="popup-loading" style="display: none; z-index: 210; width: auto; height: auto;">loading...</div><div id="popup0" class="MTPopup" style="display: none; z-index: 210; width: auto; height: auto;"><div class="popup-main" style="z-index: 210;"><div class="popup-inner"></div></div></div><script src="Metoda%20Object.Equals%20%28Object%29%20%28System%29_soubory/broker-config.js"></script></body></html>

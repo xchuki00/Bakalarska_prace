@@ -1,4 +1,13 @@
+c:\users\xchuki00\documents\bakalarska_prace\bullet_build\lib\debug\linearmath_debug.bsc
 c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearmath.dir\debug\linearmath.pdb
+c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearmath.dir\debug\btalignedallocator.sbr
+c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearmath.dir\debug\btconvexhull.sbr
+c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearmath.dir\debug\btconvexhullcomputer.sbr
+c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearmath.dir\debug\btgeometryutil.sbr
+c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearmath.dir\debug\btpolardecomposition.sbr
+c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearmath.dir\debug\btquickprof.sbr
+c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearmath.dir\debug\btserializer.sbr
+c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearmath.dir\debug\btvector3.sbr
 c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearmath.dir\debug\btvector3.obj
 c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearmath.dir\debug\btserializer.obj
 c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearmath.dir\debug\btquickprof.obj
@@ -9,6 +18,9 @@ c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearm
 c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearmath.dir\debug\btalignedallocator.obj
 c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\cmakefiles\generate.stamp
 c:\users\xchuki00\documents\bakalarska_prace\bullet_build\lib\debug\linearmath_debug.lib
+c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearmath.dir\debug\linearmath.tlog\bscmake.command.1.tlog
+c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearmath.dir\debug\linearmath.tlog\bscmake.read.1.tlog
+c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearmath.dir\debug\linearmath.tlog\bscmake.write.1.tlog
 c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearmath.dir\debug\linearmath.tlog\cl.command.1.tlog
 c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearmath.dir\debug\linearmath.tlog\cl.read.1.tlog
 c:\users\xchuki00\documents\bakalarska_prace\bullet_build\src\linearmath\linearmath.dir\debug\linearmath.tlog\cl.write.1.tlog

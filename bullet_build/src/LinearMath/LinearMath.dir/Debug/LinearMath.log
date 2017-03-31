@@ -1,2 +1,12 @@
-﻿  btPolarDecomposition.cpp
+﻿  Building Custom Rule C:/Users/xchuki00/Documents/Bakalarska_prace/libs/bullet3-2.85.1/src/LinearMath/CMakeLists.txt
+  CMake does not need to re-run because C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\src\LinearMath\CMakeFiles\generate.stamp is up-to-date.
+  btAlignedAllocator.cpp
+  btConvexHull.cpp
+  btConvexHullComputer.cpp
+  btGeometryUtil.cpp
+  btPolarDecomposition.cpp
+  btQuickprof.cpp
+  btSerializer.cpp
+  btVector3.cpp
+  Generating Code...
   LinearMath.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\lib\Debug\LinearMath_Debug.lib

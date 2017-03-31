@@ -41,6 +41,10 @@ Model* Scene::addModel(int clas, std::string pathOfObj, std::string pathOfTextur
 		m->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
 		m->load_3DModel(pathOfObj);
 		m->load_texture(pathOfTexture.c_str());
+
+//		m->set3DModel(this->get3DModel(pathOfObj));
+	//	m->setIndices(this->getIndices(pathOfObj));
+		//m->setTexture(this->getTexture(pathOfTexture));
 		m->setPosition(position);
 		this->bulletWorld.addCollisionObject(position, velocity, mass, m);
 		this->models.push_back(m);
@@ -63,23 +67,10 @@ Model* Scene::addModel(int clas, std::string pathOfObj, std::string pathOfTextur
 		return m;
 
 	default:
-		m = new Model();
-		m->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
-		m->load_3DModel(pathOfObj);
-		m->load_texture(pathOfTexture.c_str());
-		m->setPosition(position);
-		this->bulletWorld.addCollisionObject(position, velocity, mass, m);
-		this->models.push_back(m);
-		std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
-		return m;
+		std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " neni vlozen typ" << std::endl;
+		return nullptr;
 	}
 	//m->setShader(this->shader);
-
-	
-
-
-	
-	
 }
 
 Model * Scene::addProjectil(std::string pathOfObj, std::string pathOfTexture,int mass)

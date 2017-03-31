@@ -71,12 +71,13 @@ int main() {
 	);
 	Projectil *p = (Projectil*)sc.addProjectil("./icons/arrow.obj", "./icons/wood.jpg", 5);
 //	Projectil *p = NULL;
-	Weapon *w = (Weapon*)sc.addWeapon("./icons/bow_final.dae", "./icons/bricks.bmp", p);
+	Weapon *w = (Weapon*)sc.addWeapon("./icons/bow_final2.dae", "./icons/bricks.bmp", p);
 	sc.addPlayer("./icons/bullet.obj", "./icons/bricks.bmp", getMyPosition(), glm::vec3(0, 0, 0), w,1.7);
 	//sc.addModel(PLAYER, "./icons/cube.obj", "./icons/bricks.bmp", getMyPosition(), glm::vec3(0, 0, 0), 3);
 	//sc.addWeapon("./icons/bow_final2.dae", "./icons/bricks.bmp", (Player *)sc.addModel(PLAYER, "./icons/bullet.obj", "./icons/bricks.bmp", getMyPosition(), glm::vec3(0, 0, 0), 1.7));
 	//std::cerr << "PLAYER" << sc.player->classID << std::endl;
 
 	loop();
+
 	return 0;
 }

@@ -1,5 +1,7 @@
 #pragma once
-#include "loader.h"
+//#include "loader.h"
+#include "structures.h"
+#include "animation.h"
 class Model
 {
 protected:
@@ -10,6 +12,7 @@ protected:
 	GLuint indexBuffer;
 	unsigned int countOfIndex;
 	///////////Odkazy do shaderu///////////
+	///udelat structur shader
 	GLuint shader;
 	GLuint depthShader;
 
@@ -34,6 +37,8 @@ public:
 	int id;
 	std::vector<MyVertex> vertices;
 	std::vector<unsigned short> indices;
+
+	double AnimationTime=0;
 	int classID = MODEL;
 	glm::mat4 modelMatrix;
 	glm::mat4 depthMVP;
@@ -68,10 +73,30 @@ public:
 	virtual double getDmg();
 	//////////DRAW////////////////////
 	virtual glm::mat4 getPosition();
+	virtual void CalcBones(double time);
 	virtual void calc();
 	virtual void draw();
 	virtual void depthDraw();
+	virtual double getTime();
 	Model();
 	~Model();
+	animation *animation;
+	//////////POUZE DOCASNE////////////////
+//presunout do vlastni tridy Animation
+	//GLuint boneBuffer;
+	aiMatrix4x4 inverseGlobalMartix;
+	std::vector<bone> bones;
+	std::vector<aiMatrix4x4> finalTransform;
+	std::map<std::string, unsigned int> bonesMap;
+	GLuint BonesID;
+	Assimp::Importer *imp;
+	const aiNode* nodes = nullptr;
+	const aiAnimation* animations = nullptr;
+	virtual void updateNode(const aiNode* Node, aiMatrix4x4 ParentTransform, double time);
+	virtual const aiNodeAnim* findAnimNode(const aiAnimation *anim,std::string nodeName);
+	virtual void getNodeRotation(aiQuaternion* vec, double time,const aiNodeAnim* animNode);
+	virtual void getNodeScale(aiVector3D* vec,double time,const aiNodeAnim* animNode);
+	virtual void getNodePosition(aiVector3D* vec, double time,const aiNodeAnim* animNode);
+
 };
 

@@ -1,14 +1,4 @@
-﻿  controls.cpp
-c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
-c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
-c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\controls.cpp(109): warning C4305: '*=': truncation from 'double' to 'float'
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\controls.cpp(110): warning C4305: '*=': truncation from 'double' to 'float'
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\controls.cpp(113): warning C4305: '*=': truncation from 'double' to 'float'
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\controls.cpp(114): warning C4305: '*=': truncation from 'double' to 'float'
-  Generating Code...
-  Compiling...
-  weapon.cpp
+﻿  weapon.cpp
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
@@ -24,11 +14,25 @@ c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\target.cpp(7): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  loader.cpp
+c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+  Source.cpp
+c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\source.cpp(65): warning C4101: 'k': unreferenced local variable
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\source.cpp(65): warning C4101: 'h': unreferenced local variable
   skybox.cpp
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
   shadowmap.cpp
+c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+  Shader.cpp
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
@@ -76,10 +80,6 @@ c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\model.cpp(2
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
-  loader.cpp
-c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
-c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
-c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
   ground.cpp
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
@@ -88,22 +88,21 @@ c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+  controls.cpp
+c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\controls.cpp(109): warning C4305: '*=': truncation from 'double' to 'float'
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\controls.cpp(110): warning C4305: '*=': truncation from 'double' to 'float'
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\controls.cpp(113): warning C4305: '*=': truncation from 'double' to 'float'
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\controls.cpp(114): warning C4305: '*=': truncation from 'double' to 'float'
   bulletC.cpp
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\bulletc.cpp(151): warning C4244: 'argument': conversion from 'double' to 'btScalar', possible loss of data
-  Source.cpp
-c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
-c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
-c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\source.cpp(65): warning C4101: 'k': unreferenced local variable
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\source.cpp(65): warning C4101: 'h': unreferenced local variable
-  Shader.cpp
-c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
-c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
-c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
   Generating Code...
 c:\users\xchuki00\documents\bakalarska_prace\opengl_test\opengl_test\scene.cpp(171): warning C4715: 'scene::addModel': not all control paths return a value
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   opengl_test.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\opengl_test\x64\Debug\OpenGlDemo.exe
   opengl_test.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\opengl_test\x64\Debug\OpenGlDemo.pdb (Partial PDB)

@@ -1,6 +1,5 @@
 #include "loader.h"
-
-
+#include "misc.h"
 int loadObj(std::string path, std::vector<glm::vec3>& out_vertices, std::vector<glm::vec2>& out_uvs, std::vector<glm::vec3>&out_normals) {
 	std::vector< unsigned int > vertexIndices, uvIndices, normalIndices;
 	std::vector< glm::vec3 > temp_vertices;
@@ -120,6 +119,74 @@ int loadObjAss(std::string path, std::vector<MyVertex>& out_vertices, std::vecto
 	std::cout << "nacten 3D modle " << path << std::endl;
 	return indices.size();
 }
+
+int loadAnimated(std::string path,Model *model)
+{
+	const aiScene *scen = model->imp->ReadFile(path.c_str(), aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_JoinIdenticalVertices);
+	if (scen == NULL) {
+		std::cerr << "Error:Assimp load\n";
+		return -1;
+	}
+	//std::cerr << "ASSIMP: num mesh:" << scen->mNumMeshes<<std::endl;
+	const aiMesh* mesh = scen->mMeshes[0];
+	std::cerr << "ASSIMP: num ver:" << mesh->mNumVertices << std::endl;
+	const aiVector3D Zero3D(0.0f, 0.0f, 0.0f);
+	for (int i = 0; i < mesh->mNumVertices; i++) {
+		const aiVector3D* pTexCoord = mesh->HasTextureCoords(0) ? &(mesh->mTextureCoords[0][i]) : &Zero3D;
+		MyVertex v(
+			glm::vec3(mesh->mVertices[i].x, mesh->mVertices[i].y, mesh->mVertices[i].z),
+			//glm::vec2(pTexCoord->x, pTexCoord->y),
+			glm::vec2(0, 0),
+			glm::vec3(mesh->mNormals[i].x, mesh->mNormals[i].y, mesh->mNormals[i].z));
+		model->vertices.push_back(v);
+	}
+	std::cerr << "ASSIMP: out:" << model->vertices.size() << std::endl;
+	std::cerr << "ASSIMP: num face:" << mesh->mNumFaces << std::endl;
+	for (int i = 0; i < mesh->mNumFaces; i++) {
+		const aiFace& Face = mesh->mFaces[i];
+		//assert(Face.mNumIndices == 3);
+		for (int j = 0; j < Face.mNumIndices; j++) {
+			model->indices.push_back(Face.mIndices[j]);
+		}/*
+		 indices.push_back(Face.mIndices[0]);
+		 indices.push_back(Face.mIndices[1]);
+		 indices.push_back(Face.mIndices[2]);
+		 */
+	}
+	if (mesh->HasBones()) {
+		aiBone **b = mesh->mBones;
+		int count = mesh->mNumBones;
+		int boneID=0;
+		std::cerr << "POCET KOSTI: " << count << std::endl;
+		//pridat kost do boneMap
+		for (int i = 0; i < count; i++) {
+			std::string boneName = b[i]->mName.data;
+			if (model->bonesMap.find(boneName) == model->bonesMap.end()) {
+				boneID = model->bonesMap.size();
+				model->bonesMap.emplace(boneName, boneID);	
+				model->bones.push_back(b[i]->mOffsetMatrix);
+				model->finalTransform.push_back(aiMatrix4x4());
+			}
+			else {
+				boneID = model->bonesMap[boneName];
+			}
+
+			for (int j = 0; j < b[i]->mNumWeights; j++) {
+				model->vertices[b[i]->mWeights[j].mVertexId].addBone(boneID, b[i]->mWeights[j].mWeight);
+			}
+		}
+	}
+	if (scen->HasAnimations()) {
+		model->nodes = scen->mRootNode;
+		model->animations = scen->mAnimations[0];
+		std::cerr << "NODES " << scen->mRootNode << " ANIM " << scen->mAnimations[0] << std::endl;
+	}
+	
+
+	std::cout << "nacten 3D modle " << path << std::endl;
+	return model->indices.size();
+}
+
 
 
 

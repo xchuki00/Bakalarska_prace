@@ -5,6 +5,7 @@
 #include "BulletWorld.h"
 #include "Player.h"
 #include "Weapon.h"
+#include "animation.h"
 class Scene
 {
 protected:
@@ -25,10 +26,11 @@ protected:
 	/////////////crosshair/////////////
 	crossHair CrossHair;
 	////////////bullet////////////
-	
+	std::map < std::string, std::tuple< std::vector<MyVertex>, std::vector<unsigned short>, animation>> LoadedModels;
 	std::map < std::string, std::vector<MyVertex>> VerticesOfModels;
 	std::map < std::string, std::vector<unsigned short>> IndicesOfModels;
-	std::map <std::string, GLuint> LiberyOfTextures;
+	std::map < std::string, GLuint> LiberyOfTextures;
+	
 public:
 	BulletWorld bulletWorld;
 	GLFWwindow* window;

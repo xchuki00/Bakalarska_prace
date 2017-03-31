@@ -61,6 +61,8 @@ glm::mat4 Projectil::getPosition()
 	return this->modelMatrix;
 }
 
+
+
 int Projectil::init()
 {
 

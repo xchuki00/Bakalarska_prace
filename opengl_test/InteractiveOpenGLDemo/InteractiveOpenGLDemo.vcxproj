@@ -118,6 +118,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="animation.cpp" />
     <ClCompile Include="BulletWorld.cpp" />
     <ClCompile Include="controls.cpp" />
     <ClCompile Include="crossHair.cpp" />
@@ -137,6 +138,7 @@
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="animation.h" />
     <ClInclude Include="BulletWorld.h" />
     <ClInclude Include="controls.h" />
     <ClInclude Include="crossHair.h" />
@@ -150,6 +152,7 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Skybox.h" />
+    <ClInclude Include="structures.h" />
     <ClInclude Include="Target.h" />
     <ClInclude Include="textToScem.h" />
     <ClInclude Include="texture.h" />
