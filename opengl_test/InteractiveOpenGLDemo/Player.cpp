@@ -78,6 +78,24 @@ Player::Player()
 
 }
 
+bool Player::land()
+{
+	return this->landed;
+}
+
+int Player::hitted(Model * byWho)
+{
+	if (byWho->classID == GROUND&&!this->landed) {
+		this->landed = true;
+	}
+	return 0;
+}
+
+void Player::jump()
+{
+	this->landed = false;
+}
+
 
 Player::~Player()
 {

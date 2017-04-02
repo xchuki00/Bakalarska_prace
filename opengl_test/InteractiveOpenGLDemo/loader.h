@@ -1,6 +1,7 @@
 #include "includes.h"
 #include "structures.h"
 #include "Model.h"
+#include "ImportModel.h"
 int loadObj(
 	std::string path,
 	std::vector < glm::vec3 > & out_vertices,

@@ -123,6 +123,7 @@
     <ClCompile Include="controls.cpp" />
     <ClCompile Include="crossHair.cpp" />
     <ClCompile Include="Ground.cpp" />
+    <ClCompile Include="ImportModel.cpp" />
     <ClCompile Include="loader.cpp" />
     <ClCompile Include="misc.cpp" />
     <ClCompile Include="Model.cpp" />
@@ -133,7 +134,6 @@
     <ClCompile Include="Skybox.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Target.cpp" />
-    <ClCompile Include="textToScem.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
@@ -143,6 +143,7 @@
     <ClInclude Include="controls.h" />
     <ClInclude Include="crossHair.h" />
     <ClInclude Include="Ground.h" />
+    <ClInclude Include="ImportModel.h" />
     <ClInclude Include="includes.h" />
     <ClInclude Include="loader.h" />
     <ClInclude Include="misc.h" />
@@ -154,13 +155,14 @@
     <ClInclude Include="Skybox.h" />
     <ClInclude Include="structures.h" />
     <ClInclude Include="Target.h" />
-    <ClInclude Include="textToScem.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="crossHair.fragmentShader" />
     <None Include="crossHair.vertexShader" />
+    <None Include="diffuseLight.fs" />
+    <None Include="diffuseLight.vs" />
     <None Include="fragment.gls" />
     <None Include="skybox.fragmentShader" />
     <None Include="skybox.vertexShader" />

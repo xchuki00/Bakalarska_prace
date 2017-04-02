@@ -105,19 +105,19 @@ double Weapon::getTime()
 	double endA = 40 / 46;
 	if (this->triggeredTime != 0 && this->toLoad==NULL) {
 		double time = glfwGetTime() - this->triggeredTime;
-		time *= (this->animations->mTicksPerSecond != 0) ? this->animations->mTicksPerSecond :1.0f;
-		return (time>this->animations->mDuration* 40 / 46)?this->animations->mDuration* 40 / 46 :time;
+		time *= (this->animation->getTickPerSecond() != 0) ? this->animation->getTickPerSecond() :1.0f;
+		return (time>this->animation->getDuration() * 40 / 46)?this->animation->getDuration() * 40 / 46 :time;
 	}
 	else if (this->toLoad!=NULL) {
 		double time = glfwGetTime() - this->triggeredTime;
-		time *= (this->animations->mTicksPerSecond != 0) ? this->animations->mTicksPerSecond : 1.0f;
-		time += this->animations->mDuration *40/46;
-		if (time > this->animations->mDuration) {
+		time *= (this->animation->getTickPerSecond() != 0) ? this->animation->getTickPerSecond() : 1.0f;
+		time += this->animation->getDuration() *40/46;
+		if (time > this->animation->getDuration()) {
 			this->reload(this->toLoad);
 			this->toLoad = NULL;
 			this->triggeredTime = 0;
 		}
-		return (time > this->animations->mDuration) ? this->animations->mDuration * 0.99 : time;
+		return (time > this->animation->getDuration()) ? this->animation->getDuration() * 0.99 : time;
 	}
 	else {
 		return 0;

@@ -1,11 +1,13 @@
 #pragma once
 #include "Model.h"
 #include "Target.h"
+#include "Skybox.h"
 #include "crossHair.h"
 #include "BulletWorld.h"
 #include "Player.h"
 #include "Weapon.h"
 #include "animation.h"
+#include "ImportModel.h"
 class Scene
 {
 protected:
@@ -14,28 +16,23 @@ protected:
 	GLuint depthShader;
 	GLuint shadowBuffer = 0;
 	GLuint depthTexture;
-	GLuint textureID;
-	GLuint MVPID;
-	GLuint viewID;
-	GLuint modelID;
-	GLuint DepthBiasID;
-	GLuint shadowMapID;
-	GLuint depthMVPID;
-	GLuint lightInvDirID;
 	GLuint VertexArrayID;
+	GLuint dirlightID;
+	GLuint cameraID;
 	/////////////crosshair/////////////
 	crossHair CrossHair;
+	///////////skybox////////////////
+	Skybox *skybox;
 	////////////bullet////////////
-	std::map < std::string, std::tuple< std::vector<MyVertex>, std::vector<unsigned short>, animation>> LoadedModels;
-	std::map < std::string, std::vector<MyVertex>> VerticesOfModels;
-	std::map < std::string, std::vector<unsigned short>> IndicesOfModels;
+	std::map <std::string,ImportModel *> importModels;
 	std::map < std::string, GLuint> LiberyOfTextures;
-	
+	std::vector<DirectionLight> directionLights;
 public:
 	BulletWorld bulletWorld;
 	GLFWwindow* window;
 	std::vector <Model*> models;
 	Player *player;
+
 	Model* addModel(
 		int clas,
 		std::string pathOfObj,
@@ -59,8 +56,8 @@ public:
 	int addDepthShader(std::string vertexShader, std::string fragmentShader);
 	int drawAllModels();
 	GLuint getTexture(std::string path);
-	std::vector<MyVertex> get3DModel(std::string path);
-	std::vector<unsigned short> getIndices(std::string path);
+	ImportModel* getModel(std::string path);
+	void addDirectionLight(glm::vec3 color, glm::vec3 direction, float AmbientIntensity, float diffuseIntensity);
 	//////////////////////crosshair///////////
 	int addCrossHair(std::string path);
 	int drawCrossHair();

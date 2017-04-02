@@ -2,6 +2,7 @@
 //#include "loader.h"
 #include "structures.h"
 #include "animation.h"
+#include "ImportModel.h"
 class Model
 {
 protected:
@@ -15,15 +16,11 @@ protected:
 	///udelat structur shader
 	GLuint shader;
 	GLuint depthShader;
-
+	GLuint BonesID;
+	GLuint ModelID;
 	GLuint textureID;
 	GLuint MVPID;
-	GLuint viewID;
-	GLuint modelID;
-	GLuint DepthBiasID;
-	GLuint shadowMapID;
-	GLuint depthMVPID;
-	GLuint lightInvDirID;
+
 	////////////bullet///////////
 	btCollisionObject *bt;
 	btDiscreteDynamicsWorld* bulletWorld;
@@ -37,7 +34,7 @@ public:
 	int id;
 	std::vector<MyVertex> vertices;
 	std::vector<unsigned short> indices;
-
+	std::vector<aiMatrix4x4> finalTransform;
 	double AnimationTime=0;
 	int classID = MODEL;
 	glm::mat4 modelMatrix;
@@ -46,22 +43,12 @@ public:
 	////////////funkce pro init////////////
 	virtual int load_3DModel(std::string path);
 	virtual int load_texture(const char *path);
-	virtual int set3DModel(std::vector<MyVertex>v);
-	virtual int setIndices(std::vector<unsigned short>i);
+	virtual int set3DModel(ImportModel* importmodel);
 	virtual int setTexture(GLuint t);
-	void setShader(
-		GLuint sh,
-		GLuint texturID,
-		GLuint MVPID,
-		GLuint v,
-		GLuint m,
-		GLuint db,
-		GLuint shadowMap,
-		GLuint lightInvDir,
-		GLuint depthSh,
-		GLuint depthID
-	);
+	virtual void initFinalTransformation();
+	virtual void setFinalTransformation();
 	virtual void setShader(GLuint sh);
+	virtual void setAnimatonShaderID();
 	void setRigidBodyIndex(int id);
 	virtual void setPosition(glm::mat4 mat);
 	////////////kolize//////////////
@@ -78,25 +65,10 @@ public:
 	virtual void draw();
 	virtual void depthDraw();
 	virtual double getTime();
+	
 	Model();
 	~Model();
-	animation *animation;
-	//////////POUZE DOCASNE////////////////
-//presunout do vlastni tridy Animation
-	//GLuint boneBuffer;
-	aiMatrix4x4 inverseGlobalMartix;
-	std::vector<bone> bones;
-	std::vector<aiMatrix4x4> finalTransform;
-	std::map<std::string, unsigned int> bonesMap;
-	GLuint BonesID;
-	Assimp::Importer *imp;
-	const aiNode* nodes = nullptr;
-	const aiAnimation* animations = nullptr;
-	virtual void updateNode(const aiNode* Node, aiMatrix4x4 ParentTransform, double time);
-	virtual const aiNodeAnim* findAnimNode(const aiAnimation *anim,std::string nodeName);
-	virtual void getNodeRotation(aiQuaternion* vec, double time,const aiNodeAnim* animNode);
-	virtual void getNodeScale(aiVector3D* vec,double time,const aiNodeAnim* animNode);
-	virtual void getNodePosition(aiVector3D* vec, double time,const aiNodeAnim* animNode);
+	animation *animation=nullptr;
 
 };
 

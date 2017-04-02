@@ -83,7 +83,8 @@ int Projectil::fire(btCollisionObject *obj)
 
 	this->bt = obj;
 	btRigidBody* rb = btRigidBody::upcast(this->bt);
-	double force = (glfwGetTime() - this->timeOfTriggered)*5;
+	double force = ((glfwGetTime() - this->timeOfTriggered)>1.5)? (glfwGetTime() - this->timeOfTriggered):1.5;
+	force *= 7;
 //	btVector3 velocity(this->modelMatrix[2][0]*force, this->modelMatrix[2][1] * force, this->modelMatrix[2][2] * force);
 	btVector3 velocity(getDir().x*force, getDir().y*force, getDir().z*force);
 	rb->setLinearVelocity(velocity);

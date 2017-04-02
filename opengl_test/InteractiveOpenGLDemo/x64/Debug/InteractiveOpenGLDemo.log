@@ -1,9 +1,14 @@
-﻿  Weapon.cpp
+﻿  Projectil.cpp
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\structures.h(67): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\structures.h(71): warning C4244: 'argument': conversion from 'float' to 'glm::tvec4<float,0>::length_type', possible loss of data
 c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\structures.h(72): warning C4244: 'argument': conversion from 'float' to 'glm::tvec4<float,0>::length_type', possible loss of data
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\projectil.cpp(69): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\projectil.cpp(89): warning C4244: 'argument': conversion from 'double' to 'const btScalar', possible loss of data
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\projectil.cpp(127): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\projectil.cpp(128): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\projectil.cpp(129): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   InteractiveOpenGLDemo.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\opengl_test\x64\Debug\InteractiveOpenGLDemo.exe
   InteractiveOpenGLDemo.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\opengl_test\x64\Debug\InteractiveOpenGLDemo.pdb (Partial PDB)

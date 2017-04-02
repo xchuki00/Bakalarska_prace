@@ -1,5 +1,5 @@
 #include "animation.h"
-
+#include "misc.h"
 
 
 animation::animation()
@@ -11,6 +11,7 @@ animation::animation()
 
 animation::~animation()
 {
+	delete this->imp;
 }
 void animation::updateNode(const aiNode * Node, aiMatrix4x4 ParentTransform, double time)
 {
@@ -122,4 +123,26 @@ void animation::getNodePosition(aiVector3D* vec, double time, const aiNodeAnim *
 	(*vec).y = animNode->mPositionKeys[0].mValue.y;
 	(*vec).z = animNode->mPositionKeys[0].mValue.z;
 	return;
+}
+
+void animation::setRootNode(const aiNode * node)
+{
+	this->nodes = node;
+	mat4Copy(this->nodes->mTransformation, &this->inverseGlobalMartix);
+	this->inverseGlobalMartix.Inverse();
+}
+
+void animation::setAnimation(const aiAnimation * anim)
+{
+	this->animations = anim;
+}
+
+double animation::getDuration()
+{
+	return this->animations->mDuration;
+}
+
+double animation::getTickPerSecond()
+{
+	return this->animations->mTicksPerSecond;
 }

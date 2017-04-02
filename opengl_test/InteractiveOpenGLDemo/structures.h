@@ -72,3 +72,18 @@ struct MyVertex {
 		ids[j] = float(id);
 	}
 };
+struct DirectionLight {
+	glm::vec3 color;
+	glm::vec3 dir;
+	float AmbientIntensity;
+	float DiffuseIntensity;
+	///Konstruktor pro structuru Direction light, barva, smer Ambient Intesity, diffuse intesity
+	DirectionLight(glm::vec3 c, glm::vec3 d, float AI, float DI) {
+		this->color = c;
+		this->dir = d;
+		this->AmbientIntensity = AI;
+		this->DiffuseIntensity = DI;
+	}
+
+
+};

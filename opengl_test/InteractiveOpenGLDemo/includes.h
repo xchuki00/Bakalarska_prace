@@ -19,7 +19,6 @@
 #include <btBulletDynamicsCommon.h>
 #include <map>
 #include <iterator>
-#include <tuple>
 //#include <bt>
 #define HEIGHT 1080
 #define WIDTH 1920

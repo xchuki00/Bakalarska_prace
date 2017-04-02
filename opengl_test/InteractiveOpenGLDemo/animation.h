@@ -3,11 +3,11 @@
 #include "structures.h"
 class animation
 {
+public:
 	aiMatrix4x4 inverseGlobalMartix;
 	std::vector<bone> bones;
-	std::vector<aiMatrix4x4> finalTransform;
 	std::map<std::string, unsigned int> bonesMap;
-	GLuint BonesID;
+
 	Assimp::Importer *imp;
 	const aiNode* nodes = nullptr;
 	const aiAnimation* animations = nullptr;
@@ -16,8 +16,10 @@ class animation
 	virtual void getNodeRotation(aiQuaternion* vec, double time, const aiNodeAnim* animNode);
 	virtual void getNodeScale(aiVector3D* vec, double time, const aiNodeAnim* animNode);
 	virtual void getNodePosition(aiVector3D* vec, double time, const aiNodeAnim* animNode);
-
-public:
+	void setRootNode(const aiNode *node);
+	void setAnimation(const aiAnimation* anim);
+	double getDuration();
+	double getTickPerSecond();
 	animation();
 	~animation();
 };

@@ -106,16 +106,12 @@ int computeMatrices()
 		space = true;
 		
 	}
-	if (glfwGetKey(sc.window, GLFW_KEY_SPACE) == GLFW_PRESS) {
-
-		//std::cerr << sc.Player->classID << " PRDE\n";
-		//sc.player->jump();
+	if (glfwGetKey(sc.window, GLFW_KEY_SPACE) == GLFW_PRESS&&sc.player->land()&&space) {
 		space = false;
-		position += glm::vec3(0,1,0) * 0.1* speed; //vektor posunu doprava, doba drzeni, rychlost
+		sc.player->jump();
+		position += glm::vec3(0,1,0) *0.3* speed; 
 	}
-	if (glfwGetKey(sc.window,GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS) {
-		position -= glm::vec3(0, 1, 0) * delta*speed; //vektor posunu doprava, doba drzeni, rychlost
-	}
+
 	float Fov = initialFoV;
 	force.x=position.x - oldPos.x;
 	force.y = position.y - oldPos.y;
@@ -131,7 +127,7 @@ int computeMatrices()
 	btCollisionObject *pl = sc.player->getObj();
 	btRigidBody *rb = btRigidBody::upcast(pl);
 	rb->clearForces();
-	rb->applyCentralForce(btVector3(70*force.x, 1000*force.y,70*force.z));
+	rb->applyCentralForce(btVector3(70*force.x, 100*force.y,70*force.z));
 	rb->activate();
 	btTransform t;
 	rb->getMotionState()->getWorldTransform(t);

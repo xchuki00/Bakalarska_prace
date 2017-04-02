@@ -8,6 +8,7 @@
 #include "Shader.h"
 #include "texture.h"
 #include "loader.h"
+#include "controls.h"
 Scene::Scene()
 {
 }
@@ -21,8 +22,10 @@ Scene::~Scene()
 	delete this->models[i];
 	}*/
 	glDeleteProgram(this->shader);
-	glDeleteTextures(1, &this->textureID);
 	glDeleteVertexArrays(1, &this->VertexArrayID);
+	for (std::map<std::string, GLuint>::iterator it = this->LiberyOfTextures.begin(); it != this->LiberyOfTextures.end(); it++) {
+		glDeleteTextures(1, &it->second);
+	}
 	//glDeleteFramebuffers(1, &this->shadowBuffer);
 	//glDeleteTextures(1, &this->depthTexture);
 	FreeImage_DeInitialise();
@@ -38,13 +41,12 @@ Model* Scene::addModel(int clas, std::string pathOfObj, std::string pathOfTextur
 	switch (clas) {
 	case MODEL:
 		m = new Model();
-		m->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
-		m->load_3DModel(pathOfObj);
-		m->load_texture(pathOfTexture.c_str());
 
-//		m->set3DModel(this->get3DModel(pathOfObj));
-	//	m->setIndices(this->getIndices(pathOfObj));
-		//m->setTexture(this->getTexture(pathOfTexture));
+		m->setShader(this->shader);
+		//m->load_3DModel(pathOfObj);
+	//	m->load_texture(pathOfTexture.c_str());
+		m->set3DModel(this->getModel(pathOfObj));
+		m->setTexture(this->getTexture(pathOfTexture));
 		m->setPosition(position);
 		this->bulletWorld.addCollisionObject(position, velocity, mass, m);
 		this->models.push_back(m);
@@ -52,10 +54,10 @@ Model* Scene::addModel(int clas, std::string pathOfObj, std::string pathOfTextur
 		return m;
 	case GROUND:
 		m = new Ground();
-		m->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
-		m->load_3DModel(pathOfObj);
-		m->load_texture(pathOfTexture.c_str());
-		
+
+		m->setShader(this->shader);
+		m->set3DModel(this->getModel(pathOfObj));
+		m->setTexture(this->getTexture(pathOfTexture));
 		//mat = glm::translate(mat, glm::vec3(0.0f, -2.5f, 0.0f));
 		m->setPosition(position);
 		//mat = glm::translate(mat, glm::vec3(0.0f, -0.6f, 0.0f));
@@ -76,9 +78,8 @@ Model* Scene::addModel(int clas, std::string pathOfObj, std::string pathOfTextur
 Model * Scene::addProjectil(std::string pathOfObj, std::string pathOfTexture,int mass)
 {
 	Projectil *m = new Projectil();
-	m->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
-	m->set3DModel(this->get3DModel(pathOfObj));
-	m->setIndices(this->getIndices(pathOfObj));
+	m->setShader(this->shader);
+	m->set3DModel(this->getModel(pathOfObj));
 	m->setTexture(this->getTexture(pathOfTexture));
 	m->init();
 	//m->setObj(this->bulletWorld.addCollisionObject(m->getPosition(), glm::vec3(0,0,0), mass, m));
@@ -92,39 +93,48 @@ Model * Scene::addProjectil(std::string pathOfObj, std::string pathOfTexture,int
 Model * Scene::addWeapon(std::string pathOfObj, std::string pathOfTexture, Projectil* pl)
 {
 	Weapon *w = new Weapon();
-	w->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
-	w->load_3DModel(pathOfObj);
-	w->load_texture(pathOfTexture.c_str());
+	w->setShader(this->shader);
+	w->set3DModel(this->getModel(pathOfObj));
+	w->setTexture(this->getTexture(pathOfTexture));
 	w->init(pl);
 	//m->setObj(this->bulletWorld.addCollisionObject(position, velocity, mass, m));
 	this->models.push_back(w);
-	std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
+	std::cerr << "WEAPON " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
 	return w;
 }
 
 Model * Scene::addPlayer(std::string pathOfObj, std::string pathOfTexture, glm::mat4 position, glm::vec3 velocity, Weapon * w, float mass)
 {
 	Player* pl = new Player();
-	pl->setShader(this->shader, this->textureID, this->MVPID, this->viewID, this->modelID, this->DepthBiasID, this->shadowMapID, this->lightInvDirID, this->depthShader, this->depthMVPID);
-	pl->load_3DModel(pathOfObj);
-	pl->load_texture(pathOfTexture.c_str());
+	pl->setShader(this->shader);
+	pl->set3DModel(this->getModel(pathOfObj));
+	pl->setTexture(this->getTexture(pathOfTexture));
 	pl->setPosition(position);
 	pl->setWeapon(w);
 	pl->setObj(this->bulletWorld.addCollisionObject(position, velocity, mass, pl, new btBoxShape(btVector3(1, 1, 1))));
 	pl->setBulletWorld(this->bulletWorld.world);
 	this->models.push_back(pl);
 	this->player = pl;
-	std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
+	std::cerr << "PLAYER " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
 
 	return pl;
 }
 
-
+int Scene::addSkybox(const char * left, const char * front, const char * right, const char * back, const char * top, const char * bottom)
+{
+	Skybox *s = new Skybox();
+	s->load_texture(left, front, right, back, top, bottom);
+	s->addShader("skybox.vertexShader", "skybox.fragmentShader");
+	s->load_3DModel("./icons/skybox.obj");
+	//s->buffer();
+	this->skybox = s;
+	return 0;
+}
 int Scene::addShader(std::string vertexShader, std::string fragmentShader)
 {
 	this->shader = LoadShaders(vertexShader,fragmentShader);
-	this->textureID = glGetUniformLocation(this->shader, "myTextureSampler");
-	this->MVPID = glGetUniformLocation(this->shader, "MVP");
+	this->dirlightID = glGetUniformLocation(this->shader, "dl");
+	this->cameraID = glGetUniformLocation(this->shader, "CameraPos");
 	return 0;
 }
 
@@ -135,16 +145,29 @@ int Scene::addDepthShader(std::string vertexShader, std::string fragmentShader)
 
 int Scene::drawAllModels()
 {
-	
+
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	//glViewport(0, 0, WIDTH, HEIGHT);
 	glEnable(GL_CULL_FACE);
 	glCullFace(GL_BACK);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glEnableVertexAttribArray(0);
+	glEnableVertexAttribArray(1);
+	glEnableVertexAttribArray(2);
+	glEnableVertexAttribArray(3);
+	glEnableVertexAttribArray(4);
+	glUseProgram(this->shader);
+	glUniform3f(this->cameraID,getVectorOfPosition().x, getVectorOfPosition().y, getVectorOfPosition().z);
+	glUniform1fv(this->dirlightID,8,&this->directionLights[0].color[0]);
 	for (int i = 0; i<this->models.size(); i++) {
 		this->models[i]->draw();
-
 	}
+	glDisableVertexAttribArray(0);
+	glDisableVertexAttribArray(1);
+	glDisableVertexAttribArray(2);
+	glDisableVertexAttribArray(3);
+	glDisableVertexAttribArray(4);
+	this->skybox->draw();
 	this->drawCrossHair();
 	glfwSwapBuffers(this->window);
 	glfwPollEvents();
@@ -159,37 +182,27 @@ GLuint Scene::getTexture(std::string path)
 	}
 	catch (const std::out_of_range& oor) {
 		int h, w;
+
 		this->LiberyOfTextures.emplace(path, loadTexture2d(path.c_str(), &h, &w));
 	}
 	return this->LiberyOfTextures.at(path);;
 }
 
-std::vector<MyVertex> Scene::get3DModel(std::string path)
+ImportModel * Scene::getModel(std::string path)
 {
 	try {
-		this->VerticesOfModels.at(path);
+		this->importModels.at(path);
 	}
 	catch (const std::out_of_range& oor) {
-		this->VerticesOfModels.emplace(path,std::vector<MyVertex>());
-		this->IndicesOfModels.emplace(path,std::vector<unsigned short>());
-		loadObjAss(path, this->VerticesOfModels.at(path), this->IndicesOfModels.at(path));
+		ImportModel *imodel = new ImportModel(path);
+		this->importModels.emplace(path, imodel);
 	}
-	return this->VerticesOfModels.at(path);
+	return this->importModels.at(path);
 }
-
-std::vector<unsigned short> Scene::getIndices(std::string path)
+void Scene::addDirectionLight(glm::vec3 color, glm::vec3 direction, float AmbientIntensity, float diffuseIntensity)
 {
-	try {
-		this->IndicesOfModels.at(path);
-	}
-	catch (const std::out_of_range& oor) {
-		this->VerticesOfModels.emplace(path, std::vector<MyVertex>());
-		this->IndicesOfModels.emplace(path,std::vector<unsigned short>());
-		loadObjAss(path, this->VerticesOfModels.at(path), this->IndicesOfModels.at(path));
-	}
-	return this->IndicesOfModels.at(path);
+	this->directionLights.push_back(DirectionLight(color, direction, AmbientIntensity, diffuseIntensity));
 }
-
 int Scene::addCrossHair(std::string path)
 {
 	this->CrossHair.init(path);
@@ -203,16 +216,7 @@ int Scene::drawCrossHair()
 	return 0;
 }
 
-int Scene::addSkybox(const char * left, const char * front, const char * right, const char * back, const char * top, const char * bottom)
-{
-	Skybox *s = new Skybox();
-	s->load_texture(left,front, right,back,top,bottom);
-	s->addShader("skybox.vertexShader",	"skybox.fragmentShader");
-	s->load_3DModel("./icons/skybox.obj");
-	//s->buffer();
-	this->models.push_back(s);
-	return 0;
-}
+
 void Scene::CalculatePositionOfAddicted() {
 	for (auto &m : this->models) {
 		m->calc();
