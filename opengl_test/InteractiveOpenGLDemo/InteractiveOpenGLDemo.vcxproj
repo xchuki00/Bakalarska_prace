@@ -57,19 +57,19 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\opengl_test\openGL.props" />
+    <Import Project="openGL.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\opengl_test\openGL.props" />
+    <Import Project="openGL.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\opengl_test\openGL.props" />
+    <Import Project="openGL.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\opengl_test\openGL.props" />
+    <Import Project="openGL.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
@@ -119,10 +119,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="animation.cpp" />
+    <ClCompile Include="ArrowStack.cpp" />
     <ClCompile Include="BulletWorld.cpp" />
     <ClCompile Include="controls.cpp" />
     <ClCompile Include="crossHair.cpp" />
     <ClCompile Include="Ground.cpp" />
+    <ClCompile Include="HitsHud.cpp" />
+    <ClCompile Include="Hud.cpp" />
     <ClCompile Include="ImportModel.cpp" />
     <ClCompile Include="loader.cpp" />
     <ClCompile Include="misc.cpp" />
@@ -139,10 +142,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animation.h" />
+    <ClInclude Include="ArrowStack.h" />
     <ClInclude Include="BulletWorld.h" />
     <ClInclude Include="controls.h" />
     <ClInclude Include="crossHair.h" />
     <ClInclude Include="Ground.h" />
+    <ClInclude Include="HitsHud.h" />
+    <ClInclude Include="Hud.h" />
     <ClInclude Include="ImportModel.h" />
     <ClInclude Include="includes.h" />
     <ClInclude Include="loader.h" />
@@ -164,6 +170,8 @@
     <None Include="diffuseLight.fs" />
     <None Include="diffuseLight.vs" />
     <None Include="fragment.gls" />
+    <None Include="shadowMap.fs" />
+    <None Include="shadowMap.vs" />
     <None Include="skybox.fragmentShader" />
     <None Include="skybox.vertexShader" />
     <None Include="vertex.gls" />

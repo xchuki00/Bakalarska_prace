@@ -8,6 +8,28 @@ static float HAngle = 0;
 static float oldVAngle = 0;
 static float oldHAngle = 0;
 
+int Player::hasArrows()
+{
+	return this->arrows;
+}
+
+void Player::addArrowStack(ArrowStack * as)
+{
+	if (as != NULL || as !=nullptr) {
+		this->arrowStack = as;
+		this->arrowStack->setCountOfArrows(this->arrows);
+	}
+}
+
+void Player::addHitsHud(HitsHud * hh)
+{
+	if (hh != NULL || hh != nullptr) {
+		this->hitsHud = hh;
+		this->hitsHud->setPrefix("Score:");
+		this->hitsHud->setContains(hits);
+	}
+}
+
 void Player::triggered()
 {
 	this->w->triggered();
@@ -15,9 +37,13 @@ void Player::triggered()
 
 void Player::fire(Projectil* load, btCollisionObject *obj)
 {
-	if (this->w != NULL) {
-		this->w->fire(load,obj);
-	}
+		if (this->w != NULL || this->w != nullptr) {
+				this->w->fire(load, obj);
+		}
+		this->arrows--;
+		if (this->arrowStack != NULL || this->arrowStack != nullptr) {
+			this->arrowStack->minus();
+		}
 }
 
 void Player::Angles()
@@ -61,6 +87,12 @@ void Player::calc()
 		this->w->modelMatrix[3][1] = this->modelMatrix[3][1] + shift.y;
 		this->w->modelMatrix[3][2] = this->modelMatrix[3][2] + shift.z;
 	}
+}
+
+void Player::reportDmg(float f)
+{
+	this->hits += f;
+	this->hitsHud->setContains(this->hits);
 }
 
 Weapon * Player::getWeapon()

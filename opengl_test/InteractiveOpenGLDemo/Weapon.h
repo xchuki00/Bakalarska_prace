@@ -11,8 +11,12 @@ class Weapon :
 	void Angles();
 	double triggeredTime=0;
 	Projectil* toLoad = NULL;
+	bool fired=false;
 	glm::vec3 shift=glm::vec3(0.0f);
+	float LastDMG = 0;
 public:
+	void setLastDmg(float f);
+	float getLastDmg();
 	void triggered();
 	Model* getPlayer();
 	void setPlayer(Model* p);

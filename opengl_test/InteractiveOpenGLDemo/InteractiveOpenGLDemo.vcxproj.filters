@@ -69,6 +69,15 @@
     <ClCompile Include="ImportModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Hud.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrowStack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HitsHud.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controls.h">
@@ -128,6 +137,15 @@
     <ClInclude Include="ImportModel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Hud.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrowStack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HitsHud.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="crossHair.fragmentShader" />
@@ -138,5 +156,7 @@
     <None Include="vertex.gls" />
     <None Include="diffuseLight.vs" />
     <None Include="diffuseLight.fs" />
+    <None Include="shadowMap.vs" />
+    <None Include="shadowMap.fs" />
   </ItemGroup>
 </Project>

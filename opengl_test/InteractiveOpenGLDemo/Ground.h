@@ -7,6 +7,7 @@ class Ground :
 public:
 	void setPlane(btCollisionObject *bt);
 	btCollisionObject* getPlane();
+	float getDmg();
 	Ground();
 	~Ground();
 };

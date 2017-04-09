@@ -12,6 +12,11 @@ btCollisionObject * Ground::getPlane()
 	return this->plane;
 }
 
+float Ground::getDmg()
+{
+	return 0.0f;
+}
+
 Ground::Ground()
 {
 	this->classID = GROUND;

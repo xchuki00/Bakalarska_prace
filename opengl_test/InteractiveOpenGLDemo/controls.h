@@ -7,7 +7,9 @@
 int computeMatrices();
 
 glm::mat4 getProject();
+glm::mat4 getOrthoProject();
 glm::mat4 getView();
+glm::mat4 getOrthoView();
 glm::vec3 getDir();
 glm::vec3 getUp();
 glm::mat4 getMyPosition();

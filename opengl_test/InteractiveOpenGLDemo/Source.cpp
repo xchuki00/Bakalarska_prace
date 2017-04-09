@@ -30,18 +30,28 @@ void loop() {
 		if (glfwGetMouseButton(sc.window, GLFW_MOUSE_BUTTON_1) == GLFW_RELEASE && !release) {
 			//std::cerr << "PRDEL";
 			release = true;
-			Projectil *p = sc.player->getWeapon()->getProjectil();
-			btCollisionObject *obj=sc.bulletWorld.addCollisionObject(p->getPosition(), glm::vec3(0, 0, 0),1,p);
-			Projectil* p2 = (Projectil*)sc.addProjectil("./icons/arrow.obj", "./icons/wood.jpg", 1);
+			if (sc.player->hasArrows()>0) {
+				Projectil *p = sc.player->getWeapon()->getProjectil();
+				btCollisionObject *obj = sc.bulletWorld.addCollisionObject(p->getPosition(), glm::vec3(0, 0, 0), 1, p);
+				Projectil* p2 = (Projectil*)sc.addProjectil("./icons/arrow.obj", "./icons/wood.jpg", 1);
+				sc.player->fire(p2, obj);
+			}
+			else if (sc.player->hasArrows() == 0) {
 
-			sc.player->fire(p2,obj);
-			
+				Projectil *p = sc.player->getWeapon()->getProjectil();
+				btCollisionObject *obj = sc.bulletWorld.addCollisionObject(p->getPosition(), glm::vec3(0, 0, 0), 1, p);
+				sc.player->fire(NULL, obj);
+			}
+			else {
+				sc.player->fire(NULL, NULL);
+			}
 			//std::cerr << "DIR" << glm::to_string((getDir() + glm::vec3(1, 1, 1)) / 2) << std::endl;
 		}
 		
 
 		//sc.CalculatePositionOfAddicted();
 			//prepocitava moji polohu
+		sc.drawAllModelsToShadowMap();
 		sc.drawAllModels();
 	} while (glfwGetKey(sc.window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
 		glfwWindowShouldClose(sc.window) == 0);
@@ -53,14 +63,18 @@ int main() {
 	glm::mat4 mat = glm::mat4(1.0f);
 	mat = glm::translate(mat, glm::vec3(5.0f, 8.0f, -5.0f));
 	sc.addShader("diffuseLight.vs","diffuseLight.fs");
-	sc.addDirectionLight(glm::vec3(1, 1, 1), glm::vec3(0, 5, 5), 1, 1);
+	sc.addDepthShader("shadowMap.vs", "shadowMap.fs");
+	sc.setHudShaders("crossHair.vertexShader", "crossHair.fragmentShader");
+	sc.addDirectionLight(glm::vec3(1, 1, 1), glm::vec3(0, 5, 5), 1, 4);
 	sc.addModel(GROUND, "./icons/ground.obj", "./icons/grass.jpg", glm::mat4(1.0f), glm::vec3(0, 0, 0), 0);
 	sc.addModel(MODEL,"./icons/cube3.obj","./icons/bricks.bmp",mat,glm::vec3(0,0,0),100);
 	mat = glm::translate(mat, glm::vec3(-2.0f, 0.0f, 0.0f));
 	sc.addModel(MODEL, "./icons/cube.obj", "./icons/uvtemplate.tga", mat, glm::vec3(0, 0, 0), 10);
 	//sc.addModel(MODEL, "./icons/arrow.obj", "./icons/bricks.bmp",glm::translate(mat,glm::vec3(0,5,0)), glm::vec3(0, 0, 0), 100);
-
-	sc.addCrossHair("./icons/crosshairs64.tga");
+	sc.addHudElement(HUD,"crossHair","./icons/crosshairs64.tga",glm::vec4(WIDTH/2-50,HEIGHT/2+50,100,100),glm::vec4(5,0,8,8));
+	sc.addHudElement(ARROWSTACK,"playerArrowStack","./icons/arow.tga",glm::vec4(100, 300, 240, 240),glm::vec4(0, 0, 1, 1));
+	sc.addHudElement(HITSHUD, "playerHitsHud","./icons/ascii.tga", glm::vec4(WIDTH / 2 - 45, 1000, 30, 50), glm::vec4(0, 0,16, 16));
+	sc.addHudElement(HITSHUD, "windHud", "./icons/ascii.tga", glm::vec4(100, 1000, 30, 50), glm::vec4(0, 0, 16, 16));
 	sc.addSkybox(
 		"./icons/left.tga",
 		"./icons/front.tga",
@@ -73,11 +87,13 @@ int main() {
 //	Projectil *p = NULL;
 	Weapon *w = (Weapon*)sc.addWeapon("./icons/bow_final2.dae", "./icons/wood.jpg", p);
 	sc.addPlayer("./icons/bullet.obj", "./icons/bricks.bmp", getMyPosition(), glm::vec3(0, 0, 0), w,1.7);
+	sc.player->addArrowStack((ArrowStack *)(sc.getHud("playerArrowStack")));
+	sc.player->addHitsHud((HitsHud*)(sc.getHud("playerHitsHud")));
+	sc.setWindHud((HitsHud*)(sc.getHud("windHud")));
 	//sc.addModel(PLAYER, "./icons/cube.obj", "./icons/bricks.bmp", getMyPosition(), glm::vec3(0, 0, 0), 3);
 	//sc.addWeapon("./icons/bow_final2.dae", "./icons/bricks.bmp", (Player *)sc.addModel(PLAYER, "./icons/bullet.obj", "./icons/bricks.bmp", getMyPosition(), glm::vec3(0, 0, 0), 1.7));
 	//std::cerr << "PLAYER" << sc.player->classID << std::endl;
 
 	loop();
-
 	return 0;
 }

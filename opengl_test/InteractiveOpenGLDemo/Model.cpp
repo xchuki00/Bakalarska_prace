@@ -25,9 +25,9 @@ int Model::hitted(Model * byWho)
 {
 	return 0;
 }
-double Model::getDmg()
+float Model::getDmg()
 {
-	return 0.0;
+	return 1.0;
 }
 glm::mat4 Model::getPosition()
 {
@@ -54,14 +54,20 @@ void Model::draw()
 	glm::mat4 Projection = getProject();
 	glm::mat4 View = getView();
 	glm::mat4 MVP = Projection * View * this->getPosition();
-	glUniformMatrix4fv(this->ModelID, 1, GL_FALSE, &this->modelMatrix[0][0]);
 	glUniformMatrix4fv(this->MVPID, 1, GL_FALSE, &MVP[0][0]);
+
+	Projection = getOrthoProject();
+	View = getOrthoView();
+	glm::mat4 LVP = Projection * View * this->getPosition();
+	glUniformMatrix4fv(this->LVPID, 1, GL_FALSE, &LVP[0][0]);
+
+	glUniformMatrix4fv(this->ModelID, 1, GL_FALSE, &this->modelMatrix[0][0]);
 	if (this->animation!=nullptr) {
 		glUniformMatrix4fv(this->BonesID, this->finalTransform.size(), GL_FALSE, &this->finalTransform[0][0][0]);
 	}
-	glActiveTexture(GL_TEXTURE0);
+	glActiveTexture(GL_TEXTURE1);
 	glBindTexture(GL_TEXTURE_2D, this->textur);
-	glUniform1i(this->textureID, 0);
+	glUniform1i(this->textureID, 1);
 	glBindBuffer(GL_ARRAY_BUFFER, this->vertexBuffer);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(MyVertex), 0);
 	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(MyVertex), (const GLvoid*)sizeof(glm::vec3));
@@ -74,8 +80,19 @@ void Model::draw()
 	glDrawElements(GL_TRIANGLES, this->countOfIndex, GL_UNSIGNED_SHORT, 0);
 }
 
-void Model::depthDraw()
+void Model::DrawToShadowMap()
 {
+//	this->CalcBones(this->getTime());
+	glm::mat4 Projection = getOrthoProject();
+	glm::mat4 View = getOrthoView();
+	glm::mat4 MVP = Projection * View * this->getPosition();
+	glUniformMatrix4fv(this->ShadowMVPID, 1, GL_FALSE, &MVP[0][0]);
+	glBindBuffer(GL_ARRAY_BUFFER, this->vertexBuffer);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(MyVertex), 0);
+	//std::cerr << this->classID << "vertexpoitn\n";
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, this->indexBuffer);
+
+	glDrawElements(GL_TRIANGLES, this->countOfIndex, GL_UNSIGNED_SHORT, 0);
 }
 
 double Model::getTime()
@@ -173,7 +190,13 @@ void Model::setShader(GLuint sh)
 	this->textureID = glGetUniformLocation(this->shader, "myTextureSampler");
 	this->MVPID = glGetUniformLocation(this->shader, "MVP");
 	this->ModelID = glGetUniformLocation(this->shader, "M");
+	this->LVPID = glGetUniformLocation(this->shader, "LVP");
+}
 
+void Model::setShadowShader(GLuint sh)
+{
+	this->shadowShader = sh;
+	this->ShadowMVPID = glGetUniformLocation(this->shadowShader, "MVP");
 }
 
 void Model::setAnimatonShaderID()

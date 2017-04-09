@@ -8,26 +8,35 @@
 #include "Weapon.h"
 #include "animation.h"
 #include "ImportModel.h"
+#include "Hud.h"
 class Scene
 {
 protected:
 	//////////////////shaders///////////////
 	GLuint shader;
-	GLuint depthShader;
+	GLuint ShadowShader;
 	GLuint shadowBuffer = 0;
-	GLuint depthTexture;
+	GLuint shadowTexture;
+	GLuint shadowTextureID;
 	GLuint VertexArrayID;
 	GLuint dirlightID;
 	GLuint cameraID;
-	/////////////crosshair/////////////
-	crossHair CrossHair;
+	/////////////HUD/////////////
+
+	std::map<std::string,Hud*> hud;
 	///////////skybox////////////////
 	Skybox *skybox;
 	////////////bullet////////////
 	std::map <std::string,ImportModel *> importModels;
 	std::map < std::string, GLuint> LiberyOfTextures;
-	std::vector<DirectionLight> directionLights;
+	////////////Enviroment///////////
+	float windSrenght = 0;
+	glm::vec3 windDirect = glm::vec3(0,0,10);
+	HitsHud* windHud = nullptr;
+
 public:
+
+	std::vector<DirectionLight> directionLights;
 	BulletWorld bulletWorld;
 	GLFWwindow* window;
 	std::vector <Model*> models;
@@ -55,12 +64,17 @@ public:
 	int addShader(std::string vertexShader, std::string fragmentShader);
 	int addDepthShader(std::string vertexShader, std::string fragmentShader);
 	int drawAllModels();
+	int drawAllModelsToShadowMap();
 	GLuint getTexture(std::string path);
 	ImportModel* getModel(std::string path);
 	void addDirectionLight(glm::vec3 color, glm::vec3 direction, float AmbientIntensity, float diffuseIntensity);
-	//////////////////////crosshair///////////
-	int addCrossHair(std::string path);
-	int drawCrossHair();
+	//////////////////////HUD///////////
+	int addHudElement(int classID,std::string key,std::string path,glm::vec4 position, glm::vec4 uv);
+	int addHudElement(std::string path, Hud* hud);
+	int drawHud();
+	Hud *getHud(std::string path);
+	void setHudShaders(std::string vectorPath, std::string fragmentPath);
+	void setWindHud(HitsHud* hh);
 	///////////////skybox////////
 	int addSkybox(const char* left,
 		const char* front,
@@ -68,10 +82,13 @@ public:
 		const char* back,
 		const char* top,
 		const char* bottom);
-	void CalculatePositionOfAddicted();
+	//void CalculatePositionOfAddicted();
+	////////////Enviroment/////////
+	void addWind(float strength, glm::vec3 dir);
+	void addToWindStrength(float increase);
+	void addToWindDirection(glm::vec3 dir, float angle);
 	////////////INIT///////////
 	void calculate();
-	int initShadowBuffer();
 
 	int initWindow();
 	Scene();

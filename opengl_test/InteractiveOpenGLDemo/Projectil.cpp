@@ -1,6 +1,7 @@
 #include "Projectil.h"
 #include "controls.h"
 #include "misc.h"
+#include "Weapon.h"
 int Model::idCount = 0;
 void Projectil::setMass(int m)
 {
@@ -123,6 +124,7 @@ int Projectil::hitted(Model * byWho)
 			t.getOpenGLMatrix(glm::value_ptr(this->modelMatrix));
 		}
 		//this->models[i]->setPosition(mat);
+		((Weapon*)(this->weapon))->setLastDmg(byWho->getDmg());
 		this->weapon = byWho;
 		this->translateVec.x = (this->modelMatrix[3][0] - this->weapon->getPosition()[3][0])*0.8;
 		this->translateVec.y = (this->modelMatrix[3][1] - this->weapon->getPosition()[3][1])*0.8;

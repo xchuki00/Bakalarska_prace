@@ -1,21 +1,13 @@
 #pragma once
 #include "includes.h"
-class crossHair
+#include "Hud.h"
+class crossHair :
+	public Hud
 {
-	GLuint shader;
-	GLuint UVbuffer;
-	GLuint VertexBuffer;
-	GLuint texture=0;
-	GLuint textureID;
-	GLuint half_height_ID;
-	GLuint half_width_ID;
 
-	int width, height;
 public:
-	void init(std::string path);
+	void print();
 	void buffer();
-	void draw();
-	crossHair(std::string path);
 	crossHair();
 	virtual ~crossHair();
 };

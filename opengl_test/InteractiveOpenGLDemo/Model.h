@@ -15,12 +15,13 @@ protected:
 	///////////Odkazy do shaderu///////////
 	///udelat structur shader
 	GLuint shader;
-	GLuint depthShader;
+	GLuint shadowShader;
 	GLuint BonesID;
 	GLuint ModelID;
 	GLuint textureID;
 	GLuint MVPID;
-
+	GLuint ShadowMVPID;
+	GLuint LVPID;
 	////////////bullet///////////
 	btCollisionObject *bt;
 	btDiscreteDynamicsWorld* bulletWorld;
@@ -48,6 +49,7 @@ public:
 	virtual void initFinalTransformation();
 	virtual void setFinalTransformation();
 	virtual void setShader(GLuint sh);
+	virtual void setShadowShader(GLuint sh);
 	virtual void setAnimatonShaderID();
 	void setRigidBodyIndex(int id);
 	virtual void setPosition(glm::mat4 mat);
@@ -57,13 +59,13 @@ public:
 	btCollisionObject * getObj();
 	void setObj(btCollisionObject* obj);
 	virtual int hitted(Model* byWho);
-	virtual double getDmg();
+	virtual float getDmg();
 	//////////DRAW////////////////////
 	virtual glm::mat4 getPosition();
 	virtual void CalcBones(double time);
 	virtual void calc();
 	virtual void draw();
-	virtual void depthDraw();
+	virtual void DrawToShadowMap();
 	virtual double getTime();
 	
 	Model();

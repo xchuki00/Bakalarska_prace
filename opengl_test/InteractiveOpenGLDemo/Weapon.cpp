@@ -1,5 +1,6 @@
 #include "Weapon.h"
 #include "controls.h"
+#include "Player.h"
 ///vectory pro rotaci projektilu
 static glm::vec3 upProjectil(1, 0, 0);
 static glm::vec3 dirProjectil(0, -1, 0);
@@ -14,10 +15,22 @@ void Weapon::Angles()
 	oldHAngle = getHAngle();
 	oldVAngle = getVAngle();
 }
+void Weapon::setLastDmg(float f)
+{
+	this->LastDMG = f;
+	((Player*)this->player)->reportDmg(f);
+}
+float Weapon::getLastDmg()
+{
+	return this->LastDMG;
+}
 void Weapon::triggered()
 {
 	this->triggeredTime = glfwGetTime();
-	this->p->triggered();
+	if (p != NULL) {
+		this->p->triggered();
+	}
+	this->toLoad = NULL;
 }
 Model * Weapon::getPlayer()
 {
@@ -51,8 +64,9 @@ void Weapon::init(Projectil * p)
 
 void Weapon::reload(Projectil * p)
 {
+
+	this->p = p;
 	if (p != NULL) {
-		this->p = p;
 		this->Angles();
 		upProjectil = glm::vec3(1, 0, 0);
 		dirProjectil = glm::vec3(0, -1, 0);
@@ -73,8 +87,10 @@ void Weapon::fire(Projectil* load, btCollisionObject *obj)
 	if (this->p != NULL) {
 		this->p->fire(obj);
 		this->toLoad = load;
-		this->triggeredTime = glfwGetTime();
 	}
+
+	this->triggeredTime = glfwGetTime();
+	this->fired = true;
 }
 
 void Weapon::calc()
@@ -102,26 +118,30 @@ void Weapon::calc()
 
 double Weapon::getTime()
 {
-	double endA = 40 / 46;
-	if (this->triggeredTime != 0 && this->toLoad==NULL) {
-		double time = glfwGetTime() - this->triggeredTime;
-		time *= (this->animation->getTickPerSecond() != 0) ? this->animation->getTickPerSecond() :1.0f;
-		return (time>this->animation->getDuration() * 40 / 46)?this->animation->getDuration() * 40 / 46 :time;
+	double endA = 40.0/46.0;
+	
+	double animDuration = this->animation->getDuration()*endA;
+	double time = glfwGetTime() - this->triggeredTime;
+	if (this->animation->getTickPerSecond() != 0) {
+		time *=this->animation->getTickPerSecond();
 	}
-	else if (this->toLoad!=NULL) {
-		double time = glfwGetTime() - this->triggeredTime;
-		time *= (this->animation->getTickPerSecond() != 0) ? this->animation->getTickPerSecond() : 1.0f;
-		time += this->animation->getDuration() *40/46;
+	if (!this->fired&&this->triggeredTime > 0) {
+		if (time > animDuration) {
+			return animDuration;
+		}
+		return time;
+	}
+	if (this->fired) {
+		time += animDuration;
 		if (time > this->animation->getDuration()) {
 			this->reload(this->toLoad);
 			this->toLoad = NULL;
 			this->triggeredTime = 0;
+			this->fired = false;
 		}
 		return (time > this->animation->getDuration()) ? this->animation->getDuration() * 0.99 : time;
-	}
-	else {
-		return 0;
-	}
+	}	
+	return 0;
 }
 
 

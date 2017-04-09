@@ -9,6 +9,7 @@
 #include "texture.h"
 #include "loader.h"
 #include "controls.h"
+#include "crossHair.h"
 Scene::Scene()
 {
 }
@@ -22,12 +23,13 @@ Scene::~Scene()
 	delete this->models[i];
 	}*/
 	glDeleteProgram(this->shader);
+	glDeleteProgram(this->ShadowShader);
 	glDeleteVertexArrays(1, &this->VertexArrayID);
 	for (std::map<std::string, GLuint>::iterator it = this->LiberyOfTextures.begin(); it != this->LiberyOfTextures.end(); it++) {
 		glDeleteTextures(1, &it->second);
 	}
-	//glDeleteFramebuffers(1, &this->shadowBuffer);
-	//glDeleteTextures(1, &this->depthTexture);
+	glDeleteFramebuffers(1, &this->shadowBuffer);
+	glDeleteTextures(1, &this->shadowTexture);
 	FreeImage_DeInitialise();
 	glfwTerminate();
 }
@@ -43,6 +45,7 @@ Model* Scene::addModel(int clas, std::string pathOfObj, std::string pathOfTextur
 		m = new Model();
 
 		m->setShader(this->shader);
+		m->setShadowShader(this->ShadowShader);
 		//m->load_3DModel(pathOfObj);
 	//	m->load_texture(pathOfTexture.c_str());
 		m->set3DModel(this->getModel(pathOfObj));
@@ -56,6 +59,7 @@ Model* Scene::addModel(int clas, std::string pathOfObj, std::string pathOfTextur
 		m = new Ground();
 
 		m->setShader(this->shader);
+		m->setShadowShader(this->ShadowShader);
 		m->set3DModel(this->getModel(pathOfObj));
 		m->setTexture(this->getTexture(pathOfTexture));
 		//mat = glm::translate(mat, glm::vec3(0.0f, -2.5f, 0.0f));
@@ -79,6 +83,7 @@ Model * Scene::addProjectil(std::string pathOfObj, std::string pathOfTexture,int
 {
 	Projectil *m = new Projectil();
 	m->setShader(this->shader);
+	m->setShadowShader(this->ShadowShader);
 	m->set3DModel(this->getModel(pathOfObj));
 	m->setTexture(this->getTexture(pathOfTexture));
 	m->init();
@@ -94,6 +99,7 @@ Model * Scene::addWeapon(std::string pathOfObj, std::string pathOfTexture, Proje
 {
 	Weapon *w = new Weapon();
 	w->setShader(this->shader);
+	w->setShadowShader(this->ShadowShader);
 	w->set3DModel(this->getModel(pathOfObj));
 	w->setTexture(this->getTexture(pathOfTexture));
 	w->init(pl);
@@ -107,6 +113,7 @@ Model * Scene::addPlayer(std::string pathOfObj, std::string pathOfTexture, glm::
 {
 	Player* pl = new Player();
 	pl->setShader(this->shader);
+	pl->setShadowShader(this->ShadowShader);
 	pl->set3DModel(this->getModel(pathOfObj));
 	pl->setTexture(this->getTexture(pathOfTexture));
 	pl->setPosition(position);
@@ -119,6 +126,8 @@ Model * Scene::addPlayer(std::string pathOfObj, std::string pathOfTexture, glm::
 
 	return pl;
 }
+
+
 
 int Scene::addSkybox(const char * left, const char * front, const char * right, const char * back, const char * top, const char * bottom)
 {
@@ -135,11 +144,28 @@ int Scene::addShader(std::string vertexShader, std::string fragmentShader)
 	this->shader = LoadShaders(vertexShader,fragmentShader);
 	this->dirlightID = glGetUniformLocation(this->shader, "dl");
 	this->cameraID = glGetUniformLocation(this->shader, "CameraPos");
+	this->shadowTextureID = glGetUniformLocation(this->shader, "ShadowTextureSampler");
 	return 0;
 }
 
 int Scene::addDepthShader(std::string vertexShader, std::string fragmentShader)
 {
+	this->ShadowShader = LoadShaders(vertexShader, fragmentShader);
+	glGenFramebuffers(1, &this->shadowBuffer);
+
+	glGenTextures(1, &this->shadowTexture);
+	glBindTexture(GL_TEXTURE_2D, this->shadowTexture);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT32, WIDTH, HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_NONE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+	glBindFramebuffer(GL_FRAMEBUFFER,this->shadowBuffer);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D,this->shadowTexture, 0);
+	glDrawBuffer(GL_NONE);
+	glReadBuffer(GL_NONE);
 	return 0;
 }
 
@@ -159,6 +185,9 @@ int Scene::drawAllModels()
 	glUseProgram(this->shader);
 	glUniform3f(this->cameraID,getVectorOfPosition().x, getVectorOfPosition().y, getVectorOfPosition().z);
 	glUniform1fv(this->dirlightID,8,&this->directionLights[0].color[0]);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, this->shadowTexture);
+	glUniform1i(this->shadowTextureID, 0);
 	for (int i = 0; i<this->models.size(); i++) {
 		this->models[i]->draw();
 	}
@@ -168,9 +197,23 @@ int Scene::drawAllModels()
 	glDisableVertexAttribArray(3);
 	glDisableVertexAttribArray(4);
 	this->skybox->draw();
-	this->drawCrossHair();
+	this->drawHud();
 	glfwSwapBuffers(this->window);
 	glfwPollEvents();
+	return 0;
+}
+
+int Scene::drawAllModelsToShadowMap()
+{
+	glBindFramebuffer(GL_DRAW_FRAMEBUFFER,this->shadowBuffer);
+	glClear(GL_DEPTH_BUFFER_BIT);
+	glEnableVertexAttribArray(0);
+	glUseProgram(this->ShadowShader);
+	for (int i = 0; i<this->models.size(); i++) {
+		this->models[i]->DrawToShadowMap();
+	}
+	glDisableVertexAttribArray(0);
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	return 0;
 }
 
@@ -203,25 +246,104 @@ void Scene::addDirectionLight(glm::vec3 color, glm::vec3 direction, float Ambien
 {
 	this->directionLights.push_back(DirectionLight(color, direction, AmbientIntensity, diffuseIntensity));
 }
-int Scene::addCrossHair(std::string path)
+///add element to hud, path of texture, position = x,y position of left corner on screen and x,y size
+///uv = column and row in texture and number of column and row
+
+
+int Scene::addHudElement(int classID, std::string key, std::string path, glm::vec4 position, glm::vec4 uv)
 {
-	this->CrossHair.init(path);
-	this->CrossHair.buffer();
-	return 0;
-}
-
-int Scene::drawCrossHair()
-{
-	this->CrossHair.draw();
-	return 0;
-}
-
-
-void Scene::CalculatePositionOfAddicted() {
-	for (auto &m : this->models) {
-		m->calc();
+	Hud *h;
+	switch (classID)
+	{
+	case HUD:
+		h = new Hud();
+		break;
+	case ARROWSTACK:
+		h = new ArrowStack();
+		break;
+	case HITSHUD:
+		h = new HitsHud();
+		break;
+	default:
+		h = new Hud();
+		break;
 	}
+	h->init(path);
+	h->setPosition(position.x, position.y, position.z, position.w);
+	h->setRowAColumn(uv.x, uv.y, uv.z, uv.w);
+	//h->buffer();
+	this->hud.emplace(key, h);
+	return 0;
 }
+
+int Scene::addHudElement(std::string path, Hud * hud)
+{
+	if (hud != NULL) {
+		this->hud.emplace(path, hud);
+	}
+	else {
+		return -1;
+	}
+	return 0;
+}
+
+int Scene::drawHud()
+{
+	
+	for(std::map<std::string,Hud*>::iterator it=this->hud.begin();it!=this->hud.end();++it){
+		it->second->draw();
+	}
+	return 0;
+}
+
+Hud * Scene::getHud(std::string path)
+{
+	return this->hud.at(path);
+}
+
+void Scene::setHudShaders(std::string vectorPath, std::string fragmentPath)
+{
+	Hud::setShader(vectorPath, fragmentPath);
+}
+
+void Scene::setWindHud(HitsHud * hh)
+{
+	this->windHud = hh;
+	std::ostringstream ss;
+	ss << this->windDirect.x*this->windSrenght << "," << this->windDirect.y*this->windSrenght << "," << this->windDirect.z*this->windSrenght;
+	std::cerr << ss.str();
+	this->windHud->setContains(ss.str());
+}
+
+void Scene::addWind(float strength, glm::vec3 dir)
+{
+
+}
+
+void Scene::addToWindStrength(float increase)
+{
+	this->windSrenght += increase;
+	std::ostringstream ss;
+	ss << this->windDirect.x*this->windSrenght << "," << this->windDirect.y*this->windSrenght << "," << this->windDirect.z*this->windSrenght;
+	this->windHud->setContains(ss.str());
+
+}
+
+void Scene::addToWindDirection(glm::vec3 dir, float angle)
+{
+	this->windDirect=glm::rotate(this->windDirect,angle, dir);
+
+	std::ostringstream ss;
+	ss << this->windDirect.x*this->windSrenght << "," << this->windDirect.y*this->windSrenght << "," << this->windDirect.z*this->windSrenght;
+	this->windHud->setContains(ss.str());
+
+}
+
+//void Scene::CalculatePositionOfAddicted() {
+//	for (auto &m : this->models) {
+//		m->calc();
+//	}
+//}
 void Scene::calculate()
 {
 
@@ -309,10 +431,7 @@ int Scene::removeModels(std::vector<std::pair<Model *, int>>destructionQueue)
 	}
 	return 0;
 }
-int Scene::initShadowBuffer()
-{
-	return 0;
-}
+
 
 int Scene::initWindow()
 {

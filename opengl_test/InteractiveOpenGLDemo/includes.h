@@ -23,7 +23,7 @@
 #define HEIGHT 1080
 #define WIDTH 1920
 #define MAX_VERTEX_BONES 4
-/***********CLASS ENUM****************/
+/***********MODEL CLASS ENUM****************/
 #define MODEL 0
 #define GROUND 1 
 #define SKYBOX 2
@@ -31,6 +31,10 @@
 #define TARGET 4
 #define PROJECTIL 5
 #define WEAPON 6
+///////////HUD CLASS ENUM///////////
+#define HUD 30
+#define ARROWSTACK 31
+#define HITSHUD 32
 ///////////enum pro navratove hodnoty funkce hitted
 #define DESTROY -1;
 #define DESTROY_BULLET - 2;

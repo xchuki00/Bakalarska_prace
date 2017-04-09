@@ -27,8 +27,35 @@ glm::mat4 getProject() {
 	return ProjectionC;
 }
 
+glm::mat4 getOrthoProject()
+{
+	glm::mat4 mat = glm::mat4(1.0f);
+	float l =-100 ;
+	float r = 100;
+	float b = 100;
+	float t = -100;
+	float n = -10;
+	float f = 100;
+
+	mat[0][0] = 2.0f / (r - l); mat[0][1] = 0.0f;         mat[0][2] = 0.0f;         mat[0][3] = -(r + l) / (r - l);
+	mat[1][0] = 0.0f;         mat[1][1] = 2.0f / (t - b); mat[1][2] = 0.0f;         mat[1][3] = -(t + b) / (t - b);
+	mat[2][0] = 0.0f;         mat[2][1] = 0.0f;         mat[2][2] = 2.0f / (f - n); mat[2][3] = -(f + n) / (f - n);
+	mat[3][0] = 0.0f;         mat[3][1] = 0.0f;         mat[3][2] = 0.0f;         mat[3][3] = 1.0;
+
+	return glm::mat4();
+}
+
 glm::mat4 getView() {
+
 	return ViewC;
+}
+glm::mat4 getOrthoView()
+{
+
+	glm::vec3 pos = glm::vec3(0, 0, 0);
+	glm::vec3 up = glm::vec3(0, 1, 0);
+	glm::vec3 dir = sc.directionLights[0].dir;
+	return glm::lookAt(pos,pos+dir,up);
 }
 glm::vec3 getDir() {
 	return glm::normalize(dirV);
@@ -101,7 +128,7 @@ int computeMatrices()
 		pressS = true;
 		position -= glm::vec3(dirV.x, 0, dirV.z) * delta*speed*0.75; //vektor posunu doprava, doba drzeni, rychlost
 	}
-	
+
 	if (glfwGetKey(sc.window, GLFW_KEY_SPACE) == GLFW_RELEASE) {
 		space = true;
 		
@@ -141,7 +168,21 @@ int computeMatrices()
 	ProjectionC = glm::perspective(Fov, 4.0f / 3.0f, 0.1f, 100.0f);
 	ViewC = glm::lookAt(position, position+dirV,upV);
 	lastT = current;
-
+	////////////////wind////////////
+	///strenght
+	if (glfwGetKey(sc.window, GLFW_KEY_L) == GLFW_PRESS) {
+		sc.addToWindStrength(delta); //vektor posunu doprava, doba drzeni, rychlost
+	}
+	if (glfwGetKey(sc.window, GLFW_KEY_K) == GLFW_PRESS) {
+		sc.addToWindStrength(-delta); //vektor posunu doprava, doba drzeni, rychlost
+	}
+	///direction
+	if (glfwGetKey(sc.window, GLFW_KEY_LEFT) == GLFW_PRESS) {
+		sc.addToWindDirection(glm::vec3(0,1,0),-delta); //vektor posunu doprava, doba drzeni, rychlost
+	}
+	if (glfwGetKey(sc.window, GLFW_KEY_RIGHT) == GLFW_PRESS) {
+		sc.addToWindDirection(glm::vec3(0, 1, 0), delta); //vektor posunu doprava, doba drzeni, rychlost
+	}
 	return 0;
 }
 
