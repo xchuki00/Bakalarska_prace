@@ -1,10 +1,14 @@
-﻿  HitsHud.cpp
+﻿  controls.cpp
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(169): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(170): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
 c:\users\xchuki00\documents\bakalarska_prace\libs\bullet3-2.85.1\src\linearmath\btidebugdraw.h(171): warning C4305: 'argument': truncation from 'double' to 'const btScalar'
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\hitshud.cpp(75): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\hitshud.cpp(76): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\hitshud.cpp(101): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
-c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\hitshud.cpp(107): warning C4553: '==': operator has no effect; did you intend '='?
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\structures.h(67): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\structures.h(71): warning C4244: 'argument': conversion from 'float' to 'glm::tvec4<float,0>::length_type', possible loss of data
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\structures.h(72): warning C4244: 'argument': conversion from 'float' to 'glm::tvec4<float,0>::length_type', possible loss of data
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\controls.cpp(190): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\controls.cpp(193): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\controls.cpp(197): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\xchuki00\documents\bakalarska_prace\opengl_test\interactiveopengldemo\controls.cpp(200): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   InteractiveOpenGLDemo.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\opengl_test\x64\Debug\InteractiveOpenGLDemo.exe
   InteractiveOpenGLDemo.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\opengl_test\x64\Debug\InteractiveOpenGLDemo.pdb (Partial PDB)

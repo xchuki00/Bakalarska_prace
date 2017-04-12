@@ -38,7 +38,7 @@ void Hud::setRowAColumn(float r, float c, float maxR, float maxC)
 void Hud::init(std::string path)
 {
 	if (this->texture == 0) {
-		this->texture = loadTexture2d(path.c_str(), &this->height, &this->height);
+		this->texture = loadTexture2d(path.c_str(), &this->height, &this->height, GL_RGBA);
 		glGenBuffers(1, &this->UVbuffer);
 		glGenBuffers(1, &this->VertexBuffer);
 		this->textureID = glGetUniformLocation(shader, "texture_sampler");
@@ -125,7 +125,7 @@ void Hud::draw()
 
 Hud::Hud(std::string path)
 {
-	this->texture = loadTexture2d(path.c_str(), &this->height, &this->height);
+	this->texture = loadTexture2d(path.c_str(), &this->height, &this->height, GL_RGBA);
 	glGenBuffers(1, &this->UVbuffer);
 	glGenBuffers(1, &this->VertexBuffer);
 	this->textureID = glGetUniformLocation(shader, "texture_sampler");

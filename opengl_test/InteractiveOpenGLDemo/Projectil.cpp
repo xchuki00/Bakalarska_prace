@@ -124,7 +124,12 @@ int Projectil::hitted(Model * byWho)
 			t.getOpenGLMatrix(glm::value_ptr(this->modelMatrix));
 		}
 		//this->models[i]->setPosition(mat);
-		((Weapon*)(this->weapon))->setLastDmg(byWho->getDmg());
+
+		if (byWho->classID != GROUND) {
+			glm::vec3 modPos = byWho->getPosition()[3];
+			glm::vec3 weaponPos = this->weapon->getPosition()[3];
+			((Weapon*)(this->weapon))->setLastDmg(distance(modPos, weaponPos));
+		}
 		this->weapon = byWho;
 		this->translateVec.x = (this->modelMatrix[3][0] - this->weapon->getPosition()[3][0])*0.8;
 		this->translateVec.y = (this->modelMatrix[3][1] - this->weapon->getPosition()[3][1])*0.8;
@@ -132,12 +137,8 @@ int Projectil::hitted(Model * byWho)
 		this->oldModel.x = this->weapon->getPosition()[0][1] + this->weapon->getPosition()[0][2] + this->weapon->getPosition()[0][3];
 		this->oldModel.y = this->weapon->getPosition()[1][1] + this->weapon->getPosition()[1][2] + this->weapon->getPosition()[1][3];
 		this->oldModel.y = this->weapon->getPosition()[2][1] + this->weapon->getPosition()[2][2] + this->weapon->getPosition()[2][3];
-		std::cerr << "TRAMS" << glm::to_string(this->translateVec) << std::endl;
 		this->inTargetAtr = true;		
-		//std::cerr << "Objetk " << this->id << " ZASAZENO " << byWho->classID << " OBJECT ID " << byWho->id << std::endl;
 		return DESTROY_BULLET;
 	}
-	//std::cerr << byWho->classID;
-	//this->bt->setCollisionFlags(1);
 	return NOTHING;
 }

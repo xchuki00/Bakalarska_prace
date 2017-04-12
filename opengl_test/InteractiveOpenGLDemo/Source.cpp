@@ -61,14 +61,17 @@ void loop() {
 int main() {
 	sc.initWindow();
 	glm::mat4 mat = glm::mat4(1.0f);
-	mat = glm::translate(mat, glm::vec3(5.0f, 8.0f, -5.0f));
+	mat = glm::translate(mat, glm::vec3(5.0f, 1.0f, -5.0f));
 	sc.addShader("diffuseLight.vs","diffuseLight.fs");
 	sc.addDepthShader("shadowMap.vs", "shadowMap.fs");
 	sc.setHudShaders("crossHair.vertexShader", "crossHair.fragmentShader");
 	sc.addDirectionLight(glm::vec3(1, 1, 1), glm::vec3(0, 5, 5), 1, 4);
-	sc.addModel(GROUND, "./icons/ground.obj", "./icons/grass.jpg", glm::mat4(1.0f), glm::vec3(0, 0, 0), 0);
-	sc.addModel(MODEL,"./icons/cube3.obj","./icons/bricks.bmp",mat,glm::vec3(0,0,0),100);
-	mat = glm::translate(mat, glm::vec3(-2.0f, 0.0f, 0.0f));
+	sc.addModel(GROUND, "./icons/ground.obj", "./icons/grass2.tga", glm::mat4(1.0f), glm::vec3(0, 0, 0), 0);
+	mat = glm::rotate(mat, PI, glm::vec3(0, -1, 0));
+	//sc.addModel(MODEL,"./icons/terc.obj","./icons/bricks.bmp",mat,glm::vec3(0,0,0),100);
+	sc.addModel(MODEL,"./icons/cube.obj","./icons/bricks.bmp",mat,glm::vec3(0,0,0),100);
+	mat = glm::translate(mat, glm::vec3(-2.0f, 0.0f, -4.0f));
+	//sc.addModel(MODEL, "./icons/terc.obj", "./icons/uvtemplate.tga", mat, glm::vec3(0, 0, 0), 10);
 	sc.addModel(MODEL, "./icons/cube.obj", "./icons/uvtemplate.tga", mat, glm::vec3(0, 0, 0), 10);
 	//sc.addModel(MODEL, "./icons/arrow.obj", "./icons/bricks.bmp",glm::translate(mat,glm::vec3(0,5,0)), glm::vec3(0, 0, 0), 100);
 	sc.addHudElement(HUD,"crossHair","./icons/crosshairs64.tga",glm::vec4(WIDTH/2-50,HEIGHT/2+50,100,100),glm::vec4(5,0,8,8));
@@ -83,9 +86,9 @@ int main() {
 		"./icons/top.tga",
 		"./icons/bottom.tga"
 	);
-	Projectil *p = (Projectil*)sc.addProjectil("./icons/arrow.obj", "./icons/wood.jpg", 5);
+	Projectil *p = (Projectil*)sc.addProjectil("./icons/arrow.obj", "./icons/wood.tga", 5);
 //	Projectil *p = NULL;
-	Weapon *w = (Weapon*)sc.addWeapon("./icons/bow_final2.dae", "./icons/wood.jpg", p);
+	Weapon *w = (Weapon*)sc.addWeapon("./icons/bow_final2.dae", "./icons/wood2.tga", p);
 	sc.addPlayer("./icons/bullet.obj", "./icons/bricks.bmp", getMyPosition(), glm::vec3(0, 0, 0), w,1.7);
 	sc.player->addArrowStack((ArrowStack *)(sc.getHud("playerArrowStack")));
 	sc.player->addHitsHud((HitsHud*)(sc.getHud("playerHitsHud")));

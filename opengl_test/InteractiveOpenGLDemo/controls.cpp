@@ -2,10 +2,11 @@
 #include "controls.h"
 #include "scene.h"
 #include "misc.h"
+#include <limits>
 extern Scene sc;
 glm::mat4 ViewC;
 glm::mat4 ProjectionC;
-glm::vec3 position(0, 1.0f, 2.0f);
+glm::vec3 position(0, 2.0f, 5.0f);
 glm::vec3 dirV(0,0,0.5f);
 glm::mat4 MyPosition = glm::translate(glm::mat4(1.0f), position);
 glm::vec3 upV(0, 1, 0);
@@ -18,7 +19,7 @@ float oldHAngle = PI;
 float vAngle = 0.0f;
 float oldVAngle = 0.0f;
 // Initial Field of View
-float initialFoV = 45.0f;
+float initialFoV = glm::half_pi<float>()/2;
 bool space = true;
 float speed = 2.0f; // 3 units / second
 float mouseSpeed = 0.005f;
@@ -29,20 +30,35 @@ glm::mat4 getProject() {
 
 glm::mat4 getOrthoProject()
 {
-	glm::mat4 mat = glm::mat4(1.0f);
-	float l =-100 ;
-	float r = 100;
-	float b = 100;
-	float t = -100;
-	float n = -10;
-	float f = 100;
-
-	mat[0][0] = 2.0f / (r - l); mat[0][1] = 0.0f;         mat[0][2] = 0.0f;         mat[0][3] = -(r + l) / (r - l);
-	mat[1][0] = 0.0f;         mat[1][1] = 2.0f / (t - b); mat[1][2] = 0.0f;         mat[1][3] = -(t + b) / (t - b);
-	mat[2][0] = 0.0f;         mat[2][1] = 0.0f;         mat[2][2] = 2.0f / (f - n); mat[2][3] = -(f + n) / (f - n);
-	mat[3][0] = 0.0f;         mat[3][1] = 0.0f;         mat[3][2] = 0.0f;         mat[3][3] = 1.0;
-
-	return glm::mat4();
+	float l = std::numeric_limits<float>::infinity();
+	float r = -l;
+	float b = std::numeric_limits<float>::infinity();
+	float t = -b;
+	float n = -1000;
+	float f = 1000;
+	glm::mat4 iVP = getOrthoView()*glm::inverse(getProject() *getView());
+	for (int i = 0; i < 8; i++) {
+		glm::vec4 v;
+		for (int j = 0; j < 3; j++) {
+			v[j] = (-1.f + 2.f*((i >> j) & 1));
+		}
+		v[3] = 1.0f;
+		v = iVP*v;
+		v.x /= v.w;
+		v.y /= v.w;
+		l = glm::min(l, v.x);
+		r = glm::max(r, v.x);
+		b = glm::min(b, v.y);
+		t = glm::max(t, v.y);
+		n = glm::min(n, v.z);
+		f = glm::max(f, v.z);
+	}
+	std::cerr << "L: " << l <<","<<r << "," << b << "," << t << std::endl;
+	/*l = -100;
+	r = -l;
+	b = -100;
+	t = -b;*/
+	return glm::ortho(l, r, b, t, n, f);
 }
 
 glm::mat4 getView() {
@@ -55,7 +71,7 @@ glm::mat4 getOrthoView()
 	glm::vec3 pos = glm::vec3(0, 0, 0);
 	glm::vec3 up = glm::vec3(0, 1, 0);
 	glm::vec3 dir = sc.directionLights[0].dir;
-	return glm::lookAt(pos,pos+dir,up);
+	return glm::lookAt(pos,-dir,up);
 }
 glm::vec3 getDir() {
 	return glm::normalize(dirV);

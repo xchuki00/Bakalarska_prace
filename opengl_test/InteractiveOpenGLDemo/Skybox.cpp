@@ -34,9 +34,9 @@ void Skybox::draw()
 {
 	glm::mat4 Projection = getProject();
 	glm::mat4 View = getView();
-	glm::mat4 mat=glm::scale(glm::mat4(1.0f),glm::vec3(10,10,10));
+	glm::mat4 mat=glm::scale(getMyPosition(),glm::vec3(2,1,2));
 
-	glm::mat4 MV = Projection * View*getMyPosition();
+	glm::mat4 MV = Projection * View*mat;
 
 	glUseProgram(this->shader);
 	glUniformMatrix4fv(this->MVPID, 1, GL_FALSE, &MV[0][0]);

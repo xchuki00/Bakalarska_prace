@@ -1,7 +1,7 @@
 #include "BulletWorld.h"
-
-
-
+#include "BulletCollision/CollisionShapes/btShapeHull.h"
+#include <BulletCollision\CollisionShapes\btConvexHullShape.h>
+#include <BulletCollision\CollisionShapes\btHeightfieldTerrainShape.h>
 int BulletWorld::init()
 {
 	this->broadphase = new btDbvtBroadphase();
@@ -21,7 +21,11 @@ btCollisionObject * BulletWorld::addCollisionObject(glm::mat4 position, glm::vec
 		//shape->addPoint(btVector3(vertices.data()[i][0], vertices.data()[i][1], vertices.data()[i][2]), true);
 		shape->addPoint(btVector3(index->vertices.data()[i].pos.x, index->vertices.data()[i].pos.y, index->vertices.data()[i].pos.z), true);
 	}
-
+	btShapeHull *hull = new btShapeHull(shape);
+	btScalar m = shape->getMargin();
+	hull->buildHull(m);
+	delete shape;
+	shape = new btConvexHullShape(hull->getVertexPointer()[0], hull->numVertices());
 	btTransform temp;
 	temp.setFromOpenGLMatrix(glm::value_ptr(position));
 	btVector3 inertiaVec(0, 0, 0);
@@ -38,20 +42,9 @@ btCollisionObject * BulletWorld::addCollisionObject(glm::mat4 position, glm::vec
 	RigidBody->setLinearVelocity(velocity);
 	RigidBody->setUserPointer((void*)index);
 	this->world->addRigidBody(RigidBody);
-	/*bool match = false;
-	for (int i = 0; i < this->shapes.size(); i++) {
-		if (shape == this->shapes[i]) {
-			match = true;
-			break;
-		}
-	}
-	if (!match) {*/
-		this->shapes.push_back(shape);
-	/*}
-	else {
-		delete shape;
-	}	//delete shape;
-	*/
+
+	this->shapes.push_back(shape);
+
 	index->setBulletWorld(this->world);
 	index->setObj(this->world->getCollisionObjectArray()[this->world->getNumCollisionObjects() - 1]);
 	return this->world->getCollisionObjectArray()[this->world->getNumCollisionObjects() - 1];
@@ -86,6 +79,9 @@ btCollisionObject * BulletWorld::addCollisionObject(glm::mat4 position, glm::vec
 	if (!match) {*/
 		this->shapes.push_back(shape);
 	/*}//delete shape;*/
+
+		index->setBulletWorld(this->world);
+		index->setObj(this->world->getCollisionObjectArray()[this->world->getNumCollisionObjects() - 1]);
 	return this->world->getCollisionObjectArray()[this->world->getNumCollisionObjects() - 1];
 	return nullptr;
 }
@@ -94,10 +90,32 @@ btCollisionObject * BulletWorld::addCollisionObject(glm::mat4 position, glm::vec
 
 btCollisionObject * BulletWorld::addGround(glm::mat4 position,Model * index)
 {
-	btCollisionShape* Ground = new btStaticPlaneShape(btVector3(0, 1, 0), 1);
+	std::vector<float> zMap;
+	glm::vec3 vertex;
+	float maxH = 0;
+	float minH = 0;
+	float maxW = 0;
+	float minW = 0;
+	float maxL = 0;
+	float minL = 0;
+	for (int i = 0; i < index->vertices.size();i++) {
+		vertex = index->vertices.data()->pos;
+		maxH = (vertex.y > maxH)? vertex.y : maxH;
+		maxW = (vertex.x > maxW) ? vertex.x : maxW;
+		maxL = (vertex.z > maxL) ? vertex.z : maxL;
+		minH = (vertex.y < minH) ? vertex.y : minH;
+		minW = (vertex.x < minW) ? vertex.x : minW;
+		minL = (vertex.z < minL) ? vertex.z : minL;
+		zMap.push_back(vertex.y);
+	}
+
+	btCollisionShape *Ground = new btHeightfieldTerrainShape((maxW-minW),(maxL-minL),&zMap[0], 1, minH,maxH,1,PHY_FLOAT,false);
+
+	//btCollisionShape* Ground = new btStaticPlaneShape(btVector3(0, 1, 0), 1);
 	btTransform temp;
-	
+
 	temp.setFromOpenGLMatrix(glm::value_ptr(position));
+	temp.setOrigin(btVector3(0, (minH + maxH)*0.5f, 0));
 	btDefaultMotionState* groundMotionState =
 		new btDefaultMotionState(temp);
 	btRigidBody::btRigidBodyConstructionInfo
@@ -106,6 +124,8 @@ btCollisionObject * BulletWorld::addGround(glm::mat4 position,Model * index)
 	rb->setUserPointer((void *)index);
 	rb->setUserIndex2(this->world->getNumCollisionObjects());
 	this->world->addRigidBody(rb);
+	index->setBulletWorld(this->world);
+	index->setObj(this->world->getCollisionObjectArray()[this->world->getNumCollisionObjects() - 1]);
 	std::cerr << "ground add" << std::endl;
 	return this->world->getCollisionObjectArray()[this->world->getNumCollisionObjects() - 1];
 

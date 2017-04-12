@@ -58,7 +58,7 @@ void Model::draw()
 
 	Projection = getOrthoProject();
 	View = getOrthoView();
-	glm::mat4 LVP = Projection * View * this->getPosition();
+	glm::mat4 LVP = /*glm::translate(glm::mat4(1.0f), glm::vec3(1.0f))*glm::scale(glm::mat4(1.0f), glm::vec3(0.5f))*/Projection * View * this->getPosition();
 	glUniformMatrix4fv(this->LVPID, 1, GL_FALSE, &LVP[0][0]);
 
 	glUniformMatrix4fv(this->ModelID, 1, GL_FALSE, &this->modelMatrix[0][0]);
@@ -85,7 +85,8 @@ void Model::DrawToShadowMap()
 //	this->CalcBones(this->getTime());
 	glm::mat4 Projection = getOrthoProject();
 	glm::mat4 View = getOrthoView();
-	glm::mat4 MVP = Projection * View * this->getPosition();
+	
+	glm::mat4 MVP = /*glm::translate(glm::mat4(1.0f), glm::vec3(1.0f))*glm::scale(glm::mat4(1.0f),glm::vec3(0.5f))**/Projection * View * this->getPosition();
 	glUniformMatrix4fv(this->ShadowMVPID, 1, GL_FALSE, &MVP[0][0]);
 	glBindBuffer(GL_ARRAY_BUFFER, this->vertexBuffer);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(MyVertex), 0);
@@ -131,7 +132,7 @@ int Model::load_3DModel(std::string path)
 
 int Model::load_texture(const char * path)
 {
-	this->textur = loadTexture2d(path, &this->textureHeight, &this->textureWidth);
+	this->textur = loadTexture2d(path, &this->textureHeight, &this->textureWidth, GL_RGBA);
 
 	return 0;
 }

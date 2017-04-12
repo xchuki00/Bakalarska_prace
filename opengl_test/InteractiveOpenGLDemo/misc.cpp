@@ -93,3 +93,10 @@ void printNodeHiearchy(const aiNode * Nodes)
 		}
 	}
 
+float distance(glm::vec3 x, glm::vec3 y)
+{
+	glm::vec3 vec = x - y;
+
+	return sqrt(vec.x*vec.x+ vec.y*vec.y+ vec.z*vec.z);
+}
+

@@ -1,6 +1,6 @@
 #include "texture.h"
 
-GLuint loadTexture2d(const char * path,int* height,int *width) {
+GLuint loadTexture2d(const char * path,int* height,int *width, GLuint code) {
 	//kontorla formatu
 	
 	FREE_IMAGE_FORMAT form = FreeImage_GetFileType(path, 0);
@@ -31,7 +31,6 @@ GLuint loadTexture2d(const char * path,int* height,int *width) {
 	glActiveTexture(GL_TEXTURE0);
 	glCreateTextures(GL_TEXTURE_2D, 1, &ret);
 	glBindTexture(GL_TEXTURE_2D, ret);
-	GLuint code=GL_RGBA;
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, iWidth, iHeight, 0, code, GL_UNSIGNED_BYTE, data);
 	FreeImage_Unload(bm32);
 	if (qu != 32) {

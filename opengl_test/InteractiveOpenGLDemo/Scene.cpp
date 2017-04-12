@@ -49,7 +49,7 @@ Model* Scene::addModel(int clas, std::string pathOfObj, std::string pathOfTextur
 		//m->load_3DModel(pathOfObj);
 	//	m->load_texture(pathOfTexture.c_str());
 		m->set3DModel(this->getModel(pathOfObj));
-		m->setTexture(this->getTexture(pathOfTexture));
+		m->setTexture(this->getTexture(pathOfTexture, GL_RGBA));
 		m->setPosition(position);
 		this->bulletWorld.addCollisionObject(position, velocity, mass, m);
 		this->models.push_back(m);
@@ -61,13 +61,13 @@ Model* Scene::addModel(int clas, std::string pathOfObj, std::string pathOfTextur
 		m->setShader(this->shader);
 		m->setShadowShader(this->ShadowShader);
 		m->set3DModel(this->getModel(pathOfObj));
-		m->setTexture(this->getTexture(pathOfTexture));
+		m->setTexture(this->getTexture(pathOfTexture, GL_BGRA));
 		//mat = glm::translate(mat, glm::vec3(0.0f, -2.5f, 0.0f));
 		m->setPosition(position);
 		//mat = glm::translate(mat, glm::vec3(0.0f, -0.6f, 0.0f));
-		//m->setObj(this->bulletWorld.addGround(mat,m));
 		//m->setPosition(position);
 		this->bulletWorld.addCollisionObject(position,velocity,mass,m);
+		//this->bulletWorld.addGround(position, m);
 		this->models.push_back(m);
 		std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
 		return m;
@@ -85,7 +85,7 @@ Model * Scene::addProjectil(std::string pathOfObj, std::string pathOfTexture,int
 	m->setShader(this->shader);
 	m->setShadowShader(this->ShadowShader);
 	m->set3DModel(this->getModel(pathOfObj));
-	m->setTexture(this->getTexture(pathOfTexture));
+	m->setTexture(this->getTexture(pathOfTexture, GL_RGBA));
 	m->init();
 	//m->setObj(this->bulletWorld.addCollisionObject(m->getPosition(), glm::vec3(0,0,0), mass, m));
 	//btRigidBody *rb = btRigidBody::upcast(m->getObj());
@@ -101,10 +101,11 @@ Model * Scene::addWeapon(std::string pathOfObj, std::string pathOfTexture, Proje
 	w->setShader(this->shader);
 	w->setShadowShader(this->ShadowShader);
 	w->set3DModel(this->getModel(pathOfObj));
-	w->setTexture(this->getTexture(pathOfTexture));
+	w->setTexture(this->getTexture(pathOfTexture, GL_BGRA));
 	w->init(pl);
 	//m->setObj(this->bulletWorld.addCollisionObject(position, velocity, mass, m));
 	this->models.push_back(w);
+
 	std::cerr << "WEAPON " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
 	return w;
 }
@@ -115,7 +116,7 @@ Model * Scene::addPlayer(std::string pathOfObj, std::string pathOfTexture, glm::
 	pl->setShader(this->shader);
 	pl->setShadowShader(this->ShadowShader);
 	pl->set3DModel(this->getModel(pathOfObj));
-	pl->setTexture(this->getTexture(pathOfTexture));
+	pl->setTexture(this->getTexture(pathOfTexture, GL_RGBA));
 	pl->setPosition(position);
 	pl->setWeapon(w);
 	pl->setObj(this->bulletWorld.addCollisionObject(position, velocity, mass, pl, new btBoxShape(btVector3(1, 1, 1))));
@@ -152,13 +153,15 @@ int Scene::addDepthShader(std::string vertexShader, std::string fragmentShader)
 {
 	this->ShadowShader = LoadShaders(vertexShader, fragmentShader);
 	glGenFramebuffers(1, &this->shadowBuffer);
-
+	
 	glGenTextures(1, &this->shadowTexture);
 	glBindTexture(GL_TEXTURE_2D, this->shadowTexture);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT32, WIDTH, HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT32, WIDTH*5, HEIGHT*5, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_NONE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_COMPARE_REF_TO_TEXTURE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_FUNC, GL_LEQUAL);
+
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
@@ -174,9 +177,9 @@ int Scene::drawAllModels()
 
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	//glViewport(0, 0, WIDTH, HEIGHT);
-	glEnable(GL_CULL_FACE);
-	glCullFace(GL_BACK);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glDisable(GL_CULL_FACE);
+	/*glCullFace(GL_BACK);*/
+	glClear(GL_COLOR_BUFFER_BIT| GL_DEPTH_BUFFER_BIT);
 	glEnableVertexAttribArray(0);
 	glEnableVertexAttribArray(1);
 	glEnableVertexAttribArray(2);
@@ -207,17 +210,21 @@ int Scene::drawAllModelsToShadowMap()
 {
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER,this->shadowBuffer);
 	glClear(GL_DEPTH_BUFFER_BIT);
+	//glDisable(GL_CULL_FACE);
+	glViewport(0, 0, WIDTH * 5, HEIGHT * 5);
 	glEnableVertexAttribArray(0);
 	glUseProgram(this->ShadowShader);
 	for (int i = 0; i<this->models.size(); i++) {
 		this->models[i]->DrawToShadowMap();
 	}
+	glViewport(0, 0, WIDTH, HEIGHT);
 	glDisableVertexAttribArray(0);
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	/*glEnable(GL_CULL_FACE);*/
 	return 0;
 }
 
-GLuint Scene::getTexture(std::string path)
+GLuint Scene::getTexture(std::string path,GLuint code)
 {
 
 	try {
@@ -226,7 +233,7 @@ GLuint Scene::getTexture(std::string path)
 	catch (const std::out_of_range& oor) {
 		int h, w;
 
-		this->LiberyOfTextures.emplace(path, loadTexture2d(path.c_str(), &h, &w));
+		this->LiberyOfTextures.emplace(path, loadTexture2d(path.c_str(), &h, &w,code));
 	}
 	return this->LiberyOfTextures.at(path);;
 }
@@ -237,6 +244,7 @@ ImportModel * Scene::getModel(std::string path)
 		this->importModels.at(path);
 	}
 	catch (const std::out_of_range& oor) {
+		std::cerr <<"PATH: " <<path<<std::endl;
 		ImportModel *imodel = new ImportModel(path);
 		this->importModels.emplace(path, imodel);
 	}
@@ -471,6 +479,8 @@ int Scene::initWindow()
 	glDepthFunc(GL_LESS);
 	glGenVertexArrays(1, &this->VertexArrayID);
 	glBindVertexArray(this->VertexArrayID);
+	glEnable(GL_POLYGON_OFFSET_FILL);
+	glPolygonOffset(2.5f,10);
 	this->bulletWorld.init();
 	return 0;
 }

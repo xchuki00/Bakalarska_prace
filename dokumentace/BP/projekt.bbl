@@ -12,4 +12,8 @@
 Meiri, E.: {\it Modern OpenGL tutorials}. [Online; navštíveno 12.05.2017].
 \newline\urlprefix\url{http://ogldev.atspace.co.uk}
 
+\bibitem{OpenGLBookcz}
+Shreiner, D.; Woo, M.; Neider, J.; aj.: \emph{{OpenGL Průvodce
+  programátora}}. Computer press, 2006, ISBN 80-251-1275-6.
+
 \end{thebibliography}

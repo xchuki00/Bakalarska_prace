@@ -19,7 +19,7 @@ uniform float dl[8];
 uniform vec3 CameraPos;
 // uniform/vlastnosti modelu
 
-uniform sampler2D ShadowTextureSampler;
+uniform sampler2DShadow ShadowTextureSampler;
 uniform sampler2D myTextureSampler;
 float specPower = 1;
 // funkce
@@ -32,17 +32,17 @@ DirectionLight getDirLight(float input[8]){
 	return dl;
 }
 float calcShadowFactor(){
-    vec3 ProjCoords = lightPos.xyz / lightPos.w;                                  
-    vec2 UVCoords;                                                                          
-    UVCoords.x = 0.5 * ProjCoords.x + 0.5;                                                  
-    UVCoords.y = 0.5 * ProjCoords.y + 0.5;                                                  
-    float z = 0.5 * ProjCoords.z + 0.5;                                                     
-    float Depth = texture(ShadowTextureSampler, UVCoords).x;                                          
-    if (Depth < z + 0.00001)                                                                 
+    vec4 ProjCoords = lightPos ;                                                                                   
+    float z = 0.5 * ProjCoords.z + 0.5;  
+	ProjCoords.xyz *= 0.5;          
+	ProjCoords.xyz += 0.5;                                                   
+                                         
+    float Depth = textureProj(ShadowTextureSampler, ProjCoords,10);                                          
+	return Depth;
+    if (Depth < z - 0.0001 )                                                                 
         return 0.5;                                                                         
     else                                                                                    
        return 1.0;
-	//return Depth;   
 }
 vec4 DirectionColor(DirectionLight dirlight){
 	vec3 DDir=normalize(dirlight.Dir);
@@ -61,10 +61,10 @@ vec4 DirectionColor(DirectionLight dirlight){
 		diffuse=vec4(Dcolor * dirlight.DiffInt * factor,1.f);
 	}
 	float shadowFactor = calcShadowFactor();
-	if(shadowFactor<=1){
-	//	return vec4(shadowFactor,shadowFactor,shadowFactor,1);
+	if(shadowFactor ==1){
+		return vec4(shadowFactor,shadowFactor,shadowFactor,1);
 	}else{
-	//	return vec4(1,0,0,1);
+		return vec4(1,0,0,1);
 	}
 	vec4 Amb = vec4(Dcolor*dirlight.AmbInt,1.0f);
 	return Amb+shadowFactor*(diffuse+spec); 

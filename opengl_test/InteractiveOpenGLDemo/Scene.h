@@ -65,7 +65,7 @@ public:
 	int addDepthShader(std::string vertexShader, std::string fragmentShader);
 	int drawAllModels();
 	int drawAllModelsToShadowMap();
-	GLuint getTexture(std::string path);
+	GLuint getTexture(std::string path,GLuint code);
 	ImportModel* getModel(std::string path);
 	void addDirectionLight(glm::vec3 color, glm::vec3 direction, float AmbientIntensity, float diffuseIntensity);
 	//////////////////////HUD///////////

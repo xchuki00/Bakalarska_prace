@@ -4,5 +4,6 @@
  uniform samplerCube textureSampler;
 void main(){
 	vec3 p=uv/vec3(10.0,10.0,10.0);
-  color = texture(textureSampler,p);
+	color = texture(textureSampler,uv);
+	//color = vec4(1,0,0,1);
 }

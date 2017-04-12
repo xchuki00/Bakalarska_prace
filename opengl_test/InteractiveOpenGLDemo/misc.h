@@ -18,3 +18,4 @@ void indexVBOmy(
 void mat4Rotate(glm::mat4 *mat, glm::vec3 dir,glm::vec3 up);
 float AngleBetween(glm::vec3 first, glm::vec3 second);
 void printNodeHiearchy(const aiNode *Nodes);
+float distance(glm::vec3 x, glm::vec3 y);
