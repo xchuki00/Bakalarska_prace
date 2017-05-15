@@ -1,0 +1,4 @@
+﻿  Building Custom Rule C:/Users/xchuki00/Documents/Bakalarska_prace/3rd_parties/libs/bullet3-2.85.1/Extras/GIMPACTUtils/CMakeLists.txt
+  CMake does not need to re-run because C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\Extras\GIMPACTUtils\CMakeFiles\generate.stamp is up-to-date.
+  btGImpactConvexDecompositionShape.cpp
+  GIMPACTUtils.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\lib\Debug\GIMPACTUtils_Debug.lib

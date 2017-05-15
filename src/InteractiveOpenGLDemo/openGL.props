@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <ExecutablePath>$(SolutionDir)\..\3rd_parties\libs\irrKlang-64bit-1.5.0;$(SolutionDir)\..\3rd_parties\libs\irrKlang-64bit-1.5.0\bin\winx64-visualStudio;$(SolutionDir)\..\3rd_parties\libs\assimp-3.3.1\bin\Debug;$(SolutionDir)\..\3rd_parties\libs\bullet3-2.85.1\bullet_build\lib\Debug;$(SolutionDir)\..\3rd_parties\libs\dll;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(SolutionDir)\..\3rd_parties\libs\irrKlang-64bit-1.5.0\include;$(SolutionDir)\..\3rd_parties\libs\bullet3-2.85.1\src;$(SolutionDir)\..\3rd_parties\libs\include;$(SolutionDir)\..\3rd_parties\libs\assimp-3.3.1\include\assimp;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\..\3rd_parties\libs\irrKlang-64bit-1.5.0;$(SolutionDir)\..\3rd_parties\libs\irrKlang-64bit-1.5.0\lib\Winx64-visualStudio;$(SolutionDir)\..\3rd_parties\libs\assimp-3.3.1\lib\Debug;$(SolutionDir)\..\3rd_parties\libs\lib64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\3rd_parties\libs\assimp-3.3.1\include\assimp;$(SolutionDir)\..\3rd_parties\libs\bullet3-2.85.1\src;$(SolutionDir)\..\3rd_parties\libs\irrKlang-64bit-1.5.0\include;$(SolutionDir)\..\3rd_parties\libs\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\3rd_parties\libs\irrKlang-64bit-1.5.0\lib\Winx64-visualStudio;$(SolutionDir)\..\3rd_parties\libs\lib64;$(SolutionDir)\..\3rd_parties\libs\bullet3-2.85.1\bullet_build\lib\Debug;$(SolutionDir)\..\3rd_parties\libs\assimp-3.3.1\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;glew32s.lib;glfw3.lib;glu32.lib;glfw3dll.lib;OpenGL32.Lib;FreeImage.lib;FreeImagePlus.lib;assimp-vc140-mt.lib;irrKlang.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>

@@ -1,0 +1,7 @@
+﻿  Building Custom Rule C:/Users/xchuki00/Documents/Bakalarska_prace/3rd_parties/libs/bullet3-2.85.1/src/Bullet3Common/CMakeLists.txt
+  CMake does not need to re-run because C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\src\Bullet3Common\CMakeFiles\generate.stamp is up-to-date.
+  b3AlignedAllocator.cpp
+  b3Vector3.cpp
+  b3Logging.cpp
+  Generating Code...
+  Bullet3Common.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\lib\Debug\Bullet3Common_Debug.lib

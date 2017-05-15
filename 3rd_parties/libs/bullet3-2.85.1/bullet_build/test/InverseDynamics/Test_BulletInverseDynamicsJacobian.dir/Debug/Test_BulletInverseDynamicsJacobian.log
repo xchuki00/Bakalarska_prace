@@ -1,0 +1,4 @@
+﻿  Building Custom Rule C:/Users/xchuki00/Documents/Bakalarska_prace/3rd_parties/libs/bullet3-2.85.1/test/InverseDynamics/CMakeLists.txt
+  CMake does not need to re-run because C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\test\InverseDynamics\CMakeFiles\generate.stamp is up-to-date.
+  test_invdyn_jacobian.cpp
+  Test_BulletInverseDynamicsJacobian.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\test\InverseDynamics\Debug\Test_BulletInverseDynamicsJacobian.exe

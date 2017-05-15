@@ -1,6 +1,0 @@
-﻿  Building Custom Rule C:/Users/xchuki00/Documents/Bakalarska_prace/libs/bullet3-2.85.1/src/Bullet3Geometry/CMakeLists.txt
-  CMake does not need to re-run because C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\src\Bullet3Geometry\CMakeFiles\generate.stamp is up-to-date.
-  b3ConvexHullComputer.cpp
-  b3GeometryUtil.cpp
-  Generating Code...
-  Bullet3Geometry.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\bullet_build\lib\Debug\Bullet3Geometry_Debug.lib

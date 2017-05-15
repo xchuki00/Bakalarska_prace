@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\InverseDynamics\CloneTreeCreator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\InverseDynamics\CoilCreator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\InverseDynamics\MultiBodyTreeCreator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\InverseDynamics\btMultiBodyTreeCreator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\InverseDynamics\DillCreator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\InverseDynamics\MultiBodyTreeDebugGraph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\InverseDynamics\invdyn_bullet_comparison.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\InverseDynamics\IDRandomUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\InverseDynamics\RandomTreeCreator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\InverseDynamics\SimpleTreeCreator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\InverseDynamics\MultiBodyNameMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\InverseDynamics\User2InternalIndex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\InverseDynamics\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{FAE9CD8C-79F0-30F7-BD15-7D9EDBC0581A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

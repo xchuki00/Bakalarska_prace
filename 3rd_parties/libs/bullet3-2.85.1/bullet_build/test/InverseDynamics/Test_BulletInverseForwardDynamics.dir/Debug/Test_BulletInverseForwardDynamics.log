@@ -1,0 +1,103 @@
+﻿  Building Custom Rule C:/Users/xchuki00/Documents/Bakalarska_prace/3rd_parties/libs/bullet3-2.85.1/test/InverseDynamics/CMakeLists.txt
+  CMake does not need to re-run because C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\test\InverseDynamics\CMakeFiles\generate.stamp is up-to-date.
+  test_invdyn_bullet.cpp
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\test\InverseDynamics\test_invdyn_bullet.cpp(49): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+  b3ResourcePath.cpp
+  MyMultiBodyCreator.cpp
+  BulletUrdfImporter.cpp
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\Importers\ImportURDFDemo\BulletUrdfImporter.cpp(122): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\Importers\ImportURDFDemo\BulletUrdfImporter.cpp(174): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+  urdfStringSplit.cpp
+  UrdfParser.cpp
+  URDF2Bullet.cpp
+  b3ImportMeshUtility.cpp
+  stb_image.cpp
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(222): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(230): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(270): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(292): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(514): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(552): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(570): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(1480): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(1509): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(1527): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2501): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2626): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2632): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2640): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2642): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2650): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2684): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2687): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2708): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2711): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2722): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2760): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2958): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2969): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(2973): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3150): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3154): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3162): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3170): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3183): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3200): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3204): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3347): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3375): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3386): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3387): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3401): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3420): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3438): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3449): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3458): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3485): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3486): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3700): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3704): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3709): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3720): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3749): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3756): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3773): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3803): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3836): warning C4312: 'type cast': conversion from 'int' to 'unsigned char *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3948): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3957): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3962): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(3966): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\examples\ThirdPartyLibs\stb_image\stb_image.cpp(4015): warning C4312: 'type cast': conversion from 'int' to 'float *' of greater size
+  b3Clock.cpp
+  btBulletWorldImporter.cpp
+  btWorldImporter.cpp
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\Serialize\BulletWorldImporter\btWorldImporter.cpp(1000): warning C4800: 'char': forcing value to bool 'true' or 'false' (performance warning)
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\Serialize\BulletWorldImporter\btWorldImporter.cpp(1004): warning C4800: 'char': forcing value to bool 'true' or 'false' (performance warning)
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\Serialize\BulletWorldImporter\btWorldImporter.cpp(1007): warning C4800: 'char': forcing value to bool 'true' or 'false' (performance warning)
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\Serialize\BulletWorldImporter\btWorldImporter.cpp(1327): warning C4800: 'char': forcing value to bool 'true' or 'false' (performance warning)
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\Serialize\BulletWorldImporter\btWorldImporter.cpp(1330): warning C4800: 'char': forcing value to bool 'true' or 'false' (performance warning)
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\Serialize\BulletWorldImporter\btWorldImporter.cpp(1334): warning C4800: 'char': forcing value to bool 'true' or 'false' (performance warning)
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\Serialize\BulletWorldImporter\btWorldImporter.cpp(1337): warning C4800: 'char': forcing value to bool 'true' or 'false' (performance warning)
+  bChunk.cpp
+  bFile.cpp
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\Serialize\BulletFileLoader\bFile.cpp(1288): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'void *'
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\Serialize\BulletFileLoader\bFile.cpp(1288): warning C4313: 'printf': '%d' in format string conflicts with argument 1 of type 'void *'
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\Serialize\BulletFileLoader\bFile.cpp(1306): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'void *'
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\Serialize\BulletFileLoader\bFile.cpp(1306): warning C4313: 'printf': '%d' in format string conflicts with argument 1 of type 'void *'
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\Serialize\BulletFileLoader\bFile.cpp(1487): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 2 has type 'void *const '
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\Extras\Serialize\BulletFileLoader\bFile.cpp(1487): warning C4313: 'printf': '%d' in format string conflicts with argument 2 of type 'void *const '
+  bDNA.cpp
+  btBulletFile.cpp
+  Wavefront2GLInstanceGraphicsShape.cpp
+  LoadMeshFromObj.cpp
+  LoadMeshFromCollada.cpp
+  tiny_obj_loader.cpp
+  Generating Code...
+  Compiling...
+  tinystr.cpp
+  tinyxml.cpp
+  tinyxmlerror.cpp
+  tinyxmlparser.cpp
+  Generating Code...
+  Test_BulletInverseForwardDynamics.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\test\InverseDynamics\Debug\Test_BulletInverseForwardDynamics.exe

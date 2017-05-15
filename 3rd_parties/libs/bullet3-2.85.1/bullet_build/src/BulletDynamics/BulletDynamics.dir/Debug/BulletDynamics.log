@@ -1,0 +1,41 @@
+﻿  btKinematicCharacterController.cpp
+  btConeTwistConstraint.cpp
+  btContactConstraint.cpp
+c:\users\xchuki00\documents\bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\src\bulletdynamics\constraintsolver\btContactConstraint.h(25): warning C4359: 'btContactConstraint': Alignment specifier is less than actual alignment (128), and will be ignored.
+  btFixedConstraint.cpp
+  btGearConstraint.cpp
+  btGeneric6DofConstraint.cpp
+  btGeneric6DofSpringConstraint.cpp
+  btGeneric6DofSpring2Constraint.cpp
+  btHinge2Constraint.cpp
+  btHingeConstraint.cpp
+  btPoint2PointConstraint.cpp
+  btSequentialImpulseConstraintSolver.cpp
+  btNNCGConstraintSolver.cpp
+  btSliderConstraint.cpp
+  btSolve2LinearConstraint.cpp
+  btTypedConstraint.cpp
+  btUniversalConstraint.cpp
+  btDiscreteDynamicsWorld.cpp
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\src\BulletDynamics/ConstraintSolver/btContactConstraint.h(25): warning C4359: 'btContactConstraint': Alignment specifier is less than actual alignment (128), and will be ignored.
+  btRigidBody.cpp
+  btSimpleDynamicsWorld.cpp
+  Generating Code...
+  Compiling...
+  btRaycastVehicle.cpp
+C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\src\BulletDynamics/ConstraintSolver/btContactConstraint.h(25): warning C4359: 'btContactConstraint': Alignment specifier is less than actual alignment (128), and will be ignored.
+  btWheelInfo.cpp
+  btMultiBody.cpp
+  btMultiBodyConstraintSolver.cpp
+  btMultiBodyDynamicsWorld.cpp
+  btMultiBodyJointLimitConstraint.cpp
+  btMultiBodyConstraint.cpp
+  btMultiBodyPoint2Point.cpp
+  btMultiBodyFixedConstraint.cpp
+  btMultiBodySliderConstraint.cpp
+  btMultiBodyJointMotor.cpp
+  btDantzigLCP.cpp
+  btMLCPSolver.cpp
+  btLemkeAlgorithm.cpp
+  Generating Code...
+  BulletDynamics.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\lib\Debug\BulletDynamics_Debug.lib

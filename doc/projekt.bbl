@@ -1,0 +1,24 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\selectlanguage}[1]{\relax}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{bullet}
+Coumans, E.: {\it Bullet physic library}. [Online; navštíveno 26.04.2017].
+\newline\urlprefix\url{http://bulletphysics.org/wordpress/}
+
+\bibitem{assimp}
+Gessler, A.; Schulze, T.; Kulling, K.; aj.: {\it Open Asset Import library}.
+  [Online; navštíveno 26.04.2017].
+\newline\urlprefix\url{http://assimp.org/index.html}
+
+\bibitem{MPGBook}
+Žára, J.; Beneš, B.; Sochor, J.; aj.: \emph{{Moderní počítačová
+  grafika}}. Computer press, 2004, ISBN 80-251-0454-0.
+
+\end{thebibliography}

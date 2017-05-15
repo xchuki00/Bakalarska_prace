@@ -1,0 +1,9 @@
+﻿  Building Custom Rule C:/Users/xchuki00/Documents/Bakalarska_prace/3rd_parties/libs/bullet3-2.85.1/src/Bullet3Serialize/Bullet2FileLoader/CMakeLists.txt
+  CMake does not need to re-run because C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\src\Bullet3Serialize\Bullet2FileLoader\CMakeFiles\generate.stamp is up-to-date.
+  b3BulletFile.cpp
+  b3Chunk.cpp
+  b3DNA.cpp
+  b3File.cpp
+  b3Serializer.cpp
+  Generating Code...
+  Bullet2FileLoader.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\lib\Debug\Bullet2FileLoader_Debug.lib

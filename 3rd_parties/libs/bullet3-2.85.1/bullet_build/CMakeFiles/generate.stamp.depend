@@ -1,0 +1,28 @@
+# CMake generation dependency list for this directory.
+C:/Users/xchuki00/Documents/Bakalarska_prace/3rd_parties/libs/bullet3-2.85.1/CMakeLists.txt
+C:/Users/xchuki00/Documents/Bakalarska_prace/3rd_parties/libs/bullet3-2.85.1/bullet_build/CMakeFiles/3.7.1/CMakeSystem.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Users/xchuki00/Documents/Bakalarska_prace/3rd_parties/libs/bullet3-2.85.1/bullet_build/CMakeFiles/3.7.1/CMakeCCompiler.cmake
+C:/Users/xchuki00/Documents/Bakalarska_prace/3rd_parties/libs/bullet3-2.85.1/bullet_build/CMakeFiles/3.7.1/CMakeCXXCompiler.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/CMakeGenericSystem.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/Platform/Windows.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/Platform/WindowsPaths.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/CMakeCInformation.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/CMakeLanguageInformation.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/Platform/Windows-MSVC-C.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/Platform/Windows-MSVC.cmake
+C:/Users/xchuki00/Documents/Bakalarska_prace/3rd_parties/libs/bullet3-2.85.1/bullet_build/CMakeFiles/3.7.1/CMakeRCCompiler.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/CMakeRCInformation.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/CMakeCXXInformation.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/CMakeLanguageInformation.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/FindOpenGL.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/FindPackageMessage.cmake
+C:/Program Files (x86)/cmake-3.7.1-win64-x64/share/cmake-3.7/Modules/CMakeParseArguments.cmake
+C:/Users/xchuki00/Documents/Bakalarska_prace/3rd_parties/libs/bullet3-2.85.1/BulletConfig.cmake.in

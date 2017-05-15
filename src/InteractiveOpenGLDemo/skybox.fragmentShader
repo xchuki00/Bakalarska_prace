@@ -1,0 +1,55 @@
+ #version 400
+ in vec3 uv;
+ out vec4 color;
+ uniform samplerCube DaytextureSampler;
+ uniform samplerCube NighttextureSampler;
+ uniform int day;
+ uniform vec3 axis[2];
+void main(){
+	float d=1;
+	float n=0;
+	vec2 cameraPos = (uv - vec3(0,0,0)).xy;
+	cameraPos = normalize(cameraPos);
+	float angleY1 = acos(dot(cameraPos.xy,axis[1].xy));
+	float angleY0 = acos(dot(cameraPos.xy,axis[0].xy));
+	float limit90 = radians(90);
+	float limit45 = radians(45);
+	float limit135 = radians(135);
+	float ret;
+	if(day>5 || day<2){
+		d=0;n=1;
+	}
+	if(angleY0 < limit45){
+		//prechod
+		ret = (angleY0/limit45) * 0.5+0.5;
+		if((angleY1 >limit90 && day<4)||(angleY1<limit90&&day>=4)){
+			d = ret;
+			n = 1 - ret;
+		}else{
+			d = 1 - ret;
+			n = ret;
+		}
+	}else{
+		if(day == 5 || day ==1){
+			//za prechodem prevracena hodnotta
+			if(angleY1>limit135){
+				float pom = d;
+				d=n;
+				n=pom;
+			}
+		}
+		if(day == 6 || day == 2){
+			//pred prechodem prevracena hodnotta		
+			if(angleY1<limit45){
+				float pom = d;
+				d=n;
+				n=pom;
+			}
+		}
+	
+	}	
+
+	vec3 p=uv/vec3(10.0,10.0,10.0);
+	color =	(n*texture(NighttextureSampler, uv) + d*texture(DaytextureSampler, uv))/2;
+	//color = vec4(1,0,0,1);
+}

@@ -1,0 +1,13 @@
+﻿  Building Custom Rule C:/Users/xchuki00/Documents/Bakalarska_prace/3rd_parties/libs/bullet3-2.85.1/test/collision/CMakeLists.txt
+  CMake does not need to re-run because C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\test\collision\CMakeFiles\generate.stamp is up-to-date.
+  main.cpp
+  btVoronoiSimplexSolver.cpp
+  btSphereShape.cpp
+  btMultiSphereShape.cpp
+  btPolyhedralConvexShape.cpp
+  btConvexShape.cpp
+  btConvexInternalShape.cpp
+  btCollisionShape.cpp
+  btConvexPolyhedron.cpp
+  Generating Code...
+  Test_Collision.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\test\collision\Debug\Test_Collision.exe

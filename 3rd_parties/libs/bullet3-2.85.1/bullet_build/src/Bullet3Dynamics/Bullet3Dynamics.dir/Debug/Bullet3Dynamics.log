@@ -1,0 +1,10 @@
+﻿  Building Custom Rule C:/Users/xchuki00/Documents/Bakalarska_prace/3rd_parties/libs/bullet3-2.85.1/src/Bullet3Dynamics/CMakeLists.txt
+  CMake does not need to re-run because C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\src\Bullet3Dynamics\CMakeFiles\generate.stamp is up-to-date.
+  b3CpuRigidBodyPipeline.cpp
+  b3FixedConstraint.cpp
+  b3Generic6DofConstraint.cpp
+  b3PgsJacobiSolver.cpp
+  b3Point2PointConstraint.cpp
+  b3TypedConstraint.cpp
+  Generating Code...
+  Bullet3Dynamics.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\lib\Debug\Bullet3Dynamics_Debug.lib

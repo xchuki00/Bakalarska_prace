@@ -1,0 +1,10 @@
+﻿  Building Custom Rule C:/Users/xchuki00/Documents/Bakalarska_prace/3rd_parties/libs/bullet3-2.85.1/examples/BasicDemo/CMakeLists.txt
+  CMake does not need to re-run because C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\examples\BasicDemo\CMakeFiles\generate.stamp is up-to-date.
+  BasicExample.cpp
+  main_opengl_single_example.cpp
+  OpenGLGuiHelper.cpp
+  GL_ShapeDrawer.cpp
+  CollisionShape2TriangleMesh.cpp
+  b3Clock.cpp
+  Generating Code...
+  AppBasicExampleGui.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\examples\BasicDemo\Debug\AppBasicExampleGui.exe
