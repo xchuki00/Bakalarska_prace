@@ -10,8 +10,6 @@ protected:
 	std::vector<glm::vec3> nor;
 	GLuint dayTextur;
 	GLuint nightTextur;
-	GLuint sunTextur;
-	GLuint moonTextur;
 	GLuint dayTextureID;
 	GLuint nightTextureID;
 	GLuint dayID;
@@ -36,6 +34,6 @@ public:
 	int addShader(std::string vertexShader, std::string fragmentShader);
 	void setRefToTime(double * t);
 	Skybox();
-	~Skybox();
+	virtual~Skybox();
 };
 

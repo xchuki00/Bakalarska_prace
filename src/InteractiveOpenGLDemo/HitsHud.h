@@ -15,6 +15,6 @@ public:
 	void setContains(char c);
 	void buffer();
 	HitsHud();
-	~HitsHud();
+	virtual~HitsHud();
 };
 

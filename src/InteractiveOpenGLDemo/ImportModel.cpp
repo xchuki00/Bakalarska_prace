@@ -27,7 +27,7 @@ ImportModel::ImportModel(std::string path)
 		this->Animation = new animation();
 		const aiScene *scen = this->Animation->imp->ReadFile(path.c_str(), aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_JoinIdenticalVertices);
 		if (scen == NULL) {
-			std::cerr << "Error:Assimp load\n";
+			//std::cerr << "Error:Assimp load\n";
 			throw;
 		}
 		const aiMesh* mesh = scen->mMeshes[0];
@@ -85,4 +85,8 @@ ImportModel::ImportModel(std::string path)
 
 ImportModel::~ImportModel()
 {
+	delete this->Animation;
+
+
+
 }

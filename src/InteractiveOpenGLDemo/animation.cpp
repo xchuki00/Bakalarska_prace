@@ -36,9 +36,9 @@ void animation::updateNode(const aiNode * Node, aiMatrix4x4 ParentTransform, dou
 		this->getNodePosition(&Translation, time, pNodeAnim);
 		aiMatrix4x4 TransM = aiMatrix4x4();
 		TransM.Translation(Translation, TransM);
-		//std::cerr << "SCALE" << Scaling.x<<"," << Scaling.y << "," << Scaling.z << "\n";
-		//std::cerr << "ROTATE" << RotationQ.x << "," << RotationQ.y << "," << RotationQ.z <<"," << RotationQ.w << "\n";
-		//std::cerr << "TRANS" << Translation.x << "," << Translation.y << "," << Translation.z << "\n";
+		////std::cerr << "SCALE" << Scaling.x<<"," << Scaling.y << "," << Scaling.z << "\n";
+		////std::cerr << "ROTATE" << RotationQ.x << "," << RotationQ.y << "," << RotationQ.z <<"," << RotationQ.w << "\n";
+		////std::cerr << "TRANS" << Translation.x << "," << Translation.y << "," << Translation.z << "\n";
 
 		NodeTransformation = TransM*rotateM*scaleM;
 	}

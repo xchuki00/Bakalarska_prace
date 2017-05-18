@@ -4,8 +4,12 @@
 
 glm::mat4 SunMoon::getPosition()
 {
-	static int lastTime = 0;
-	float angle = ((2 * glm::pi<float>()) / this->period)*((*time) - lastTime);
+
+	float delta = *time - lastTime;
+	if (*time < lastTime) {		//zacatek noveho dne
+		delta = (dayLenght - lastTime) + *time;
+	} 
+	float angle = ((2 * glm::pi<float>()) / this->period)*(delta);
 	this->modelMatrix = glm::rotate(this->modelMatrix,angle,this->axis);
 	
 	this->transalteVec = glm::rotate(this->transalteVec, angle, this->axis);
@@ -13,7 +17,9 @@ glm::mat4 SunMoon::getPosition()
 	this->modelMatrix[3][0] = trans.x;
 	this->modelMatrix[3][1] = trans.y;
 	this->modelMatrix[3][2] = trans.z;
-	this->light->dir = (-1)*trans;
+	if(this->light!=NULL){
+		this->light->dir = (-1)*trans;
+	}
 	lastTime = *time;
 	return this->modelMatrix;
 }
@@ -35,7 +41,7 @@ void SunMoon::draw(std::vector<DirectionLight> lights)
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(MyVertex), 0);
 	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(MyVertex), (const GLvoid*)sizeof(glm::vec3));
 	glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeof(MyVertex), (const GLvoid*)(sizeof(glm::vec2) + sizeof(glm::vec3)));
-	//std::cerr << this->classID << "vertexpoitn\n";
+	////std::cerr << this->classID << "vertexpoitn\n";
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, this->indexBuffer);
 	glDrawElements(GL_TRIANGLES, this->countOfIndex, GL_UNSIGNED_SHORT, 0);
 	glDisableVertexAttribArray(0);
@@ -43,9 +49,7 @@ void SunMoon::draw(std::vector<DirectionLight> lights)
 	glDisableVertexAttribArray(2);
 }
 
-void SunMoon::DrawToShadowMap(glm::vec3 orthoDir)
-{
-}
+
 
 void SunMoon::setOffset(float o)
 {
@@ -88,7 +92,7 @@ SunMoon::SunMoon()
 	this->classID = SUNMOON;
 	this->modelMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(10, 0, 0));
 	this->axis = glm::rotate(glm::vec3(0, 0, 1), glm::pi<float>() / 36, glm::vec3(1, 0, 0));
-	this->shader = LoadShaders("SunMoon.vs", "SunMoon.fs");
+	this->shader = LoadShaders("./shaders/SunMoon.vs", "./shaders/SunMoon.fs");
 	this->textureID = glGetUniformLocation(this->shader, "myTextureSampler");
 
 	this->MVPID = glGetUniformLocation(this->shader, "MV");
@@ -97,4 +101,5 @@ SunMoon::SunMoon()
 
 SunMoon::~SunMoon()
 {
+
 }

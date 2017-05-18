@@ -1,6 +1,7 @@
 #include "Wind.h"
 #include "Shader.h"
 #include "controls.h"
+#include "misc.h"
 glm::vec3 Wind::getDir()
 {
 	return this->dir;
@@ -14,7 +15,7 @@ void Wind::setDirection(glm::vec3 dir, float str)
 
 void Wind::init(glm::vec3 dir, float str)
 {
-	this->ShadowShader = LoadShaders("shadowMap.vs", "shadowMap.fs");
+	this->ShadowShader = LoadShaders("./shaders/shadowMap.vs", "./shaders/shadowMap.fs");
 	glGenFramebuffers(1, &this->shadowBuffer);
 
 	glGenTextures(1, &this->shadowTexture);
@@ -62,23 +63,27 @@ glm::vec3 Wind::getLocalWind(glm::vec3 pos)
 	iy = (y >= HEIGHT) ? HEIGHT-1 : y;
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, this->shadowBuffer);
 	glReadPixels(ix,iy , 1, 1, GL_DEPTH_COMPONENT, GL_FLOAT, &s);
-	//std::cerr << "VITR: " << ix << ";"<< iy << ";" << s << "\n";
+	////std::cerr << "VITR: " << ix << ";"<< iy << ";" << s << "\n";
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
-	if (s < z + 0.0001) {
+	if (s < z - 0.0001) {
 		s = 0.5;
-		std::cerr << "VITR: " << ix << ";" << iy << ";" << s << "\n";
+		////std::cerr << "VITR: " << ix << ";" << iy << ";" << s << "\n";
 	}
 	else {
 		s = 1;
 	}
-	return this->dir*s;
+	return glm::rotateY(this->dir,(float)this->noise->perlinNoise2D(x*WIDTH,y*HEIGHT)/10)*s*this->strength*this->noise->perlinNoise2D(x*WIDTH, y*HEIGHT);
 }
 
 Wind::Wind()
 {
+	this->noise = new PerlinNoise();
 }
 
 
 Wind::~Wind()
 {
+	glDeleteBuffers(1, &this->shadowBuffer);
+	glDeleteTextures(1, &this->shadowTexture);
+	glDeleteProgram(this->ShadowShader);
 }

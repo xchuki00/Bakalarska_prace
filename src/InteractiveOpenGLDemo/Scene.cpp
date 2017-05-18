@@ -19,19 +19,35 @@ Scene::Scene()
 Scene::~Scene()
 {
 
-	std::cerr << "delete" << std::endl;
-	/*for (int i = 0; i < this->models.size(); i++) {
-	delete this->models[i];
-	}*/
+	////std::cerr << "delete" << std::endl;
+	for (int i = 0; i < this->models.size(); i++) {
+		delete this->models[i];
+	}
+	for each (Model* var in this->specialModels)
+	{
+		delete var;
+	}
 	Sound::deleteEngine(this->background->getEngine());
 	glDeleteProgram(this->shader);
 	glDeleteProgram(this->ShadowShader);
 	glDeleteVertexArrays(1, &this->VertexArrayID);
+	for each (std::pair<std::string, ImportModel*> var in this->importModels)
+	{
+		delete var.second;
+	}
+	for each (std::pair<std::string, Hud*> var in this->hud)
+	{
+		delete var.second;
+	}
 	for (std::map<std::string, GLuint>::iterator it = this->LiberyOfTextures.begin(); it != this->LiberyOfTextures.end(); it++) {
 		glDeleteTextures(1, &it->second);
 	}
-	glDeleteFramebuffers(1, &this->shadowBuffer[0]);
-	glDeleteTextures(1, &this->shadowTexture[0]);
+	delete skybox;
+	delete wind;
+	this->background->deleteEngine(this->background->getEngine());
+	delete background;
+	glDeleteFramebuffers(this->directionLights.size(), &this->shadowBuffer[0]);
+	glDeleteTextures(this->directionLights.size(), &this->shadowTexture[0]);
 	FreeImage_DeInitialise();
 	glfwTerminate();
 }
@@ -48,18 +64,14 @@ Model* Scene::addModel(int clas, std::string pathOfObj, std::string pathOfTextur
 
 		m->setShader(this->shader);
 		m->setShadowShader(this->ShadowShader);
-		//m->load_3DModel(pathOfObj);
-	//	m->load_texture(pathOfTexture.c_str());
 		m->set3DModel(this->getModel(pathOfObj));
-		m->setTexture(this->getTexture(pathOfTexture, GL_RGBA));
+		m->setTexture(this->getTexture(pathOfTexture, GL_BGRA));
 		m->setPosition(position);
 		m->setSoundEngine(this->background->getEngine());
 		m->setWind(this->wind);
-
-		//this->background->play3D("./sounds/ds.mp3", glm::vec3(0,0,0));
-		this->bulletWorld.addCollisionObject(position, velocity, mass, m);
+		m->setObj(this->bulletWorld.addCollisionObject(position, velocity, mass, m));
 		this->models.push_back(m);
-		std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
+		////std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
 		return m;
 	case GROUND:
 		m = new Ground();
@@ -70,13 +82,15 @@ Model* Scene::addModel(int clas, std::string pathOfObj, std::string pathOfTextur
 		m->setTexture(this->getTexture(pathOfTexture, GL_BGRA));
 		m->setPosition(position);
 		m->setSoundEngine(this->background->getEngine());
-		this->bulletWorld.addCollisionObject(position,velocity,mass,m);
-		m->setObj(this->bulletWorld.addCollisionObject(position, velocity, mass, m, new btStaticPlaneShape(btVector3(0, 1, 0), 0.01)));
+		m->setObj(this->bulletWorld.addCollisionObject(position, velocity, mass, m));
+		position[3].y -= 0.25;
+		//((Ground*)m)->setPlane(this->bulletWorld.addCollisionObject(position, velocity, mass, m, new btStaticPlaneShape(btVector3(0, 1, 0), 1)));
+		//m->setObj(this->bulletWorld.addCollisionObject(position, velocity, mass, m, new btStaticPlaneShape(btVector3(0, 1, 0), 1)));
 		this->models.push_back(m);
-		std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
+		////std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
 		return m;
 	default:
-		std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " neni vlozen typ" << std::endl;
+		////std::cerr << "MODEL " << pathOfObj << " s texturou " << pathOfTexture << " neni vlozen typ" << std::endl;
 		return nullptr;
 	}
 }
@@ -87,14 +101,15 @@ Model * Scene::addProjectil(std::string pathOfObj, std::string pathOfTexture,int
 	m->setShader(this->shader);
 	m->setShadowShader(this->ShadowShader);
 	m->set3DModel(this->getModel(pathOfObj));
-	m->setTexture(this->getTexture(pathOfTexture, GL_RGBA));
+	m->setTexture(this->getTexture(pathOfTexture, GL_BGRA));
+	m->setSoundEngine(this->background->getEngine());
 	m->init();
 	m->setWind(this->wind);
 	//m->setObj(this->bulletWorld.addCollisionObject(m->getPosition(), glm::vec3(0,0,0), mass, m));
 	//btRigidBody *rb = btRigidBody::upcast(m->getObj());
 	//rb->setActivationState(DISABLE_SIMULATION);
 	this->models.push_back(m);
-	std::cerr << "PROJECTIL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen."<< std::endl;
+	////std::cerr << "PROJECTIL " << pathOfObj << " s texturou " << pathOfTexture << " vlozen."<< std::endl;
 	return m;
 }
 
@@ -106,13 +121,13 @@ Model * Scene::addWeapon(std::string pathOfObj, std::string pathOfTexture, Proje
 	w->setShader(this->shader);
 	w->setShadowShader(this->ShadowShader);
 	w->set3DModel(this->getModel(pathOfObj));
-	w->setTexture(this->getTexture(pathOfTexture, GL_BGRA));
+	w->setTexture(this->getTexture(pathOfTexture, GL_RGBA));
 	w->init(pl);
 	w->setSoundEngine(this->background->getEngine());
 	//m->setObj(this->bulletWorld.addCollisionObject(position, velocity, mass, m));
 	this->models.push_back(w);
 
-	std::cerr << "WEAPON " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
+	////std::cerr << "WEAPON " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
 	return w;
 }
 Model * Scene::addPlayer(std::string pathOfObj, std::string pathOfTexture, glm::mat4 position, glm::vec3 velocity, Weapon * w, float mass)
@@ -131,7 +146,7 @@ Model * Scene::addPlayer(std::string pathOfObj, std::string pathOfTexture, glm::
 	pl->setBulletWorld(this->bulletWorld.world);
 	this->models.push_back(pl);
 	this->player = pl;
-	std::cerr << "PLAYER " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
+	////std::cerr << "PLAYER " << pathOfObj << " s texturou " << pathOfTexture << " vlozen." << std::endl;
 
 	return pl;
 }
@@ -151,7 +166,7 @@ int Scene::addSkybox(std::string left, std::string front, std::string right, std
 		(TEXT + "skyboxes/night/starfield_bk.tga").c_str(),
 		(TEXT + "skyboxes/night/starfield_up.tga").c_str(),
 		(TEXT+"skyboxes/night/starfield_dn.tga").c_str());
-	s->addShader("skybox.vertexShader", "skybox.fragmentShader");
+	s->addShader("./shaders/skybox.vertexShader", "./shaders/skybox.fragmentShader");
 	s->load_3DModel(OBJ+"skybox.obj");
 	s->setRefToTime(&GameTime);
 	//s->buffer();
@@ -162,7 +177,7 @@ void Scene::addSunMoon(std::string path, std::string texture, float offset, floa
 {
 	SunMoon* sm = new SunMoon();
 	sm->set3DModel(this->getModel(path));
-	sm->setTexture(this->getTexture(texture, GL_RGBA));
+	sm->setTexture(this->getTexture(texture, GL_BGRA));
 	
 	sm->setPeriod(period);
 	sm->setLightSource(l);
@@ -171,7 +186,8 @@ void Scene::addSunMoon(std::string path, std::string texture, float offset, floa
 	sm->setOffset(offset);
 	this->specialModels.push_back(sm);
 
-	std::cerr << "SUNMOON " << path << " s texturou " << texture << " vlozen." << std::endl;
+	//
+	////std::cerr << "SUNMOON " << path << " s texturou " << texture << " vlozen." << std::endl;
 
 }
 void Scene::drawSpecialModels()
@@ -201,7 +217,16 @@ int Scene::addDepthShader(std::string vertexShader, std::string fragmentShader)
 
 int Scene::drawAllModels()
 {
-	GameTime =fmod((glfwGetTime()*timeSpeed), dayLenght);
+	GameTime = fmod((glfwGetTime()*timeSpeed), dayLenght);
+
+	static float fps = 0;
+	static double lastTime = 0;
+	if (GameTime > lastTime + 1) {
+		((HitsHud*)this->hud.at("fps"))->setContains((float)(fps/(GameTime-lastTime)));
+		fps = 0;
+		lastTime = GameTime;
+	}
+	fps+=1;
 	this->addToWindDirection(this->wind->getLocalWind(this->player->getPosition()[3]), 1);
 	glm::vec3 pos=this->player->getPosition()[3];
 	glm::vec3 dir = getDir();
@@ -220,7 +245,7 @@ int Scene::drawAllModels()
 	glUseProgram(this->shader);
 	glUniform3f(this->cameraID,getVectorOfPosition().x, getVectorOfPosition().y, getVectorOfPosition().z);
 	glUniform1i(this->countOfLightID, this->directionLights.size());
-	glUniform1fv(this->dirlightID, 8*this->directionLights.size(), reinterpret_cast<GLfloat *>(&this->directionLights[0].color[0]));
+	glUniform1fv(this->dirlightID, 8 * this->directionLights.size(), &this->directionLights[0].color[0]);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, *this->shadowTexture);
 	glUniform1i(this->shadowTextureID, 0);
@@ -280,7 +305,7 @@ ImportModel * Scene::getModel(std::string path)
 		this->importModels.at(path);
 	}
 	catch (const std::out_of_range& oor) {
-		std::cerr <<"PATH: " <<path<<std::endl;
+		////std::cerr <<"PATH: " <<path<<std::endl;
 		ImportModel *imodel = new ImportModel(path);
 		this->importModels.emplace(path, imodel);
 	}
@@ -393,7 +418,7 @@ void Scene::addToWindDirection(glm::vec3 dir, float angle)
 	//this->windDirect=glm::rotate(this->windDirect,angle, dir);
 
 	std::ostringstream ss;
-	ss << dir.x << "," << dir.y << "," << dir.z;
+	ss << roundf(dir.x* 100) / 100 << "," << roundf(dir.y * 100) / 100 << "," << roundf(dir.z * 100) / 100;
 	this->windHud->setContains(ss.str());
 
 }
@@ -447,13 +472,13 @@ void Scene::calculate()
 		}
 	}
 
-	//std::cerr << glm::to_string(mat);
+	////std::cerr << glm::to_string(mat);
 	//this->Ground.setPosition(mat);
 	std::vector<std::pair<Model *, int>> destructionQueue;// = new std::vector<std::pair<Model *, int>>();
 	for (int i = 0; i < colisions->size(); i+=2) {
 		int reaction;
 		if (colisions->data()[i] != NULL) {
-			//std::cerr << modA->classID << std::endl;
+			////std::cerr << modA->classID << std::endl;
 			if (colisions->data()[i]->classID != GROUND) {
 					reaction = colisions->data()[i]->hitted(colisions->data()[i+1]);
 				if (reaction < 0) {
@@ -472,7 +497,7 @@ void Scene::calculate()
 		}
 	}
 //	if (destructionQueue.size() != 0) {
-	//	std::cerr << "DESTRO" << destructionQueue.size() << std::endl;
+	//	//std::cerr << "DESTRO" << destructionQueue.size() << std::endl;
 	//}
 	this->removeModels(destructionQueue);
 }

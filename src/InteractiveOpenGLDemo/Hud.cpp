@@ -94,7 +94,7 @@ void Hud::buffer()
 
 void Hud::draw()
 {
-	//std::cerr << "TEXTUREA" << this->texture << std::endl;
+	////std::cerr << "TEXTUREA" << this->texture << std::endl;
 	if (!this->visible) {
 		return;
 	}
@@ -141,7 +141,6 @@ Hud::Hud()
 
 Hud::~Hud()
 {
-	std::cerr << "hud delete\n";
 	glDeleteBuffers(1, &this->VertexBuffer);
 	glDeleteBuffers(1, &this->UVbuffer);
 	glDeleteTextures(1, &this->texture);

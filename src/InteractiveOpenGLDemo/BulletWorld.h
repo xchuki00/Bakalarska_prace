@@ -28,6 +28,6 @@ public:
 	std::vector<Model *> *calculate();
 
 	BulletWorld();
-	~BulletWorld();
+	virtual~BulletWorld();
 };
 

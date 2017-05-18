@@ -29,7 +29,7 @@ glm::mat4 Projectil::getPosition()
 	if (!this->firedAtr) {
 		if (this->weapon != NULL) {
 			this->weapon->calc();
-			//std::cerr << "INIT WEAOPN ID" << this->weapon->id << std::endl;
+			////std::cerr << "INIT WEAOPN ID" << this->weapon->id << std::endl;
 		}
 	}
 	else if(this->inTargetAtr){
@@ -113,7 +113,7 @@ bool Projectil::inTarget()
 int Projectil::hitted(Model * byWho)
 {
 	std::cerr << "Objetk " << this->id << " ZASAZENO " << byWho->classID << " OBJECT ID " << byWho->id << std::endl;
-
+	this->sounds->play3D(SOUND + "fire_bow_sound-mike-koenig.mp3",this->modelMatrix[3],false);
 	if (!this->inTargetAtr&&byWho->classID!=PLAYER) {
 		///Kontrola uhlu dopadu <45 == zabodne jinak odraz?
 		if (this->bt != nullptr) {
@@ -143,7 +143,7 @@ int Projectil::hitted(Model * byWho)
 		this->translateVec.z = (this->modelMatrix[3][2] - this->weapon->getPosition()[3][2])*0.8;
 		this->oldModel.x = this->weapon->getPosition()[0][1] + this->weapon->getPosition()[0][2] + this->weapon->getPosition()[0][3];
 		this->oldModel.y = this->weapon->getPosition()[1][1] + this->weapon->getPosition()[1][2] + this->weapon->getPosition()[1][3];
-		this->oldModel.y = this->weapon->getPosition()[2][1] + this->weapon->getPosition()[2][2] + this->weapon->getPosition()[2][3];
+		this->oldModel.z = this->weapon->getPosition()[2][1] + this->weapon->getPosition()[2][2] + this->weapon->getPosition()[2][3];
 		this->inTargetAtr = true;		
 		return DESTROY_BULLET;
 	}

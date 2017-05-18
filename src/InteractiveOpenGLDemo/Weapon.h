@@ -29,6 +29,6 @@ public:
 	glm::mat4 getPosition();
 	Projectil* getProjectil();
 	Weapon();
-	~Weapon();
+	virtual~Weapon();
 };
 

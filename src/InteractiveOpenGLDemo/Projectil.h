@@ -12,10 +12,12 @@ class Projectil :
 	glm::vec3 oldModel=glm::vec3(0,0,0);
 	glm::vec3 translateVec;
 public:
+
+	Projectil();
+	virtual~Projectil();
+
 	void setMass(int m);
 	void setWeapon(Model *w);
-	Projectil();
-	~Projectil();
 	glm::mat4 getPosition();
 	int init();
 	void triggered();

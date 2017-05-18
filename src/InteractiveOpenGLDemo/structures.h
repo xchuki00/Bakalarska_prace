@@ -34,7 +34,7 @@ struct VertexBone {
 			}
 		}
 		if (Weights[j] != 0) {
-			std::cerr << "vic jak 4 "<< std::endl;
+			//std::cerr << "vic jak 4 "<< std::endl;
 		}
 		Weights[j] = w;
 		IDs[j] = id;

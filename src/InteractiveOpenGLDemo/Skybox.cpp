@@ -33,7 +33,7 @@ int Skybox::load_DayNighttexture(bool day,const char * left, const char * front,
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-	std::cerr << "skybox textury nacteny" << std::endl;
+	//std::cerr << "skybox textury nacteny" << std::endl;
 	return 0;
 }
 static float lastAngle = glm::pi<float>() / 4;
@@ -52,7 +52,7 @@ void Skybox::calcAxis()
 	axis.data()[1] = glm::rotate(glm::vec3(0, 1, 0.1), angle, glm::vec3(0, 0, 1));
 	float angleB = AngleBetween(this->axis[0],glm::vec3(1, 0, 0));
 
-	std::cerr << "DATAE" << this->dayPart << "    " << angleB << "      " << lastAngle <<"     "<< glm::to_string(this->axis[0]) << std::endl;
+	////std::cerr << "DATAE" << this->dayPart << "    " << angleB << "      " << lastAngle <<"     "<< glm::to_string(this->axis[0]) << std::endl;
 	if (angleB > (pi / 4) && angleB < (3 * pi / 4)&& AngleBetween(glm::vec3(1, 0, 0), this->axis[1])>(3 * pi / 4)) {
 		angle *= 3;
 	}
@@ -95,7 +95,7 @@ void Skybox::draw()
 	glUniform1i(this->dayTextureID, 0);
 	glActiveTexture(GL_TEXTURE1);
 	glBindTexture(GL_TEXTURE_CUBE_MAP, this->nightTextur);
-	//std::cerr << "SKY time: " << *this->time << std::endl;
+	////std::cerr << "SKY time: " << *this->time << std::endl;
 	glUniform1i(this->nightTextureID, 1);
 	this->calcAxis();
 	//glm::vec3 middle = getVectorOfPosition();
@@ -157,4 +157,6 @@ Skybox::~Skybox()
 	glDeleteBuffers(1, &this->vertexBuffer);
 	glDeleteBuffers(1, &this->indexBuffer);
 	glDeleteProgram(this->shader);
+	glDeleteTextures(1, &this->dayTextur);
+	glDeleteTextures(1, &this->nightTextur);
 }

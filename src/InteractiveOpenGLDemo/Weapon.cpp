@@ -26,6 +26,7 @@ float Weapon::getLastDmg()
 }
 void Weapon::triggered()
 {
+	this->sounds->play3D(SOUND + "draw_bow_sound-mike-koenig-1234.mp3", this->modelMatrix[3],false);
 	this->triggeredTime = glfwGetTime();
 	if (p != NULL) {
 		this->p->triggered();
@@ -84,6 +85,7 @@ void Weapon::reload(Projectil * p)
 
 void Weapon::fire(Projectil* load, btCollisionObject *obj)
 {
+	this->sounds->play3D(SOUND + "Bow_Fire_Arrow-Stephan_Schutze-2133929391.mp3", this->modelMatrix[3],false);
 	if (this->p != NULL) {
 		this->p->fire(obj);
 		this->toLoad = load;
@@ -101,7 +103,7 @@ void Weapon::calc()
 
 		this->player->calc();
 		this->Angles();
-		//std::cerr <<i<<"VANGLE: "<<VAngle<<"\t HANGLE: "<<HAngle<<std::endl;
+		////std::cerr <<i<<"VANGLE: "<<VAngle<<"\t HANGLE: "<<HAngle<<std::endl;
 		this->p->modelMatrix = glm::rotate(this->p->modelMatrix, -VAngle, upProjectil);
 		dirProjectil = glm::rotate(dirProjectil, VAngle, upProjectil);
 		this->p->modelMatrix = glm::rotate(this->p->modelMatrix, -HAngle, dirProjectil);
@@ -111,7 +113,7 @@ void Weapon::calc()
 		this->p->modelMatrix[3][1] = this->modelMatrix[3][1]+shift.y;
 		this->p->modelMatrix[3][2] = this->modelMatrix[3][2]+shift.z;
 		i++;
-		//std::cerr << "PRDEL" << glm::to_string(this->p->modelMatrix)<<std::endl;
+		////std::cerr << "PRDEL" << glm::to_string(this->p->modelMatrix)<<std::endl;
 		//return this->p->modelMatrix;
 	}
 }
@@ -152,7 +154,7 @@ glm::mat4 Weapon::getPosition()
 
 	//this->modelMatrix = glm::rotate(this->modelMatrix, 0.05f, glm::vec3(this->modelMatrix[0][0], this->modelMatrix[0][1], this->modelMatrix[0][2]));
 	if(i%60==0)
-	//std::cerr << "WEAPON: " << glm::to_string(this->modelMatrix)<<std::endl;
+	////std::cerr << "WEAPON: " << glm::to_string(this->modelMatrix)<<std::endl;
 	i++;
 	return this->modelMatrix;
 	

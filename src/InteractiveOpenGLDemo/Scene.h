@@ -98,6 +98,6 @@ public:
 
 	int initWindow();
 	Scene();
-	~Scene();
+	virtual~Scene();
 };
 

@@ -1,4 +1,6 @@
-﻿  btAlignedAllocator.cpp
+﻿  Building Custom Rule C:/Users/xchuki00/Documents/Bakalarska_prace/3rd_parties/libs/bullet3-2.85.1/src/LinearMath/CMakeLists.txt
+  CMake does not need to re-run because C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\src\LinearMath\CMakeFiles\generate.stamp is up-to-date.
+  btAlignedAllocator.cpp
   btConvexHull.cpp
   btConvexHullComputer.cpp
   btGeometryUtil.cpp

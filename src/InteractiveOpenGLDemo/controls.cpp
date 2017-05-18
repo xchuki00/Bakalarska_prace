@@ -6,7 +6,7 @@
 extern Scene sc;
 glm::mat4 ViewC;
 glm::mat4 ProjectionC;
-glm::vec3 position(0, 2.0f, 5.0f);
+glm::vec3 position(10, 2.0f, 5.0f);
 glm::vec3 dirV(0,0,0.5f);
 glm::mat4 MyPosition = glm::translate(glm::mat4(1.0f), position);
 glm::vec3 upV(0, 1, 0);
@@ -97,7 +97,7 @@ glm::vec3 getChange() {
 }
 int computeMatrices()
 {
-	//std::cerr << glm::to_string(position) << std::endl;
+	////std::cerr << glm::to_string(position) << std::endl;
 	glm::vec3 oldPos;
 	vec3Copy(position, &oldPos);
 	static double lastT = glfwGetTime();
@@ -174,7 +174,7 @@ int computeMatrices()
 	position.y = mat[3][1];
 	position.z = mat[3][2];
 	MyPosition = glm::translate(glm::mat4(1.0f), position);
-	//std::cerr << "FORCE" << glm::to_string(position) <<"\n"<<glm::to_string(oldPos)<< std::endl;
+	////std::cerr << "FORCE" << glm::to_string(position) <<"\n"<<glm::to_string(oldPos)<< std::endl;
 	ProjectionC = glm::perspective(Fov, 4.0f / 3.0f, 0.1f, 100.0f);
 	ViewC = glm::lookAt(position, position+dirV,upV);
 	lastT = current;

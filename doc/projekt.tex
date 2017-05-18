@@ -60,6 +60,7 @@
   \usepackage{color}
   \usepackage[unicode,colorlinks,hyperindex,plainpages=false,pdftex]{hyperref}
   \usepackage{amsmath}
+  \usepackage{algorithm}
   \usepackage[ampersand]{easylist}
   \definecolor{links}{rgb}{0.4,0.5,0}
   \definecolor{anchors}{rgb}{1,0,0}
@@ -76,7 +77,10 @@
   \setlist[myEnumerate,2]{label= --}
   \setlist[myEnumerate,3]{label=--}
   \setlist[myEnumerate,4]{label= ---}
-  \setlist[myEnumerate,5]{label=----}
+  \setlist[myEnumerate,5]{label=---}
+  \renewcommand{\lstlistingname}{Algoritmus}
+  \newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+  \newcommand{\tab}[1]{\hspace{.4\textwidth}\rlap{#1}}
  \fi
 \else % pro tisk budou odkazy, na které se dá klikat, černé / for the print clickable links will be black
 \ifx\pdfoutput\undefined % nejedeme pod pdflatexem / we are not using pdflatex
@@ -115,11 +119,11 @@
   department=UPGM, % doplnte prislusnou zkratku dle ustavu na zadani: UPSY/UIFS/UITS/UPGM
   %                  fill in appropriate abbreviation of the department according to assignment: UPSY/UIFS/UITS/UPGM
   %Skolitel / supervisor
-  supervisor=Tomáš Milét, %cele jmeno a prijmeni skolitele / full name and surname of the supervisor
+  supervisor=Tomáš Milet, %cele jmeno a prijmeni skolitele / full name and surname of the supervisor
   supervisor.name={Tomáš},   %jmeno skolitele (pro citaci) / supervisor name (for reference) 
-  supervisor.surname={Milét},   %prijmeni skolitele (pro citaci) / supervisor surname (for reference) 
-  supervisor.title.p=Ing.,   %titul pred jmenem (nepovinne) / title before the name (optional)
-  supervisor.title.a={},    %titul za jmenem (nepovinne) / title after the name (optional)
+  supervisor.surname={Milet},   %prijmeni skolitele (pro citaci) / supervisor surname (for reference) 
+  supervisor.title.p={Ing.},   %titul pred jmenem (nepovinne) / title before the name (optional)
+  %supervisor.title.a={},    %titul za jmenem (nepovinne) / title after the name (optional)
   %Klicova slova, abstrakty, prohlaseni a podekovani je mozne definovat 
   %bud pomoci nasledujicich parametru nebo pomoci vyhrazenych maker (viz dale)
   %Keywords, abstracts, declaration and acknowledgement can be defined by following 
@@ -141,28 +145,28 @@
 }
 
 %Abstrakt (cesky, slovensky ci anglicky) / Abstract (in czech, slovak or english)
-\abstract[cs]{
-Práce se zabývá realnou implementaci jednoduchého dema v prostředí OpenGL.  	
+\abstract[cs]{Práce popisuje implementaci jednoduché 3D hry pomocí OpenGL. Věnuje se návrhu aplikace a konkrétní implementaci, která je výstupem této práce. V textu práce je popsán postupně způsob použití knihoven \emph{Assimp}, \emph{Bullet} a \emph{IrrKlang}.  \emph{Assimp} pro načítání souborů formátu \emph{dae} a \emph{obj}. \emph{Bullet} pro zachytávání kolizí a fyziku scény. A \emph{IrrKlang} jako nástroj pro 3D ozvučení. Dále se práce podrobně věnuje osvětlení, stínům a implementaci \emph{Skeleton animation}. Část práce je taky věnovaná použité implementaci \emph{skyboxu} a střídání dne a noci. V poslední kapitole jsou potom popsány výkonnostní testy výsledné implementace.	
 }
-\abstract[en]{Do tohoto odstavce bude zapsán výtah (abstrakt) práce v anglickém jazyce.}
+\abstract[en]{This Bachelor's thesis describe implementation of simple 3D game by OpenGL. The attention is paid to draft of this game and specific implementation, which is output of this work. In text of thesis is described usage of libraries \emph{Assimp}, \emph{Bullet} and \emph{IrrKlang}. \emph{Assimp} for loading  an .obj and .dae model file. \emph{Bullet} for detection of collision and physics of scene. And \emph{IrrKlang} for sounds. Furthmore thesis  deals with lighting, shadows and implementation of Skeleton animation. Part of thesis is dedicated to implementation of skybox and changing day and night. In last chapter are analyzed test of game.
+}
 
 %Klicova slova (cesky, slovensky ci anglicky) / Keywords (in czech, slovak or english)
-\keywords[cs]{OpenGL, 3D hra, }
-\keywords[en]{OpenGL 3D game}
+\keywords[cs]{OpenGL, 3D hra, Assimp, Bullet engine, IrrKlang, Skeletal animation, Shadow depth map, Phongův osvětlovací model, Perlinův šum}
+\keywords[en]{OpenGL, 3D game, Assimp, Bullet engine, IrrKlang, Skeletal animation, Shadow depth map, Phong's lighting model, Perlin's noise}
 
 %Prohlaseni (u anglicky psane prace anglicky, u slovensky psane prace slovensky)
 %Declaration (for thesis in english should be in english)
-\declaration{Prohlašuji, že jsem tuto bakalářskou práci vypracoval samostatně pod vedením pana X...
-Další informace mi poskytli...
-Uvedl jsem všechny literární prameny a publikace, ze kterých jsem čerpal.}
+\declaration{Prohlašuji, že jsem tuto bakalářskou práci vypracoval samostatně pod vedením pana Ing.~Tomáše Mileta.
+Uvedl jsem všechny literární prameny a publikace, ze kterých jsem čerpal.
+\\
+}
 
 % \declaration{Hereby I declare that this bachelor's thesis was prepared as an original author’s work under the supervision of Mr. X
 % The supplementary information was provided by Mr. Y
 % All the relevant information sources, which were used during preparation of this thesis, are properly cited and included in the list of references.}
 
 %Podekovani (nepovinne, nejlepe v jazyce prace) / Acknowledgement (optional, ideally in the language of the thesis)
-\acknowledgment{V této sekci je možno uvést poděkování vedoucímu práce a těm, kteří poskytli odbornou pomoc
-(externí zadavatel, konzultant, apod.).}
+\acknowledgment{Tímto bych chtěl poděkovat svému vedoucímu Ing. Tomáši Miletovi za odbornou pomoc, dále Viktorii Chomaničové a Bc.~Evě Bártové za gramatickou a slohovou kontrolu, a také své rodině za podporu během tvorby.}
 %\acknowledgment{Here it is possible to express thanks to the supervisor and to the people which provided professional help
 %(external submitter, consultant, etc.).}
 

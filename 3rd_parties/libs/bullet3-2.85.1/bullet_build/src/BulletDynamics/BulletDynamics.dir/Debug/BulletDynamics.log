@@ -1,4 +1,6 @@
-﻿  btKinematicCharacterController.cpp
+﻿  Building Custom Rule C:/Users/xchuki00/Documents/Bakalarska_prace/3rd_parties/libs/bullet3-2.85.1/src/BulletDynamics/CMakeLists.txt
+  CMake does not need to re-run because C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\src\BulletDynamics\CMakeFiles\generate.stamp is up-to-date.
+  btKinematicCharacterController.cpp
   btConeTwistConstraint.cpp
   btContactConstraint.cpp
 c:\users\xchuki00\documents\bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\src\bulletdynamics\constraintsolver\btContactConstraint.h(25): warning C4359: 'btContactConstraint': Alignment specifier is less than actual alignment (128), and will be ignored.

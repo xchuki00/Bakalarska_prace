@@ -87,6 +87,9 @@
     <ClCompile Include="sunMoon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PerlinNoise.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controls.h">
@@ -164,19 +167,20 @@
     <ClInclude Include="sunMoon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PerlinNoise.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="crossHair.fragmentShader" />
-    <None Include="crossHair.vertexShader" />
-    <None Include="fragment.gls" />
-    <None Include="skybox.fragmentShader" />
-    <None Include="skybox.vertexShader" />
-    <None Include="vertex.gls" />
-    <None Include="diffuseLight.vs" />
-    <None Include="diffuseLight.fs" />
-    <None Include="shadowMap.vs" />
-    <None Include="shadowMap.fs" />
-    <None Include="SunMoon.fs" />
-    <None Include="SunMoon.vs" />
+    <None Include="shaders\crossHair.fragmentShader" />
+    <None Include="shaders\crossHair.vertexShader" />
+    <None Include="shaders\diffuseLight.fs" />
+    <None Include="shaders\diffuseLight.vs" />
+    <None Include="shaders\shadowMap.fs" />
+    <None Include="shaders\shadowMap.vs" />
+    <None Include="shaders\skybox.fragmentShader" />
+    <None Include="shaders\skybox.vertexShader" />
+    <None Include="shaders\SunMoon.fs" />
+    <None Include="shaders\SunMoon.vs" />
   </ItemGroup>
 </Project>

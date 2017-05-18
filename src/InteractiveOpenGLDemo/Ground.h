@@ -10,6 +10,6 @@ public:
 	glm::mat4 getPosition();
 	float getDmg();
 	Ground();
-	~Ground();
+	virtual~Ground();
 };
 

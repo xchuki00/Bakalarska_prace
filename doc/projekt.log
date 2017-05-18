@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.1.27)  15 MAY 2017 03:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.1.27)  18 MAY 2017 09:03
 entering extended mode
 **./projekt.tex
 (projekt.tex
@@ -1297,22 +1297,28 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip81
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+\@float@every@algorithm=\toks29
+\c@algorithm=\count297
+)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\easylist\easylist.sty"
 Package: easylist 2014/01/11 v.1.4 Numbered items with a single command.
-\el@CounterTotal=\count297
-\el@Scratch=\count298
-\el@ControlCounter=\count299
-\el@CounterLevel=\count300
-\c@List1=\count301
-\c@List2=\count302
-\c@List3=\count303
-\c@List4=\count304
-\c@List5=\count305
-\c@List6=\count306
-\c@List7=\count307
-\c@List8=\count308
-\c@List9=\count309
-\c@List10=\count310
+\el@CounterTotal=\count298
+\el@Scratch=\count299
+\el@ControlCounter=\count300
+\el@CounterLevel=\count301
+\c@List1=\count302
+\c@List2=\count303
+\c@List3=\count304
+\c@List4=\count305
+\c@List5=\count306
+\c@List6=\count307
+\c@List7=\count308
+\c@List8=\count309
+\c@List9=\count310
+\c@List10=\count311
 \el@ProgressiveDimension=\dimen179
 \el@CounterBox=\box52
 \el@ControlBox=\box53
@@ -1326,63 +1332,72 @@ Package: gensymb 2003/07/02 v1.0 (WaS)
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip82
 \enit@outerparindent=\dimen182
-\enit@toks=\toks29
+\enit@toks=\toks30
 \enit@inbox=\box54
-\enitdp@description=\count311
+\enitdp@description=\count312
 )
-\c@myEnumeratei=\count312
-\c@myEnumerateii=\count313
-\c@myEnumerateiii=\count314
-\c@myEnumerateiv=\count315
-\c@myEnumeratev=\count316
-\c@myEnumeratevi=\count317
-\c@myEnumeratevii=\count318
-\c@myEnumerateviii=\count319
-\c@myEnumerateix=\count320
-\enitdp@myEnumerate=\count321
+\c@myEnumeratei=\count313
+\c@myEnumerateii=\count314
+\c@myEnumerateiii=\count315
+\c@myEnumerateiv=\count316
+\c@myEnumeratev=\count317
+\c@myEnumeratevi=\count318
+\c@myEnumeratevii=\count319
+\c@myEnumerateviii=\count320
+\c@myEnumerateix=\count321
+\enitdp@myEnumerate=\count322
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\hypcap.sty"
 Package: hypcap 2016/05/16 v1.12 Adjusting the anchors of captions (HO)
-) (projekt.aux)
+) (projekt.aux
+
+LaTeX Warning: Label `aiAnimation' multiply defined.
+
+
+LaTeX Warning: Label `"Algoritmus"' multiply defined.
+
+
+LaTeX Warning: Label `"Algoritmus"' multiply defined.
+
+)
 \openout1 = `projekt.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 174.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 178.
+LaTeX Font Info:    ... okay on input line 178.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 178.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 174.
+LaTeX Info: Redefining \selectfont on input line 178.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count322
+\scratchcounter=\count323
 \scratchdimen=\dimen183
 \scratchbox=\box55
-\nofMPsegments=\count323
-\nofMParguments=\count324
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count325
+\nofMPsegments=\count324
+\nofMParguments=\count325
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count326
 \MPscratchDim=\dimen184
-\MPnumerator=\count326
-\makeMPintoPDFobject=\count327
-\everyMPtoPDFconversion=\toks31
+\MPnumerator=\count327
+\makeMPintoPDFobject=\count328
+\everyMPtoPDFconversion=\toks32
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -1396,9 +1411,9 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\c@lstlisting=\count328
+\c@lstlisting=\count329
 \AtBeginShipoutBox=\box56
-Package hyperref Info: Link coloring ON on input line 174.
+Package hyperref Info: Link coloring ON on input line 178.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1406,29 +1421,29 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count329
+\c@section@level=\count330
 )
-LaTeX Info: Redefining \ref on input line 174.
-LaTeX Info: Redefining \pageref on input line 174.
-LaTeX Info: Redefining \nameref on input line 174.
+LaTeX Info: Redefining \ref on input line 178.
+LaTeX Info: Redefining \pageref on input line 178.
+LaTeX Info: Redefining \nameref on input line 178.
 
 (projekt.out) (projekt.out)
 \@outlinefile=\write3
 \openout3 = `projekt.out'.
 
-LaTeX Info: Redefining \celsius on input line 174.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 174
+LaTeX Info: Redefining \celsius on input line 178.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 178
 .
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 174.
-Package gensymb Info: Using \Omega for \ohm on input line 174.
+LaTeX Info: Redefining \ohm on input line 178.
+Package gensymb Info: Using \Omega for \ohm on input line 178.
 
 Package gensymb Warning: Not defining \micro.
 
-LaTeX Font Info:    Try loading font information for T1+qhv on input line 180.
+LaTeX Font Info:    Try loading font information for T1+qhv on input line 184.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tex-gyre\t1qhv.fd"
 File: t1qhv.fd 2009/09/25 v1.2 font definition file for T1/qhv
 )
@@ -1439,30 +1454,41 @@ File: t1qhv.fd 2009/09/25 v1.2 font definition file for T1/qhv
 \@vyskaobr=\skip85
 \@sirkaobr=\skip86
 
-<template-fig/VUT_symbol_barevne_CMYK_CZ.pdf, id=96, 167.13641pt x 165.87971pt>
+<template-fig/VUT_symbol_barevne_CMYK_CZ.pdf, id=168, 167.13641pt x 165.87971pt
+>
 File: template-fig/VUT_symbol_barevne_CMYK_CZ.pdf Graphic file (type pdf)
-<use template-fig/VUT_symbol_barevne_CMYK_CZ.pdf>
+ <use template-fig/VUT_symbol_barevne_CMYK_CZ.pdf>
 Package pdftex.def Info: template-fig/VUT_symbol_barevne_CMYK_CZ.pdf used on in
-put line 180.
+put line 184.
 (pdftex.def)             Requested size: 116.65646pt x 115.17995pt.
-LaTeX Font Info:    Try loading font information for T1+fos on input line 180.
+LaTeX Font Info:    Try loading font information for T1+fos on input line 184.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\opensans\t1fos.fd"
 File: t1fos.fd 2011/11/11 Fontinst v1.927 font definitions for T1/fos.
 )
 LaTeX Font Info:    Font shape `T1/fos/bx/n' in size <18> not available
-(Font)              Font shape `T1/fos/b/n' tried instead on input line 180.
+(Font)              Font shape `T1/fos/b/n' tried instead on input line 184.
 LaTeX Font Info:    Font shape `T1/fos/bx/n' in size <11> not available
-(Font)              Font shape `T1/fos/b/n' tried instead on input line 180.
+(Font)              Font shape `T1/fos/b/n' tried instead on input line 184.
 LaTeX Font Info:    Font shape `T1/fos/bx/n' in size <14> not available
-(Font)              Font shape `T1/fos/b/n' tried instead on input line 180.
+(Font)              Font shape `T1/fos/b/n' tried instead on input line 184.
 LaTeX Font Info:    Font shape `T1/fos/bx/n' in size <10> not available
-(Font)              Font shape `T1/fos/b/n' tried instead on input line 180.
+(Font)              Font shape `T1/fos/b/n' tried instead on input line 184.
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./template-fig/VUT_symbol
-_barevne_CMYK_CZ.pdf>] [2] [3] (projekt.toc<<ot1.cmap>><<oml.cmap>><<oms.cmap>>
-<<omx.cmap>>
+_barevne_CMYK_CZ.pdf>] [2]
+Overfull \hbox (0.92572pt too wide) in paragraph at lines 184--184
+\T1/lmr/m/n/10.95 Prohla²uji, ºe jsem tuto ba-ka-lá°-skou práci vy-pra-co-val s
+a-mo-statn¥ pod ve-de-ním pana Ing. To-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--184
+
+ []
+
+[3] (projekt.toc<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
 LaTeX Font Info:    Try loading font information for U+msa on input line 4.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
@@ -1472,200 +1498,299 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 4.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+)pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.37 ... }\IeC {\v r}it aplikaci}{26}{section.5.3}
+                                                   [1
+
+
+])
 \tf@toc=\write4
 \openout4 = `projekt.toc'.
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.191    \listoffigures
-                        [1
-
-
-] (projekt.lof)
+l.195    \listoffigures
+                        [2] (projekt.lof)
 \tf@lof=\write5
 \openout5 = `projekt.lof'.
 
  (projekt-01-kapitoly-chapters.texpdfTeX warning (ext4): destination with the s
-ame identifier (name{page.2}) has been already used, duplicate ignored
+ame identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.4 \chapter
-            {Ãšvod} [2
+            {Ãšvod} [3
 
 ]
 Kapitola 1.
-
-LaTeX Warning: Citation `irrklang' on page 3 undefined on input line 6.
-
-
-LaTeX Warning: Citation `glew' on page 3 undefined on input line 6.
-
-
-LaTeX Warning: Citation `glfw' on page 3 undefined on input line 6.
-
-
-LaTeX Warning: Citation `glm' on page 3 undefined on input line 6.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.8 \chapter
-            {Teorie} [3
+[4
 
 ]
 Kapitola 2.
 
-LaTeX Warning: Citation `MPGbook' on page 4 undefined on input line 9.
+Underfull \hbox (badness 10000) in paragraph at lines 23--26
 
-[4
+ []
 
-]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 62.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--26
+
+ []
+
+[5
+
+] ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+)
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 48.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 62.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 48.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 62.
-
-<obrazky-figures/skeletalAnimation.png, id=213, 845.40843pt x 597.73312pt>
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 48.
+ [6]
+<obrazky-figures/skeletalAnimation.png, id=382, 845.40843pt x 597.73312pt>
 File: obrazky-figures/skeletalAnimation.png Graphic file (type png)
 
 <use obrazky-figures/skeletalAnimation.png>
 Package pdftex.def Info: obrazky-figures/skeletalAnimation.png used on input li
-ne 88.
+ne 91.
 (pdftex.def)             Requested size: 278.98564pt x 197.25253pt.
- [5] [6 <./obrazky-figures/skeletalAnimation.png>]
-Kapitola 3.
-[7
+ [7 <./obrazky-figures/skeletalAnimation.png>] <obrazky-figures/PN.png, id=393,
+ 546.54187pt x 571.38469pt>
+File: obrazky-figures/PN.png Graphic file (type png)
 
-] <obrazky-figures/aiAnimation.png, id=251, 622.325pt x 218.8175pt>
+<use obrazky-figures/PN.png>
+Package pdftex.def Info: obrazky-figures/PN.png used on input line 111.
+(pdftex.def)             Requested size: 136.63513pt x 142.84581pt.
+ [8] [9 <./obrazky-figures/PN.png>]
+Kapitola 3.
+[10
+
+] <obrazky-figures/aiAnimation.png, id=421, 622.325pt x 218.8175pt>
 File: obrazky-figures/aiAnimation.png Graphic file (type png)
 
 <use obrazky-figures/aiAnimation.png>
-Package pdftex.def Info: obrazky-figures/aiAnimation.png used on input line 122
+Package pdftex.def Info: obrazky-figures/aiAnimation.png used on input line 140
 .
 (pdftex.def)             Requested size: 311.16173pt x 109.40848pt.
- [8 <./obrazky-figures/aiAnimation.png>]
-<obrazky-figures/dayOnight.png, id=260, 845.40843pt x 597.73312pt>
+ [11 <./obrazky-figures/aiAnimation.png>]
+<obrazky-figures/dayOnight.png, id=432, 845.40843pt x 597.73312pt>
 File: obrazky-figures/dayOnight.png Graphic file (type png)
 
 <use obrazky-figures/dayOnight.png>
-Package pdftex.def Info: obrazky-figures/dayOnight.png used on input line 145.
+Package pdftex.def Info: obrazky-figures/dayOnight.png used on input line 169.
 (pdftex.def)             Requested size: 295.89738pt x 209.20972pt.
- [9 <./obrazky-figures/dayOnight.png>]
-<obrazky-figures/windMap.png, id=269, 550.30594pt x 420.82219pt>
+ [12]
+<obrazky-figures/windMap.png, id=440, 550.30594pt x 420.82219pt>
 File: obrazky-figures/windMap.png Graphic file (type png)
 
 <use obrazky-figures/windMap.png>
-Package pdftex.def Info: obrazky-figures/windMap.png used on input line 170.
+Package pdftex.def Info: obrazky-figures/windMap.png used on input line 200.
 (pdftex.def)             Requested size: 275.1523pt x 210.41057pt.
- [10] [11 <./obrazky-figures/windMap.png>]
+ [13 <./obrazky-figures/dayOnight.png>]
+[14 <./obrazky-figures/windMap.png>] [15]
 Kapitola 4.
-<obrazky-figures/ClassDia.png, id=282, 828.09375pt x 779.91376pt>
+<obrazky-figures/ClassDia.png, id=457, 924.45375pt x 810.02625pt>
 File: obrazky-figures/ClassDia.png Graphic file (type png)
 
 <use obrazky-figures/ClassDia.png>
-Package pdftex.def Info: obrazky-figures/ClassDia.png used on input line 193.
-(pdftex.def)             Requested size: 414.04587pt x 389.95593pt.
- [12
+Package pdftex.def Info: obrazky-figures/ClassDia.png used on input line 221.
+(pdftex.def)             Requested size: 462.22574pt x 405.01213pt.
 
-] [13 <./obrazky-figures/ClassDia.png>]
-[14]
-Kapitola 5.
-[15
+Overfull \hbox (29.74394pt too wide) in paragraph at lines 221--222
+ [] 
+ []
 
-]
-Kapitola 6.
-) (projekt.bbl [16
+[16
 
-]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 13.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
+] [17 <./obrazky-figures/ClassDia.png>] [18] [19]
+Overfull \hbox (1.47855pt too wide) in paragraph at lines 273--274
+[]\T1/lmr/m/n/10.95 V²echny in-stance této t°ídy by m¥ly pra-co-vat s je-di-nou
+ in-stancí \T1/lmr/m/it/10.95 ISoun-dEn-gine \T1/lmr/m/n/10.95 z knihovny
+ []
+
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 281.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-))
-[17
+)
+<obrazky-figures/PWP.png, id=491, 596.2275pt x 234.8775pt>
+File: obrazky-figures/PWP.png Graphic file (type png)
 
-] [18
+<use obrazky-figures/PWP.png>
+Package pdftex.def Info: obrazky-figures/PWP.png used on input line 284.
+(pdftex.def)             Requested size: 357.73926pt x 140.92758pt.
+ [20]
+<obrazky-figures/aiATree.png, id=497, 816.04875pt x 884.30376pt>
+File: obrazky-figures/aiATree.png Graphic file (type png)
+
+<use obrazky-figures/aiATree.png>
+Package pdftex.def Info: obrazky-figures/aiATree.png used on input line 300.
+(pdftex.def)             Requested size: 408.02338pt x 442.1508pt.
+ [21 <./obrazky-figures/PWP.png>]
+(diffuseLight.vs
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <9> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 22.
+) [22] [23 <./obrazky-figures/aiATree.png>]
+Kapitola 5.
+<obrazky-figures/19.png, id=543, 1212.02812pt x 715.92468pt>
+File: obrazky-figures/19.png Graphic file (type png)
+
+<use obrazky-figures/19.png>
+Package pdftex.def Info: obrazky-figures/19.png used on input line 347.
+(pdftex.def)             Requested size: 172.99007pt x 102.17326pt.
+
+<obrazky-figures/20.png, id=544, 1202.24156pt x 678.28406pt>
+File: obrazky-figures/20.png Graphic file (type png)
+
+<use obrazky-figures/20.png>
+Package pdftex.def Info: obrazky-figures/20.png used on input line 352.
+(pdftex.def)             Requested size: 172.99007pt x 97.5983pt.
+ [24
 
 ]
-\c@ttl@toc@chapters=\count330
+<obrazky-figures/17.png, id=551, 1201.48875pt x 696.35156pt>
+File: obrazky-figures/17.png Graphic file (type png)
+
+<use obrazky-figures/17.png>
+Package pdftex.def Info: obrazky-figures/17.png used on input line 369.
+(pdftex.def)             Requested size: 172.99007pt x 100.25116pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--370
+[]\T1/lmr/m/n/10.95 Obrázek 5.3: B¥-hem vklá-dání
+ []
+
+<obrazky-figures/18.png, id=552, 1183.42125pt x 698.61pt>
+File: obrazky-figures/18.png Graphic file (type png)
+
+<use obrazky-figures/18.png>
+Package pdftex.def Info: obrazky-figures/18.png used on input line 374.
+(pdftex.def)             Requested size: 172.99007pt x 102.122pt.
+
+<obrazky-figures/21.png, id=553, 1164.60094pt x 691.83469pt>
+File: obrazky-figures/21.png Graphic file (type png)
+
+<use obrazky-figures/21.png>
+Package pdftex.def Info: obrazky-figures/21.png used on input line 389.
+(pdftex.def)             Requested size: 172.99007pt x 102.7573pt.
+ [25 <./obrazky-figures/19.png> <./obrazky-figures/20.png> <./obrazky-figures/1
+7.png> <./obrazky-figures/18.png>] [26 <./obrazky-figures/21.png>]
+Kapitola 6.
+) (projekt.bbl [27
+
+]) [28
+
+] [29
+
+]
+\c@ttl@toc@chapters=\count331
  (projekt-30-prilohy-appendices.tex
 P\IeC {\v r}\IeC {\'\i }loha A.
-<obrazky-figures/crossHair.png, id=321, 102.3825pt x 102.3825pt>
-File: obrazky-figures/crossHair.png Graphic file (type png)
+<obrazky-figures/22.png, id=595, 1206.00563pt x 707.64375pt>
+File: obrazky-figures/22.png Graphic file (type png)
 
-<use obrazky-figures/crossHair.png>
-Package pdftex.def Info: obrazky-figures/crossHair.png used on input line 17.
-(pdftex.def)             Requested size: 102.38225pt x 102.38225pt.
-File: obrazky-figures/crossHair.png Graphic file (type png)
- <use obrazky-figures/crossHair.png>
-Package pdftex.def Info: obrazky-figures/crossHair.png used on input line 21.
-(pdftex.def)             Requested size: 102.38225pt x 102.38225pt.
+<use obrazky-figures/22.png>
+Package pdftex.def Info: obrazky-figures/22.png used on input line 20.
+(pdftex.def)             Requested size: 301.50067pt x 176.9105pt.
+
+<obrazky-figures/23.png, id=596, 1181.16281pt x 703.87968pt>
+File: obrazky-figures/23.png Graphic file (type png)
+
+<use obrazky-figures/23.png>
+Package pdftex.def Info: obrazky-figures/23.png used on input line 26.
+(pdftex.def)             Requested size: 295.28998pt x 175.96948pt.
+
+<obrazky-figures/24.png, id=597, 1209.76968pt x 706.89093pt>
+File: obrazky-figures/24.png Graphic file (type png)
+
+<use obrazky-figures/24.png>
+Package pdftex.def Info: obrazky-figures/24.png used on input line 31.
+(pdftex.def)             Requested size: 302.44168pt x 176.72229pt.
+
+<obrazky-figures/27.png, id=598, 1209.01688pt x 705.38531pt>
+File: obrazky-figures/27.png Graphic file (type png)
+
+<use obrazky-figures/27.png>
+Package pdftex.def Info: obrazky-figures/27.png used on input line 37.
+(pdftex.def)             Requested size: 302.25348pt x 176.34589pt.
+ [30
+
+] [31 <./obrazky-figures/22.png> <./obrazky-figures/23.png>] [32 <./obrazky-fig
+ures/24.png> <./obrazky-figures/27.png>]
+P\IeC {\v r}\IeC {\'\i }loha B.
 )
 \tf@ptc=\write6
 \openout6 = `projekt.ptc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 284.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 288.
+ [33
 
-[19
-
- <./obrazky-figures/crossHair.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 284.
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 288.
  (projekt.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 284.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 284.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 288.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 288.
+Package rerunfilecheck Info: File `projekt.out' has not changed.
+(rerunfilecheck)             Checksum: 96AF10D3A8001F516AA0DCFBAF041D59;6838.
 
 
-Package rerunfilecheck Warning: File `projekt.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `projekt.out':
-(rerunfilecheck)             Before: 4C462D35E338BC69FBA87BFFDCE6AB53;3658
-(rerunfilecheck)             After:  79C05C28C049247357CA28283E221476;4086.
-
-LaTeX Warning: There were undefined references.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 23059 strings out of 493329
- 373293 string characters out of 3139054
- 448039 words of memory out of 3000000
- 26138 multiletter control sequences out of 15000+200000
- 105517 words of font info for 81 fonts, out of 3000000 for 9000
+ 23846 strings out of 493329
+ 382806 string characters out of 3139054
+ 483986 words of memory out of 3000000
+ 26797 multiletter control sequences out of 15000+200000
+ 116724 words of font info for 87 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,37p,10405b,616s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/M
-iKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/fonts/e
-nc/dvips/opensans/opensans-03.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/
-opensans/opensans-02.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/opensans/
-opensans-04.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/opensans/opensans-
-01.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/opensans/OpenSans-Bold.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on projekt.pdf (22 pages, 799189 bytes).
+ 41i,13n,58p,10405b,1413s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{lstnumber.2.1.26} has been referenced but does no
+t exist, replaced by a fixed one
+
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files
+/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc
+/dvips/opensans/opensans-03.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/op
+ensans/opensans-02.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/opensans/op
+ensans-04.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/opensans/opensans-01
+.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/opensans/OpenSans-Bold.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/lm/lmbx9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/lm/lmbxi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm
+/lmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
+Output written on projekt.pdf (36 pages, 11666334 bytes).
 PDF statistics:
- 402 PDF objects out of 1000 (max. 8388607)
- 76 named destinations out of 1000 (max. 500000)
- 246 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 723 PDF objects out of 1000 (max. 8388607)
+ 167 named destinations out of 1000 (max. 500000)
+ 445 words of extra memory for PDF output out of 10000 (max. 10000000)
 

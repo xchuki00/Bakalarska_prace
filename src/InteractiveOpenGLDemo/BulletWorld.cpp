@@ -10,7 +10,7 @@ int BulletWorld::init()
 	this->solver = new btSequentialImpulseConstraintSolver;
 	this->world = new btDiscreteDynamicsWorld(this->dispatcher, this->broadphase, this->solver, this->collisionConfig);
 	this->world->setGravity(btVector3(0, -2, 0));
-	std::cerr << "Bullet Init" << std::endl;
+	//std::cerr << "Bullet Init" << std::endl;
 	return 0;
 }
 
@@ -126,7 +126,7 @@ btCollisionObject * BulletWorld::addGround(glm::mat4 position,Model * index)
 	this->world->addRigidBody(rb);
 	index->setBulletWorld(this->world);
 	index->setObj(this->world->getCollisionObjectArray()[this->world->getNumCollisionObjects() - 1]);
-	std::cerr << "ground add" << std::endl;
+	//std::cerr << "ground add" << std::endl;
 	return this->world->getCollisionObjectArray()[this->world->getNumCollisionObjects() - 1];
 
 }

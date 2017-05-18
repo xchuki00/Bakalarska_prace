@@ -5,7 +5,8 @@ c:\users\xchuki00\documents\bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\src
 c:\users\xchuki00\documents\bakalarska_prace\src\interactiveopengldemo\structures.h(67): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 c:\users\xchuki00\documents\bakalarska_prace\src\interactiveopengldemo\structures.h(71): warning C4244: 'argument': conversion from 'float' to 'glm::tvec4<float,0>::length_type', possible loss of data
 c:\users\xchuki00\documents\bakalarska_prace\src\interactiveopengldemo\structures.h(72): warning C4244: 'argument': conversion from 'float' to 'glm::tvec4<float,0>::length_type', possible loss of data
-c:\users\xchuki00\documents\bakalarska_prace\src\interactiveopengldemo\source.cpp(20): warning C4101: 'releaseT': unreferenced local variable
-c:\users\xchuki00\documents\bakalarska_prace\src\interactiveopengldemo\source.cpp(97): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\xchuki00\documents\bakalarska_prace\src\interactiveopengldemo\source.cpp(128): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+c:\users\xchuki00\documents\bakalarska_prace\src\interactiveopengldemo\source.cpp(129): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+c:\users\xchuki00\documents\bakalarska_prace\src\interactiveopengldemo\source.cpp(133): warning C4305: 'argument': truncation from 'double' to 'float'
   InteractiveOpenGLDemo.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\src\x64\Debug\InteractiveOpenGLDemo.exe
   InteractiveOpenGLDemo.vcxproj -> C:\Users\xchuki00\Documents\Bakalarska_prace\src\x64\Debug\InteractiveOpenGLDemo.pdb (Partial PDB)

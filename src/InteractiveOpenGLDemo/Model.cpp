@@ -12,7 +12,28 @@ glm::mat4 coordiationTransformMatrix(
 	0.0, 0.0, 0.5, 0.0,
 	0.5, 0.5, 0.5, 1.0
 );
-glm::vec3 light(5, 5, 0);
+Model::Model()
+{
+	this->classID = MODEL;
+	this->id = idCount;
+
+	idCount++;
+}
+
+
+Model::~Model()
+{
+	//std::cerr << "MODEL" << std::endl;
+	glDeleteProgram(this->shader);
+	glDeleteProgram(this->shadowShader);
+	glDeleteBuffers(1, &this->vertexBuffer);
+	glDeleteBuffers(1, &this->indexBuffer);
+	delete this->sounds;
+	//glDeleteTextures(1, &this->textureID);
+	//glDeleteBuffers(1, &this->boneBuffer);
+	glDeleteProgram(this->shader);
+}
+
 btCollisionObject * Model::getObj()
 {
 	return this->bt;
@@ -84,7 +105,7 @@ void Model::draw(std::vector<DirectionLight> lights)
 	glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeof(MyVertex), (const GLvoid*)(sizeof(glm::vec2) + sizeof(glm::vec3)));
 	glVertexAttribPointer(3, 4, GL_FLOAT, GL_FALSE, sizeof(MyVertex), (const GLvoid*)(sizeof(glm::vec2) + sizeof(glm::vec3) + sizeof(glm::vec3)));
 	glVertexAttribPointer(4, 4, GL_FLOAT, GL_FALSE, sizeof(MyVertex), (const GLvoid*)(sizeof(glm::vec2) + sizeof(glm::vec3)+sizeof(glm::vec3)+sizeof(glm::vec4)));
-	//std::cerr << this->classID << "vertexpoitn\n";
+	////std::cerr << this->classID << "vertexpoitn\n";
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, this->indexBuffer);
 
 	glDrawElements(GL_TRIANGLES, this->countOfIndex, GL_UNSIGNED_SHORT, 0);
@@ -100,7 +121,7 @@ void Model::DrawToShadowMap(glm::vec3 orthoDir)
 	glUniformMatrix4fv(this->ShadowMVPID, 1, GL_FALSE, &MVP[0][0]);
 	glBindBuffer(GL_ARRAY_BUFFER, this->vertexBuffer);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(MyVertex), 0);
-	//std::cerr << this->classID << "vertexpoitn\n";
+	////std::cerr << this->classID << "vertexpoitn\n";
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, this->indexBuffer);
 
 	glDrawElements(GL_TRIANGLES, this->countOfIndex, GL_UNSIGNED_SHORT, 0);
@@ -128,23 +149,7 @@ void Model::setWind(Wind * w)
 	this->wind = w;
 }
 
-Model::Model()
-{
-	this->classID = MODEL;
-	this->id = idCount;
 
-	idCount++;
-}
-
-
-Model::~Model()
-{
-	glDeleteBuffers(1, &this->vertexBuffer);
-	glDeleteBuffers(1, &this->indexBuffer);
-	//glDeleteTextures(1, &this->textureID);
-	//glDeleteBuffers(1, &this->boneBuffer);
-	glDeleteProgram(this->shader);
-}
 
 int Model::load_3DModel(std::string path)
 {
@@ -198,7 +203,7 @@ void Model::setFinalTransformation()
 
 int Model::buffer()
 {
-	std::cerr << "VERTEX" << this->vertices.size()<<this->indices.size() << std::endl;
+	//std::cerr << "VERTEX" << this->vertices.size()<<this->indices.size() << std::endl;
 	glGenBuffers(1, &this->vertexBuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, this->vertexBuffer);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(MyVertex) * this->vertices.size(), &this->vertices[0], GL_STATIC_DRAW);
@@ -207,7 +212,7 @@ int Model::buffer()
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, this->indexBuffer);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned short) * this->indices.size(), &this->indices[0], GL_STATIC_DRAW);
 
-	//std::cerr << "prdel";
+	////std::cerr << "prdel";
 	return 0;
 }
 

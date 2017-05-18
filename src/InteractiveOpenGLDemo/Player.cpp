@@ -7,7 +7,17 @@ static float VAngle = 0;
 static float HAngle = 0;
 static float oldVAngle = 0;
 static float oldHAngle = 0;
+void Player::jump()
+{
+	this->landed = false;
+}
 
+
+Player::~Player()
+{
+	
+
+}
 int Player::hasArrows()
 {
 	return this->arrows;
@@ -123,12 +133,4 @@ int Player::hitted(Model * byWho)
 	return 0;
 }
 
-void Player::jump()
-{
-	this->landed = false;
-}
 
-
-Player::~Player()
-{
-}

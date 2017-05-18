@@ -5,12 +5,12 @@ GLuint loadTexture2d(const char * path,int* height,int *width, GLuint code) {
 	
 	FREE_IMAGE_FORMAT form = FreeImage_GetFileType(path, 0);
 	if (form == -1) {
-		std::cerr << "Error:Nelze otevrit soubor textury" << std::endl;
+		//std::cerr << "Error:Nelze otevrit soubor textury" << std::endl;
 	}
 	else if(form == FIF_UNKNOWN){
 		form = FreeImage_GetFIFFromFilename(path);
 		if (!FreeImage_FIFSupportsReading(form)) {
-			std::cerr << "Error:Nelze urcit typ souboru" << std::endl;
+			//std::cerr << "Error:Nelze urcit typ souboru" << std::endl;
 			return NULL;
 		}
 	}
@@ -52,12 +52,12 @@ GLuint loadTextureCube(const char * path, GLenum side, GLuint *texture)
 {
 	FREE_IMAGE_FORMAT form = FreeImage_GetFileType(path, 0);
 	if (form == -1) {
-		std::cerr << "Error:Nelze otevrit soubor textury" << std::endl;
+		//std::cerr << "Error:Nelze otevrit soubor textury" << std::endl;
 	}
 	else if (form == FIF_UNKNOWN) {
 		form = FreeImage_GetFIFFromFilename(path);
 		if (!FreeImage_FIFSupportsReading(form)) {
-			std::cerr << "Error:Nelze urcit typ souboru" << std::endl;
+			//std::cerr << "Error:Nelze urcit typ souboru" << std::endl;
 			return -1;
 		}
 	}
@@ -79,7 +79,7 @@ GLuint loadTextureCube(const char * path, GLenum side, GLuint *texture)
 	if (qu != 32) {
 		FreeImage_Unload(bm);
 	}
-	std::cout << "nactena textura " << path << " return je " << std::endl;
+	//std::cout << "nactena textura " << path << " return je " << std::endl;
 
 	return GLuint();
 }
@@ -88,12 +88,12 @@ GLuint loadTexture2d(const char * path, GLuint * texture)
 {
 	FREE_IMAGE_FORMAT form = FreeImage_GetFileType(path, 0);
 	if (form == -1) {
-		std::cerr << "Error:Nelze otevrit soubor textury" << std::endl;
+		//std::cerr << "Error:Nelze otevrit soubor textury" << std::endl;
 	}
 	else if (form == FIF_UNKNOWN) {
 		form = FreeImage_GetFIFFromFilename(path);
 		if (!FreeImage_FIFSupportsReading(form)) {
-			std::cerr << "Error:Nelze urcit typ souboru" << std::endl;
+			//std::cerr << "Error:Nelze urcit typ souboru" << std::endl;
 			return -1;
 		}
 	}
@@ -115,7 +115,7 @@ GLuint loadTexture2d(const char * path, GLuint * texture)
 	if (qu != 32) {
 		FreeImage_Unload(bm);
 	}
-	std::cout << "nactena textura " << path << " return je " << std::endl;
+	//std::cout << "nactena textura " << path << " return je " << std::endl;
 
 	return GLuint();
 

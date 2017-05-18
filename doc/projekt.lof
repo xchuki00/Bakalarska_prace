@@ -1,14 +1,27 @@
 \select@language {czech}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Skelatal animation}}{6}{figure.2.1}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Na obr\IeC {\'a}zku vid\IeC {\'\i }me n\IeC {\'a}\IeC {\v c}rtek modelu s kostmi pro \emph {Skeletoon animation} ve dvou r\IeC {\r u}zn\IeC {\'y}ch \IeC {\v c}asech (pln\IeC {\'a} pro \IeC {\v c}as t, pr\IeC {\'a}zdn\IeC {\'a} pro \IeC {\v c}as t+1).}}{7}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Uk\IeC {\'a}zka gratientn\IeC {\'\i }ch(g) a sm\IeC {\v e}rov\IeC {\'y}ch(d) vektor\IeC {\r u} pro Perlin\IeC {\r u} \IeC {\v s}um}}{9}{figure.2.2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces \IeC {\v C}\IeC {\'a}st diagramu t\IeC {\v r}\IeC {\'\i }d knihovny \emph {Assimp}\cite {assimp}}}{8}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Graf st\IeC {\v r}\IeC {\'\i }d\IeC {\'a}n\IeC {\'\i } denn\IeC {\'\i } a no\IeC {\v c}n\IeC {\'\i } oblohy}}{9}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces V\IeC {\v e}trn\IeC {\'a} mapa v\IeC {\'y}sledn\IeC {\'e} aplikace}}{11}{figure.3.3}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \IeC {\v C}\IeC {\'a}st diagramu struktury knihovny \emph {Assimp}\cite {assimp} uchov\IeC {\'a}vaj\IeC {\'\i }c\IeC {\'\i } informace o jedn\IeC {\'e} animaci jednoho nebo v\IeC {\'\i }ce \emph {mesh} model\IeC {\r u}.}}{11}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Graf st\IeC {\v r}\IeC {\'\i }d\IeC {\'a}n\IeC {\'\i } denn\IeC {\'\i } a no\IeC {\v c}n\IeC {\'\i } oblohy, kdy poloha osy fragmentu v\IeC {\r u}\IeC {\v c}i ose 0 a 1 ur\IeC {\v c}uje pom\IeC {\v e}r m\IeC {\'\i }ch\IeC {\'a}n\IeC {\'\i } textur pro tento fragment. Osy 0 a 1 na z\IeC {\'a}klad\IeC {\v e} hern\IeC {\'\i }ho \IeC {\v c}asu rotuj\IeC {\'\i } a d\IeC {\v e}l\IeC {\'\i } den na 8 \IeC {\v c}\IeC {\'a}st\IeC {\'\i }. }}{13}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces V\IeC {\v e}trn\IeC {\'a} mapa v\IeC {\'y}sledn\IeC {\'e} aplikace. \IeC {\v S}ipky zn\IeC {\'a}zor\IeC {\v n}uj\IeC {\'\i } sm\IeC {\v e}r a velikost v\IeC {\v e}tru. Za ob\IeC {\v e}ma \IeC {\v c}tverci je mo\IeC {\v z}no vid\IeC {\v e}t v\IeC {\v e}trn\IeC {\'e} st\IeC {\'\i }ny s v\IeC {\'y}razn\IeC {\v e} ni\IeC {\v z}\IeC {\v s}\IeC {\'\i } intenzitou v\IeC {\v e}tru.}}{14}{figure.3.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Zjednodu\IeC {\v s}en\IeC {\'y} diagram t\IeC {\v r}\IeC {\'\i }d v\IeC {\'y}sledn\IeC {\'e} implementace}}{13}{figure.4.1}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Zjednodu\IeC {\v s}en\IeC {\'y} diagram t\IeC {\v r}\IeC {\'\i }d v\IeC {\'y}sledn\IeC {\'e} implementace}}{17}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Varianty prov\IeC {\'a}z\IeC {\'a}n\IeC {\'\i } Player, Weapon a Projectil. \IeC {\v S}ipky nazna\IeC {\v c}uj\IeC {\'\i }, kter\IeC {\'e} t\IeC {\v r}\IeC {\'\i }da bud obsahovat ukazatel na druhou t\IeC {\v r}\IeC {\'\i }du.}}{21}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Graf konkr\IeC {\'e}tn\IeC {\'\i } instance struktur \emph {aiScene}. Jsou vid\IeC {\v e}t v\IeC {\v s}echny t\IeC {\v r}i podstruktury, ve kter\IeC {\'y}ch jsou ulo\IeC {\v z}eny data pot\IeC {\v r}ebn\IeC {\'e} k realizaci animace. P\IeC {\v r}eru\IeC {\v s}ovan\IeC {\'e} \IeC {\v c}\IeC {\'a}ry spojuj\IeC {\'\i } ekvivalentn\IeC {\'\i } objekty.}}{23}{figure.4.3}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces B\IeC {\v e}hem vkl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } koul\IeC {\'\i }}}{25}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Po ust\IeC {\'a}len\IeC {\'\i } koul\IeC {\'\i }}}{25}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces B\IeC {\v e}hem vkl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } krychl\IeC {\'y}}}{25}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Po ust\IeC {\'a}len\IeC {\'\i } krychl\IeC {\'y}}}{25}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces B\IeC {\v e}hem vkl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } tank\IeC {\r u}}}{26}{figure.5.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Screenshot ze st\IeC {\v r}eleck\IeC {\'e} pozice s napl\IeC {\'y}m lukem}}{31}{figure.A.1}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Screenshot b\IeC {\v e}hem \IeC {\'u}svitu, jsou zde vid\IeC {\v e}t st\IeC {\'\i }ny vr\IeC {\v z}en\IeC {\'e} ter\IeC {\v c}i a odlesk od vych\IeC {\'a}zej\IeC {\'\i }c\IeC {\'\i }ho slunce}}{31}{figure.A.2}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Detail ter\IeC {\v c}e, na kter\IeC {\'e}m jsou vid\IeC {\v e}t vykreslen\IeC {\'e} vlastn\IeC {\'\i } st\IeC {\'\i }ny}}{32}{figure.A.3}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Zde je vid\IeC {\v e}t st\IeC {\'\i }n vr\IeC {\v z}en\IeC {\'y} zabodl\IeC {\'y}m \IeC {\v s}\IeC {\'\i }pem v ter\IeC {\v c}i}}{32}{figure.A.4}
 \addvspace {10\p@ }
 \contentsfinish 

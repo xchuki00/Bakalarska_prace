@@ -4,7 +4,7 @@
 
 void Target::draw()
 {
-	std::cerr << "TARGET";
+	//std::cerr << "TARGET";
 }
 
 Target::Target()

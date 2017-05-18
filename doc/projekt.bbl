@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -12,10 +12,49 @@
 Coumans, E.: {\it Bullet physic library}. [Online; navštíveno 26.04.2017].
 \newline\urlprefix\url{http://bulletphysics.org/wordpress/}
 
+\bibitem{bullet-trigger}
+Coumans, E.: {\it Bullet physic library, článek o spouštích v případě
+  kolizí}. [Online; navštíveno 26.04.2017].
+\newline\urlprefix\url{http://bulletphysics.org/mediawiki-1.5.8/index.php/Collision_Callbacks_and_Triggers}
+
+\bibitem{irrKlang}
+Gebhardt, N.; Ambiera: {\it IrrKlang, high level 3D audio engine}. [Online;
+  navštíveno 16.05.2017].
+\newline\urlprefix\url{http://www.ambiera.com/irrklang/}
+
+\bibitem{glew}
+Gebhardt, N.; Ambiera: {\it IrrKlang, high level 3D audio engine}. [Online;
+  navštíveno 16.05.2017].
+\newline\urlprefix\url{http://www.ambiera.com/irrklang/}
+
+\bibitem{glfw}
+Gebhardt, N.; Ambiera: {\it IrrKlang, high level 3D audio engine}. [Online;
+  navštíveno 16.05.2017].
+\newline\urlprefix\url{http://www.ambiera.com/irrklang/}
+
+\bibitem{glm}
+Gebhardt, N.; Ambiera: {\it IrrKlang, high level 3D audio engine}. [Online;
+  navštíveno 16.05.2017].
+\newline\urlprefix\url{http://www.ambiera.com/irrklang/}
+
 \bibitem{assimp}
 Gessler, A.; Schulze, T.; Kulling, K.; aj.: {\it Open Asset Import library}.
   [Online; navštíveno 26.04.2017].
 \newline\urlprefix\url{http://assimp.org/index.html}
+
+\bibitem{KP-site}
+Perlin, K.: {\it new york university mrl Ken Perlin}. [Online; navštíveno
+  16.05.2017].
+\newline\urlprefix\url{http://mrl.nyu.edu/~perlin/}
+
+\bibitem{KP-old}
+Perlin, K.: {\it An Image Synthesizer}. 2017, [Online; navštíveno
+  13.05.2017].
+\newline\urlprefix\url{https://pdfs.semanticscholar.org/c4e6/00dad6313f9d0b5469ff0aa2f6e9f179de93.pdf}
+
+\bibitem{KP-new}
+Perlin, K.: {\it Improving Noise}. 2017, [Online; navštíveno 13.05.2017].
+\newline\urlprefix\url{http://mrl.nyu.edu/~perlin/paper445.pdf}
 
 \bibitem{MPGBook}
 Žára, J.; Beneš, B.; Sochor, J.; aj.: \emph{{Moderní počítačová

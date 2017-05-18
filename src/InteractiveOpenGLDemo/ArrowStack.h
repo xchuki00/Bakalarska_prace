@@ -4,6 +4,7 @@ class ArrowStack :
 	public Hud
 {
 	int countOfArrow = 6;
+	int initialCount = 6;
 
 public:
 	void buffer();
@@ -11,6 +12,6 @@ public:
 	void setCountOfArrows(int count);
 	int getCountofArrows();
 	ArrowStack();
-	~ArrowStack();
+	virtual ~ArrowStack();
 };
 

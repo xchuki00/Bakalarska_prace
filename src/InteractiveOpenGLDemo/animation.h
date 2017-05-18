@@ -11,6 +11,8 @@ public:
 	Assimp::Importer *imp;
 	const aiNode* nodes = nullptr;
 	const aiAnimation* animations = nullptr;
+
+
 	virtual void updateNode(const aiNode* Node, aiMatrix4x4 ParentTransform, double time);
 	virtual const aiNodeAnim* findAnimNode(const aiAnimation *anim, std::string nodeName);
 	virtual void getNodeRotation(aiQuaternion* vec, double time, const aiNodeAnim* animNode);
@@ -21,6 +23,6 @@ public:
 	double getDuration();
 	double getTickPerSecond();
 	animation();
-	~animation();
+	virtual ~animation();
 };
 

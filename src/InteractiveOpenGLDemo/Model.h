@@ -45,6 +45,10 @@ public:
 	int classID = MODEL;
 	glm::mat4 modelMatrix;
 	glm::mat4 depthMVP;
+
+
+	Model();
+	virtual ~Model();
 	////////////funkce pro init////////////
 	virtual int load_3DModel(std::string path);
 	virtual int load_texture(const char *path);
@@ -76,8 +80,7 @@ public:
 	virtual void addSound(std::string key,std::string path);
 	////////enviroment//////////
 	virtual void setWind(Wind* w);
-	Model();
-	~Model();
+
 
 
 };

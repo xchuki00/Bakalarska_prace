@@ -9,7 +9,7 @@ int loadObj(std::string path, std::vector<glm::vec3>& out_vertices, std::vector<
 	std::ifstream obj(path);
 	if (!(obj.is_open())) {
 
-		std::cerr << "ERROR:soubor " << path << " se nepodarilo otevrit!" << std::endl;
+		//std::cerr << "ERROR:soubor " << path << " se nepodarilo otevrit!" << std::endl;
 		return -1;
 	}
 
@@ -63,7 +63,7 @@ int loadObj(std::string path, std::vector<glm::vec3>& out_vertices, std::vector<
 	}
 	obj.close();
 		if (vertexIndices.size() <= 0 || temp_vertices.size() <= 0) {
-		std::cerr << "Error: NEnacten 3D modle " << path << std::endl;
+		//std::cerr << "Error: NEnacten 3D modle " << path << std::endl;
 		return 1;
 	}
 	for (int i = 0; i < vertexIndices.size(); i++) {
@@ -86,12 +86,12 @@ int loadObjAss(std::string path, std::vector<MyVertex>& out_vertices, std::vecto
 	Assimp::Importer imp;
 	const aiScene *scen = imp.ReadFile(path.c_str(), aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_JoinIdenticalVertices);
 	if (scen == NULL) {
-		std::cerr << "Error:Assimp load\n";
+		//std::cerr << "Error:Assimp load\n";
 		return -1;
 	}
-	//std::cerr << "ASSIMP: num mesh:" << scen->mNumMeshes<<std::endl;
+	////std::cerr << "ASSIMP: num mesh:" << scen->mNumMeshes<<std::endl;
 	const aiMesh* mesh = scen->mMeshes[0];
-	std::cerr << "ASSIMP: num ver:" << mesh->mNumVertices << std::endl;
+	//std::cerr << "ASSIMP: num ver:" << mesh->mNumVertices << std::endl;
 	const aiVector3D Zero3D(0.0f, 0.0f, 0.0f);
 	for (int i = 0; i < mesh->mNumVertices; i++) {
 		const aiVector3D* pTexCoord = mesh->HasTextureCoords(0) ? &(mesh->mTextureCoords[0][i]) : &Zero3D;
@@ -102,8 +102,8 @@ int loadObjAss(std::string path, std::vector<MyVertex>& out_vertices, std::vecto
 			glm::vec3(mesh->mNormals[i].x, mesh->mNormals[i].y, mesh->mNormals[i].z));
 		out_vertices.push_back(v);
 	}
-	std::cerr << "ASSIMP: out:" << out_vertices.size() << std::endl;
-	std::cerr << "ASSIMP: num face:" << mesh->mNumFaces << std::endl;
+	//std::cerr << "ASSIMP: out:" << out_vertices.size() << std::endl;
+	//std::cerr << "ASSIMP: num face:" << mesh->mNumFaces << std::endl;
 	for (int i = 0; i < mesh->mNumFaces; i++) {
 		const aiFace& Face = mesh->mFaces[i];
 		//assert(Face.mNumIndices == 3);
@@ -125,10 +125,10 @@ int loadAnimated(std::string path,Model *model)
 	model->animation = new animation();
 	const aiScene *scen = model->animation->imp->ReadFile(path.c_str(), aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_JoinIdenticalVertices);
 	if (scen == NULL) {
-		std::cerr << "Error:Assimp load\n";
+		//std::cerr << "Error:Assimp load\n";
 		return -1;
 	}
-	//std::cerr << "ASSIMP: num mesh:" << scen->mNumMeshes<<std::endl;
+	////std::cerr << "ASSIMP: num mesh:" << scen->mNumMeshes<<std::endl;
 	const aiMesh* mesh = scen->mMeshes[0];
 	const aiVector3D Zero3D(0.0f, 0.0f, 0.0f);
 	for (int i = 0; i < mesh->mNumVertices; i++) {

@@ -31,6 +31,6 @@ public:
 	virtual void draw();
 	Hud(std::string path);
 	Hud();
-	~Hud();
+	virtual~Hud();
 };
 

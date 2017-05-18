@@ -1,4 +1,6 @@
-﻿  btAxisSweep3.cpp
+﻿  Building Custom Rule C:/Users/xchuki00/Documents/Bakalarska_prace/3rd_parties/libs/bullet3-2.85.1/src/BulletCollision/CMakeLists.txt
+  CMake does not need to re-run because C:\Users\xchuki00\Documents\Bakalarska_prace\3rd_parties\libs\bullet3-2.85.1\bullet_build\src\BulletCollision\CMakeFiles\generate.stamp is up-to-date.
+  btAxisSweep3.cpp
   btBroadphaseProxy.cpp
   btCollisionAlgorithm.cpp
   btDbvt.cpp

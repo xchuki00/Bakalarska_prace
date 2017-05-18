@@ -1,9 +1,11 @@
 #pragma once
 #include "includes.h"
+#include "PerlinNoise.h"
 class Wind
 {
 	glm::vec3 dir;
 	float strength;
+	PerlinNoise * noise;
 
 public:
 	GLuint ShadowShader;
@@ -15,6 +17,6 @@ public:
 	void drawWindMap();
 	glm::vec3 getLocalWind(glm::vec3 pos);
 	Wind();
-	~Wind();
+	virtual~Wind();
 };
 

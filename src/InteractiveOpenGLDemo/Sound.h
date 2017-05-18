@@ -14,8 +14,8 @@ public:
 	static void deleteEngine(ISoundEngine* engine);
 	void setEngine(ISoundEngine* e);
 	void play2D(std::string path, bool looped);
-	void play3D(std::string path, glm::vec3 position);
+	void play3D(std::string path, glm::vec3 position, bool loop);
 	Sound();
-	~Sound();
+	virtual~Sound();
 };
 

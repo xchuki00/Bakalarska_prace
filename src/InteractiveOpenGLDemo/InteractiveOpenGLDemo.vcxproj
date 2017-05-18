@@ -131,6 +131,7 @@
     <ClCompile Include="loader.cpp" />
     <ClCompile Include="misc.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="PerlinNoise.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Projectil.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="loader.h" />
     <ClInclude Include="misc.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="PerlinNoise.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Projectil.h" />
     <ClInclude Include="Scene.h" />
@@ -172,20 +174,6 @@
     <ClInclude Include="Wind.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="crossHair.fragmentShader" />
-    <None Include="crossHair.vertexShader" />
-    <None Include="diffuseLight.fs" />
-    <None Include="diffuseLight.vs" />
-    <None Include="fragment.gls" />
-    <None Include="shadowMap.fs" />
-    <None Include="shadowMap.vs" />
-    <None Include="skybox.fragmentShader" />
-    <None Include="skybox.vertexShader" />
-    <None Include="SunMoon.fs" />
-    <None Include="SunMoon.vs" />
-    <None Include="vertex.gls" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\3rd_parties\libs\bullet3-2.85.1\bullet_build\src\BulletCollision\BulletCollision.vcxproj">
       <Project>{69161357-de7a-30e8-a127-d99b30456272}</Project>
     </ProjectReference>
@@ -195,6 +183,18 @@
     <ProjectReference Include="..\..\3rd_parties\libs\bullet3-2.85.1\bullet_build\src\LinearMath\LinearMath.vcxproj">
       <Project>{3e99b633-37f8-3d48-91cb-e79a8527f0dc}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\crossHair.fragmentShader" />
+    <None Include="shaders\crossHair.vertexShader" />
+    <None Include="shaders\diffuseLight.fs" />
+    <None Include="shaders\diffuseLight.vs" />
+    <None Include="shaders\shadowMap.fs" />
+    <None Include="shaders\shadowMap.vs" />
+    <None Include="shaders\skybox.fragmentShader" />
+    <None Include="shaders\skybox.vertexShader" />
+    <None Include="shaders\SunMoon.fs" />
+    <None Include="shaders\SunMoon.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

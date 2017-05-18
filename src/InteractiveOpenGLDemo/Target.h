@@ -6,6 +6,6 @@ class Target :
 public:
 	void draw();
 	Target();
-	~Target();
+	virtual~Target();
 };
 

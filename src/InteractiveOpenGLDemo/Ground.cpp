@@ -14,7 +14,7 @@ btCollisionObject * Ground::getPlane()
 
 glm::mat4 Ground::getPosition()
 {
-	return glm::translate(this->modelMatrix, glm::vec3(0,0.1,0));
+	return this->modelMatrix;
 }
 
 float Ground::getDmg()

@@ -10,8 +10,8 @@ void crossHair::print()
 {
 
 
-	std::cerr << "RC" <<this->PositionX <<"," <<this->sizeX << " " << this->PositionY << "," << this->sizeY << "\n";
-	std::cerr << "RC" << this->Column << "," << this->MaxColumn << " " << this->Row << "," << this->MaxRow << "\n";
+	//std::cerr << "RC" <<this->PositionX <<"," <<this->sizeX << " " << this->PositionY << "," << this->sizeY << "\n";
+	//std::cerr << "RC" << this->Column << "," << this->MaxColumn << " " << this->Row << "," << this->MaxRow << "\n";
 }
 
 void crossHair::buffer()

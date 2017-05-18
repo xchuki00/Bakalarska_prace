@@ -17,6 +17,8 @@ protected:
 	ArrowStack* arrowStack=nullptr;
 	HitsHud* hitsHud = nullptr;
 public:
+	Player();
+	virtual ~Player();
 	int hasArrows();
 	void addArrowStack(ArrowStack* as);
 	void addHitsHud(HitsHud * hh);
@@ -28,10 +30,10 @@ public:
 	void reportDmg(float f);
 	Weapon* getWeapon();
 	glm::mat4 getPosition();
-	Player();
+	
 	bool land();
 	int hitted(Model* byWho);
 	void jump();
-	~Player();
+	
 };
 

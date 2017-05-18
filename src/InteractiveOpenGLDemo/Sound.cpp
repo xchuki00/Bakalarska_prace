@@ -31,17 +31,16 @@ void Sound::play2D(std::string path, bool looped)
 
 }
 
-void Sound::play3D(std::string path, glm::vec3 position)
+void Sound::play3D(std::string path, glm::vec3 position, bool loop)
 {
 
 	this->music = engine->play3D(path.c_str(),
-		vec3df(position.x, position.y, position.z), true, false, true);
+	vec3df(position.x, position.y, position.z), loop, false, true);
 }
 
 Sound::Sound()
 {
 }
-
 
 Sound::~Sound()
 {

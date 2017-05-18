@@ -11,6 +11,7 @@ void ArrowStack::minus()
 void ArrowStack::setCountOfArrows(int count)
 {
 	this->countOfArrow = count;
+	this->initialCount = count;
 }
 
 int ArrowStack::getCountofArrows()
@@ -25,7 +26,7 @@ void ArrowStack::buffer()
 	int posX = this->PositionX;
 	int posY = this->PositionY;
 	int sizeOfOneX = this->sizeX;
-	int sizeOfOneY = this->sizeY/6;
+	int sizeOfOneY = this->sizeY/this->initialCount;
 	if (this->countOfArrow <= 0) {
 		this->visible = false;
 		return;
