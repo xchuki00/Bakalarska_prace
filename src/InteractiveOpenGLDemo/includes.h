@@ -20,8 +20,8 @@
 #include <map>
 #include <iterator>
 //#include <bt>
-#define HEIGHT 1050
-#define WIDTH 1680
+#define HEIGHT 1080
+#define WIDTH 1920
 #define MAX_VERTEX_BONES 4
 /***********MODEL CLASS ENUM****************/
 #define MODEL 0
@@ -50,4 +50,4 @@ const std::string SOUND = "./../../3rd_parties/sounds/";
 #pragma once
 const float PI = 3.1415927f;
 const double timeSpeed = 1;
-const int dayLenght = 720;
+const int dayLenght = 60;

@@ -1,0 +1,34 @@
+V tomto souboru jsou uvedeny zdroje jednotlivých textur, knihoven, modelù a další souborù nacházejícíh se v této složce.
+
+/sounds/
+	všechny zvuky pocházejí z http://soundbible.com/free-sound-effects-1.html
+/libs/
+	lib64, include, dll  -- dll a lib soubory vykopírované z ostatních složek v /3rd_partie/libs pro snadnìjšší nastavení cest v VS
+	assimp-3.3.1  - knihovna assimp z http://assimp.sourceforge.net/, autor je Alexander Gessler a spol
+	bullet3-2.85.1 - knihovna bullet physic engine, vèetnì jejího buildu,z http://bulletphysics.org/wordpress/ autor je Erwin Coumans
+	glew-2.0.0 - knihovna glew z 
+	glfw-3.2.1.bin.WIN64 - knihovna glfw z
+	glm-0.9.8.1 - knihovna glm z
+	irrKlang-64bit-1.5.0 - knihovna Irrklang z http://www.ambiera.com/irrklang/, autor je Nikolaus Gebhardt and Ambiera
+/icons/
+	blend/
+		bow_final.blend - je model luku z http://www.cgmasters.net/free-tutorials/bow-and-arrow-rigging/, autor je Chris (blengine)
+		zbylé soubory .blend - jsou moje práce(Patrik Chukir), zde jsou proto aby v kodu nemusel rozlišovat èí vìc zrovna používám
+	dae/	
+			
+		bow_final.dae - export(bow_final.blend)-je model luku z http://www.cgmasters.net/free-tutorials/bow-and-arrow-rigging/, autor je Chris (blengine)
+		zbylé soubory - opìt moje
+	obj/	
+		v této složce se nachází exporty blend modelù, autoøi jsou tedy stejní jako u jejich protìjšku .blend
+	texture/
+		/skybox/day
+			blue* - pochází z  https://www.roblox.com/library/91460091/Skybox-Clear-sky by awsumpwner27
+			zbylé textury zde jsou z https://www.cgtrader.com/free-3d-models/exterior/landscape/skycube autor je petomavar
+		/skybox/night - vše v této složce je z http://www.custommapmakers.org/skyboxes.php
+		arrow.* - pozchází z https://sirgo.org/image-post/9187-feathered-arrow-black-clipart-9.jpg.html,uvádí, že má být zmínìno https://sirgo.org
+		bricks.bmp + bricks2.tg(úprava bmp) - https://cz.pinterest.com/pin/490751690620836969/
+		crosshairs64.tga - je pøevedený soubor z https://opengameart.org/content/64-crosshairs-pack
+		grass* - vše jsou varianty a úpravy souboru ze zdroje http://6iee.com/544484.html
+		wood2.tga .xcf -http://matthewboorermtp.blogspot.cz/2013/06/task-1-textures.html
+		sun06.jpg - http://cartoonsmix.com/cartoons/cartoon-sun-texture.html	
+		moon_texture.jpg .tga - http://deanstock.deviantart.com/art/moon-texture-4213255

@@ -15,9 +15,9 @@
 %   projekt-01-kapitoly-chapters.tex - obsah práce / the thesis content
 %   projekt-30-prilohy-appendices.tex - přílohy / appendices
 %==============================================================================
-\documentclass[]{fitthesis} % bez zadání - pro začátek práce, aby nebyl problém s překladem
+%\documentclass[]{fitthesis} % bez zadání - pro začátek práce, aby nebyl problém s překladem
 %\documentclass[english]{fitthesis} % without assignment - for the work start to avoid compilation problem
-%\documentclass[zadani]{fitthesis} % odevzdani do wisu - odkazy jsou barevné
+\documentclass[zadani]{fitthesis} % odevzdani do wisu - odkazy jsou barevné
 %\documentclass[english,zadani]{fitthesis} % for submission to the IS FIT - links are color
 %\documentclass[zadani,print]{fitthesis} % pro tisk - odkazy jsou černé
 %\documentclass[english,zadani,print]{fitthesis} % for the print - links are black
@@ -93,6 +93,22 @@
   \def\LinkColor{links}
   \def\pdfBorderAttrs{/Border [0 0 0] } % bez okrajů kolem odkazů / without margins around links
   \pdfcompresslevel=9
+    \usepackage{amsmath}
+  \usepackage{algorithm}
+  \usepackage[ampersand]{easylist}
+  \usepackage{gensymb}
+  \usepackage{enumitem}
+  \setlistdepth{9}
+  
+  \newlist{myEnumerate}{enumerate}{9}
+  \setlist[myEnumerate,1]{label=\arabic*}
+  \setlist[myEnumerate,2]{label= --}
+  \setlist[myEnumerate,3]{label=--}
+  \setlist[myEnumerate,4]{label= ---}
+  \setlist[myEnumerate,5]{label=---}
+  \renewcommand{\lstlistingname}{Algoritmus}
+  \newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+  \newcommand{\tab}[1]{\hspace{.4\textwidth}\rlap{#1}}
 \fi
 \fi
 % Řešení problému, kdy klikací odkazy na obrázky vedou za obrázek
@@ -145,9 +161,9 @@
 }
 
 %Abstrakt (cesky, slovensky ci anglicky) / Abstract (in czech, slovak or english)
-\abstract[cs]{Práce popisuje implementaci jednoduché 3D hry pomocí OpenGL. Věnuje se návrhu aplikace a konkrétní implementaci, která je výstupem této práce. V textu práce je popsán postupně způsob použití knihoven \emph{Assimp}, \emph{Bullet} a \emph{IrrKlang}.  \emph{Assimp} pro načítání souborů formátu \emph{dae} a \emph{obj}. \emph{Bullet} pro zachytávání kolizí a fyziku scény. A \emph{IrrKlang} jako nástroj pro 3D ozvučení. Dále se práce podrobně věnuje osvětlení, stínům a implementaci \emph{Skeleton animation}. Část práce je taky věnovaná použité implementaci \emph{skyboxu} a střídání dne a noci. V poslední kapitole jsou potom popsány výkonnostní testy výsledné implementace.	
+\abstract[cs]{Práce popisuje implementaci jednoduché 3D hry pomocí OpenGL. Věnuje se návrhu aplikace a konkrétní implementaci, která je výstupem této práce. V textu práce je postupně popsán způsob použití knihoven \emph{Assimp}, \emph{Bullet} a \emph{IrrKlang}.  \emph{Assimp} pro načítání souborů formátu \emph{dae} a \emph{obj}. \emph{Bullet} pro zachytávání kolizí a fyziku scény. A \emph{IrrKlang} jako nástroj pro 3D ozvučení. Dále se práce podrobně věnuje osvětlení, stínům a implementaci \emph{Skeleton animation}. Část práce je také věnována použité implementaci \emph{skyboxu} a střídání dne a noci. V poslední kapitole jsou poté popsány výkonnostní testy výsledné implementace.	
 }
-\abstract[en]{This Bachelor's thesis describe implementation of simple 3D game by OpenGL. The attention is paid to draft of this game and specific implementation, which is output of this work. In text of thesis is described usage of libraries \emph{Assimp}, \emph{Bullet} and \emph{IrrKlang}. \emph{Assimp} for loading  an .obj and .dae model file. \emph{Bullet} for detection of collision and physics of scene. And \emph{IrrKlang} for sounds. Furthmore thesis  deals with lighting, shadows and implementation of Skeleton animation. Part of thesis is dedicated to implementation of skybox and changing day and night. In last chapter are analyzed test of game.
+\abstract[en]{This Bachelor's thesis describe implementation of simple 3D game by OpenGL. The attention is paid to draft of this game and specific implementation, which is output of this work. In text of thesis is described usage of libraries \emph{Assimp}, \emph{Bullet} and \emph{IrrKlang}. \emph{Assimp} for loading  an \emph{.obj} and \emph{.dae} model file. \emph{Bullet} for detection of collision and physics of scene. And \emph{IrrKlang} for sounds. Furthmore thesis  deals with lighting, shadows and implementation of \emph{Skeleton animation}. Part of thesis is dedicated to implementation of \emph{skybox} and changing day and night. In last chapter are analyzed test of game.
 }
 
 %Klicova slova (cesky, slovensky ci anglicky) / Keywords (in czech, slovak or english)

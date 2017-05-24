@@ -8,6 +8,11 @@
 \providecommand{\selectlanguage}[1]{\relax}
 \providecommand{\eprint}[2][]{\url{#2}}
 
+\bibitem{glfw}
+Baş, C.; Shuralyov, D.; Gray, J.; aj.: {\it GLFW}. [Online; navštíveno
+  16.05.2017].
+\newline\urlprefix\url{http://www.glfw.org/}
+
 \bibitem{bullet}
 Coumans, E.: {\it Bullet physic library}. [Online; navštíveno 26.04.2017].
 \newline\urlprefix\url{http://bulletphysics.org/wordpress/}
@@ -17,22 +22,16 @@ Coumans, E.: {\it Bullet physic library, článek o spouštích v případě
   kolizí}. [Online; navštíveno 26.04.2017].
 \newline\urlprefix\url{http://bulletphysics.org/mediawiki-1.5.8/index.php/Collision_Callbacks_and_Triggers}
 
-\bibitem{irrKlang}
-Gebhardt, N.; Ambiera: {\it IrrKlang, high level 3D audio engine}. [Online;
-  navštíveno 16.05.2017].
-\newline\urlprefix\url{http://www.ambiera.com/irrklang/}
-
-\bibitem{glew}
-Gebhardt, N.; Ambiera: {\it IrrKlang, high level 3D audio engine}. [Online;
-  navštíveno 16.05.2017].
-\newline\urlprefix\url{http://www.ambiera.com/irrklang/}
-
-\bibitem{glfw}
-Gebhardt, N.; Ambiera: {\it IrrKlang, high level 3D audio engine}. [Online;
-  navštíveno 16.05.2017].
-\newline\urlprefix\url{http://www.ambiera.com/irrklang/}
-
 \bibitem{glm}
+truck creation, G.; Riccio, C.: {\it OpenGL Mathematics}. [Online; navštíveno
+  16.05.2017].
+\newline\urlprefix\url{http://glm.g-truc.net/0.9.8/index.html}
+
+\bibitem{gengine}
+Eberly, D.~H.: \emph{{3D Game Engine Design}}. Morgan Kaufmann publishers,
+  2001, ISBN 1-55860-593-2.
+
+\bibitem{irrKlang}
 Gebhardt, N.; Ambiera: {\it IrrKlang, high level 3D audio engine}. [Online;
   navštíveno 16.05.2017].
 \newline\urlprefix\url{http://www.ambiera.com/irrklang/}
@@ -59,5 +58,14 @@ Perlin, K.: {\it Improving Noise}. 2017, [Online; navštíveno 13.05.2017].
 \bibitem{MPGBook}
 Žára, J.; Beneš, B.; Sochor, J.; aj.: \emph{{Moderní počítačová
   grafika}}. Computer press, 2004, ISBN 80-251-0454-0.
+
+\bibitem{OpenGLBookcz}
+Shreiner, D.; Woo, M.; Neider, J.; aj.: \emph{{OpenGL Průvodce
+  programátora}}. Computer press, 2006, ISBN 80-251-1275-6.
+
+\bibitem{glew}
+Stewart, N.; Ikits, M.; Magallon, M.: {\it The OpenGL Extension Wrangler
+  Library}. [Online; navštíveno 16.05.2017].
+\newline\urlprefix\url{http://glew.sourceforge.net/}
 
 \end{thebibliography}
